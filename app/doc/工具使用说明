@@ -5,7 +5,7 @@
 2、所有日志在自己定义TAG时默认TAG为："LogUtils",可在Logutils中查看 。
 3、查看http请求网络时传递后台参数信息TAG为 “AsyncHttpClient RequestParams”。
 4、请求http 调用的方法过程查看TAG为："RequestTask task".
-	
+
 
 
 
