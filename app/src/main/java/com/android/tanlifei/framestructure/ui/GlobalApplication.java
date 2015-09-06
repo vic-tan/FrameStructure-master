@@ -1,6 +1,5 @@
 package com.android.tanlifei.framestructure.ui;
 
-import android.app.Application;
 import android.content.Context;
 
 import com.android.tanlifei.framestructure.common.constants.StatusConstants;
@@ -9,6 +8,8 @@ import com.android.tanlifei.framestructure.common.exception.CrashHandler;
 import com.android.tanlifei.framestructure.common.utils.ImageConfigUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import org.litepal.LitePalApplication;
+
 /**
  * 全局Application
  *
@@ -16,7 +17,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
  * @date 2015年8月13日 上午11:30:51
  */
 
-public class GlobalApplication extends Application {
+public class GlobalApplication extends LitePalApplication {
 
     public static Context appContext;//全局上下文
     public static ImageLoader imageLoader;
@@ -29,7 +30,6 @@ public class GlobalApplication extends Application {
         setCrashHandler();//打开全局未捕获异常
         initImageLoader();//初始化图片加载缓存 ImageLoader基本配置
     }
-
 
 
     /**

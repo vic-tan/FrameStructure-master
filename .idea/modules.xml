@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FrameStructure.iml" filepath="$PROJECT_DIR$/FrameStructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/litepal/litepal.iml" filepath="$PROJECT_DIR$/litepal/litepal.iml" />
     </modules>
   </component>
 </project>
