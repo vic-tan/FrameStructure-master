@@ -1,0 +1,131 @@
+--------------------------日志块----------------------------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.LogUtils。
+1、所有日志输出请调用Logutils工具类，所有日志输出请LogUtils.getLogger().的形式输出，具体详情请看LogUtils类。
+2、所有日志在自己定义TAG时默认TAG为："LogUtils",可在Logutils中查看 。
+3、查看http请求网络时传递后台参数信息TAG为 “AsyncHttpClient RequestParams”。
+4、请求http 调用的方法过程查看TAG为："RequestTask task".
+	
+
+
+
+
+
+--------------------------数组集合块-----------------------------------------------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.[?]。
+1、所有List集合业务处理请写入或者调用ListUtils类中，具体详情请看ListUtils类。
+2、所有Map集合业务处理请写入或者调用MapUtils类中，具体详情请看MapUtils类。
+3、所有Object集合业务处理请写入或者调用ObjectUtils类中，具体详情请看ObjectUtils类。
+4、所有Array数组业务处理请写入或者调用ArrayUtils类中，具体详情请看ArrayUtils类。
+
+
+
+
+
+
+--------------------------字符串块-----------------------------------------------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.StringUtils。
+1、所有String处理包括非空，匹配,分割等..调用StringUtils类中，具体详情请看StringUtils类。
+
+
+
+
+
+
+--------------------------http请求块----------------------------------------------------------------------------
+
+位置：com.zxy.mlds.business.http.RequestTask。
+1、所有请求网络接口统一调用RequestTask类中方法处理，具体详情请看RequestTask类。
+注意：
+	1-1、task()方法为本后台正常返回数据，即指返回json数据格式内容必须有code,msg,data这三个字段为根级，本方法作了相应的处理，请求成功后直接返回了data字段的内容。
+。	1-2、sourceTask()方法返回了后以最原始数据，没有作任何处理，调用此方法者自行处理相应的业务逻辑。
+
+2、调用本类方法传入url参数时如果要在前前拼接域名时请直接调用本类中getUrl()方法即可。
+
+
+
+
+--------------------------json解析块----------------------------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.JsonUtils。
+1、所有请求网络返回的Json统一调用类部相应的方法解析，具体详情请看JsonUtils类。
+2、具体操作测试请到com.zxy.mlds.test.other.FastjsonTestCase包下的测试。
+3、注意：返回的json 中所有以“id”为字段名的字段都被替换成了“my_id”,这样是为了解决与在保存到litepal数据库时与默认id冲突而保存，
+       所以请各实体中有关跟返回json 中的"id"解析的都在实体中换成"my_id"接收。
+
+
+
+
+
+--------------------------图片处理块----------------------------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.ImageLoaderHelper。
+1、所有通过url请求网络图片都将通过ImageLoaderHelper实现，具体详情请看ImageLoaderHelper类。
+	1-1、本类将在ZXYApplication类中初始化，只初始化一次。
+	1-2、在加载控件中作用如：ZXYApplication.imageLoader.displayImage(imageUrl,holder.interesLogo, ZXYApplication.options);
+
+
+
+
+
+
+--------------------------SharedPreferences 处理块---------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.PreferencesUtils。
+1、所有保存读取SharedPreferences信息请统一调用PreferencesUtils内部方法实现。具体方法请看PreferencesUtils类方法。
+
+
+
+--------------------------提示块---------------------------------------------------------
+com.zxy.mlds.common.base.view.dialog.BaseLoadDialog
+主要是弹出框显示正在加载统一调用BaseLoadDialog类，具体看本内信息。
+com.zxy.mlds.common.base.view.prompt.BasePromptView
+主要是view覆盖提示统一调用BaseLoadDialog类，网络错误，加载失败，具体看本内信息。。
+
+
+--------------------------Toast处理块---------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.ToastUtils
+1、所有Toast输出请统一调用ToastUtils内部方法。具体方法请看ToastUtils类。
+
+
+
+--------------------------手机信息处理块---------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.PhoneUtils。
+1、所有有关手机信息如：手机网络判断,手机屏幕大小，密度，IMEI,手机号...请统一调用PhoneUtils内部方法。具体方法请看PhoneUtils类。
+
+
+
+--------------------------app res 读取处理---------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.ResourceUtils。
+1、所有本App内部资源如：color.xml中的颜色 ，string.xml中的字符串，array.xml中的数组，dimens.xml中的dip都通过ResourceUtils读取，
+      具体方法请看ResourceUtils类。
+
+
+
+--------------------------Activity管理块---------------------------------------------------------
+
+位置：com.zxy.mlds.common.utils.ActivityUtils。
+1、所有Activity初始化时请切记调用ActivityUtils内部addActivity()方法.
+2、当App应用退出时请切记调用ActivityUtils内部exit()方法后在退出。
+3、所有Activity跳转请统一调用ActivityUtils内部方法,以备添加需求统一加动画。具体方法请看ActivityUtils类。
+
+
+--------------------------Base块---------------------------------------------------------
+
+com.zxy.mlds.common.base.adapter
+1、adapter
+	1-1、以继承BaseAdapter填充数据的Adapter都可以直接继承ListAdapter来减少代码量。
+
+2、
+
+
+--------------------------PullToRefresh 块---------------------------------------------------------
+com.zxy.mlds.common.base.view.listview.BaseListView
+1、所有下拉上拉刷新统一调用BaseListView，具体查看本类。
+
+
