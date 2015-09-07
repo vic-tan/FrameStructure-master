@@ -1,5 +1,103 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- —————————————————————————————————————————  全局间距常量   ——————————————————————————————————————————————————— -->
+    <!-- 正加载弹出提示框的边框圆角半径 -->
+    <dimen name="common_dialog_loading_border_radius">10dip</dimen>
+
+    <!-- —————————————————————————————————————————  控件常用间距常量   ——————————————————————————————————————————————————— -->
+
+    <dimen name="space_0">0dip</dimen>
+    <dimen name="space_0_1">0.1dip</dimen>
+    <dimen name="space_0_5">0.5dip</dimen>
+    <dimen name="space_0_7">0.7dip</dimen>
+    <dimen name="space_1_5">1.0dip</dimen>
+    <dimen name="space_1">1.5dip</dimen>
+    <dimen name="space_2">2.0dip</dimen>
+    <dimen name="space_3">3.0dip</dimen>
+    <dimen name="space_4">4.0dip</dimen>
+    <dimen name="space_4_5">4.5dip</dimen>
+    <dimen name="space_5">5.0dip</dimen>
+    <dimen name="space_5_35">5.35dip</dimen>
+    <dimen name="space_6">6.0dip</dimen>
+    <dimen name="space_6_5">6.5dip</dimen>
+    <dimen name="space_7">7.0dip</dimen>
+    <dimen name="space_8">8.0dip</dimen>
+    <dimen name="space_9">9.0dip</dimen>
+    <dimen name="space_10">10.0dip</dimen>
+    <dimen name="space_11">11.0dip</dimen>
+    <dimen name="space_12">12.0dip</dimen>
+    <dimen name="space_13">13.0dip</dimen>
+    <dimen name="space_14">14.0dip</dimen>
+    <dimen name="space_15">15.0dip</dimen>
+    <dimen name="space_16">16.0dip</dimen>
+    <dimen name="space_17">17.0dip</dimen>
+    <dimen name="space_18">18.0dip</dimen>
+    <dimen name="space_20">20.0dip</dimen>
+    <dimen name="space_21">21.0dip</dimen>
+    <dimen name="space_22">22.0dip</dimen>
+    <dimen name="space_25">25.0dip</dimen>
+    <dimen name="space_26">26.0dip</dimen>
+    <dimen name="space_27">27.0dip</dimen>
+    <dimen name="space_30">30.0dip</dimen>
+    <dimen name="space_32">32.0dip</dimen>
+    <dimen name="space_35">35.0dip</dimen>
+    <dimen name="space_36">36.0dip</dimen>
+    <dimen name="space_40">40.0dip</dimen>
+    <dimen name="space_44">44.0dip</dimen>
+    <dimen name="space_45">45.0dip</dimen>
+    <dimen name="space_47">47.0dip</dimen>
+    <dimen name="space_48">48.0dip</dimen>
+    <dimen name="space_50">50dip</dimen>
+    <dimen name="space_52">52dip</dimen>
+    <dimen name="space_55">55dip</dimen>
+    <dimen name="space_59">59dip</dimen>
+    <dimen name="space_60">60dip</dimen>
+    <dimen name="space_64">64dip</dimen>
+    <dimen name="space_65">65dip</dimen>
+    <dimen name="space_68">68dip</dimen>
+    <dimen name="space_70">70.0dip</dimen>
+    <dimen name="space_71">71.0dip</dimen>
+    <dimen name="space_72">72.0dip</dimen>
+    <dimen name="space_75">75.0dip</dimen>
+    <dimen name="space_78">78.0dip</dimen>
+    <dimen name="space_80">80.0dip</dimen>
+    <dimen name="space_82">82.0dip</dimen>
+    <dimen name="space_85">85.0dip</dimen>
+    <dimen name="space_87">87.0dip</dimen>
+    <dimen name="space_90">90.0dip</dimen>
+    <dimen name="space_95">95.0dip</dimen>
+    <dimen name="space_100">100.0dip</dimen>
+    <dimen name="space_102">102.0dip</dimen>
+    <dimen name="space_115">115.0dip</dimen>
+    <dimen name="space_120">120.0dip</dimen>
+    <dimen name="space_128">128.0dip</dimen>
+    <dimen name="space_140">140.0dip</dimen>
+    <dimen name="space_148">148.0dip</dimen>
+    <dimen name="space_150">150.0dip</dimen>
+    <dimen name="space_156">156.0dip</dimen>
+    <dimen name="space_160">160.0dip</dimen>
+    <dimen name="space_180">180.0dip</dimen>
+    <dimen name="space_200">200.0dip</dimen>
+    <dimen name="space_300">300.0dip</dimen>
+
+    <!-- —————————————————————————————————————————  字体大小常用常量   ——————————————————————————————————————————————————— -->
+
+    <dimen name="size_7">7sp</dimen>
+    <dimen name="size_8">8sp</dimen>
+    <dimen name="size_9">9sp</dimen>
+    <dimen name="size_10">10sp</dimen>
+    <dimen name="size_11">11sp</dimen>
+    <dimen name="size_12">12sp</dimen>
+    <dimen name="size_13">13sp</dimen>
+    <dimen name="size_14">14sp</dimen>
+    <dimen name="size_15">15sp</dimen>
+    <dimen name="size_16">16sp</dimen>
+    <dimen name="size_17">17sp</dimen>
+    <dimen name="size_18">18sp</dimen>
+    <dimen name="size_19">19sp</dimen>
+    <dimen name="size_20">20sp</dimen>
+    <dimen name="size_24">24sp</dimen>
+    <dimen name="size_30">30sp</dimen>
+
+
 </resources>

@@ -10,6 +10,7 @@ import com.android.tanlifei.framestructure.common.constants.UrlConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatus;
 import com.android.tanlifei.framestructure.common.http.RequestTask;
 import com.android.tanlifei.framestructure.common.utils.Logger;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 
 public class MainActivity extends Activity {

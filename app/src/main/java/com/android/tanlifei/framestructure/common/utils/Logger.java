@@ -350,7 +350,7 @@ public final class Logger {
         }
         for (int i = 0; i < length; i += CHUNK_SIZE) {
             int count = Math.min(length - i, CHUNK_SIZE);
-            //create a new String with system's default charset (which is UTF-8 for Android)
+            //createDialog a new String with system's default charset (which is UTF-8 for Android)
             logContent(logType, tag, new String(bytes, i, count));
         }
         logBottomBorder(logType, tag);

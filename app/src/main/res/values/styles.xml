@@ -5,4 +5,46 @@
         <!-- Customize your theme here. -->
     </style>
 
+
+    <!-- —————————————————— 公用样式 —————————————————————————————————————————————————————————————————————————— -->
+
+
+    <!-- —————————————————— 幕宽高样式 ——————————————————————————————— -->
+
+    <!-- 控件设置屏幕宽 -->
+    <style name="common_match_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- 控件设置屏幕宽 -->
+    <style name="common_wrap_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 控件设置屏幕宽 -->
+    <style name="common_match_parent_with">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 控件设置屏幕高 -->
+    <style name="common_match_parent_height">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <!-- —————————————————— dialog样式 ——————————————————————————————— -->
+    <!-- 正在加载弹出框样式  -->
+    <style name="loading_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!--—————————————————— 模块样式 ——————————————————————————————————————————————————————————————————————————-->
+
+
 </resources>
