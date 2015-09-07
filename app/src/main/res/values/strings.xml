@@ -1,4 +1,16 @@
 <resources>
+
+    <!-- —————————————————— 全局共用文字 ———————————————————————————————————————————————————————————————————————— -->
+    <string name="test">这是测试文字</string>
+
+
+
+
+    <!-- —————————————————— dialog文字 ——————————————————————————————— -->
+
+    <string name="common_dialog_loading_msg">加载中...</string>
+
+
     <string name="app_name">FrameStructure</string>
 
     <string name="hello_world">Hello world!</string>
