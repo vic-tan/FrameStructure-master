@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- —————————————————— 全局共用颜色 ———————————————————————————————————————————————————————————————————————— -->
-
+    <!--默认背景色-->
+    <color name="common_default_bg">#00FFFFFF</color>
     <!-- 正加载弹出提示框的背影色 -->
     <color name="common_dialog_loading_bg">#75000000</color>
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
 
 
     <!-- —————————————————— 模块颜色 ——————————————————————————————— -->

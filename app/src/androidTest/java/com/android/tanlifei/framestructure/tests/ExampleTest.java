@@ -6,6 +6,8 @@ import com.android.tanlifei.framestructure.common.TestConstants;
 import com.android.tanlifei.framestructure.common.TestHttpUtils;
 import com.android.tanlifei.framestructure.common.constants.UrlConstants;
 import com.android.tanlifei.framestructure.common.utils.Logger;
+import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
+import com.android.tanlifei.framestructure.ui.GlobalApplication;
 
 import java.util.HashMap;
 
@@ -26,6 +28,11 @@ public class ExampleTest extends InstrumentationTestCase {
     }
 
     public void testHttp2() throws Exception {
-        TestHttpUtils.post(UrlConstants.ASK_ASKING_HOTEST_LIST, new HashMap<String, Object>());
+        TestHttpUtils.post(UrlConstants.TEST_TWO_SUCCESS, new HashMap<String, Object>());
+    }
+
+    public void testNetWork(){
+        PhoneUtils.isNetworkOk(GlobalApplication.appContext);
+        Logger.i(PhoneUtils.isNetworkOk(GlobalApplication.appContext)+"---");
     }
 }

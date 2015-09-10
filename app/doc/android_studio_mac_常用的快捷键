@@ -28,3 +28,4 @@ command + shift + U	                     -------> 大小写转化
 shift + F4	                             -------> 全屏打开编辑文件
 Cmd + Option + T    Ctrl + Alt + T	     -------> 快捷生成结构体如，if / if/else for
 Cmd + Option + M                 	     -------> 提取成方法
+command + G                	             -------> 光标自动定位到下一个变量被使用的地方

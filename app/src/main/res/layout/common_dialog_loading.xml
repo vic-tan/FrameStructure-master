@@ -14,7 +14,7 @@
         android:id="@id/tv_msg"
         style="@style/common_wrap_content"
         android:layout_marginTop="@dimen/space_5"
-        android:text="@string/common_dialog_loading_msg"
+        android:text="@string/common_prompt_loading"
         android:textSize="@dimen/size_15" />
 
 </LinearLayout>

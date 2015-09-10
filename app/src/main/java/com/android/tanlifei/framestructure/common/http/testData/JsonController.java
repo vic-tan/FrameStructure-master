@@ -19,8 +19,7 @@ public class JsonController {
         String json = "";
         if (url.contains(TEST_MODEL_URL)) { // 测试模块URL
             json = testModelUrl(url);
-        }
-        if (url.contains(TEST_MODEL_URL_TWO)) { // 测试模块URL2
+        }else if (url.contains(TEST_MODEL_URL_TWO)) { // 测试模块URL2
             json = testModelUrlTwo(url);
         } else {
             json = ResUtils.getFileFromRaw(R.raw.common_suceess);
@@ -30,9 +29,9 @@ public class JsonController {
 
     public static String testModelUrl(String url) {
         String json = null;
-        if (url.contains(UrlConstants.COMMUNITY_TAG_LIST)) {// 目录
-            json = ResUtils.getFileFromRaw(R.raw.ask_tag_json);
-        } else if (url.contains(UrlConstants.COMMUNITY_NEWEST_LIST)) { // 最新
+        if (url.contains(UrlConstants.TEST_LIST)) {// 目录
+            json = ResUtils.getFileFromRaw(R.raw.test_list_json);
+        } else if (url.contains(UrlConstants.TEST_SUCCESS)) { // 最新
             json = ResUtils.getFileFromRaw(R.raw.common_suceess);
         }
         return json;
@@ -40,9 +39,9 @@ public class JsonController {
 
     public static String testModelUrlTwo(String url) {
         String json = null;
-        if (url.contains(UrlConstants.ASK_ASKING_NEWEST_LIST)) {// 目录
-            json = ResUtils.getFileFromRaw(R.raw.ask_tag_json);
-        } else if (url.contains(UrlConstants.ASK_ASKING_HOTEST_LIST)) { // 最新
+        if (url.contains(UrlConstants.TEST_TWO_LIST)) {// 目录
+            json = ResUtils.getFileFromRaw(R.raw.test_list_json);
+        } else if (url.contains(UrlConstants.TEST_TWO_SUCCESS)) { // 最新
             json = ResUtils.getFileFromRaw(R.raw.common_suceess);
         }
         return json;

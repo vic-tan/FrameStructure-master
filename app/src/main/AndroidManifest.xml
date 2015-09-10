@@ -3,6 +3,8 @@
     package="com.android.tanlifei.framestructure" >
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 手机移动网络 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"

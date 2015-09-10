@@ -1,4 +1,4 @@
-package com.android.tanlifei.framestructure.common.view.dialog;
+package com.android.tanlifei.framestructure.common.view.prompt;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -18,7 +18,7 @@ import com.android.tanlifei.framestructure.R;
  * @author tanlifei
  * @date 2015年2月11日 上午11:17:15
  */
-public class LoadingDialog extends Dialog {
+public  class LoadingDialog extends Dialog {
     private static int default_width = 160; // 默认宽度
     private static int default_height = 120;// 默认高度
 
@@ -60,26 +60,26 @@ public class LoadingDialog extends Dialog {
     }
 
 
-    /*public void setDismissImpl(DialogDismissImpl dismissImpl) {
-        this.dismissImpl = dismissImpl;
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-            if (isShowing()) {
-                if (dismissImpl != null) {
-                    dismissImpl.dismissControll();
-                    dismissImpl = null;
-                }
-                dismiss();
-            }
+        /*public void setDismissImpl(DialogDismissImpl dismissImpl) {
+            this.dismissImpl = dismissImpl;
         }
-        return true;
-    }
 
-    public interface DialogDismissImpl {
-        void dismissControll();
-    }*/
+        @Override
+        public boolean onKeyDown(int keyCode, KeyEvent event) {
+            if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+                if (isShowing()) {
+                    if (dismissImpl != null) {
+                        dismissImpl.dismissControll();
+                        dismissImpl = null;
+                    }
+                    dismiss();
+                }
+            }
+            return true;
+        }
+
+        public interface DialogDismissImpl {
+            void dismissControll();
+        }*/
 
 }

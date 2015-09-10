@@ -2,8 +2,13 @@ package com.android.tanlifei.framestructure.common.http;
 
 import android.os.Handler;
 
+import com.android.tanlifei.framestructure.R;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatus;
 import com.android.tanlifei.framestructure.common.http.base.BaseRequestTask;
 import com.android.tanlifei.framestructure.common.utils.HttpUtils;
+import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
+import com.android.tanlifei.framestructure.common.utils.ResUtils;
+import com.android.tanlifei.framestructure.ui.GlobalApplication;
 
 import java.util.Map;
 
@@ -33,6 +38,10 @@ public class RequestTask extends BaseRequestTask {
      */
     public static void get(String url, Map<String, Object> params,
                            Handler handler) {
+        if (!PhoneUtils.isNetworkOk(GlobalApplication.appContext)) {
+            sendHandler(handler, RequestStatus.NETWORK_ERROR.value(), ResUtils.getString(R.string.common_prompt_network));
+            return;
+        }
         HttpUtils.get(url, params, setAsyncHttpResponseHandler(url, handler));
     }
 
@@ -45,6 +54,10 @@ public class RequestTask extends BaseRequestTask {
      */
     public static void getByJsonParams(String url, Map<String, Object> params,
                                        Handler handler) {
+        if (!PhoneUtils.isNetworkOk(GlobalApplication.appContext)) {
+            sendHandler(handler, RequestStatus.NETWORK_ERROR.value(), ResUtils.getString(R.string.common_prompt_network));
+            return;
+        }
         HttpUtils.getJsonParams(url, params, setAsyncHttpResponseHandler(url, handler));
     }
 
@@ -57,6 +70,10 @@ public class RequestTask extends BaseRequestTask {
      */
     public static void post(String url, Map<String, Object> params,
                             Handler handler) {
+        if (!PhoneUtils.isNetworkOk(GlobalApplication.appContext)) {
+            sendHandler(handler, RequestStatus.NETWORK_ERROR.value(), ResUtils.getString(R.string.common_prompt_network));
+            return;
+        }
         HttpUtils.post(url, params, setAsyncHttpResponseHandler(url, handler));
     }
 
@@ -69,6 +86,10 @@ public class RequestTask extends BaseRequestTask {
      */
     public static void postByJsonParams(String url, Map<String, Object> params,
                                         Handler handler) {
+        if (!PhoneUtils.isNetworkOk(GlobalApplication.appContext)) {
+            sendHandler(handler, RequestStatus.NETWORK_ERROR.value(), ResUtils.getString(R.string.common_prompt_network));
+            return;
+        }
         HttpUtils.postJsonParams(url, params, setAsyncHttpResponseHandler(url, handler));
     }
 }

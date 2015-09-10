@@ -6,81 +6,36 @@ import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * CommonParserHandler <br>统一解析Json
  * <li>
  * <Strong> Method </Strong>getData
- * <ul> {@link #getData(JSONObject)} 拿到默认Data数据的内容</ul>
  * <ul> {@link #getKeyResult(String, String)} 根据key拿vulue数据的内容</ul>
- * <ul>{@link #isRequestSuccess(JSONObject)} 请求是否成功</ul>
  * <ul>{@link #parseToObjectBean(String, Class)} json字符串转化为实体bean</ul>
  * <ul>{@link #parseToObjectList(String, Class)} json字符串转化为实体bean集合</ul>
  * <ul>{@link #parseToObjectList(JSONObject, Class, String)} 获取为key字段json的内容,并转化为实体bean集合</ul>
  * <ul>{@link #objectToJson(Object)} Object类型的对象转化为JSON</ul>
  * <ul>{@link #collectionToJson(Collection)} 将集合类型的对象转化为JSON</ul>
  * <ul>{@link #mapToJson(Map)} 将一个Map类型的对象转化为JSON</ul>
- * <ul>{@link #beanToJson(Object)} 将一个Bean类型的对象转化为JSON</ul>
  * <ul>{@link #arrayToJson(Object[])} 将数组转化为JSON</ul>
  * <ul>{@link #stringToJson(String)} 将String类型的对象转化为JSON</ul>
+ * <ul>{@link #escape(String)} 将json 里英文双引号等特殊符变成转义中文双引号等</ul>
+ * <ul>{@link #format(String)} 得到格式化json数据  退格用\t 换行用\r</ul>
+ * <ul>{@link #getLevelStr(int)} 退格用\t替换</ul>
  * </li>
  *
  * @author tanlifei
  * @version 2015-01-26
  */
 public class JsonUtils {
-
-
-    /**
-     * 拿到默认Data数据的内容
-     *
-     * @param json
-     * @return Data 目录下的数据
-     */
-    public static String getData(JSONObject json) {
-        try {
-            if (StringUtils.isEmpty(json.getString(JsonConstants.JSON_DATA))) {
-                return "[]";
-            } else {
-                return json.getString(JsonConstants.JSON_DATA);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Logger.e(e);
-            return "[]";
-        }
-    }
-
-    /**
-     * 请求是否成功
-     *
-     * @param json
-     * @return
-     */
-
-    public static boolean isRequestSuccess(JSONObject json) {
-        try {
-            if (StringUtils.isEquals(
-                    json.getString(JsonConstants.JSON_CODE),
-                    JsonConstants.CODE_VALUE_0000)) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
 
     /**
      * 拿到字段的值
@@ -173,9 +128,9 @@ public class JsonUtils {
         } else if (object instanceof Collection<?>) {
             json.append(collectionToJson((Collection<?>) object));
         } else {
-            json.append(beanToJson(object));
+            //json.append(beanToJson(object));
         }
-        return json.toString();
+        return escape(json.toString());
     }
 
     /**
@@ -197,7 +152,7 @@ public class JsonUtils {
         } else {
             json.append("]");
         }
-        return json.toString();
+        return escape(json.toString());
     }
 
     /**
@@ -224,7 +179,7 @@ public class JsonUtils {
         } else {
             json.append("}");
         }
-        return json.toString();
+        return escape(json.toString());
     }
 
     /**
@@ -234,7 +189,7 @@ public class JsonUtils {
      * @return String 返回类型
      * @Title: beanToJson
      */
-    public static String beanToJson(Object bean) {
+   /* public static String beanToJson(Object bean) {
         StringBuilder json = new StringBuilder();
         Class cl = bean.getClass();
         json.append("{");
@@ -266,8 +221,8 @@ public class JsonUtils {
             }
         }
         json.setCharAt(json.length() - 1, '}');// 将最后一个逗号改为"}"
-        return json.toString();
-    }
+        return escape(json.toString());
+    }*/
 
     /**
      * 将数组转化为JSON
@@ -288,7 +243,7 @@ public class JsonUtils {
         } else {
             json.append("]");
         }
-        return json.toString();
+        return escape(json.toString());
     }
 
 
@@ -343,8 +298,93 @@ public class JsonUtils {
                     }
             }
         }
-        return json.toString();
+        return escape(json.toString());
     }
 
 
+    /**
+     * 将json 里英文双引号等特殊符变成转义中文双引号等
+     *
+     * @param strOri 待处理字符串
+     * @return
+     */
+    private static String escape(String strOri) {
+        String regex = "\"\\w*?\"";// 正则表达式匹配串
+        String regex1 = "\'\\w*?\'";// 正则表达式匹配串
+        String str, str2;
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(strOri);
+
+        Pattern pattern2 = Pattern.compile(regex1);
+        Matcher matcher2 = pattern2.matcher(strOri);
+        while (matcher.find()) {
+            str = matcher.group();
+            str2 = str;
+            str2 = str2.replaceAll("\"", "");// 去掉前后双引号
+            str2 = "“" + str2 + "”"; // 前后添上中文双引号
+            strOri = strOri.replace(str, str2);
+        }
+
+        while (matcher2.find()) {
+            str = matcher2.group();
+            str2 = str;
+            str2 = str2.replaceAll("'", "");// 去掉前后单引号
+            str2 = "‘" + str2 + "’"; // 前后添上中文单引号
+            strOri = strOri.replace(str, str2);
+        }
+
+        strOri = strOri.replace("'", "‘").replace("\"", "“");
+        return strOri;// 输出结果
+    }
+
+
+    /**
+     * 得到格式化json数据  退格用\t 换行用\r
+     */
+    public static String format(String jsonStr) {
+        int level = 0;
+        StringBuffer jsonForMatStr = new StringBuffer();
+        for (int i = 0; i < jsonStr.length(); i++) {
+            char c = jsonStr.charAt(i);
+            if (level > 0 && '\n' == jsonForMatStr.charAt(jsonForMatStr.length() - 1)) {
+                jsonForMatStr.append(getLevelStr(level));
+            }
+            switch (c) {
+                case '{':
+                case '[':
+                    jsonForMatStr.append(c + "\n");
+                    level++;
+                    break;
+                case ',':
+                    jsonForMatStr.append(c + "\n");
+                    break;
+                case '}':
+                case ']':
+                    jsonForMatStr.append("\n");
+                    level--;
+                    jsonForMatStr.append(getLevelStr(level));
+                    jsonForMatStr.append(c);
+                    break;
+                default:
+                    jsonForMatStr.append(c);
+                    break;
+            }
+        }
+
+        return jsonForMatStr.toString();
+
+    }
+
+    /**
+     * 退格用\t替换
+     * @param level
+     * @return
+     */
+    private static String getLevelStr(int level) {
+        StringBuffer levelStr = new StringBuffer();
+        for (int levelI = 0; levelI < level; levelI++) {
+            levelStr.append("\t");
+        }
+        return levelStr.toString();
+    }
 }

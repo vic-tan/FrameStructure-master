@@ -1,10 +1,8 @@
 package com.android.tanlifei.framestructure.common.utils;
 
 import android.content.Context;
-import android.widget.TextView;
 
-import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.common.view.dialog.LoadingDialog;
+import com.android.tanlifei.framestructure.common.view.prompt.LoadingDialog;
 
 
 /**

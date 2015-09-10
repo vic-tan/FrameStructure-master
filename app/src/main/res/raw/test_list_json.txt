@@ -1,0 +1,52 @@
+{
+    "code": "0000",
+    "msg": "操作成功",
+    "data": {
+        "pageSize": 10,
+        "pageNumber": 1,
+        "totalRow":100,
+        "totalPage": 5,
+        "list": [
+            {
+                "id": "8a22b2424c1b4c6b014c986982523f92",
+                "name": "test2"
+            },
+            {
+                "id": "8a22b2424c1b4c6b014cb6b2f50255f2",
+                "name": "test3"
+            },
+            {
+                "id": "8a22b2424c1b4c6b014c92c742273aab",
+                "name": "测审批"
+            },
+            {
+                "id": "8a22b2424c1b4c6b014c6ab394682f41",
+                "name": "xxxx"
+            },
+            {
+                "id": "8a22b2424c1b4c6b014c4ea9ecec25f9",
+                "name": "选拔考试"
+            },
+            {
+                "id": "8a22b2424c1b4c6b014c26f7c7fe0906",
+                "name": "综合管理"
+            },
+            {
+                "id": "8a22b2424c1b4c6b014c2bfda7850a50",
+                "name": "MTP"
+            },
+            {
+                "id": "8a22b2424c165e36014c1689966400b1",
+                "name": "班级-0314"
+            },
+            {
+                "id": "8a22b2424ab3bd02014ab4faa35f00b2",
+                "name": "新员工入"
+            },
+            {
+                "id": "8a22b2424ab3bd02014b7643a5d32cff",
+                "name": "新员-fuzh"
+            }
+        ]
+    }
+}

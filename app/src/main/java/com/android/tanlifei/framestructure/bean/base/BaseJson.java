@@ -1,7 +1,10 @@
 package com.android.tanlifei.framestructure.bean.base;
 
 /**
- * json 数据根结构
+ * json 最外层数据基本结构实体
+ *
+ * @author tanlifei
+ * @date 2015年8月13日 上午11:30:51
  */
 public class BaseJson {
 
@@ -9,6 +12,9 @@ public class BaseJson {
     private String msg;
     private String data;
 
+    public BaseJson() {
+        super();
+    }
 
     public String getCode() {
         return code;
@@ -42,8 +48,10 @@ public class BaseJson {
 
     @Override
     public String toString() {
-        return "HandlerJsonMsg [code=" + code + ", msg=" + msg + ", data="
-                + data + "]";
+        return "BaseJson{" +
+                "code='" + code + '\'' +
+                ", msg='" + msg + '\'' +
+                ", data='" + data + '\'' +
+                '}';
     }
-
 }

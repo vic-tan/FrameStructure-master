@@ -15,16 +15,16 @@ public class UrlConstants {
 
 	/****************************** 测试一 *************************************************************/
 
-	public static final String COMMUNITY_TAG_LIST = "http://wenku.baidu.com/jingpin/18";
-	public static final String COMMUNITY_NEWEST_LIST = "http://wenku.baidu.com/jingpin/19";
+	public static final String TEST_LIST = "http://wenku.baidu.com/jingpin/18";
+	public static final String TEST_SUCCESS = "http://wenku.baidu.com/jingpin/19";
 
 
 
     /****************************** 测试二 *************************************************************/
 
 
-    public static final String ASK_ASKING_NEWEST_LIST = "http://wenku.baidu.com/portal/subject/8_s0_g0_v0";
-    public static final String ASK_ASKING_HOTEST_LIST = "http://wenku.baidu.com/portal/subject/8_s1_g0_v11";
+    public static final String TEST_TWO_LIST = "http://wenku.baidu.com/portal/subject/8_s0_g0_v0";
+    public static final String TEST_TWO_SUCCESS = "http://wenku.baidu.com/portal/subject/8_s1_g0_v11";
 
 
 

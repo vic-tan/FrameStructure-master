@@ -1,5 +1,7 @@
 package com.android.tanlifei.framestructure.common.utils;
 
+import android.text.Html;
+
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
 import com.android.tanlifei.framestructure.common.utils.MapUtils;
@@ -117,7 +119,7 @@ public class HttpUtils {
                                                       Map<String, Object> mapParams, boolean isJsonType) {
         RequestParams params = new RequestParams();
         StringBuffer log = new StringBuffer("url = " + url);
-        log.append(",Parameter = [");
+        log.append("<br>Parameter = [");
         if (!MapUtils.isEmpty(mapParams)) {
             for (Entry<String, Object> entry : mapParams.entrySet()) {
                 log.append(entry.getKey() + "=" + entry.getValue() + ",");
@@ -131,7 +133,7 @@ public class HttpUtils {
             }
         }
         log.append("]");
-        Logger.i(TAG, log.toString());// 打参数日志
+        Logger.i(TAG, Html.fromHtml(log.toString()).toString());// 打参数日志
         return params;
     }
 

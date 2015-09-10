@@ -13,6 +13,7 @@ import java.util.Map;
  * <li>{@link #taskUrl()} 列表请求接口的路径</li>
  * <li>{@link #taskParams(Map)}  列表请求接口参数</li>
  * <li>{@link #parseClassName()} 获取列表刷新返回json自动解析成对象的实体名</li>
+ * <li>{@link #isCustomParseJson()} 是否手动解析Json标识,为true手动解析，可以在customParseJson方法里自行解析 </li>
  * <li>{@link #customParseJson(String, PullToRefreshBase.Mode)} 手动解析json</li>
  * <li>{@link #getAdapter()} 获取列表的适配器</li>
  * <li>{@link #getList()} 获取列表存储容器集合</li>
@@ -46,6 +47,12 @@ public interface IPullToRefreshCallBack {
 
 
     /**
+     * 是否手动解析Json标识,为true手动解析，可以在customParseJson方法里自行解析
+     * @return false 则自动解析json ，true 为手动解析，可以在customParseJson方法里自行解析
+     */
+    boolean isCustomParseJson();
+
+    /**
      * 手动解析json
      *
      * @param json 请求的json
@@ -63,9 +70,9 @@ public interface IPullToRefreshCallBack {
 
 
     /**
-     * 设置ListView
+     * 设置装载容器list
      */
-    List<?> getList();
+    List getList();
 
 
 }

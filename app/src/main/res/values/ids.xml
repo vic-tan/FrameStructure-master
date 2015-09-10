@@ -5,21 +5,47 @@
     <!-- —————————————————— type = id ———————————————————————————————————————————————————————————————————————— -->
 
     <!-- —————————————————— 公用TextView ———————————————— -->
+
     <item name="tv_name" type="id" />
     <item name="tv_msg" type="id"/>
+    <item name="tv_hint" type="id"/>
+    <item name="tv_content" type="id"/>
 
 
     <!-- —————————————————— 公用ImagveView —————————————— -->
+
     <item name="iv_name" type="id" />
+    <item name="iv_logo" type="id" />
 
 
     <!-- —————————————————— 公用Button —————————————————— -->
+
     <item name="btn_name" type="id" />
 
 
+
+
+
     <!-- —————————————————— 公用ProgressBar ————————————— -->
+
     <item name="pb_loading" type="id" />
 
+
+
+
+
+    <!-- —————————————————— 公用layout  ————————————————— -->
+
+    <item name="layout_root" type="id" />
+
+
+
+
+
+    <!-- —————————————————— 公用 listView ———————————————— -->
+
+    <item name="lv_pull_to_refresh" type="id"/>
+    <item name="gv_pull_to_refresh" type="id"/>
 
 
     <!-- —————————————————— type = string ———————————————————————————————————————————————————————————————————————— -->

@@ -10,37 +10,41 @@ public enum RequestStatus {
     /**
      * 开始请求
      */
-    START(1),
+    START(0x0001),
     /**
      * 正在请求
      */
-    PROGRESS(2),
+    PROGRESS(0x0002),
     /**
      * 请求成功
      */
-    SUCCESS(3),
+    SUCCESS(0x0003),
     /**
      * 请求失败
      */
-    FAILURE(4),
+    FAILURE(0x0004),
     /**
      * 请求完成
      */
-    FINISH(5),
+    FINISH(0x0005),
     /**
      * 取消请求
      */
-    CANCEL(6),
+    CANCEL(0x0006),
     /**
      * 服务器错误
      */
-    SERVICE_ERROR(7),
+    SERVICE_ERROR(0x0007),
+    /**
+     * 没有网络
+     */
+    NETWORK_ERROR(0x0008),
     /**
      * 请求超时
      */
-    TIMEOUT_ERROR(8);
+    TIMEOUT_ERROR(0x0009);
 
-    private int value = 0;
+    private int value = 0x0000;
 
     private RequestStatus(int value) {    //    必须是private的，否则编译错误
         this.value = value;
@@ -48,21 +52,23 @@ public enum RequestStatus {
 
     public static RequestStatus RequestStatus(int value) {    //    手写的从int到enum的转换函数
         switch (value) {
-            case 1:
+            case 0x0001:
                 return START;
-            case 2:
+            case 0x0002:
                 return PROGRESS;
-            case 3:
+            case 0x0003:
                 return SUCCESS;
-            case 4:
+            case 0x0004:
                 return FAILURE;
-            case 5:
+            case 0x0005:
                 return FINISH;
-            case 6:
+            case 0x0006:
                 return CANCEL;
-            case 7:
+            case 0x0007:
                 return SERVICE_ERROR;
-            case 8:
+            case 0x0008:
+                return NETWORK_ERROR;
+            case 0x0009:
                 return TIMEOUT_ERROR;
             default:
                 return null;
