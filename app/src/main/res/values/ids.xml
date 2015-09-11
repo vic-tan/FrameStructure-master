@@ -8,6 +8,7 @@
 
     <item name="tv_name" type="id" />
     <item name="tv_msg" type="id"/>
+    <item name="tv_desc" type="id"/>
     <item name="tv_hint" type="id"/>
     <item name="tv_content" type="id"/>
 

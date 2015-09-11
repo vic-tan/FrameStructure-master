@@ -6,18 +6,19 @@ import android.os.Message;
 import android.view.View;
 
 import com.android.tanlifei.framestructure.R;
+import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.bean.base.PageBean;
 import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatus;
-import com.android.tanlifei.framestructure.common.http.RequestTask;
-import com.android.tanlifei.framestructure.common.http.base.BaseRequestParams;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.HttpTaskStatus;
+import com.android.tanlifei.framestructure.common.http.HttpTask;
+import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
 import com.android.tanlifei.framestructure.common.view.prompt.LoadingPrompt;
-import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptCallBack;
+import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCallBack;
 import com.android.tanlifei.framestructure.engine.interf.IPullToRefreshCallBack;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
@@ -51,7 +52,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
  * @author tanlifei
  * @date 2015年8月13日 上午11:30:51
  */
-public abstract class BasePullToRefresh implements ILoadingPromptCallBack {
+public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack {
 
     protected View baseView; // 布局
     protected PageBean pageBean;// 分页参数实体
@@ -65,7 +66,7 @@ public abstract class BasePullToRefresh implements ILoadingPromptCallBack {
     protected Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
-            switch (RequestStatus.RequestStatus(msg.what)) {
+            switch (HttpTaskStatus.HttpTaskStatus(msg.what)) {
                 case NETWORK_ERROR:
                     loadingPrompt.displayNetworkErrorLayout();
                     requestFinish();
@@ -84,7 +85,7 @@ public abstract class BasePullToRefresh implements ILoadingPromptCallBack {
                     requestFinish();
                     break;
                 case SUCCESS:
-                    parseJsonController(msg.obj.toString());
+                    parseJsonController((BaseJson)msg.obj);
                     requestFinish();
                     break;
                 default:
@@ -115,52 +116,48 @@ public abstract class BasePullToRefresh implements ILoadingPromptCallBack {
      * 开始请求网络
      */
     protected void startRequest() {
-        RequestTask.post(refreshCallBack.taskUrl(), refreshCallBack
-                .taskParams(BaseRequestParams.pageParams(pageBean
+        HttpTask.post(refreshCallBack.taskUrl(), refreshCallBack
+                .taskParams(BaseHttpParams.pageParams(pageBean
                         .getPageNumber())), handler);
     }
 
     /**
      * 处理请求成功后的业务
      *
-     * @param json
+     * @param baseJson
      */
-    private void parseJsonController(String json) {
+    private void parseJsonController(BaseJson baseJson) {
         if (refreshCallBack.isCustomParseJson()) {//手动解析Json
-            parsePageBean(json);//解析分页数据
-            if (isEmptyDate(JsonUtils.getKeyResult(json, JsonConstants.JSON_LIST))) {
+            parsePageBean(baseJson.getData());//解析分页数据
+            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST))) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
-            if (mode == PullToRefreshBase.Mode.DISABLED) {//手动解析Json,没有上拉下拉时
-                refreshCallBack.customParseJson(json, mode);
-            } else {//手动解析Json,有上拉下拉时
-                refreshCallBack.customParseJson(JsonUtils.getKeyResult(json, JsonConstants.JSON_LIST), mode);
-            }
+            refreshCallBack.customParseJson(baseJson, mode);
             return;
         } else if (mode == PullToRefreshBase.Mode.PULL_FROM_START) {//自动解析下拉json
-            parsePageBean(json);//解析分页数据
-            if (isEmptyDate(JsonUtils.getKeyResult(json, JsonConstants.JSON_LIST))) {
+            parsePageBean(baseJson.getData());//解析分页数据
+            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST))) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
-            pullFromStartParseJson(JsonUtils.getKeyResult(json, JsonConstants.JSON_LIST));
+            pullFromStartParseJson(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST));
             return;
         } else if (mode == PullToRefreshBase.Mode.PULL_FROM_END) {//自动解析上拉json
-            parsePageBean(json);//解析分页数据
+            parsePageBean(baseJson.getData());//解析分页数据
             //pageBean.setPageNumber(pageBean.getPageNumber()+1);//测试本数据用的
-            if (isEmptyDate(JsonUtils.getKeyResult(json, JsonConstants.JSON_LIST))) {
+            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST))) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
-            pullFromEndParseJson(JsonUtils.getKeyResult(json, JsonConstants.JSON_LIST));
+            pullFromEndParseJson(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST));
             return;
         } else if (mode == PullToRefreshBase.Mode.DISABLED) {//没有上拉下拉时
-            if (isEmptyDate(json)) {
+            if (isEmptyDate(baseJson.getData())) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
-            pullFromStartParseJson(json);
+            pullFromStartParseJson(baseJson.getData());
             return;
         }
     }
@@ -184,8 +181,8 @@ public abstract class BasePullToRefresh implements ILoadingPromptCallBack {
             startRequest();
             mode = PullToRefreshBase.Mode.PULL_FROM_END;
         } else {//最后一页
-            ToastUtils.show(context, ResUtils.getString(R.string.common_pull_to_refresh_last_page));
-            handler.obtainMessage(RequestStatus.FINISH.value()).sendToTarget();
+            ToastUtils.show(context, ResUtils.getStr(R.string.common_pull_to_refresh_last_page));
+            handler.obtainMessage(HttpTaskStatus.FINISH.value()).sendToTarget();
         }
     }
 

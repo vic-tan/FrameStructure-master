@@ -17,6 +17,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
  * <li>{@link #RefreshListView(Context, IPullToRefreshCallBack, View)}  当 listView 为上拉下拉时调用的构造方法</li>
  * <li>{@link #RefreshListView(Context, IPullToRefreshCallBack, View, PullToRefreshBase.Mode)} 当 listView 为上拉下拉自定义是调用的构造方法</li>
  * <li>{@link #init(PullToRefreshBase.Mode)} 初始化数据</li>
+ * <li>{@link #getmPullRefreshListView()} 获取当前 ListView</li>
  * </ul>
  * <ul>
  * <strong>子类要实现或者实现父类的的方法</strong>
@@ -29,6 +30,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 public class RefreshListView extends BasePullToRefresh {
 
     private PullToRefreshListView mPullRefreshListView;//上拉下拉刷新的 listVie
+
 
     /**
      * 当 listView 为上拉下拉时调用的构造方法
@@ -84,8 +86,19 @@ public class RefreshListView extends BasePullToRefresh {
         });
     }
 
+
     @Override
     public void requestFinish() {
         mPullRefreshListView.onRefreshComplete();
     }
+
+
+    /**
+     * 获取当前 ListView
+     * @return
+     */
+    public PullToRefreshListView getmPullRefreshListView() {
+        return mPullRefreshListView;
+    }
+
 }

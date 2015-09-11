@@ -16,7 +16,6 @@ import org.litepal.LitePalApplication;
  * @author tanlifei
  * @date 2015年8月13日 上午11:30:51
  */
-
 public class GlobalApplication extends LitePalApplication {
 
     public static Context appContext;//全局上下文

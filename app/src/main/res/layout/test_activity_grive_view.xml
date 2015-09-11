@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@id/gv_pull_to_refresh"
+        style="@style/common_match_parent"
+        android:cacheColorHint="@color/transparent"
+        android:listSelector="@color/transparent"
+        android:scrollbars="none"
+        android:smoothScrollbar="true"
+        android:numColumns="4"
+        ptr:ptrAnimationStyle="flip" />
+
+</RelativeLayout>

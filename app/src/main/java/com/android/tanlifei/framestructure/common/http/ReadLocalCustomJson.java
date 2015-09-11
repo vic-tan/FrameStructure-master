@@ -3,13 +3,15 @@ package com.android.tanlifei.framestructure.common.http;
 import android.os.Handler;
 import android.text.Html;
 
+import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.common.constants.JsonConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatus;
-import com.android.tanlifei.framestructure.common.http.base.BaseRequestTask;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.HttpTaskStatus;
+import com.android.tanlifei.framestructure.common.http.base.BaseHttpTask;
 import com.android.tanlifei.framestructure.common.http.testData.JsonController;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
+import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
 
 
@@ -24,7 +26,7 @@ import com.android.tanlifei.framestructure.common.utils.StringUtils;
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public class ReadLocalCustomJson extends BaseRequestTask {
+public class ReadLocalCustomJson extends BaseHttpTask {
 
 
     /**
@@ -34,19 +36,19 @@ public class ReadLocalCustomJson extends BaseRequestTask {
      * @param handler
      */
     public static void readJson(final String url, final Handler handler) {
-        String responseBody = "";
+        BaseJson jsonBean = null;
         try {
-            responseBody = JsonController.getLocalJson(url);
-            BaseJson jsonBean = JsonUtils.parseToObjectBean(replaceId(responseBody), BaseJson.class);
+            String responseBody = JsonController.getLocalJson(url);
+            jsonBean = JsonUtils.parseToObjectBean(replaceId(responseBody), BaseJson.class);
             if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_VALUE_0000)) {// 请求成功
                 Logger.i(TAG, "" + replaceId(responseBody));
-                sendHandler(handler, RequestStatus.SUCCESS.value(), jsonBean.getData(), JsonUtils.format(replaceId(responseBody)).toString());
+                sendHandler(handler, HttpTaskStatus.SUCCESS.value(), jsonBean, JsonUtils.format(replaceId(responseBody)).toString());
             } else {// 服务错误
-                sendHandler(handler, RequestStatus.SERVICE_ERROR.value(), jsonBean, "--------------> service error (onSuccess)");
+                sendHandler(handler, HttpTaskStatus.SERVICE_ERROR.value(), jsonBean, "--------------> service error (onSuccess)");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            sendHandler(handler, RequestStatus.SERVICE_ERROR.value(), replaceId(responseBody), Html.fromHtml("--------------> Exception (onSuccess)<br>" + e.toString()).toString());
+            sendHandler(handler, HttpTaskStatus.SERVICE_ERROR.value(), jsonBean, Html.fromHtml("--------------> Exception (onSuccess)<br>" + e.toString()).toString());
         }
     }
 
@@ -56,17 +58,19 @@ public class ReadLocalCustomJson extends BaseRequestTask {
      * @param url
      */
     public static String readJson(final String url) {
+        BaseJson jsonBean = new BaseJson();
         try {
             String responseBody = JsonController.getLocalJson(url);
-            BaseJson jsonBean = JsonUtils.parseToObjectBean(replaceId(responseBody), BaseJson.class);
+            jsonBean = JsonUtils.parseToObjectBean(replaceId(responseBody), BaseJson.class);
             if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_VALUE_0000)) {// 请求成功
-                return jsonBean.getData();
+                return replaceId(responseBody);
             } else {// 服务错误
-                return "服务错误";
+                jsonBean.setMsg(ResUtils.getStr(R.string.common_prompt_serivce));
+                return ResUtils.getStr(R.string.common_prompt_serivce);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return e.getMessage() + "服务错误";
+            return ResUtils.getStr(R.string.common_prompt_serivce);
         }
     }
 

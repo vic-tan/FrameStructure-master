@@ -1,0 +1,21 @@
+{
+    "code": "0000",
+    "msg": "操作成功",
+    "data": [
+        {
+            "activityPath": "com.android.tanlifei.framestructure.testDemo.ui.activity.HtppTaskActivity",
+            "name": "网络请求公用示范",
+            "desc": "包括基本get,post,及弹Dialog"
+        },
+        {
+           "activityPath": "com.android.tanlifei.framestructure.testDemo.ui.activity.ListViewActivity",
+           "name": "listVIew上拉下拉刷新示范",
+           "desc": "listVIew"
+       },
+        {
+           "activityPath": "com.android.tanlifei.framestructure.testDemo.ui.activity.GridViewActivity",
+           "name": "GridView上拉下拉刷新示范",
+           "desc": "GridView"
+       }
+    ]
+}

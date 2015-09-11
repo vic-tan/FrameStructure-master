@@ -56,7 +56,7 @@ public class ResUtils {
 
     //************************************************ string values************************************************************//
 
-    public static String getString(int id) {
+    public static String getStr(int id) {
         return GlobalApplication.appContext.getResources().getString(id);
     }
 

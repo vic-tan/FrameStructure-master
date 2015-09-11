@@ -1,6 +1,7 @@
 package com.android.tanlifei.framestructure.engine.interf;
 
 import com.android.tanlifei.framestructure.adpater.base.ListAdapter;
+import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.Map;
  * <li>{@link #taskParams(Map)}  列表请求接口参数</li>
  * <li>{@link #parseClassName()} 获取列表刷新返回json自动解析成对象的实体名</li>
  * <li>{@link #isCustomParseJson()} 是否手动解析Json标识,为true手动解析，可以在customParseJson方法里自行解析 </li>
- * <li>{@link #customParseJson(String, PullToRefreshBase.Mode)} 手动解析json</li>
+ * <li>{@link #customParseJson(BaseJson, PullToRefreshBase.Mode)} 手动解析json</li>
  * <li>{@link #getAdapter()} 获取列表的适配器</li>
  * <li>{@link #getList()} 获取列表存储容器集合</li>
  * </ul>
@@ -55,10 +56,10 @@ public interface IPullToRefreshCallBack {
     /**
      * 手动解析json
      *
-     * @param json 请求的json
+     * @param baseJson 请求的回来的baseJson
      * @param mode 类型，上拉还是下拉
      */
-    void customParseJson(String json, PullToRefreshBase.Mode mode);
+    void customParseJson(BaseJson baseJson, PullToRefreshBase.Mode mode);
 
 
     /**

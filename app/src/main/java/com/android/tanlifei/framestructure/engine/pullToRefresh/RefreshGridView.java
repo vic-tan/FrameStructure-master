@@ -3,16 +3,11 @@ package com.android.tanlifei.framestructure.engine.pullToRefresh;
 import android.content.Context;
 import android.view.View;
 import android.widget.GridView;
-import android.widget.ListView;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatus;
-import com.android.tanlifei.framestructure.common.utils.ResUtils;
-import com.android.tanlifei.framestructure.common.utils.ToastUtils;
 import com.android.tanlifei.framestructure.engine.interf.IPullToRefreshCallBack;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshGridView;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 
 /**
@@ -22,6 +17,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
  * <li>{@link #RefreshGridView(Context, IPullToRefreshCallBack, View)}  当 GridView 为上拉下拉时调用的构造方法</li>
  * <li>{@link #RefreshGridView(Context, IPullToRefreshCallBack, View, PullToRefreshBase.Mode)} 当 GridView 为上拉下拉自定义是调用的构造方法</li>
  * <li>{@link #init(PullToRefreshBase.Mode)} 初始化数据</li>
+ * <li>{@link #getmPullRefreshGridView()} 获取当前 GridView</li>
  * </ul>
  * <ul>
  * <strong>子类要实现或者实现父类的的方法</strong>
@@ -93,5 +89,13 @@ public class RefreshGridView extends BasePullToRefresh {
     @Override
     public void requestFinish() {
         mPullRefreshGridView.onRefreshComplete();
+    }
+
+    /**
+     * 获取当前 GridView
+     * @return
+     */
+    public PullToRefreshGridView getmPullRefreshGridView() {
+        return mPullRefreshGridView;
     }
 }
