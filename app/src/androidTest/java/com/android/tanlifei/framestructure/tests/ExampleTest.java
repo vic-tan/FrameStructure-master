@@ -31,8 +31,12 @@ public class ExampleTest extends InstrumentationTestCase {
         TestHttpUtils.post(UrlConstants.TEST_TWO_SUCCESS, new HashMap<String, Object>());
     }
 
-    public void testNetWork(){
+    public void testNetWork() throws Exception {
         PhoneUtils.isNetworkOk(GlobalApplication.appContext);
-        Logger.i(PhoneUtils.isNetworkOk(GlobalApplication.appContext)+"---");
+        Logger.i(TestConstants.TAG, PhoneUtils.isNetworkOk(GlobalApplication.appContext) + "---");
+    }
+
+    public void testDensity() throws Exception {
+        Logger.i(TestConstants.TAG, PhoneUtils.getDensity(getInstrumentation().getContext()) + "---");
     }
 }

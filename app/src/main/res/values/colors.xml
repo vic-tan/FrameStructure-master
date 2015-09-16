@@ -2,11 +2,33 @@
 <resources>
     <!-- —————————————————— 全局共用颜色 ———————————————————————————————————————————————————————————————————————— -->
     <!--默认背景色-->
-    <color name="common_default_bg">#00FFFFFF</color>
-    <!-- 正加载弹出提示框的背影色 -->
-    <color name="common_dialog_loading_bg">#75000000</color>
+    <color name="common_default_bg">#FFFFFFFF</color>
+    <!-- 分割线色 -->
+    <color name="common_split_bg">#e1e1e1</color>
     <!-- 透明色 -->
     <color name="transparent">#00000000</color>
+
+
+    <!-- —————————————————— dialog颜色 ——————————————————————————————— -->
+
+    <!-- 正加载弹出提示框的背影色 -->
+    <color name="common_dialog_loading_bg">#75000000</color>
+    <!-- 弹出提示框的背影色 -->
+    <color name="common_prompt_dialog_lift_btn_bg">#fff5f5f9</color>
+    <!-- 弹出提示框的windows背影边框色 -->
+    <color name="common_prompt_dialog_windows_bg">#a0000000</color>
+    <!-- 弹出提示框的背影边框色 -->
+    <color name="common_prompt_dialog_border">#ffb8b7c6</color>
+    <!-- 弹出提示框标题字体色 -->
+    <color name="common_prompt_dialog_title_txt">#ff283c61</color>
+    <!-- 弹出提示框按钮字体色 -->
+    <color name="common_prompt_dialog_btn_txt">#ff0178fa</color>
+    <!-- 弹出提示框内容字体色 -->
+    <color name="common_prompt_dialog_content_txt">#ffa8a7b9</color>
+    <!-- 弹出提示框按钮默认色 -->
+    <color name="common_prompt_dialog_btn_nor">#fff5f5f9</color>
+    <!-- 弹出提示框按钮点击色 -->
+    <color name="common_prompt_dialog_btn_pre">#ffe9e9e9</color>
 
 
     <!-- —————————————————— 模块颜色 ——————————————————————————————— -->

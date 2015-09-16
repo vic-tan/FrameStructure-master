@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
+import com.android.tanlifei.framestructure.common.utils.Logger;
+import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StartActUtils;
 import com.android.tanlifei.framestructure.testDemo.adapter.TestAdapter;
@@ -39,6 +41,7 @@ public class TestMainActivity extends Activity implements  AdapterView.OnItemCli
         adapter = new TestAdapter(this, list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+        Logger.i(TAG,PhoneUtils.getScreenWidth(this)+":"+PhoneUtils.getScreenHeight(this));
     }
 
 

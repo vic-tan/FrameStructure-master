@@ -7,6 +7,7 @@
     <!-- —————————————————— 公用TextView ———————————————— -->
 
     <item name="tv_name" type="id" />
+    <item name="tv_title" type="id" />
     <item name="tv_msg" type="id"/>
     <item name="tv_desc" type="id"/>
     <item name="tv_hint" type="id"/>

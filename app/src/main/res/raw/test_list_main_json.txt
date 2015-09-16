@@ -16,6 +16,11 @@
            "activityPath": "com.android.tanlifei.framestructure.testDemo.ui.activity.GridViewActivity",
            "name": "GridView上拉下拉刷新示范",
            "desc": "GridView"
-       }
+       },
+       {
+          "activityPath": "com.android.tanlifei.framestructure.testDemo.ui.activity.DialogActivity",
+          "name": "公用提示框",
+          "desc": "Dialog"
+      }
     ]
 }
