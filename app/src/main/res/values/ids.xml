@@ -50,6 +50,15 @@
     <item name="gv_pull_to_refresh" type="id"/>
 
 
+    <!-- —————————————————— 公用ExpandableTextView ———————————————— -->
+    <!-- 点击伸缩ExpandableTextView  id -->
+    <item type="id" name="expand_text_view"/>
+    <!-- 点击伸缩textview 文字 id -->
+    <item type="id" name="expandable"/>
+    <!-- 点击伸缩textview 图片 id -->
+    <item type="id" name="expand_collapse"/>
+
+
     <!-- —————————————————— type = string ———————————————————————————————————————————————————————————————————————— -->
 
 

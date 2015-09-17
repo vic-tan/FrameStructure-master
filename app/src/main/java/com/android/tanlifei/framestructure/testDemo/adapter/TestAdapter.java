@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.adpater.base.ListAdapter;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
+import com.android.tanlifei.framestructure.common.view.textview.ExpandableTextView;
 import com.android.tanlifei.framestructure.testDemo.bean.TestBean;
 
 import java.util.List;
@@ -33,7 +34,7 @@ public class TestAdapter extends ListAdapter {
             holder = new Holder();
             convertView = super.getView(position, convertView, parent);
             holder.name = (TextView) convertView.findViewById(R.id.tv_name);
-            holder.desc = (TextView) convertView.findViewById(R.id.tv_desc);
+            holder.desc = (ExpandableTextView) convertView.findViewById(R.id.expand_text_view);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
@@ -55,7 +56,7 @@ public class TestAdapter extends ListAdapter {
 
     static class Holder {
         private TextView name;
-        private TextView desc;
+        private ExpandableTextView desc;
     }
 
 }

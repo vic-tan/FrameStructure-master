@@ -15,8 +15,8 @@ import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
  * 自定弹出正在加载对话框
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #LoadingDialog(Context)} 创建默认大小的正在加载对话框</li>
- * <li>{@link #LoadingDialog(Context, int, int, int, int)} 创建自定义宽高正在加载对话框 </li>
+ * <li>{@link #CustomLoadingDialog(Context)} 创建默认大小的正在加载对话框</li>
+ * <li>{@link #CustomLoadingDialog(Context, int, int, int, int)} 创建自定义宽高正在加载对话框 </li>
  * <li>{@link #init(Context, int, int)} 初始化</li>
  * <li>{@link #onTouchEvent(MotionEvent)} 触摸事件传递控制</li>
  * <li>{@link #setMsgText(CharSequence)} 设置加载提示文字</li>
@@ -26,7 +26,7 @@ import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public class LoadingDialog extends Dialog {
+public class CustomLoadingDialog extends Dialog {
     private static int default_width = 160; // 默认宽度
     private static int default_height = 120;// 默认高度
 
@@ -37,7 +37,7 @@ public class LoadingDialog extends Dialog {
      *
      * @param context
      */
-    public LoadingDialog(Context context) {
+    public CustomLoadingDialog(Context context) {
         this(context, default_width, default_height, R.layout.common_dialog_loading,
                 R.style.loading_dialog);
     }
@@ -51,8 +51,8 @@ public class LoadingDialog extends Dialog {
      * @param layout
      * @param style
      */
-    public LoadingDialog(Context context, int width, int height, int layout,
-                         int style) {
+    public CustomLoadingDialog(Context context, int width, int height, int layout,
+                               int style) {
         super(context, style);
         setContentView(layout);
         msg = (TextView) findViewById(R.id.tv_msg);

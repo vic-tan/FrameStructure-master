@@ -3,13 +3,16 @@ package com.android.tanlifei.framestructure.common.view.prompt;
 import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
+import com.android.tanlifei.framestructure.common.utils.AnimationUtils;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCallBack;
@@ -48,7 +51,7 @@ import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCa
 public class LoadingPrompt {
 
     private View view;//加载提示布局
-    private ProgressBar load;//加载圏
+    private ImageView load;//加载圏
     private ImageView logo;//提示图片
     private TextView prompt;//提示文字
     private LinearLayout promptLayout;//加载提示布局
@@ -103,10 +106,12 @@ public class LoadingPrompt {
      */
     private void initView() {
         displayLayout(View.VISIBLE);
-        load = (ProgressBar) view.findViewById(R.id.pb_loading);
+        load = (ImageView) view.findViewById(R.id.pb_loading);
         logo = (ImageView) view.findViewById(R.id.iv_logo);
         prompt = (TextView) view.findViewById(R.id.tv_hint);
     }
+
+
 
 
     /**
@@ -265,6 +270,7 @@ public class LoadingPrompt {
      * @return
      */
     private View setProgressLayout(int strId) {
+        AnimationUtils.show(load, com.bigkoo.svprogresshud.R.drawable.ic_svstatus_loading);
         displayLayout(View.VISIBLE);
         promptStatus = PromptStatus.PROGRESS;
         load.setVisibility(View.VISIBLE);

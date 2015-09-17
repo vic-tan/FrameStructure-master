@@ -4,14 +4,11 @@
     style="@style/common_match_parent"
     android:background="@color/common_default_bg"
     android:gravity="center"
-    android:visibility="gone"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:visibility="gone">
 
-    <ProgressBar
-        android:id="@id/pb_loading"
-        style="@style/common_wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone" />
+
+    <include layout="@layout/common_loading_progress_bar"/>
 
     <ImageView
         android:id="@id/iv_logo"

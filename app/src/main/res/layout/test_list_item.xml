@@ -12,12 +12,6 @@
         android:layout_marginTop="@dimen/space_15"
         android:textSize="@dimen/size_15" />
 
-    <TextView
-        android:id="@id/tv_desc"
-        style="@style/common_match_parent"
-        android:layout_marginBottom="@dimen/space_15"
-        android:layout_marginLeft="@dimen/space_10"
-        android:layout_marginTop="@dimen/space_5"
-        android:textSize="@dimen/size_15" />
+    <include layout="@layout/common_expandable_textview"/>
 
 </LinearLayout>

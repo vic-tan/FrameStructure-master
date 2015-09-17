@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/litepal" />
             <option value="$PROJECT_DIR$/pullToRefresh" />
+            <option value="$PROJECT_DIR$/svprogresshud" />
           </set>
         </option>
       </GradleProjectSettings>

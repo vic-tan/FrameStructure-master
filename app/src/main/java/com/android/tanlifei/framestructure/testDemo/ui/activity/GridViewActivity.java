@@ -10,10 +10,8 @@ import com.android.tanlifei.framestructure.adpater.base.ListAdapter;
 import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.common.constants.UrlConstants;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
-import com.android.tanlifei.framestructure.common.view.prompt.LoadingDialog;
 import com.android.tanlifei.framestructure.engine.interf.IPullToRefreshCallBack;
 import com.android.tanlifei.framestructure.engine.pullToRefresh.RefreshGridView;
-import com.android.tanlifei.framestructure.engine.pullToRefresh.RefreshListView;
 import com.android.tanlifei.framestructure.testDemo.adapter.TagAdapter;
 import com.android.tanlifei.framestructure.testDemo.bean.TagBean;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -31,7 +29,6 @@ public class GridViewActivity extends Activity implements IPullToRefreshCallBack
     private RefreshGridView refreshGridView;
     private List list;
     private View view;
-    private LoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +38,6 @@ public class GridViewActivity extends Activity implements IPullToRefreshCallBack
         list = new ArrayList();
         adapter = new TagAdapter(this, list);
         refreshGridView = new RefreshGridView(this, this, view, PullToRefreshBase.Mode.BOTH);
-        loadingDialog = new LoadingDialog(this);
         refreshGridView.getmPullRefreshGridView().setOnItemClickListener(this);
     }
 

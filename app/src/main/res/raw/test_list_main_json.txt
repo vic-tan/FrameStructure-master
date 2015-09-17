@@ -21,6 +21,13 @@
           "activityPath": "com.android.tanlifei.framestructure.testDemo.ui.activity.DialogActivity",
           "name": "公用提示框",
           "desc": "Dialog"
-      }
+      },
+      {
+         "activityPath": "com.android.tanlifei.framestructure.testDemo.ui.activity.DialogActivity",
+         "name": "公用提示框",
+         "desc": "Dialog公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用
+         公用提示框公用提示框公用提示框公用提示框公用公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框
+         公用提示框公用提示框公用提示框提示框公用提示框提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框公用提示框"
+     }
     ]
 }
