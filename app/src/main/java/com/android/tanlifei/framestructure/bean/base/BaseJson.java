@@ -1,5 +1,7 @@
 package com.android.tanlifei.framestructure.bean.base;
 
+import com.android.tanlifei.framestructure.common.utils.StringUtils;
+
 /**
  * json 最外层数据基本结构实体
  *
@@ -11,6 +13,21 @@ public class BaseJson {
     private String code;
     private String msg;
     private String data;
+
+    public BaseJson(String code, String msg, String data) {
+
+        this.code = code;
+        if(StringUtils.isEmpty(data) || StringUtils.isEquals(data,"null")){
+            this.data = "";
+        }else {
+            this.data = data;
+        }
+        this.msg = msg;
+    }
+
+    public BaseJson(String data) {
+        this.data = data;
+    }
 
     public BaseJson() {
         super();

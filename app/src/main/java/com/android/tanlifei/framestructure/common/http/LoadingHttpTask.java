@@ -1,15 +1,13 @@
 package com.android.tanlifei.framestructure.common.http;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Message;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.bean.base.BaseJson;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.HttpTaskStatus;
+import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
 import com.android.tanlifei.framestructure.common.http.base.HttpTaskController;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
+import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 import com.bigkoo.svprogresshud.SVProgressHUD;
 
 /**
@@ -27,38 +25,6 @@ public class LoadingHttpTask extends HttpTaskController {
 
 
     private Context context;
-
-    Handler handler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message msg) {
-            switch (HttpTaskStatus.HttpTaskStatus(msg.what)) {
-                case NETWORK_ERROR:
-                    dismiss();
-                    ToastUtils.show(context, ResUtils.getStr(R.string.common_prompt_network));
-                    break;
-                case PROGRESS:
-                    show();
-                    break;
-                case FAILURE:
-                case SERVICE_ERROR:
-                    dismiss();
-                    ToastUtils.show(context, ((BaseJson) msg.obj).getMsg());
-                    break;
-                case TIMEOUT_ERROR:
-                    dismiss();
-                    ToastUtils.show(context, ResUtils.getStr(R.string.common_prompt_timeout_error));
-                    break;
-                case SUCCESS:
-                    loadingHttpTaskBean.getLoadingDialogCallBack().resultTask(loadingHttpTaskBean.getParams(), (BaseJson) msg.obj, loadingHttpTaskBean.getTaskTag());
-                    dismiss();
-                    break;
-                default:
-                    dismiss();
-                    break;
-            }
-            return true;
-        }
-    });
 
 
     /**
@@ -92,7 +58,38 @@ public class LoadingHttpTask extends HttpTaskController {
     }
 
     @Override
-    protected Handler getHandler() {
-        return handler;
+    public IHttpTaskCallBack setCallBack() {
+        return new IHttpTaskCallBack() {
+            @Override
+            public void taskHandler(CallbackBean handlerBean) {
+                switch (handlerBean.getStatus()) {
+                    case NETWORK_ERROR:
+                        dismiss();
+                        ToastUtils.show(context, ResUtils.getStr(R.string.common_prompt_network));
+                        break;
+                    case PROGRESS:
+                        show();
+                        break;
+                    case FAILURE:
+                    case SERVICE_ERROR:
+                        dismiss();
+                        if(null!=handlerBean.getBaseJson()){
+                            ToastUtils.show(context, handlerBean.getBaseJson().getMsg());
+                        }
+                        break;
+                    case TIMEOUT_ERROR:
+                        dismiss();
+                        ToastUtils.show(context, ResUtils.getStr(R.string.common_prompt_timeout_error));
+                        break;
+                    case SUCCESS:
+                        taskCallBack.taskHandler(handlerBean);
+                        dismiss();
+                        break;
+                    default:
+                        dismiss();
+                        break;
+                }
+            }
+        };
     }
 }

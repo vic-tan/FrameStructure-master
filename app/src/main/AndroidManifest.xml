@@ -32,6 +32,7 @@
         <activity android:name=".testDemo.ui.activity.ListViewActivity"/>
         <activity android:name=".testDemo.ui.activity.GridViewActivity"/>
         <activity android:name=".testDemo.ui.activity.DialogActivity"/>
+        <activity android:name=".testDemo.ui.activity.LoadingDialogActivity"/>
     </application>
 
 </manifest>

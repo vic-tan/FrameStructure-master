@@ -1,6 +1,5 @@
 package com.android.tanlifei.framestructure.common.http;
 
-import android.os.Handler;
 import android.text.Html;
 
 import com.android.tanlifei.framestructure.R;
@@ -8,18 +7,20 @@ import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.HttpTaskStatus;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpTask;
-import com.android.tanlifei.framestructure.common.http.testData.JsonController;
+import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestBean;
+import com.android.tanlifei.framestructure.common.http.localJson.JsonController;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
-import com.android.tanlifei.framestructure.common.utils.Logger;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
+import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 
 
 /**
  * 请求接口任务过程
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #readJson(String, Handler)}  读取本地自定义Json测试数据</li>
+ * <li>{@link #readJson(RequestBean, IHttpTaskCallBack, int)}   读取本地自定义Json测试数据</li>
  * <li>{@link #readJson(String)} 读取本地自定义Json测试数据</li>
  * </ul>
  *
@@ -32,23 +33,27 @@ public class ReadLocalCustomJson extends BaseHttpTask {
     /**
      * 读取本地自定义Json测试数据
      *
-     * @param url
-     * @param handler
+     * @param params
+     * @param callBackMethod
+     * @param callBackTag
      */
-    public static void readJson(final String url, final Handler handler) {
+    public static void readJson(final RequestBean params, final IHttpTaskCallBack callBackMethod, final int callBackTag) {
         BaseJson jsonBean = null;
         try {
-            String responseBody = JsonController.getLocalJson(url);
+            String responseBody = JsonController.getLocalJson(params.getUrl());
             jsonBean = JsonUtils.parseToObjectBean(replaceId(responseBody), BaseJson.class);
-            if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_VALUE_0000)) {// 请求成功
-                Logger.i(TAG, "" + replaceId(responseBody));
-                sendHandler(handler, HttpTaskStatus.SUCCESS.value(), jsonBean, JsonUtils.format(replaceId(responseBody)).toString());
+            if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_SUCCEE)) {// 请求成功
+                log("" + replaceId(responseBody));
+                sendHandler(new CallbackBean(jsonBean, HttpTaskStatus.SUCCESS, callBackTag, params.getCallbackParams()), callBackMethod );
             } else {// 服务错误
-                sendHandler(handler, HttpTaskStatus.SERVICE_ERROR.value(), jsonBean, "--------------> service error (onSuccess)");
+                log("--------------> service error (onSuccess)");
+                sendHandler(new CallbackBean(new BaseJson(), HttpTaskStatus.SERVICE_ERROR, callBackTag, params.getCallbackParams()), callBackMethod);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            sendHandler(handler, HttpTaskStatus.SERVICE_ERROR.value(), jsonBean, Html.fromHtml("--------------> Exception (onSuccess)<br>" + e.toString()).toString());
+            log(Html.fromHtml("--------------> Exception (onSuccess)<br>" + e.toString()).toString());
+            sendHandler(new CallbackBean(new BaseJson(), HttpTaskStatus.SERVICE_ERROR, callBackTag, params.getCallbackParams()), callBackMethod);
+            ;
         }
     }
 
@@ -62,7 +67,7 @@ public class ReadLocalCustomJson extends BaseHttpTask {
         try {
             String responseBody = JsonController.getLocalJson(url);
             jsonBean = JsonUtils.parseToObjectBean(replaceId(responseBody), BaseJson.class);
-            if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_VALUE_0000)) {// 请求成功
+            if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_SUCCEE)) {// 请求成功
                 return replaceId(responseBody);
             } else {// 服务错误
                 jsonBean.setMsg(ResUtils.getStr(R.string.common_prompt_serivce));

@@ -1,23 +1,24 @@
 package com.android.tanlifei.framestructure.engine.pullToRefresh;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.bean.base.PageBean;
 import com.android.tanlifei.framestructure.common.constants.JsonConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.HttpTaskStatus;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
+import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestBean;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
 import com.android.tanlifei.framestructure.common.view.prompt.LoadingPrompt;
+import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCallBack;
 import com.android.tanlifei.framestructure.engine.interf.IPullToRefreshCallBack;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -27,10 +28,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
  * 列表PullToRefresh 基类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #handler 请求过程回调</li>
  * <li>{@link #baseInit(Context, View, IPullToRefreshCallBack)} 初始化基本数据</li>
  * <li>{@link #startRequest()} 开始请求网络</li>
- * <li>{@link #parseJsonController(String)} 处理请求成功后的业务</li>
+ * <li>{@link #parseJsonController(BaseJson)}  处理请求成功后的业务</li>
  * <li>{@link #pullDownToRefresh()} 下拉刷新业务处理</li>
  * <li>{@link #pullUpToRefresh()}  上拉刷新处理</li>
  * <li>{@link #pullFromStartParseJson(String)} 下拉完成要解析的json</li>
@@ -60,42 +60,6 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
     protected IPullToRefreshCallBack refreshCallBack;// 回调接口
     protected LoadingPrompt loadingPrompt;// 加载提示
     protected PullToRefreshBase.Mode mode = PullToRefreshBase.Mode.PULL_FROM_START;//上拉下拉标识,用来区分解析json时分别调用各自的解析方法
-    /**
-     * 请求过程回调
-     */
-    protected Handler handler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message msg) {
-            switch (HttpTaskStatus.HttpTaskStatus(msg.what)) {
-                case NETWORK_ERROR:
-                    loadingPrompt.displayNetworkErrorLayout();
-                    requestFinish();
-                    break;
-                case START:
-                    loadingPrompt.displayProgressLayout();
-                    break;
-                case FAILURE:
-                case SERVICE_ERROR:
-                    loadingPrompt.displayserviceErrorLayout();
-                    requestFinish();
-                    break;
-                case TIMEOUT_ERROR:
-                case CANCEL:
-                    loadingPrompt.displayTimeoutErrorLayout();
-                    requestFinish();
-                    break;
-                case SUCCESS:
-                    parseJsonController((BaseJson)msg.obj);
-                    requestFinish();
-                    break;
-                default:
-                    requestFinish();
-                    break;
-            }
-
-            return true;
-        }
-    });
 
     /**
      * 初始化基本数据
@@ -116,9 +80,39 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
      * 开始请求网络
      */
     protected void startRequest() {
-        HttpTask.post(refreshCallBack.taskUrl(), refreshCallBack
+        HttpTask.post(new RequestBean(refreshCallBack.taskUrl(), refreshCallBack
                 .taskParams(BaseHttpParams.pageParams(pageBean
-                        .getPageNumber())), handler);
+                        .getPageNumber())), null), new IHttpTaskCallBack() {
+            @Override
+            public void taskHandler(CallbackBean callbackBean) {
+                switch (callbackBean.getStatus()) {
+                    case NETWORK_ERROR:
+                        loadingPrompt.displayNetworkErrorLayout();
+                        requestFinish();
+                        break;
+                    case START:
+                        loadingPrompt.displayProgressLayout();
+                        break;
+                    case FAILURE:
+                    case SERVICE_ERROR:
+                        loadingPrompt.displayserviceErrorLayout();
+                        requestFinish();
+                        break;
+                    case TIMEOUT_ERROR:
+                    case CANCEL:
+                        loadingPrompt.displayTimeoutErrorLayout();
+                        requestFinish();
+                        break;
+                    case SUCCESS:
+                        parseJsonController(callbackBean.getBaseJson());
+                        requestFinish();
+                        break;
+                    default:
+                        requestFinish();
+                        break;
+                }
+            }
+        });
     }
 
     /**
@@ -182,7 +176,8 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
             mode = PullToRefreshBase.Mode.PULL_FROM_END;
         } else {//最后一页
             ToastUtils.show(context, ResUtils.getStr(R.string.common_pull_to_refresh_last_page));
-            handler.obtainMessage(HttpTaskStatus.FINISH.value()).sendToTarget();
+            requestFinish();
+            //handler.obtainMessage(HttpTaskStatus.FINISH.value()).sendToTarget();
         }
     }
 

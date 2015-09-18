@@ -1,6 +1,6 @@
 package com.android.tanlifei.framestructure.bean.paramsBean;
 
-import com.android.tanlifei.framestructure.engine.interf.ILoadingResultTaskCallBack;
+import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,20 +15,20 @@ import java.util.Map;
 public class LoadingHttpTaskBean {
     private final Map<String, Object> params;//请求接口前携带的参数
     private final int taskTag;//请求接口任务标识
-    private final ILoadingResultTaskCallBack loadingDialogCallBack;//请求接口完成要回调
+    private final IHttpTaskCallBack callBack;//请求接口完成要回调
 
-    public LoadingHttpTaskBean(ILoadingResultTaskCallBack loadingDialogCallBack, Map params, int taskTag) {
-        this.loadingDialogCallBack = loadingDialogCallBack;
-        if(null == params){
+    public LoadingHttpTaskBean(IHttpTaskCallBack callBack, Map params, int taskTag) {
+        this.callBack = callBack;
+        if (null == params) {
             this.params = new HashMap<>();
-        }else{
+        } else {
             this.params = params;
         }
         this.taskTag = taskTag;
     }
 
-    public ILoadingResultTaskCallBack getLoadingDialogCallBack() {
-        return loadingDialogCallBack;
+    public IHttpTaskCallBack getLoadingDialogCallBack() {
+        return callBack;
     }
 
     public Map<String, Object> getParams() {

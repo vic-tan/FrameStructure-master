@@ -1,4 +1,4 @@
-package com.android.tanlifei.framestructure.common.http.testData;
+package com.android.tanlifei.framestructure.common.http.localJson;
 
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.common.constants.UrlConstants;

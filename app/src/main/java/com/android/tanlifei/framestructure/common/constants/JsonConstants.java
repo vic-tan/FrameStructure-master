@@ -25,7 +25,7 @@ public class JsonConstants {
 
 
     // 项目级别消息 用户验证问题
-    public static final String CODE_VALUE_0000 = "0000";// 操作成功
+    public static final String CODE_SUCCEE = "0000";// 操作成功
     public static final String CODE_VALUE_0001 = "0001";// 查询用户异常
     public static final String CODE_VALUE_0002 = "0002";// 用户不存在
     public static final String CODE_VALUE_0003 = "0003";// 密码错误
