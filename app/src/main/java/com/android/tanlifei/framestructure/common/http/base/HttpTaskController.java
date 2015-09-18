@@ -1,11 +1,7 @@
 package com.android.tanlifei.framestructure.common.http.base;
 
-import android.os.Handler;
-
-import com.android.tanlifei.framestructure.bean.paramsBean.LoadingHttpTaskBean;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
-
-import java.util.Map;
+import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 
 
 /**
@@ -13,10 +9,14 @@ import java.util.Map;
  * (PromptHttpTask类)和（LoadingHttpTask类）的基类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #get(String, Map, LoadingHttpTaskBean)} get 请求 以普通形式提交参数</li>
- * <li>{@link #getByJsonParams(String, Map, LoadingHttpTaskBean)} get 请求 以json格式提交参数</li>
- * <li>{@link #post(String, Map, LoadingHttpTaskBean)}  post 请求，以普通形式提交参数</li>
- * <li>{@link #postByJsonParams(String, Map, LoadingHttpTaskBean)} post 请求，以json格式提交参数</li>
+ * <li>{@link #get(RequestBean, IHttpTaskCallBack)} get 请求 以普通形式提交参数</li>
+ * <li>{@link #get(RequestBean, int, IHttpTaskCallBack)} get 请求 以普通形式提交参数</li>
+ * <li>{@link #getByJsonParams(RequestBean, IHttpTaskCallBack)} get 请求 以json格式提交参数</li>
+ * <li>{@link #getByJsonParams(RequestBean, int, IHttpTaskCallBack)} get 请求 以json格式提交参数</li>
+ * <li>{@link #post(RequestBean, IHttpTaskCallBack)}  post 请求，以普通形式提交参数</li>
+ * <li>{@link #post(RequestBean, int, IHttpTaskCallBack)}  post 请求，以普通形式提交参数</li>
+ * <li>{@link #postByJsonParams(RequestBean, IHttpTaskCallBack)} post 请求，以json格式提交参数</li>
+ * <li>{@link #postByJsonParams(RequestBean, int, IHttpTaskCallBack)} post 请求，以json格式提交参数</li>
  * </ul>
  *
  * @author tanlifei
@@ -24,56 +24,101 @@ import java.util.Map;
  */
 public abstract class HttpTaskController extends BaseHttpTask {
 
-    protected LoadingHttpTaskBean loadingHttpTaskBean;//请求接口成功
+    protected IHttpTaskCallBack taskCallBack;
 
     /**
      * get 请求 以普通形式提交参数
      *
-     * @param callBackParams 请求前参数设置
-     * @param url            请求路径
-     * @param params         请求参数
+     * @param callBackTag  多个请求任务区分标识
+     * @param taskCallBack 回调
+     * @param params       请求参数
      */
-    public void get(String url, Map<String, Object> params, LoadingHttpTaskBean callBackParams) {
-        this.loadingHttpTaskBean = callBackParams;
-        HttpTask.get(url, params, getHandler());
+    public void get(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.get(params, callBackTag, setCallBack());
+    }
+
+    /**
+     * get 请求 以普通形式提交参数
+     *
+     * @param taskCallBack 回调
+     * @param params       请求参数
+     */
+    public void get(RequestBean params, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.get(params, setCallBack());
     }
 
     /**
      * get 请求 以json格式提交参数
      *
-     * @param callBackParams 请求前参数设置
-     * @param url            请求路径
-     * @param params         请求参数
+     * @param callBackTag  多个请求任务区分标识
+     * @param taskCallBack 回调
+     * @param params       请求参数
      */
-    public void getByJsonParams(String url, Map<String, Object> params, LoadingHttpTaskBean callBackParams) {
-        this.loadingHttpTaskBean = callBackParams;
-        HttpTask.getByJsonParams(url, params, getHandler());
+    public void getByJsonParams(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.getByJsonParams(params, callBackTag, setCallBack());
+    }
+
+    /**
+     * get 请求 以json格式提交参数
+     *
+     * @param taskCallBack 回调
+     * @param params       请求参数
+     */
+    public void getByJsonParams(RequestBean params, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.getByJsonParams(params, setCallBack());
     }
 
     /**
      * post 请求，以普通形式提交参数
      *
-     * @param callBackParams 请求前参数设置
-     * @param url            请求路径
-     * @param params         请求参数
+     * @param callBackTag  多个请求任务区分标识
+     * @param taskCallBack 回调
+     * @param params       请求参数
      */
-    public void post(String url, Map<String, Object> params, LoadingHttpTaskBean callBackParams) {
-        this.loadingHttpTaskBean = callBackParams;
-        HttpTask.post(url, params, getHandler());
+    public void post(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.post(params, callBackTag, setCallBack());
+    }
+
+    /**
+     * post 请求，以普通形式提交参数
+     *
+     * @param taskCallBack 回调
+     * @param params       请求参数
+     */
+    public void post(RequestBean params, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.post(params, setCallBack());
     }
 
 
     /**
      * post 请求，以json格式提交参数
      *
-     * @param callBackParams 请求前参数设置
-     * @param url            请求路径
-     * @param params         请求参数
+     * @param callBackTag  多个请求任务区分标识
+     * @param taskCallBack 回调
+     * @param params       请求参数
      */
-    public void postByJsonParams(String url, Map<String, Object> params, LoadingHttpTaskBean callBackParams) {
-        this.loadingHttpTaskBean = callBackParams;
-        HttpTask.getByJsonParams(url, params, getHandler());
+    public void postByJsonParams(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.getByJsonParams(params, callBackTag, setCallBack());
     }
 
-    protected abstract Handler getHandler();
+    /**
+     * post 请求，以json格式提交参数
+     *
+     * @param taskCallBack 回调
+     * @param params       请求参数
+     */
+    public void postByJsonParams(RequestBean params, IHttpTaskCallBack taskCallBack) {
+        this.taskCallBack = taskCallBack;
+        HttpTask.getByJsonParams(params, setCallBack());
+    }
+
+    public abstract IHttpTaskCallBack setCallBack();
+
 }
