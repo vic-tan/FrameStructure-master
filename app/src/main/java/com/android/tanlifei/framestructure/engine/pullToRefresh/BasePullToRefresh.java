@@ -11,7 +11,7 @@ import com.android.tanlifei.framestructure.common.constants.enumConstants.Prompt
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
 import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
-import com.android.tanlifei.framestructure.common.http.base.ReqBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestBean;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
@@ -79,7 +79,7 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
      * 开始请求网络
      */
     protected void startRequest() {
-        HttpTask.post(new ReqBean(refreshCallBack.taskUrl(), refreshCallBack
+        HttpTask.post(new RequestBean(refreshCallBack.taskUrl(), refreshCallBack
                 .taskParams(BaseHttpParams.pageParams(pageBean
                         .getPageNumber())), null), new IHttpTaskCallBack() {
             @Override
