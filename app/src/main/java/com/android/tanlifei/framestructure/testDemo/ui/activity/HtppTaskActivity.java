@@ -11,7 +11,7 @@ import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.LoadingHttpTask;
 import com.android.tanlifei.framestructure.common.http.PromptHttpTask;
 import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
-import com.android.tanlifei.framestructure.common.http.base.TaskParamsBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestBean;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
 import com.android.tanlifei.framestructure.common.utils.StartActUtils;
@@ -74,7 +74,7 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
                 //1、调用 HttpTask相应的方法;
                 //2、Handler 处理请求成功后的业务
 
-                HttpTask.post(new TaskParamsBean(UrlConstants.TEST_LIST, null, null), new IHttpTaskCallBack() {
+                HttpTask.post(new RequestBean(UrlConstants.TEST_LIST, null, null), new IHttpTaskCallBack() {
                     @Override
                     public void taskHandler(CallbackBean callbackBean) {
                         switch (callbackBean.getStatus()) {
@@ -115,7 +115,7 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
 
                 Map map = new HashMap();
                 map.put("test", "加载框请求 ");
-                promptHttpTask.post(new TaskParamsBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map), 1, this);
+                promptHttpTask.post(new RequestBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map), 1, this);
                 break;
 
             case R.id.btn_1_3://提示框请求
@@ -139,7 +139,7 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
     private void testPrompt() {
         Map map2 = new HashMap();
         map2.put("test", "提示框请求 ");
-        promptHttpTask.post(new TaskParamsBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map2), 2, this);
+        promptHttpTask.post(new RequestBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map2), 2, this);
     }
 
     @Override

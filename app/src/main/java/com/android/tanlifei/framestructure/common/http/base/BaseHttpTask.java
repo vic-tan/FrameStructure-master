@@ -28,7 +28,7 @@ import java.util.Map;
  * 请求接口任务过程基类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #setAsyncHttpResponseHandler(TaskParamsBean, int, IHttpTaskCallBack)}  response响应回调</li>
+ * <li>{@link #setAsyncHttpResponseHandler(RequestBean, int, IHttpTaskCallBack)}  response响应回调</li>
  * <li>{@link #sendHandler(CallbackBean, IHttpTaskCallBack)}  发送回调</li>
  * <li>{@link #replaceId(String)} 把json 中的"id" key  替换成"my_id" key ,这样做是为了跟 litepal 或GreenDao 等关系型数据库库自带的id冲突</li>
  * </ul>
@@ -48,7 +48,7 @@ public class BaseHttpTask {
      * @param callBackMethod
      * @return
      */
-    protected static AsyncHttpResponseHandler setAsyncHttpResponseHandler(final TaskParamsBean params, final int callBackTag, final IHttpTaskCallBack callBackMethod) {
+    protected static AsyncHttpResponseHandler setAsyncHttpResponseHandler(final RequestBean params, final int callBackTag, final IHttpTaskCallBack callBackMethod) {
         return new AsyncHttpResponseHandler() {
 
             @Override
