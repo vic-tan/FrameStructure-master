@@ -2,14 +2,14 @@ package com.android.tanlifei.framestructure.engine.interf;
 
 import android.view.View;
 
-import com.android.tanlifei.framestructure.common.view.prompt.BasePromptDialog;
+import com.android.tanlifei.framestructure.common.view.prompt.BaseDialog;
 
 /**
  * 提示dialog 左右按钮回调
  *
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #onClickListener(BasePromptDialog,View,int)} 左边按钮点击监听</li>
+ * <li>{@link #onClickListener(BaseDialog,View,int)} 左边按钮点击监听</li>
  * </ul>
  *
  * @author tanlifei
@@ -23,5 +23,5 @@ public interface IPromptDialogBtnSingleCallBack {
      * @param v 当前点击view
      * @param callBackTag 多个弹出框时区分标识
      */
-    void onClickListener(BasePromptDialog promptDialog, View v,int callBackTag);
+    void onClickListener(BaseDialog promptDialog, View v,int callBackTag);
 }

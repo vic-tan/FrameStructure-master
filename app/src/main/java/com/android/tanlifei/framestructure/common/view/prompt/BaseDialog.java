@@ -9,17 +9,15 @@ import android.widget.TextView;
 
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
-import com.android.tanlifei.framestructure.common.utils.ResUtils;
-import com.android.tanlifei.framestructure.testDemo.ui.activity.DialogActivity;
 
 
 /**
  * 加载数据时数据错误,或为空时view
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #BasePromptDialog(Context, int)}  创建对话框全屏宽高</li>
- * <li>{@link #BasePromptDialog(Context, int,int)}  创建可以区分多个对话框标识全屏宽高</li>
- * <li>{@link #BasePromptDialog(View, int, int)} 创建对话框自定义宽高 </li>
+ * <li>{@link #BaseDialog(Context, int)}  创建对话框全屏宽高</li>
+ * <li>{@link #BaseDialog(Context, int,int)}  创建可以区分多个对话框标识全屏宽高</li>
+ * <li>{@link #BaseDialog(View, int, int)} 创建对话框自定义宽高 </li>
  * <li>{@link #init()} 初始化</li>
  * <li>{@link #getContentView()} 返回contentView</li>
  * <li>{@link #getTitle()} 返回标题控件</li>
@@ -34,7 +32,7 @@ import com.android.tanlifei.framestructure.testDemo.ui.activity.DialogActivity;
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public abstract class BasePromptDialog extends PopupWindow {
+public abstract class BaseDialog extends PopupWindow {
 
     protected View contentView;
     protected TextView title, content; //标题，内容
@@ -47,7 +45,7 @@ public abstract class BasePromptDialog extends PopupWindow {
      * @param context 上下文
      * @param layoutId 布局编号
      */
-    public BasePromptDialog(Context context, int layoutId) {
+    public BaseDialog(Context context, int layoutId) {
         this(InflaterUtils.inflater(context, layoutId), LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
     }
 
@@ -58,7 +56,7 @@ public abstract class BasePromptDialog extends PopupWindow {
      * @param layoutId 布局编号
      * @param callBackTag 多个弹出框时区分标识
      */
-    public BasePromptDialog(Context context, int layoutId,int callBackTag) {
+    public BaseDialog(Context context, int layoutId, int callBackTag) {
         this(InflaterUtils.inflater(context, layoutId), LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         this.callBackTag = callBackTag;
     }
@@ -70,7 +68,7 @@ public abstract class BasePromptDialog extends PopupWindow {
      * @param width
      * @param height
      */
-    public BasePromptDialog(View contentView, int width, int height) {
+    public BaseDialog(View contentView, int width, int height) {
         super(contentView, width, height, true);
         this.contentView = contentView;
         init();

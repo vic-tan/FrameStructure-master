@@ -3,9 +3,9 @@ package com.android.tanlifei.framestructure.common.http;
 import android.content.Context;
 import android.view.View;
 
-import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
-import com.android.tanlifei.framestructure.common.http.base.HttpTaskController;
-import com.android.tanlifei.framestructure.common.view.prompt.LoadingPrompt;
+import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
+import com.android.tanlifei.framestructure.common.http.base.TaskController;
+import com.android.tanlifei.framestructure.common.view.prompt.LoadingLayout;
 import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCallBack;
 
@@ -19,9 +19,9 @@ import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCa
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public class PromptHttpTask extends HttpTaskController {
+public class PromptHttpTask extends TaskController {
 
-    private LoadingPrompt promptView;//提示框
+    private LoadingLayout promptView;//提示框
     private Context context;
 
 
@@ -33,7 +33,7 @@ public class PromptHttpTask extends HttpTaskController {
     public PromptHttpTask(Context context, ILoadingPromptReStartCallBack backCall, View view) {
         this.context = context;
         if (promptView == null) {
-            promptView = new LoadingPrompt(context, backCall, view);
+            promptView = new LoadingLayout(context, backCall, view);
         }
     }
 
@@ -42,7 +42,7 @@ public class PromptHttpTask extends HttpTaskController {
     public IHttpTaskCallBack setCallBack() {
         return new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(CallbackBean handlerBean) {
+            public void taskHandler(CallbackParamBean handlerBean) {
                 switch (handlerBean.getStatus()) {
                     case NETWORK_ERROR:
                         promptView.displayNetworkErrorLayout();

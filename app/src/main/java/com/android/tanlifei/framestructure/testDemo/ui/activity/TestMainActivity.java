@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.bean.base.BaseJson;
+import com.android.tanlifei.framestructure.common.exception.CustomException;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
 import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
@@ -34,6 +35,7 @@ public class TestMainActivity extends Activity implements  AdapterView.OnItemCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_activity_main);
+
         listView = (PullToRefreshListView)findViewById(R.id.lv_pull_to_refresh);
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
         list = new ArrayList();

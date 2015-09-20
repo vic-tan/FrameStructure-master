@@ -8,8 +8,8 @@ import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.TaskLevel;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpTask;
-import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
-import com.android.tanlifei.framestructure.common.http.base.RequestBean;
+import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestParamBean;
 import com.android.tanlifei.framestructure.common.http.localJson.JsonController;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
@@ -21,7 +21,7 @@ import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
  * 请求接口任务过程
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #readJson(RequestBean, IHttpTaskCallBack, TaskLevel)}   读取本地自定义Json测试数据</li>
+ * <li>{@link #readJson(RequestParamBean, IHttpTaskCallBack, TaskLevel)}   读取本地自定义Json测试数据</li>
  * <li>{@link #readJson(String)} 读取本地自定义Json测试数据</li>
  * </ul>
  *
@@ -38,22 +38,22 @@ public class ReadLocalCustomJson extends BaseHttpTask {
      * @param callBackMethod
      * @param level
      */
-    public static void readJson(final RequestBean params, final IHttpTaskCallBack callBackMethod, final TaskLevel level) {
+    public static void readJson(final RequestParamBean params, final IHttpTaskCallBack callBackMethod, final TaskLevel level) {
         BaseJson jsonBean = null;
         try {
             String responseBody = JsonController.getLocalJson(params.getUrl());
             jsonBean = JsonUtils.parseToObjectBean(replaceId(responseBody), BaseJson.class);
             if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_SUCCEE)) {// 请求成功
                 log("" + replaceId(responseBody));
-                sendHandler(new CallbackBean(jsonBean, RequestStatusLevel.SUCCESS, level, params.getCallbackParams()), callBackMethod );
+                sendHandler(new CallbackParamBean(jsonBean, RequestStatusLevel.SUCCESS, level, params.getCallbackParams()), callBackMethod );
             } else {// 服务错误
                 log("--------------> service error (onSuccess)");
-                sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
+                sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
             }
         } catch (Exception e) {
             e.printStackTrace();
             log(Html.fromHtml("--------------> Exception (onSuccess)<br>" + e.toString()).toString());
-            sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
+            sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
             ;
         }
     }

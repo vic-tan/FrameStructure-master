@@ -3,8 +3,8 @@ package com.android.tanlifei.framestructure.common.http;
 import android.content.Context;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
-import com.android.tanlifei.framestructure.common.http.base.HttpTaskController;
+import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
+import com.android.tanlifei.framestructure.common.http.base.TaskController;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
 import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
@@ -21,7 +21,7 @@ import com.bigkoo.svprogresshud.SVProgressHUD;
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public class LoadingHttpTask extends HttpTaskController {
+public class LoadingHttpTask extends TaskController {
 
 
     private Context context;
@@ -61,7 +61,7 @@ public class LoadingHttpTask extends HttpTaskController {
     public IHttpTaskCallBack setCallBack() {
         return new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(CallbackBean handlerBean) {
+            public void taskHandler(CallbackParamBean handlerBean) {
                 switch (handlerBean.getStatus()) {
                     case NETWORK_ERROR:
                         dismiss();

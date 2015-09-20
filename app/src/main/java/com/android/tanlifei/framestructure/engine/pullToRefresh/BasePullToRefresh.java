@@ -10,13 +10,13 @@ import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
-import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
-import com.android.tanlifei.framestructure.common.http.base.RequestBean;
+import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestParamBean;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
-import com.android.tanlifei.framestructure.common.view.prompt.LoadingPrompt;
+import com.android.tanlifei.framestructure.common.view.prompt.LoadingLayout;
 import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCallBack;
 import com.android.tanlifei.framestructure.engine.interf.IPullToRefreshCallBack;
@@ -57,7 +57,7 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
     protected PageBean pageBean;// 分页参数实体
     protected Context context;
     protected IPullToRefreshCallBack refreshCallBack;// 回调接口
-    protected LoadingPrompt loadingPrompt;// 加载提示
+    protected LoadingLayout loadingPrompt;// 加载提示
     protected PullToRefreshBase.Mode mode = PullToRefreshBase.Mode.PULL_FROM_START;//上拉下拉标识,用来区分解析json时分别调用各自的解析方法
 
     /**
@@ -71,7 +71,7 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
         this.refreshCallBack = refreshCallBack;
         this.baseView = baseView;
         initPageBean();//初始化分页参数
-        loadingPrompt = new LoadingPrompt(context, this);//初始化加载提示布局
+        loadingPrompt = new LoadingLayout(context, this);//初始化加载提示布局
 
     }
 
@@ -79,11 +79,11 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
      * 开始请求网络
      */
     protected void startRequest() {
-        HttpTask.post(new RequestBean(refreshCallBack.taskUrl(), refreshCallBack
+        HttpTask.post(new RequestParamBean(refreshCallBack.taskUrl(), refreshCallBack
                 .taskParams(BaseHttpParams.pageParams(pageBean
                         .getPageNumber())), null), new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(CallbackBean callbackBean) {
+            public void taskHandler(CallbackParamBean callbackBean) {
                 switch (callbackBean.getStatus()) {
                     case NETWORK_ERROR:
                         loadingPrompt.displayNetworkErrorLayout();

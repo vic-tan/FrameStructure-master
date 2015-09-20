@@ -7,8 +7,6 @@ package com.android.tanlifei.framestructure.common.constants.enumConstants;
  * @date 2015年8月13日 上午11:30:51
  */
 public enum TaskLevel {
-
-
     /**
      * 每一个请求任务
      */
@@ -82,7 +80,8 @@ public enum TaskLevel {
                 return TASK_NINE;
             case 0x1010:
                 return TASK_TEN;
-
+            case -0x11111:
+                return TASK_EMPTY;
             default:
                 return null;
         }

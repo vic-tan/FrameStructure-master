@@ -14,21 +14,21 @@ import java.util.Map;
  */
 
 
-public class CallbackBean {
+public class CallbackParamBean {
 
     private final RequestStatusLevel status;//当前请求方法状态
     private final BaseJson baseJson;//返回内容
     private final Map<String, Object> params;//多请求时区分任务标识
     private final TaskLevel level;//多请求时区分任务标识
 
-    public CallbackBean(BaseJson baseJson, RequestStatusLevel status, TaskLevel taskTag, Map<String, Object> backParams) {
+    public CallbackParamBean(BaseJson baseJson, RequestStatusLevel status, TaskLevel taskTag, Map<String, Object> backParams) {
         this.baseJson = baseJson;
         this.status = status;
         this.params = MapUtils.isEmpty(backParams) ? new HashMap<String, Object>() : backParams;
         this.level = taskTag;
     }
 
-    public CallbackBean(RequestStatusLevel status, TaskLevel taskTag, Map<String, Object> backParams) {
+    public CallbackParamBean(RequestStatusLevel status, TaskLevel taskTag, Map<String, Object> backParams) {
         baseJson = null;
         this.status = status;
         this.params = MapUtils.isEmpty(backParams) ? new HashMap<String, Object>() : backParams;

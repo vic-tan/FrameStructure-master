@@ -7,9 +7,9 @@ import android.view.View;
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
-import com.android.tanlifei.framestructure.common.view.prompt.BasePromptDialog;
-import com.android.tanlifei.framestructure.common.view.prompt.DefaultPromptDialog;
-import com.android.tanlifei.framestructure.common.view.prompt.SinglePromptDialog;
+import com.android.tanlifei.framestructure.common.view.prompt.BaseDialog;
+import com.android.tanlifei.framestructure.common.view.prompt.DefaultDialog;
+import com.android.tanlifei.framestructure.common.view.prompt.SingleDialog;
 import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnDefaultCallBack;
 import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnSingleCallBack;
 
@@ -56,30 +56,30 @@ public class DialogActivity extends Activity implements View.OnClickListener ,IP
      * 单个对话框 *
      */
   /*  private void singleDialog() {
-        new SinglePromptDialog(this, new IPromptDialogBtnSingleCallBack() {
+        new SingleDialog(this, new IPromptDialogBtnSingleCallBack() {
             @Override
-            public void onClickListener(BasePromptDialog promptDialog, View v,int callBackTag) {
+            public void onClickListener(BaseDialog promptDialog, View v,int callBackTag) {
                 ToastUtils.show(getApplicationContext(), "rightBtn");
             }
         }).getContent().setText("确定要删除吗");
     }*/
 
     private void singleDialog(int callBackTag) {
-        new SinglePromptDialog(this,this,callBackTag).getContent().setText("确定要删除吗");
+        new SingleDialog(this,this,callBackTag).getContent().setText("确定要删除吗");
     }
 
     /**
      * 默认两个对话框 *
      */
     private void defaultDialog() {
-        new DefaultPromptDialog(this, new IPromptDialogBtnDefaultCallBack() {
+        new DefaultDialog(this, new IPromptDialogBtnDefaultCallBack() {
             @Override
-            public void liftBtnOnClickListener(BasePromptDialog promptDialog, View v,int callBackTag) {
+            public void liftBtnOnClickListener(BaseDialog promptDialog, View v,int callBackTag) {
                 ToastUtils.show(getApplicationContext(), "liftBtn");
             }
 
             @Override
-            public void rightBtnOnClickListener(BasePromptDialog promptDialog, View v,int callBackTag) {
+            public void rightBtnOnClickListener(BaseDialog promptDialog, View v,int callBackTag) {
                 promptDialog.dismiss();
                 ToastUtils.show(getApplicationContext(), "rightBtn");
             }
@@ -87,7 +87,7 @@ public class DialogActivity extends Activity implements View.OnClickListener ,IP
     }
 
     @Override
-    public void onClickListener(BasePromptDialog promptDialog, View v, int callBackTag) {
+    public void onClickListener(BaseDialog promptDialog, View v, int callBackTag) {
         switch (callBackTag){
             case 1:
                 ToastUtils.show(getApplicationContext(), "1");

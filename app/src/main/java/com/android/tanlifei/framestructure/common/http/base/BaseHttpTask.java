@@ -9,6 +9,7 @@ import com.android.tanlifei.framestructure.common.constants.StatusConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.TaskLevel;
+import com.android.tanlifei.framestructure.common.exception.CustomException;
 import com.android.tanlifei.framestructure.common.http.ReadLocalCustomJson;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
@@ -29,8 +30,8 @@ import java.util.Map;
  * 请求接口任务过程基类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #setAsyncHttpResponseHandler(RequestBean, TaskLevel, IHttpTaskCallBack)}  response响应回调</li>
- * <li>{@link #sendHandler(CallbackBean, IHttpTaskCallBack)}  发送回调</li>
+ * <li>{@link #setAsyncHttpResponseHandler(RequestParamBean, TaskLevel, IHttpTaskCallBack)}  response响应回调</li>
+ * <li>{@link #sendHandler(CallbackParamBean, IHttpTaskCallBack)}  发送回调</li>
  * <li>{@link #replaceId(String)} 把json 中的"id" key  替换成"my_id" key ,这样做是为了跟 litepal 或GreenDao 等关系型数据库库自带的id冲突</li>
  * </ul>
  *
@@ -49,34 +50,34 @@ public class BaseHttpTask {
      * @param callBackMethod
      * @return
      */
-    protected static AsyncHttpResponseHandler setAsyncHttpResponseHandler(final RequestBean params, final TaskLevel level, final IHttpTaskCallBack callBackMethod) {
+    protected static AsyncHttpResponseHandler setAsyncHttpResponseHandler(final RequestParamBean params, final TaskLevel level, final IHttpTaskCallBack callBackMethod) {
         return new AsyncHttpResponseHandler() {
 
             @Override
             public void onFinish() {
                 super.onFinish();
                 log("--------------> onFinish()");
-                sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.FINISH, level, params.getCallbackParams()), callBackMethod);
+                sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.FINISH, level, params.getCallbackParams()), callBackMethod);
             }
 
             @Override
             public void onCancel() {
                 super.onCancel();
                 log("--------------> onCancel()");
-                sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.CANCEL, level, params.getCallbackParams()), callBackMethod);
+                sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.CANCEL, level, params.getCallbackParams()), callBackMethod);
             }
 
             @Override
             public void onStart() {
                 super.onStart();
                 log("--------------> onStart()");
-                sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.START, level, params.getCallbackParams()), callBackMethod);
+                sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.START, level, params.getCallbackParams()), callBackMethod);
             }
 
             @Override
             public void onProgress(long bytesWritten, long totalSize) {
                 super.onProgress(bytesWritten, totalSize);
-                sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.PROGRESS, level, params.getCallbackParams()), callBackMethod);
+                sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.PROGRESS, level, params.getCallbackParams()), callBackMethod);
             }
 
 
@@ -92,18 +93,18 @@ public class BaseHttpTask {
                     if (StringUtils.isEquals(jsonBean.getCode(), JsonConstants.CODE_SUCCEE)) {// 请求成功
                         log("" + replaceId(new String(responseBody)));
                         if(StringUtils.isEmpty(jsonBean.getData())){
-                            sendHandler(new CallbackBean(jsonBean, RequestStatusLevel.EMPTY_DATA, level, params.getCallbackParams()), callBackMethod);
+                            sendHandler(new CallbackParamBean(jsonBean, RequestStatusLevel.EMPTY_DATA, level, params.getCallbackParams()), callBackMethod);
                         }else {
-                            sendHandler(new CallbackBean(jsonBean, RequestStatusLevel.SUCCESS, level, params.getCallbackParams()), callBackMethod);
+                            sendHandler(new CallbackParamBean(jsonBean, RequestStatusLevel.SUCCESS, level, params.getCallbackParams()), callBackMethod);
                         }
                     } else {// 服务错误
                         log("--------------> service error (onSuccess)");
-                        sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
+                        sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     log(Html.fromHtml("--------------> Exception (onSuccess)<br>" + e.toString()).toString());
-                    sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
+                    sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.SERVICE_ERROR, level, params.getCallbackParams()), callBackMethod);
                 }
             }
 
@@ -112,10 +113,10 @@ public class BaseHttpTask {
                                   byte[] responseBody, Throwable error) {
                 if (error instanceof SocketTimeoutException) {
                     log(Html.fromHtml("--------------> onFailure()<br>" + error.toString()).toString());
-                    sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.TIMEOUT_ERROR, level, params.getCallbackParams()), callBackMethod);
+                    sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.TIMEOUT_ERROR, level, params.getCallbackParams()), callBackMethod);
                 } else {
                     log(Html.fromHtml("--------------> onFailure()<br>" + error.toString()).toString());
-                    sendHandler(new CallbackBean(new BaseJson(), RequestStatusLevel.FAILURE, level, params.getCallbackParams()), callBackMethod);
+                    sendHandler(new CallbackParamBean(new BaseJson(), RequestStatusLevel.FAILURE, level, params.getCallbackParams()), callBackMethod);
                 }
             }
         };
@@ -134,7 +135,7 @@ public class BaseHttpTask {
      * @param handlerBean
      * @param callBack
      */
-    protected static void sendHandler(CallbackBean handlerBean, IHttpTaskCallBack callBack) {
+    protected static void sendHandler(CallbackParamBean handlerBean, IHttpTaskCallBack callBack) {
         callBack.taskHandler(handlerBean);
     }
 
@@ -147,7 +148,7 @@ public class BaseHttpTask {
     protected static boolean networkError(IHttpTaskCallBack callBackMethod, TaskLevel level, Map<String, Object> backParams) {
         if (!PhoneUtils.isNetworkOk(GlobalApplication.appContext)) {
             log("--------------> " + ResUtils.getStr(R.string.common_prompt_network));
-            sendHandler(new CallbackBean(RequestStatusLevel.NETWORK_ERROR, level, backParams), callBackMethod);
+            sendHandler(new CallbackParamBean(RequestStatusLevel.NETWORK_ERROR, level, backParams), callBackMethod);
             return true;
         } else
             return false;

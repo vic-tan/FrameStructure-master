@@ -19,8 +19,8 @@ import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCa
  * 加载数据时数据错误,或为空时view
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #LoadingPrompt(Context, ILoadingPromptReStartCallBack)} 本构造方法主要是父类不包含layout.common_prompt 布局的时候调用该构造方法</li>
- * <li>{@link #LoadingPrompt(Context, ILoadingPromptReStartCallBack, View)}本构造方法主要是父类包含layout.common_prompt 所以父类xml,必须通过incodue 引入layout.common_prompt 布局的时候调用该构造方法 </li>
+ * <li>{@link #LoadingLayout(Context, ILoadingPromptReStartCallBack)} 本构造方法主要是父类不包含layout.common_prompt 布局的时候调用该构造方法</li>
+ * <li>{@link #LoadingLayout(Context, ILoadingPromptReStartCallBack, View)}本构造方法主要是父类包含layout.common_prompt 所以父类xml,必须通过incodue 引入layout.common_prompt 布局的时候调用该构造方法 </li>
  * <li>{@link #create(ILoadingPromptReStartCallBack)} 创建提示布局</li>
  * <li>{@link #initView()} 初化布局控件</li>
  * <li>{@link #getPromptLayout()} 获取加载提示布局</li>
@@ -45,7 +45,7 @@ import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCa
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public class LoadingPrompt {
+public class LoadingLayout {
 
     private View view;//加载提示布局
     private ImageView load;//加载圏
@@ -62,7 +62,7 @@ public class LoadingPrompt {
      * @param context  上下文
      * @param backCall 回调接口类
      */
-    public LoadingPrompt(Context context, ILoadingPromptReStartCallBack backCall) {
+    public LoadingLayout(Context context, ILoadingPromptReStartCallBack backCall) {
         super();
         view = InflaterUtils.inflater(context, R.layout.common_loading_prompt);
         create(backCall);
@@ -78,7 +78,7 @@ public class LoadingPrompt {
      * @param backCall 回调接口类
      * @param view     父类布局
      */
-    public LoadingPrompt(Context context, ILoadingPromptReStartCallBack backCall, View view) {
+    public LoadingLayout(Context context, ILoadingPromptReStartCallBack backCall, View view) {
         super();
         this.view = view;
         isIncodue = true;
