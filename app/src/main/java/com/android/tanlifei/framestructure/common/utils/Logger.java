@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.tanlifei.framestructure.common.constants.StatusConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.LogLevel;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,11 +22,10 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 /**
- *
  * 但更漂亮,简单的和强大的日志的包装
+ *
  * @author tanlifei
  * @date 2015年8月13日 上午11:30:51
- *
  */
 public final class Logger {
 
@@ -328,7 +327,7 @@ public final class Logger {
      * 这个方法是同步,以避免混乱的日志的秩序。
      */
     private synchronized static void log(int logType, String tag, String message, int methodCount) {
-        if (settings.logLevel == LogLevel.NONE) {
+        if (settings.logLevel == OnOffLevel.NONE) {
             return;
         }
         logTopBorder(logType, tag);
@@ -471,7 +470,7 @@ public final class Logger {
         /**
          * 决定日志打印出来
          */
-        LogLevel logLevel = StatusConstants.LOG_LEVEL;
+        OnOffLevel logLevel = StatusConstants.LOG_LEVEL;
 
         public Settings hideThreadInfo() {
             showThreadInfo = false;
@@ -484,7 +483,7 @@ public final class Logger {
             return this;
         }
 
-        public Settings setLogLevel(LogLevel logLevel) {
+        public Settings setLogLevel(OnOffLevel logLevel) {
             this.logLevel = logLevel;
             return this;
         }

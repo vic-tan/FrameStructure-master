@@ -3,15 +3,12 @@ package com.android.tanlifei.framestructure.common.view.prompt;
 import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.utils.AnimationUtils;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
@@ -36,11 +33,11 @@ import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCa
  * <li>{@link #displayserviceErrorLayout()} 服务器错误提示</li>
  * <li>{@link #displayTimeoutErrorLayout()} 超时错误提示</li>
  * <li>{@link #displayEmptyLayout(int)} 自定义提示文字的空数据提示</li>
- * <li>{@link #display(int, int, PromptStatus)} 自定义设置提示内容，图片，及提示状态</li>
+ * <li>{@link #display(int, int, RequestStatusLevel)} 自定义设置提示内容，图片，及提示状态</li>
  * <li>{@link #setPromptLogo(int)} 设置提示图片</li>
  * <li>{@link #setPromptContent(int)} 设置提示语</li>
  * <li>{@link #setProgressLayout(int)} 显示正在加载提示布局</li>
- * <li>{@link #setErrorLayout(PromptStatus, int)} 显示正在错误布局提示布局</li>
+ * <li>{@link #setErrorLayout(RequestStatusLevel, int)} 显示正在错误布局提示布局</li>
  * <li>{@link #setRefresh(ILoadingPromptReStartCallBack)} 点击重新请求</li>
  * <p/>
  * </ul>
@@ -55,7 +52,7 @@ public class LoadingPrompt {
     private ImageView logo;//提示图片
     private TextView prompt;//提示文字
     private LinearLayout promptLayout;//加载提示布局
-    private PromptStatus promptStatus;//异常类型
+    private RequestStatusLevel level;//异常类型
     private boolean isIncodue = false;//layout.common_prompt 是子布局
 
 
@@ -96,7 +93,7 @@ public class LoadingPrompt {
      * @param backCall
      */
     private void create(ILoadingPromptReStartCallBack backCall) {
-        promptStatus = PromptStatus.PROGRESS;
+        level = RequestStatusLevel.PROGRESS;
         initView();
         setRefresh(backCall);
     }
@@ -110,8 +107,6 @@ public class LoadingPrompt {
         logo = (ImageView) view.findViewById(R.id.iv_logo);
         prompt = (TextView) view.findViewById(R.id.tv_hint);
     }
-
-
 
 
     /**
@@ -189,7 +184,7 @@ public class LoadingPrompt {
      * @return
      */
     public View displayNetworkErrorLayout() {
-        return setErrorLayout(PromptStatus.NETWORK_ERROR, R.string.common_prompt_network);
+        return setErrorLayout(RequestStatusLevel.NETWORK_ERROR, R.string.common_prompt_network);
     }
 
     /**
@@ -198,7 +193,7 @@ public class LoadingPrompt {
      * @return
      */
     public View displayserviceErrorLayout() {
-        return setErrorLayout(PromptStatus.SERVICE_ERROR, R.string.common_prompt_serivce);
+        return setErrorLayout(RequestStatusLevel.SERVICE_ERROR, R.string.common_prompt_serivce);
     }
 
     /**
@@ -207,7 +202,7 @@ public class LoadingPrompt {
      * @return
      */
     public View displayTimeoutErrorLayout() {
-        return setErrorLayout(PromptStatus.TIMEOUT_ERROR, R.string.common_prompt_timeout_error);
+        return setErrorLayout(RequestStatusLevel.TIMEOUT_ERROR, R.string.common_prompt_timeout_error);
     }
 
 
@@ -217,7 +212,7 @@ public class LoadingPrompt {
      * @return
      */
     public View displayEmptyLayout() {
-        return setErrorLayout(PromptStatus.EMPTY_DATA, R.string.common_prompt_empty);
+        return setErrorLayout(RequestStatusLevel.EMPTY_DATA, R.string.common_prompt_empty);
     }
 
     /**
@@ -226,7 +221,7 @@ public class LoadingPrompt {
      * @return
      */
     public View displayEmptyLayout(int strId) {
-        return setErrorLayout(PromptStatus.EMPTY_DATA, strId);
+        return setErrorLayout(RequestStatusLevel.EMPTY_DATA, strId);
     }
 
 
@@ -238,7 +233,7 @@ public class LoadingPrompt {
      * @param status 提示状态
      * @return
      */
-    public View display(int resId, int strId, PromptStatus status) {
+    public View display(int resId, int strId, RequestStatusLevel status) {
         setPromptLogo(resId);
         return setErrorLayout(status, strId);
     }
@@ -272,7 +267,7 @@ public class LoadingPrompt {
     private View setProgressLayout(int strId) {
         AnimationUtils.show(load, com.bigkoo.svprogresshud.R.drawable.ic_svstatus_loading);
         displayLayout(View.VISIBLE);
-        promptStatus = PromptStatus.PROGRESS;
+        level = RequestStatusLevel.PROGRESS;
         load.setVisibility(View.VISIBLE);
         logo.setVisibility(View.GONE);
         view.setClickable(false);
@@ -286,9 +281,9 @@ public class LoadingPrompt {
      * @param strId
      * @return
      */
-    private View setErrorLayout(PromptStatus status, int strId) {
+    private View setErrorLayout(RequestStatusLevel status, int strId) {
         displayLayout(View.VISIBLE);
-        promptStatus = status;
+        level = status;
         setPromptContent(strId);
         view.setClickable(true);
         load.setVisibility(View.GONE);
@@ -306,14 +301,14 @@ public class LoadingPrompt {
         view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                backCall.onRefresh(promptStatus);
+                backCall.onRefresh(level);
             }
         });
         if (null != promptLayout) {
             promptLayout.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    backCall.onRefresh(promptStatus);
+                    backCall.onRefresh(level);
                 }
             });
         }

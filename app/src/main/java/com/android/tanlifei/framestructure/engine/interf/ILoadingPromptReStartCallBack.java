@@ -1,15 +1,13 @@
 package com.android.tanlifei.framestructure.engine.interf;
 
-import android.content.Context;
-
-import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 
 /**
  * 提示异常点击重新刷新回调
- *
+ * <p/>
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #onRefresh(PromptStatus)} 刷新（点击重新请求）</li>
+ * <li>{@link #onRefresh(RequestStatusLevel)} 刷新（点击重新请求）</li>
  * </ul>
  *
  * @author tanlifei
@@ -19,7 +17,8 @@ public interface ILoadingPromptReStartCallBack {
 
     /**
      * 刷新（点击重新请求）
-     * @param status 重新请求前的状态码
+     *
+     * @param level 重新请求前的状态码
      */
-    void onRefresh(PromptStatus status);
+    void onRefresh(RequestStatusLevel level);
 }

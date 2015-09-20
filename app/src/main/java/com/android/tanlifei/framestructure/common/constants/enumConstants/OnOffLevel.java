@@ -1,21 +1,19 @@
 package com.android.tanlifei.framestructure.common.constants.enumConstants;
 
 /**
+ * 网络请求成功后是否读取本地JSON数据
  *
- * 日志是否打印
  * @author tanlifei
  * @date 2015年8月13日 上午11:30:51
- *
  */
-public enum LogLevel {
-
+public enum OnOffLevel {
     /**
-     * 打印所有的日志
+     * 开启
      */
     FULL,
 
     /**
-     * 没有日志会被打印出来
+     * 关闭
      */
     NONE
 }

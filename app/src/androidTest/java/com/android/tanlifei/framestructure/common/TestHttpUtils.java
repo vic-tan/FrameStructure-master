@@ -3,7 +3,7 @@ package com.android.tanlifei.framestructure.common;
 import android.annotation.SuppressLint;
 
 import com.android.tanlifei.framestructure.common.constants.StatusConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.JsonLevel;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
 import com.android.tanlifei.framestructure.common.http.ReadLocalCustomJson;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
@@ -103,7 +103,7 @@ public class TestHttpUtils {
                 .execute(httpRequest);// 发出http请求
         String result = EntityUtils.toString(httpResponse.getEntity()); // 获取字符串
         if (httpResponse.getStatusLine().getStatusCode() == 200) {
-            if (StatusConstants.JSON_LEVEL == JsonLevel.FULL) {//开启请求接口成功读取对应的本的的自定义JSON
+            if (StatusConstants.JSON_LEVEL == OnOffLevel.FULL) {//开启请求接口成功读取对应的本的的自定义JSON
                 result = ReadLocalCustomJson.readJson(url);
             }
             Logger.i(TestConstants.TAG, result + "");

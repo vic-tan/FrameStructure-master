@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/common_match_parent"
+    android:background="#000000"
     android:orientation="vertical">
 
     <LinearLayout
@@ -37,6 +38,6 @@
 
     </LinearLayout>
 
-    <include layout="@layout/common_loading_prompt"/>
+    <include  layout="@layout/common_loading_prompt"/>
 
 </LinearLayout>

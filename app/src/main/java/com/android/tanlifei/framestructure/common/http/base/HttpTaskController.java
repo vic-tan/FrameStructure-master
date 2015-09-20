@@ -1,5 +1,6 @@
 package com.android.tanlifei.framestructure.common.http.base;
 
+import com.android.tanlifei.framestructure.common.constants.enumConstants.TaskLevel;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 
@@ -10,13 +11,13 @@ import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
  * <ul>
  * <strong>基本方法及自己方法</strong>
  * <li>{@link #get(RequestBean, IHttpTaskCallBack)} get 请求 以普通形式提交参数</li>
- * <li>{@link #get(RequestBean, int, IHttpTaskCallBack)} get 请求 以普通形式提交参数</li>
+ * <li>{@link #get(RequestBean,  TaskLevel, IHttpTaskCallBack)} get 请求 以普通形式提交参数</li>
  * <li>{@link #getByJsonParams(RequestBean, IHttpTaskCallBack)} get 请求 以json格式提交参数</li>
- * <li>{@link #getByJsonParams(RequestBean, int, IHttpTaskCallBack)} get 请求 以json格式提交参数</li>
+ * <li>{@link #getByJsonParams(RequestBean, TaskLevel, IHttpTaskCallBack)} get 请求 以json格式提交参数</li>
  * <li>{@link #post(RequestBean, IHttpTaskCallBack)}  post 请求，以普通形式提交参数</li>
- * <li>{@link #post(RequestBean, int, IHttpTaskCallBack)}  post 请求，以普通形式提交参数</li>
+ * <li>{@link #post(RequestBean, TaskLevel, IHttpTaskCallBack)}  post 请求，以普通形式提交参数</li>
  * <li>{@link #postByJsonParams(RequestBean, IHttpTaskCallBack)} post 请求，以json格式提交参数</li>
- * <li>{@link #postByJsonParams(RequestBean, int, IHttpTaskCallBack)} post 请求，以json格式提交参数</li>
+ * <li>{@link #postByJsonParams(RequestBean, TaskLevel, IHttpTaskCallBack)} post 请求，以json格式提交参数</li>
  * </ul>
  *
  * @author tanlifei
@@ -29,13 +30,13 @@ public abstract class HttpTaskController extends BaseHttpTask {
     /**
      * get 请求 以普通形式提交参数
      *
-     * @param callBackTag  多个请求任务区分标识
+     * @param level  多个请求任务区分标识
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void get(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+    public void get(RequestBean params, TaskLevel level, IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
-        HttpTask.get(params, callBackTag, setCallBack());
+        HttpTask.get(params, level, setCallBack());
     }
 
     /**
@@ -52,13 +53,13 @@ public abstract class HttpTaskController extends BaseHttpTask {
     /**
      * get 请求 以json格式提交参数
      *
-     * @param callBackTag  多个请求任务区分标识
+     * @param level  多个请求任务区分标识
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void getByJsonParams(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+    public void getByJsonParams(RequestBean params, TaskLevel level, IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
-        HttpTask.getByJsonParams(params, callBackTag, setCallBack());
+        HttpTask.getByJsonParams(params, level, setCallBack());
     }
 
     /**
@@ -75,13 +76,13 @@ public abstract class HttpTaskController extends BaseHttpTask {
     /**
      * post 请求，以普通形式提交参数
      *
-     * @param callBackTag  多个请求任务区分标识
+     * @param level  多个请求任务区分标识
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void post(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+    public void post(RequestBean params, TaskLevel level, IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
-        HttpTask.post(params, callBackTag, setCallBack());
+        HttpTask.post(params, level, setCallBack());
     }
 
     /**
@@ -99,13 +100,13 @@ public abstract class HttpTaskController extends BaseHttpTask {
     /**
      * post 请求，以json格式提交参数
      *
-     * @param callBackTag  多个请求任务区分标识
+     * @param level  多个请求任务区分标识
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void postByJsonParams(RequestBean params, int callBackTag, IHttpTaskCallBack taskCallBack) {
+    public void postByJsonParams(RequestBean params, TaskLevel level, IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
-        HttpTask.getByJsonParams(params, callBackTag, setCallBack());
+        HttpTask.getByJsonParams(params, level, setCallBack());
     }
 
     /**

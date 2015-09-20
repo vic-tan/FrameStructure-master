@@ -7,7 +7,7 @@ import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.bean.base.PageBean;
 import com.android.tanlifei.framestructure.common.constants.JsonConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
 import com.android.tanlifei.framestructure.common.http.base.CallbackBean;
@@ -45,7 +45,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
  * <ul>
  * <strong>子类要实现或者实现父类的的方法</strong>
  * <li>{@link #requestFinish()} 请求完成后的操作</li>
- * <li>{@link #onRefresh(PromptStatus)} 加载布局点击刷新（点击重新请求）</li>
+ * <li>{@link #onRefresh(RequestStatusLevel)} 加载布局点击刷新（点击重新请求）</li>
  * </ul>
  *
  * @author tanlifei
@@ -176,7 +176,7 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
         } else {//最后一页
             ToastUtils.show(context, ResUtils.getStr(R.string.common_pull_to_refresh_last_page));
             requestFinish();
-            //handler.obtainMessage(HttpTaskStatus.FINISH.value()).sendToTarget();
+            //handler.obtainMessage(RequestStatusLevel.FINISH.value()).sendToTarget();
         }
     }
 
@@ -282,10 +282,10 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
     /**
      * 加载布局点击刷新（点击重新请求）
      *
-     * @param status 重新请求前的状态码
+     * @param level 重新请求前的状态码
      */
     @Override
-    public void onRefresh(PromptStatus status) {
+    public void onRefresh(RequestStatusLevel level) {
         startRequest();
     }
 

@@ -17,9 +17,9 @@ public class BaseJson {
     public BaseJson(String code, String msg, String data) {
 
         this.code = code;
-        if(StringUtils.isEmpty(data) || StringUtils.isEquals(data,"null")){
+        if (StringUtils.isEmpty(data) || StringUtils.isEquals(data, "null")) {
             this.data = "";
-        }else {
+        } else {
             this.data = data;
         }
         this.msg = msg;
@@ -54,7 +54,18 @@ public class BaseJson {
 
 
     public String getData() {
-        return data;
+        try {
+            if (null == data || StringUtils.isEmpty(data) || StringUtils.isEquals(data, "null")) {
+                return  "";
+            } else {
+                return data;
+            }
+        } catch (Exception e) {
+            return  "";
+        } finally {
+            return data;
+        }
+
     }
 
 

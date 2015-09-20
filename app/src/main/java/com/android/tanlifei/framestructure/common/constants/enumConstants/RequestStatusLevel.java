@@ -6,7 +6,7 @@ package com.android.tanlifei.framestructure.common.constants.enumConstants;
  * @author tanlifei
  * @date 2015年8月13日 上午11:30:51
  */
-public enum HttpTaskStatus {
+public enum RequestStatusLevel {
     /**
      * 开始请求
      */
@@ -32,25 +32,29 @@ public enum HttpTaskStatus {
      */
     CANCEL(0x0006),
     /**
+     * 暂无数据
+     */
+    EMPTY_DATA(0x0007),
+    /**
      * 服务器错误
      */
-    SERVICE_ERROR(0x0007),
+    SERVICE_ERROR(0x0008),
     /**
      * 没有网络
      */
-    NETWORK_ERROR(0x0008),
+    NETWORK_ERROR(0x0009),
     /**
      * 请求超时
      */
-    TIMEOUT_ERROR(0x0009);
+    TIMEOUT_ERROR(0x0010);
 
     private int value = 0x0000;
 
-    private HttpTaskStatus(int value) {    //    必须是private的，否则编译错误
+    private RequestStatusLevel(int value) {    //    必须是private的，否则编译错误
         this.value = value;
     }
 
-    public static HttpTaskStatus HttpTaskStatus(int value) {    //    手写的从int到enum的转换函数
+    public static RequestStatusLevel HttpTaskStatus(int value) {    //    手写的从int到enum的转换函数
         switch (value) {
             case 0x0001:
                 return START;
@@ -65,11 +69,14 @@ public enum HttpTaskStatus {
             case 0x0006:
                 return CANCEL;
             case 0x0007:
-                return SERVICE_ERROR;
+                return EMPTY_DATA;
             case 0x0008:
-                return NETWORK_ERROR;
+                return SERVICE_ERROR;
             case 0x0009:
+                return NETWORK_ERROR;
+            case 0x00010:
                 return TIMEOUT_ERROR;
+
             default:
                 return null;
         }

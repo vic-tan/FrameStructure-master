@@ -6,7 +6,8 @@ import android.view.View;
 
 import com.android.tanlifei.framestructure.R;
 import com.android.tanlifei.framestructure.common.constants.UrlConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.PromptStatus;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.TaskLevel;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.LoadingHttpTask;
 import com.android.tanlifei.framestructure.common.http.PromptHttpTask;
@@ -44,13 +45,13 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
 
     @Override
     public void taskHandler(CallbackBean handlerBean) {
-        switch (handlerBean.getTaskTag()) {
-            case 1://加载框请求
+        switch (handlerBean.getLevel()) {
+            case TASK_ONE://加载框请求
                 ToastUtils.show(this, handlerBean.getBaseJson().getData());
                 if (handlerBean.getParams().containsKey("test"))
                     Logger.i(TAG, handlerBean.getParams().get("test").toString());//拿请求之前保存的的数据
                 break;
-            case 2://提示框请求
+            case TASK_TWO://提示框请求
                 ToastUtils.show(this, handlerBean.getBaseJson().getData());
                 if (handlerBean.getParams().containsKey("test"))
                     Logger.i(TAG, handlerBean.getParams().get("test").toString());//拿请求之前保存的的数据
@@ -115,7 +116,7 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
 
                 Map map = new HashMap();
                 map.put("test", "加载框请求 ");
-                promptHttpTask.post(new RequestBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map), 1, this);
+                loadingHttpTask.post(new RequestBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map), TaskLevel.TASK_ONE, this);
                 break;
 
             case R.id.btn_1_3://提示框请求
@@ -139,11 +140,11 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
     private void testPrompt() {
         Map map2 = new HashMap();
         map2.put("test", "提示框请求 ");
-        promptHttpTask.post(new RequestBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map2), 2, this);
+        promptHttpTask.post(new RequestBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map2), TaskLevel.TASK_TWO, this);
     }
 
     @Override
-    public void onRefresh(PromptStatus status) {
+    public void onRefresh(RequestStatusLevel level) {
         ToastUtils.show(this, "重试中。。。");
         testPrompt();
     }

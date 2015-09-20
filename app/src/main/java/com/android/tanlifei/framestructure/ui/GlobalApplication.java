@@ -3,7 +3,7 @@ package com.android.tanlifei.framestructure.ui;
 import android.content.Context;
 
 import com.android.tanlifei.framestructure.common.constants.StatusConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.UncaughtExLevel;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
 import com.android.tanlifei.framestructure.common.exception.CrashHandler;
 import com.android.tanlifei.framestructure.common.utils.ImageConfigUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -43,7 +43,7 @@ public class GlobalApplication extends LitePalApplication {
      * 设置是否开启全局未捕获异常
      */
     private void setCrashHandler() {
-        if (StatusConstants.UNCAUGHT_EX_LEVEL == UncaughtExLevel.NONE) {//不写入
+        if (StatusConstants.UNCAUGHT_EX_LEVEL == OnOffLevel.NONE) {//不写入
             return;
         }
         CrashHandler crashHandler = CrashHandler.getInstance();
