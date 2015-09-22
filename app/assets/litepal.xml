@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
-    <dbname value="test.db" />
+    <dbname value="database.db" />
     <version value="1" />
     <!-- 对应实体bean -->
     <list>

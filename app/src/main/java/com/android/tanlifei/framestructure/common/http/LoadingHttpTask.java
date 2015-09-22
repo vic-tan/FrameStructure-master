@@ -3,7 +3,7 @@ package com.android.tanlifei.framestructure.common.http;
 import android.content.Context;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
+import com.android.tanlifei.framestructure.common.http.base.TaskBean;
 import com.android.tanlifei.framestructure.common.http.base.TaskController;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
@@ -61,8 +61,8 @@ public class LoadingHttpTask extends TaskController {
     public IHttpTaskCallBack setCallBack() {
         return new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(CallbackParamBean handlerBean) {
-                switch (handlerBean.getStatus()) {
+            public void taskHandler(TaskBean requestBean) {
+                switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         dismiss();
                         ToastUtils.show(context, ResUtils.getStr(R.string.common_prompt_network));
@@ -73,8 +73,8 @@ public class LoadingHttpTask extends TaskController {
                     case FAILURE:
                     case SERVICE_ERROR:
                         dismiss();
-                        if(null!=handlerBean.getBaseJson()){
-                            ToastUtils.show(context, handlerBean.getBaseJson().getMsg());
+                        if (null != requestBean.getBaseJson()) {
+                            ToastUtils.show(context, requestBean.getBaseJson().getMsg());
                         }
                         break;
                     case TIMEOUT_ERROR:
@@ -82,7 +82,7 @@ public class LoadingHttpTask extends TaskController {
                         ToastUtils.show(context, ResUtils.getStr(R.string.common_prompt_timeout_error));
                         break;
                     case SUCCESS:
-                        taskCallBack.taskHandler(handlerBean);
+                        taskCallBack.taskHandler(requestBean);
                         dismiss();
                         break;
                     default:

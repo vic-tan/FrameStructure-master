@@ -15,7 +15,10 @@ public class JsonConstants {
 
 
     public static final String JSON_LIST = "list";
-
+    public static final String JSON_BEAN = "jsonBean";//请求返回Json内容在存储map的中的key值
+    public static final String JSON_REQUEST_STATUS_LEVEL = "request_status_level";//请求网络方法状态在存储map的中的key值
+    public static final String JSON_TASK_LEVEL = "task_level";//请求接口多任务存储map的中的key值标识
+    public static final String JSON_TASK_URL = "url";//请求接口url存储map的中的key值
     // 项目级别消息 用户验证问题
     public static final String CODE_SUCCEE = "0000";// 操作成功
 

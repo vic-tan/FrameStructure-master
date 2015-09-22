@@ -3,7 +3,7 @@ package com.android.tanlifei.framestructure.common.http;
 import android.content.Context;
 import android.view.View;
 
-import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
+import com.android.tanlifei.framestructure.common.http.base.TaskBean;
 import com.android.tanlifei.framestructure.common.http.base.TaskController;
 import com.android.tanlifei.framestructure.common.view.prompt.LoadingLayout;
 import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
@@ -42,8 +42,8 @@ public class PromptHttpTask extends TaskController {
     public IHttpTaskCallBack setCallBack() {
         return new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(CallbackParamBean handlerBean) {
-                switch (handlerBean.getStatus()) {
+            public void taskHandler(TaskBean requestBean) {
+                switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         promptView.displayNetworkErrorLayout();
                         break;
@@ -59,7 +59,7 @@ public class PromptHttpTask extends TaskController {
                         promptView.displayTimeoutErrorLayout();
                         break;
                     case SUCCESS:
-                        taskCallBack.taskHandler(handlerBean);
+                        taskCallBack.taskHandler(requestBean);
                         promptView.getPromptLayout().setVisibility(View.GONE);
                         break;
                     default:

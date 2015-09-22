@@ -10,8 +10,7 @@ import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
-import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
-import com.android.tanlifei.framestructure.common.http.base.RequestParamBean;
+import com.android.tanlifei.framestructure.common.http.base.TaskBean;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
@@ -79,12 +78,12 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
      * 开始请求网络
      */
     protected void startRequest() {
-        HttpTask.post(new RequestParamBean(refreshCallBack.taskUrl(), refreshCallBack
-                .taskParams(BaseHttpParams.pageParams(pageBean
-                        .getPageNumber())), null), new IHttpTaskCallBack() {
+        HttpTask.post(new TaskBean(context, refreshCallBack
+                .taskParams(BaseHttpParams.pageParams(refreshCallBack.taskUrl(), pageBean
+                        .getPageNumber()))), new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(CallbackParamBean callbackBean) {
-                switch (callbackBean.getStatus()) {
+            public void taskHandler(TaskBean requestBean) {
+                switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         loadingPrompt.displayNetworkErrorLayout();
                         requestFinish();
@@ -103,7 +102,7 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
                         requestFinish();
                         break;
                     case SUCCESS:
-                        parseJsonController(callbackBean.getBaseJson());
+                        parseJsonController(requestBean.getBaseJson());
                         requestFinish();
                         break;
                     default:

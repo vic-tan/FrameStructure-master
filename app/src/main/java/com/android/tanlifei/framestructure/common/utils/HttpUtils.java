@@ -2,12 +2,14 @@ package com.android.tanlifei.framestructure.common.utils;
 
 import android.text.Html;
 
-import com.android.tanlifei.framestructure.common.http.base.RequestParamBean;
+import com.android.tanlifei.framestructure.common.constants.JsonConstants;
+import com.android.tanlifei.framestructure.common.constants.StatusConstants;
+import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
+import com.android.tanlifei.framestructure.common.http.base.TaskBean;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import java.util.Map;
 import java.util.Map.Entry;
 
 
@@ -16,11 +18,11 @@ import java.util.Map.Entry;
  * <ul>
  * <strong>基本方法及自己方法</strong>
  * <li>{@link #getClient()} 获取AsyncHttpClient对象</li>
- * <li>{@link #get(RequestParamBean, AsyncHttpResponseHandler)}  get 请求 以普通形式提交参数</li>
- * <li>{@link #getJsonParams(RequestParamBean, AsyncHttpResponseHandler)}  get 请求 以json格式提交参数</li>
- * <li>{@link #post(RequestParamBean, AsyncHttpResponseHandler)}  post 请求，以普通形式提交参数</li>
- * <li>{@link #postJsonParams(RequestParamBean, AsyncHttpResponseHandler)} post 请求，以json格式提交参数</li>
- * <li>{@link #setMapToRequestParams(String, Map, boolean)}  把Map参数转化成 RequestParams 对象参数</li>
+ * <li>{@link #get(TaskBean, AsyncHttpResponseHandler)}  get 请求 以普通形式提交参数</li>
+ * <li>{@link #getJsonParams(TaskBean, AsyncHttpResponseHandler)}  get 请求 以json格式提交参数</li>
+ * <li>{@link #post(TaskBean, AsyncHttpResponseHandler)}  post 请求，以普通形式提交参数</li>
+ * <li>{@link #postJsonParams(TaskBean, AsyncHttpResponseHandler)} post 请求，以json格式提交参数</li>
+ * <li>{@link #setMapToRequestParams(TaskBean, boolean)}  把Map参数转化成 RequestParams 对象参数</li>
  * </ul>
  *
  * @author tanlifei
@@ -58,9 +60,9 @@ public class HttpUtils {
      * @param params 请求参数实体
      * @param res    AsyncHttpResponseHandler 获取 byte[]数组字节
      */
-    public static void get(RequestParamBean params,
+    public static void get(TaskBean params,
                            AsyncHttpResponseHandler res) {
-        client.get(params.getUrl(), setMapToRequestParams(params.getUrl(), params.getRequestParams(), false), res);
+        client.get(params.getUrl(), setMapToRequestParams(params, false), res);
     }
 
 
@@ -70,9 +72,9 @@ public class HttpUtils {
      * @param params 请求参数实体
      * @param res    AsyncHttpResponseHandler 获取 byte[]数组字节
      */
-    public static void getJsonParams(RequestParamBean params,
+    public static void getJsonParams(TaskBean params,
                                      AsyncHttpResponseHandler res) {
-        client.get(params.getUrl(), setMapToRequestParams(params.getUrl(), params.getRequestParams(), true), res);
+        client.get(params.getUrl(), setMapToRequestParams(params, true), res);
     }
 
 
@@ -85,8 +87,8 @@ public class HttpUtils {
      * @param params 请求参数实体
      * @param res    AsyncHttpResponseHandler 获取 byte[]数组字节
      */
-    public static void post(RequestParamBean params, AsyncHttpResponseHandler res) {
-        client.post(params.getUrl(), setMapToRequestParams(params.getUrl(), params.getRequestParams(), false), res);
+    public static void post(TaskBean params, AsyncHttpResponseHandler res) {
+        client.post(params.getUrl(), setMapToRequestParams(params, false), res);
     }
 
     /**
@@ -95,34 +97,36 @@ public class HttpUtils {
      * @param params 请求参数实体
      * @param res    AsyncHttpResponseHandler 获取 byte[]数组字节
      */
-    public static void postJsonParams(RequestParamBean params,
+    public static void postJsonParams(TaskBean params,
                                       AsyncHttpResponseHandler res) {
-        client.post(params.getUrl(), setMapToRequestParams(params.getUrl(), params.getRequestParams(), true), res);
+        client.post(params.getUrl(), setMapToRequestParams(params, true), res);
     }
 
 
     /**
      * 把Map参数转化成 RequestParams 对象参数
      *
-     * @param url        请求路径
-     * @param mapParams  map类型参数
+     * @param bean  map类型参数
      * @param isJsonType 是不是以json 类型提交参数
      * @return RequestParams 对象
      */
-    public static RequestParams setMapToRequestParams(String url,
-                                                      Map<String, Object> mapParams, boolean isJsonType) {
+    public static RequestParams setMapToRequestParams(TaskBean bean, boolean isJsonType) {
         RequestParams params = new RequestParams();
-        StringBuffer log = new StringBuffer("url = " + url);
+        StringBuffer log = new StringBuffer("url = " + bean.getUrl());
         log.append("<br>Parameter = [");
-        if (!MapUtils.isEmpty(mapParams)) {
-            for (Entry<String, Object> entry : mapParams.entrySet()) {
-                log.append(entry.getKey() + "=" + entry.getValue() + ",");
+        if (!MapUtils.isEmpty(bean.getRequestParams())) {
+            if(StatusConstants.LOG_LEVEL == OnOffLevel.FULL) {//如果日志是打开的
+                for (Entry<String, Object> entry : bean.getRequestParams().entrySet()) {
+                    if (entry.getKey() != JsonConstants.JSON_TASK_URL)
+                        log.append(entry.getKey() + "=" + entry.getValue() + ",");
+                }
             }
             if (isJsonType) {//以json 类型提交参数
-                params.put(JSON_PARAMS_KEY, JsonUtils.mapToJson(mapParams));
+                params.put(JSON_PARAMS_KEY, JsonUtils.mapToJson(bean.getRequestParams()));
             } else {//普通的url拼接或post参数
-                for (Entry<String, Object> entry : mapParams.entrySet()) {
-                    params.put(entry.getKey(), entry.getValue());
+                for (Entry<String, Object> entry : bean.getRequestParams().entrySet()) {
+                    if (entry.getKey() != JsonConstants.JSON_TASK_URL)
+                        params.put(entry.getKey(), entry.getValue());
                 }
             }
         }

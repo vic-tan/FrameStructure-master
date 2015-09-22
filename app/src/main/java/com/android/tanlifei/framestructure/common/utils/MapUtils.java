@@ -32,6 +32,10 @@ public class MapUtils {
         return (sourceMap == null || sourceMap.size() == 0);
     }
 
+    public static <K, V> boolean isNull(Map<K, V> sourceMap) {
+        return (sourceMap == null);
+    }
+
     public static Map<String, Object> crateMap(){
     	return new HashMap<String, Object>();
     }

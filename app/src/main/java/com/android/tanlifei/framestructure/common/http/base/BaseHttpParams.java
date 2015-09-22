@@ -10,8 +10,8 @@ import java.util.Map;
  * 请求接口参数基类，所有请求接口都继承此类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #baseParams()}  共同基本参数</li>
- * <li>{@link #pageParams(int)} 分页请求参数</li>
+ * <li>{@link #baseParams(String)}  共同基本参数</li>
+ * <li>{@link #pageParams(String,int)} 分页请求参数</li>
  * </ul>
  *
  * @author tanlifei
@@ -19,29 +19,27 @@ import java.util.Map;
  */
 public class BaseHttpParams {
 
+
     /**
      * 共同基本参数
-     *
-     * @return Map 返回类型
-     * @Title: baseParams
-     * @Description: 用一句话描述该文件做什么
-     * @throws:throws
+     * @param url
+     * @return
      */
-    public static Map<String, Object> baseParams() {
+    public static Map<String, Object> baseParams(String url) {
         Map<String, Object> map = MapUtils.crateMap();
+        map.put(JsonConstants.JSON_TASK_URL,url);
         return map;
     }
 
+
     /**
      * 分页请求参数
-     *
-     * @return  返回类型
-     * @Title: pageParams
-     * @Description: 分页请求参数(这些参数是固定的)
-     * @throws:throws
+     * @param url 请求url
+     * @param pageNumber 当前页数
+     * @return
      */
-    public static Map<String, Object> pageParams(int pageNumber) {
-        Map<String, Object> params = baseParams();
+    public static Map<String, Object> pageParams(String url,int pageNumber) {
+        Map<String, Object> params = baseParams(url);
         params.put(JsonConstants.REQUEST_TASK_LIST_PARAM_PAGE_NUMBER, pageNumber);
         params.put(JsonConstants.REQUEST_TASK_LIST_PARAM_PAGE_SIZE, JsonConstants.PAGE_SIZE);
         return params;

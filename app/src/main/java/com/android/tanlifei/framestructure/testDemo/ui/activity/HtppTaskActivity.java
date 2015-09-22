@@ -5,14 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.android.tanlifei.framestructure.R;
+import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.UrlConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.TaskLevel;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.LoadingHttpTask;
 import com.android.tanlifei.framestructure.common.http.PromptHttpTask;
-import com.android.tanlifei.framestructure.common.http.base.CallbackParamBean;
-import com.android.tanlifei.framestructure.common.http.base.RequestParamBean;
+import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
+import com.android.tanlifei.framestructure.common.http.base.TaskBean;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
 import com.android.tanlifei.framestructure.common.utils.StartActUtils;
@@ -44,17 +45,17 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
 
 
     @Override
-    public void taskHandler(CallbackParamBean handlerBean) {
-        switch (handlerBean.getLevel()) {
+    public void taskHandler(TaskBean requestBean) {
+        switch (requestBean.getTaskLevel()) {
             case TASK_ONE://加载框请求
-                ToastUtils.show(this, handlerBean.getBaseJson().getData());
-                if (handlerBean.getParams().containsKey("test"))
-                    Logger.i(TAG, handlerBean.getParams().get("test").toString());//拿请求之前保存的的数据
+                ToastUtils.show(this, requestBean.getBaseJson().getData());
+                if (requestBean.getRequestParams().containsKey("test"))
+                    Logger.i(TAG, requestBean.getRequestParams().get("test").toString());//拿请求之前保存的的数据
                 break;
             case TASK_TWO://提示框请求
-                ToastUtils.show(this, handlerBean.getBaseJson().getData());
-                if (handlerBean.getParams().containsKey("test"))
-                    Logger.i(TAG, handlerBean.getParams().get("test").toString());//拿请求之前保存的的数据
+                ToastUtils.show(this, requestBean.getBaseJson().getData());
+                if (requestBean.getRequestParams().containsKey("test"))
+                    Logger.i(TAG, requestBean.getRequestParams().get("test").toString());//拿请求之前保存的的数据
                 break;
         }
     }
@@ -75,16 +76,16 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
                 //1、调用 HttpTask相应的方法;
                 //2、Handler 处理请求成功后的业务
 
-                HttpTask.post(new RequestParamBean(UrlConstants.TEST_LIST, null, null), new IHttpTaskCallBack() {
+                HttpTask.post(new TaskBean(this, BaseHttpParams.baseParams(UrlConstants.TEST_LIST)), new IHttpTaskCallBack() {
                     @Override
-                    public void taskHandler(CallbackParamBean callbackBean) {
-                        switch (callbackBean.getStatus()) {
+                    public void taskHandler(TaskBean requestBean) {
+                        switch (requestBean.getRequestStatusLevel()) {
                             case START:
                                 ToastUtils.show(HtppTaskActivity.this, "START");
                                 break;
                             case SUCCESS:
-                                if (null != callbackBean.getBaseJson()) {
-                                    ToastUtils.show(HtppTaskActivity.this, callbackBean.getBaseJson().getData());
+                                if (null != requestBean.getBaseJson()) {
+                                    ToastUtils.show(HtppTaskActivity.this, requestBean.getBaseJson().getData());
                                 }
                                 break;
                             case FAILURE:
@@ -116,7 +117,8 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
 
                 Map map = new HashMap();
                 map.put("test", "加载框请求 ");
-                loadingHttpTask.post(new RequestParamBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map), TaskLevel.TASK_ONE, this);
+                map.put(JsonConstants.JSON_TASK_LEVEL, TaskLevel.TASK_ONE);
+                loadingHttpTask.post(new TaskBean(this, BaseHttpParams.baseParams(UrlConstants.TEST_LIST), map), this);
                 break;
 
             case R.id.btn_1_3://提示框请求
@@ -140,7 +142,8 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
     private void testPrompt() {
         Map map2 = new HashMap();
         map2.put("test", "提示框请求 ");
-        promptHttpTask.post(new RequestParamBean(UrlConstants.TEST_LIST, new HashMap<String, Object>(), map2), TaskLevel.TASK_TWO, this);
+        map2.put(JsonConstants.JSON_TASK_LEVEL, TaskLevel.TASK_TWO);
+        promptHttpTask.post(new TaskBean(this, BaseHttpParams.baseParams(UrlConstants.TEST_LIST), map2), this);
     }
 
     @Override
