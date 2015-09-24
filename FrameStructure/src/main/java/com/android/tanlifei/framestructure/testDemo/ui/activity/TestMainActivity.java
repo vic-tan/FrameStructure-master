@@ -22,7 +22,7 @@ import java.util.List;
 
 
 @EActivity(R.layout.test_activity_main)
-public class   TestMainActivity extends Activity{
+public class  TestMainActivity extends Activity{
 
 
     public static final String TAG = "TestMainActivity";
