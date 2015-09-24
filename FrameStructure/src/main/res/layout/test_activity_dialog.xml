@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/common_match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/common_match_parent_with"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_1_1"
+            style="@style/common_wrap_content"
+            android:text="公用单个按钮提示框" />
+
+        <Button
+            android:id="@+id/btn_1_2"
+            style="@style/common_wrap_content"
+            android:text="公用两个提示框" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
