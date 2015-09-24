@@ -19,7 +19,7 @@ import java.util.List;
 public abstract class ListAdapter extends BaseAdapter {
 
     protected List<?> list;
-    protected Context context;//
+    protected Context context;
 
     public ListAdapter(Context context, List<?> list) {
         super();

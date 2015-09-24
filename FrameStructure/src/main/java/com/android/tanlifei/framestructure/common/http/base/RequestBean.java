@@ -7,7 +7,6 @@ import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.TaskLevel;
 import com.android.tanlifei.framestructure.common.utils.MapUtils;
-import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,8 +16,8 @@ import java.util.Map;
  * 请求网络接口参数封装类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #TaskBean(Context, Map)} 只有请求参数构造</li>
- * <li>{@link #TaskBean(Context, Map, Map)} 即有请求求参数,又有返回参数构造</li>
+ * <li>{@link #RequestBean(Context, Map)} 只有请求参数构造</li>
+ * <li>{@link #RequestBean(Context, Map, Map)} 即有请求求参数,又有返回参数构造</li>
  * <li>{@link #getContext()} 上下文</li>
  * <li>{@link #getRequestParams()} 获取请求参数</li>
  * <li>{@link #getReturnParams()}  获取返回参数</li>
@@ -35,7 +34,7 @@ import java.util.Map;
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public class TaskBean {
+public class RequestBean {
 
 
     private final Context context;//上下文
@@ -48,7 +47,7 @@ public class TaskBean {
      * @param context
      * @param requestParams
      */
-    public TaskBean(Context context, Map<String, Object> requestParams) {
+    public RequestBean(Context context, Map<String, Object> requestParams) {
         this.context = context;
         this.returnParams = new HashMap<String, Object>();
         this.requestParams = MapUtils.isNull(requestParams) ? new HashMap<String, Object>() : requestParams;
@@ -60,7 +59,7 @@ public class TaskBean {
      * @param requestParams
      * @param returnParams
      */
-    public TaskBean(Context context, Map<String, Object> requestParams, Map<String, Object> returnParams) {
+    public RequestBean(Context context, Map<String, Object> requestParams, Map<String, Object> returnParams) {
         this.context = context;
         this.returnParams = MapUtils.isNull(returnParams) ? new HashMap<String, Object>() : returnParams;
         this.requestParams = MapUtils.isNull(requestParams) ? new HashMap<String, Object>() : requestParams;

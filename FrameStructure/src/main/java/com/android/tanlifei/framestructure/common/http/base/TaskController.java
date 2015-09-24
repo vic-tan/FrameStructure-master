@@ -9,10 +9,10 @@ import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
  * (PromptHttpTask类)和（LoadingHttpTask类）的基类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #get(TaskBean, IHttpTaskCallBack)} get 请求 以普通形式提交参数</li>
- * <li>{@link #getByJsonParams(TaskBean, IHttpTaskCallBack)} get 请求 以json格式提交参数</li>
- * <li>{@link #post(TaskBean, IHttpTaskCallBack)}  post 请求，以普通形式提交参数</li>
- * <li>{@link #postByJsonParams(TaskBean, IHttpTaskCallBack)} post 请求，以json格式提交参数</li>
+ * <li>{@link #get(RequestBean, IHttpTaskCallBack)} get 请求 以普通形式提交参数</li>
+ * <li>{@link #getByJsonParams(RequestBean, IHttpTaskCallBack)} get 请求 以json格式提交参数</li>
+ * <li>{@link #post(RequestBean, IHttpTaskCallBack)}  post 请求，以普通形式提交参数</li>
+ * <li>{@link #postByJsonParams(RequestBean, IHttpTaskCallBack)} post 请求，以json格式提交参数</li>
  * </ul>
  *
  * @author tanlifei
@@ -28,7 +28,7 @@ public abstract class TaskController extends BaseHttpTask {
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void get(TaskBean params, IHttpTaskCallBack taskCallBack) {
+    public void get(RequestBean params, IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
         HttpTask.get(params, setCallBack());
     }
@@ -40,7 +40,7 @@ public abstract class TaskController extends BaseHttpTask {
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void getByJsonParams(TaskBean params, IHttpTaskCallBack taskCallBack) {
+    public void getByJsonParams(RequestBean params, IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
         HttpTask.getByJsonParams(params, setCallBack());
     }
@@ -53,7 +53,7 @@ public abstract class TaskController extends BaseHttpTask {
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void post(TaskBean params,  IHttpTaskCallBack taskCallBack) {
+    public void post(RequestBean params,  IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
         HttpTask.post(params, setCallBack());
     }
@@ -66,7 +66,7 @@ public abstract class TaskController extends BaseHttpTask {
      * @param taskCallBack 回调
      * @param params       请求参数
      */
-    public void postByJsonParams(TaskBean params, IHttpTaskCallBack taskCallBack) {
+    public void postByJsonParams(RequestBean params, IHttpTaskCallBack taskCallBack) {
         this.taskCallBack = taskCallBack;
         HttpTask.getByJsonParams(params, setCallBack());
     }

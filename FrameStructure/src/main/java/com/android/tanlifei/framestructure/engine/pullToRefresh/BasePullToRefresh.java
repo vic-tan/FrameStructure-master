@@ -10,7 +10,7 @@ import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.http.HttpTask;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpParams;
-import com.android.tanlifei.framestructure.common.http.base.TaskBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestBean;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.StringUtils;
@@ -78,11 +78,11 @@ public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack
      * 开始请求网络
      */
     protected void startRequest() {
-        HttpTask.post(new TaskBean(context, refreshCallBack
+        HttpTask.post(new RequestBean(context, refreshCallBack
                 .taskParams(BaseHttpParams.pageParams(refreshCallBack.taskUrl(), pageBean
                         .getPageNumber()))), new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(TaskBean requestBean) {
+            public void taskHandler(RequestBean requestBean) {
                 switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         loadingPrompt.displayNetworkErrorLayout();

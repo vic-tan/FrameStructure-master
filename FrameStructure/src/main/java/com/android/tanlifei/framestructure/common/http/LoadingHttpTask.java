@@ -3,7 +3,7 @@ package com.android.tanlifei.framestructure.common.http;
 import android.content.Context;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.common.http.base.TaskBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestBean;
 import com.android.tanlifei.framestructure.common.http.base.TaskController;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
@@ -61,7 +61,7 @@ public class LoadingHttpTask extends TaskController {
     public IHttpTaskCallBack setCallBack() {
         return new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(TaskBean requestBean) {
+            public void taskHandler(RequestBean requestBean) {
                 switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         dismiss();

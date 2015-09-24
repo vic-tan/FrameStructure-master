@@ -7,7 +7,7 @@ import com.android.tanlifei.framestructure.bean.base.BaseJson;
 import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.http.base.BaseHttpTask;
-import com.android.tanlifei.framestructure.common.http.base.TaskBean;
+import com.android.tanlifei.framestructure.common.http.base.RequestBean;
 import com.android.tanlifei.framestructure.common.http.localJson.JsonController;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
@@ -19,7 +19,7 @@ import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
  * 请求接口任务过程
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #readJson(TaskBean, IHttpTaskCallBack)}   读取本地自定义Json测试数据</li>
+ * <li>{@link #readJson(RequestBean, IHttpTaskCallBack)}   读取本地自定义Json测试数据</li>
  * <li>{@link #readJson(String)} 读取本地自定义Json测试数据</li>
  * </ul>
  *
@@ -35,7 +35,7 @@ public class ReadLocalCustomJson extends BaseHttpTask {
      * @param params
      * @param callBackMethod
      */
-    public static void readJson(final TaskBean params, final IHttpTaskCallBack callBackMethod) {
+    public static void readJson(final RequestBean params, final IHttpTaskCallBack callBackMethod) {
         BaseJson jsonBean = null;
         try {
             String responseBody = JsonController.getLocalJson(params.getUrl());

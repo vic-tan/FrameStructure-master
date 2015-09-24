@@ -27,8 +27,8 @@ import java.net.SocketTimeoutException;
  * 请求接口任务过程基类
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #setAsyncHttpResponseHandler(TaskBean, IHttpTaskCallBack)}  response响应回调</li>
- * <li>{@link #sendHandler(TaskBean, IHttpTaskCallBack)}  发送回调</li>
+ * <li>{@link #setAsyncHttpResponseHandler(RequestBean, IHttpTaskCallBack)}  response响应回调</li>
+ * <li>{@link #sendHandler(RequestBean, IHttpTaskCallBack)}  发送回调</li>
  * <li>{@link #replaceId(String)} 把json 中的"id" key  替换成"my_id" key ,这样做是为了跟 litepal 或GreenDao 等关系型数据库库自带的id冲突</li>
  * </ul>
  *
@@ -47,7 +47,7 @@ public class BaseHttpTask {
      * @param callBackMethod
      * @return
      */
-    protected static AsyncHttpResponseHandler setAsyncHttpResponseHandler(final TaskBean params, final IHttpTaskCallBack callBackMethod) {
+    protected static AsyncHttpResponseHandler setAsyncHttpResponseHandler(final RequestBean params, final IHttpTaskCallBack callBackMethod) {
         return new AsyncHttpResponseHandler() {
 
             @Override
@@ -145,7 +145,7 @@ public class BaseHttpTask {
      * @param requestBean
      * @param callBack
      */
-    protected static void sendHandler(TaskBean requestBean, IHttpTaskCallBack callBack) {
+    protected static void sendHandler(RequestBean requestBean, IHttpTaskCallBack callBack) {
         callBack.taskHandler(requestBean);
     }
 
@@ -155,7 +155,7 @@ public class BaseHttpTask {
      * @param callBackMethod
      * @param params
      */
-    protected static boolean networkError(IHttpTaskCallBack callBackMethod, TaskBean params) {
+    protected static boolean networkError(IHttpTaskCallBack callBackMethod, RequestBean params) {
         if (!PhoneUtils.isNetworkOk(GlobalApplication.appContext)) {
             log("--------------> " + ResUtils.getStr(R.string.common_prompt_network));
             params.setRequestStatusLevel(RequestStatusLevel.NETWORK_ERROR);
