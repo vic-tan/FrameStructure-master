@@ -62,7 +62,6 @@ public class ReadLocalCustomJson extends BaseHttpTask {
             log(Html.fromHtml("--------------> Exception (onSuccess)<br>" + e.toString()).toString());
             params.setRequestStatusLevel(RequestStatusLevel.SERVICE_ERROR);
             sendHandler(params, callBackMethod);
-            ;
         }
     }
 
