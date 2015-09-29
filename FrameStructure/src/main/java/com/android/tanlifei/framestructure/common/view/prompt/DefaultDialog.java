@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnDefaultCallBack;
+import com.android.tanlifei.framestructure.engine.interf.IDialogBtnDefaultCallBack;
 
 
 /**
  * 加载数据时数据错误,或为空时view
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #DefaultDialog(Context,IPromptDialogBtnDefaultCallBack)}  创建对话框全屏宽高</li>
- * <li>{@link #DefaultDialog(Context,IPromptDialogBtnDefaultCallBack,int)} 创建可以区分多个对话框标识全屏宽高</li>
+ * <li>{@link #DefaultDialog(Context, IDialogBtnDefaultCallBack)}  创建对话框全屏宽高</li>
+ * <li>{@link #DefaultDialog(Context, IDialogBtnDefaultCallBack,int)} 创建可以区分多个对话框标识全屏宽高</li>
  * <li>{@link #liftBtnClickListener(View,int)} 左按钮事件监听</li>
  * <li>{@link #rightBtnClickListener(View,int)} 右按钮事件监听</li>
  * </ul>
@@ -23,7 +23,7 @@ import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnDefault
 public class DefaultDialog extends BaseDialog {
 
 
-    private IPromptDialogBtnDefaultCallBack callBack;
+    private IDialogBtnDefaultCallBack callBack;
 
 
 
@@ -33,7 +33,7 @@ public class DefaultDialog extends BaseDialog {
      * @param context
      * @param callBack 回调接口
      */
-    public DefaultDialog(Context context, IPromptDialogBtnDefaultCallBack callBack) {
+    public DefaultDialog(Context context, IDialogBtnDefaultCallBack callBack) {
         super(context, R.layout.common_prompt_dialog_default_view);
         this.callBack = callBack;
     }
@@ -46,7 +46,7 @@ public class DefaultDialog extends BaseDialog {
      * @param callBackTag 多个弹出框时区分标识
      * @param callBack 回调接口
      */
-    public DefaultDialog(Context context, IPromptDialogBtnDefaultCallBack callBack, int callBackTag) {
+    public DefaultDialog(Context context, IDialogBtnDefaultCallBack callBack, int callBackTag) {
         super(context, R.layout.common_prompt_dialog_default_view,callBackTag);
         this.callBack = callBack;
     }

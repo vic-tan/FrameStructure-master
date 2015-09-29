@@ -15,7 +15,7 @@ import com.android.tanlifei.framestructure.common.view.prompt.BaseDialog;
  * @author tanlifei
  * @date 2015年2月3日 上午10:50:58
  */
-public interface IPromptDialogBtnSingleCallBack {
+public interface IDialogBtnSingleCallBack {
 
     /**
      * 左边按钮点击监听

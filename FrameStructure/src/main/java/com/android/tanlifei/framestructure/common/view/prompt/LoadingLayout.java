@@ -12,16 +12,16 @@ import com.android.tanlifei.framestructure.common.constants.enumConstants.Reques
 import com.android.tanlifei.framestructure.common.utils.AnimationUtils;
 import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
 import com.android.tanlifei.framestructure.common.utils.ResUtils;
-import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCallBack;
+import com.android.tanlifei.framestructure.engine.interf.ILayoutReStartCallBack;
 
 
 /**
  * 加载数据时数据错误,或为空时view
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #LoadingLayout(Context, ILoadingPromptReStartCallBack)} 本构造方法主要是父类不包含layout.common_prompt 布局的时候调用该构造方法</li>
- * <li>{@link #LoadingLayout(Context, ILoadingPromptReStartCallBack, View)}本构造方法主要是父类包含layout.common_prompt 所以父类xml,必须通过incodue 引入layout.common_prompt 布局的时候调用该构造方法 </li>
- * <li>{@link #create(ILoadingPromptReStartCallBack)} 创建提示布局</li>
+ * <li>{@link #LoadingLayout(Context, ILayoutReStartCallBack)} 本构造方法主要是父类不包含layout.common_prompt 布局的时候调用该构造方法</li>
+ * <li>{@link #LoadingLayout(Context, ILayoutReStartCallBack, View)}本构造方法主要是父类包含layout.common_prompt 所以父类xml,必须通过incodue 引入layout.common_prompt 布局的时候调用该构造方法 </li>
+ * <li>{@link #create(ILayoutReStartCallBack)} 创建提示布局</li>
  * <li>{@link #initView()} 初化布局控件</li>
  * <li>{@link #getPromptLayout()} 获取加载提示布局</li>
  * <li>{@link #setViewBackgroundColor(int)} 设置加载提示布局的背景色</li>
@@ -38,7 +38,7 @@ import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCa
  * <li>{@link #setPromptContent(int)} 设置提示语</li>
  * <li>{@link #setProgressLayout(int)} 显示正在加载提示布局</li>
  * <li>{@link #setErrorLayout(RequestStatusLevel, int)} 显示正在错误布局提示布局</li>
- * <li>{@link #setRefresh(ILoadingPromptReStartCallBack)} 点击重新请求</li>
+ * <li>{@link #setRefresh(ILayoutReStartCallBack)} 点击重新请求</li>
  * <p/>
  * </ul>
  *
@@ -62,7 +62,7 @@ public class LoadingLayout {
      * @param context  上下文
      * @param backCall 回调接口类
      */
-    public LoadingLayout(Context context, ILoadingPromptReStartCallBack backCall) {
+    public LoadingLayout(Context context, ILayoutReStartCallBack backCall) {
         super();
         view = InflaterUtils.inflater(context, R.layout.common_loading_prompt);
         create(backCall);
@@ -78,7 +78,7 @@ public class LoadingLayout {
      * @param backCall 回调接口类
      * @param view     父类布局
      */
-    public LoadingLayout(Context context, ILoadingPromptReStartCallBack backCall, View view) {
+    public LoadingLayout(Context context, ILayoutReStartCallBack backCall, View view) {
         super();
         this.view = view;
         isIncodue = true;
@@ -92,7 +92,7 @@ public class LoadingLayout {
      *
      * @param backCall
      */
-    private void create(ILoadingPromptReStartCallBack backCall) {
+    private void create(ILayoutReStartCallBack backCall) {
         level = RequestStatusLevel.PROGRESS;
         initView();
         setRefresh(backCall);
@@ -298,7 +298,7 @@ public class LoadingLayout {
      *
      * @param backCall 当前布局显示类型
      */
-    public void setRefresh(final ILoadingPromptReStartCallBack backCall) {//设置点击事件
+    public void setRefresh(final ILayoutReStartCallBack backCall) {//设置点击事件
         view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

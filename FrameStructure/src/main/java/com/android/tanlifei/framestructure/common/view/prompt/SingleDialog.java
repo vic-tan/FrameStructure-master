@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnSingleCallBack;
+import com.android.tanlifei.framestructure.engine.interf.IDialogBtnSingleCallBack;
 
 
 /**
  * 加载数据时数据错误,或为空时view
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #SingleDialog(Context,IPromptDialogBtnSingleCallBack)}  创建对话框全屏宽高</li>
- * <li>{@link #SingleDialog(Context,IPromptDialogBtnSingleCallBack,int)} 创建可以区分多个对话框标识全屏宽高</li>
+ * <li>{@link #SingleDialog(Context, IDialogBtnSingleCallBack)}  创建对话框全屏宽高</li>
+ * <li>{@link #SingleDialog(Context, IDialogBtnSingleCallBack,int)} 创建可以区分多个对话框标识全屏宽高</li>
  * <li>{@link #liftBtnClickListener(View,int)} 左按钮事件监听</li>
  * <li>{@link #rightBtnClickListener(View,int)} 右按钮事件监听</li>
  * </ul>
@@ -23,7 +23,7 @@ import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnSingleC
 public class SingleDialog extends BaseDialog {
 
 
-    private IPromptDialogBtnSingleCallBack callBack;
+    private IDialogBtnSingleCallBack callBack;
 
 
 
@@ -33,7 +33,7 @@ public class SingleDialog extends BaseDialog {
      * @param context
      * @param callBack 回调接口
      */
-    public SingleDialog(Context context, IPromptDialogBtnSingleCallBack callBack) {
+    public SingleDialog(Context context, IDialogBtnSingleCallBack callBack) {
         super(context, R.layout.common_prompt_dialog_single_view);
         this.callBack = callBack;
     }
@@ -45,7 +45,7 @@ public class SingleDialog extends BaseDialog {
      * @param callBackTag 多个弹出框时区分标识
      * @param callBack 回调接口
      */
-    public SingleDialog(Context context, IPromptDialogBtnSingleCallBack callBack, int callBackTag) {
+    public SingleDialog(Context context, IDialogBtnSingleCallBack callBack, int callBackTag) {
         super(context, R.layout.common_prompt_dialog_single_view,callBackTag);
         this.callBack = callBack;
     }

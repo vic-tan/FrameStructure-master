@@ -13,7 +13,7 @@ import com.android.tanlifei.framestructure.common.constants.enumConstants.Reques
  * @author tanlifei
  * @date 2015年2月3日 上午10:50:58
  */
-public interface ILoadingPromptReStartCallBack {
+public interface ILayoutReStartCallBack {
 
     /**
      * 刷新（点击重新请求）

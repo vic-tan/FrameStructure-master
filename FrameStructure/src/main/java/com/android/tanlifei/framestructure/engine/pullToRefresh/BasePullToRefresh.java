@@ -17,7 +17,7 @@ import com.android.tanlifei.framestructure.common.utils.StringUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
 import com.android.tanlifei.framestructure.common.view.prompt.LoadingLayout;
 import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
-import com.android.tanlifei.framestructure.engine.interf.ILoadingPromptReStartCallBack;
+import com.android.tanlifei.framestructure.engine.interf.ILayoutReStartCallBack;
 import com.android.tanlifei.framestructure.engine.interf.IPullToRefreshCallBack;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
@@ -50,7 +50,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
  * @author tanlifei
  * @date 2015年8月13日 上午11:30:51
  */
-public abstract class BasePullToRefresh implements ILoadingPromptReStartCallBack {
+public abstract class BasePullToRefresh implements ILayoutReStartCallBack {
 
     protected View baseView; // 布局
     protected PageBean pageBean;// 分页参数实体

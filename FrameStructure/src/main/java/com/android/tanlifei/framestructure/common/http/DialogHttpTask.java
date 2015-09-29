@@ -15,13 +15,13 @@ import com.bigkoo.svprogresshud.SVProgressHUD;
  * （比如进入详情，进去界面前就先请求接口，并且有Dialog加载框，请求过程完成后在进入详情）
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #LoadingHttpTask(Context)} 默认弹出正在加载提示框</li>
+ * <li>{@link #DialogHttpTask(Context)} 默认弹出正在加载提示框</li>
  * </ul>
  *
  * @author tanlifei
  * @date 2015年2月14日 上午11:30:51
  */
-public class LoadingHttpTask extends TaskController {
+public class DialogHttpTask extends TaskController {
 
 
     private Context context;
@@ -32,7 +32,7 @@ public class LoadingHttpTask extends TaskController {
      *
      * @param context
      */
-    public LoadingHttpTask(Context context) {
+    public DialogHttpTask(Context context) {
         this.context = context;
     }
 

@@ -11,12 +11,8 @@ import com.android.tanlifei.framestructure.engine.interf.IHttpTaskCallBack;
  * <ul>
  * <strong>基本方法及自己方法</strong>
  * <li>{@link #get(RequestBean, IHttpTaskCallBack)}  get 请求 以普通形式提交参数</li>
- * <li>{@link #get(RequestBean, IHttpTaskCallBack)}  get 请求 以普通形式提交参数</li>
- * <li>{@link #getByJsonParams(RequestBean, IHttpTaskCallBack)}  get 请求 以json格式提交参数</li>
  * <li>{@link #getByJsonParams(RequestBean, IHttpTaskCallBack)}  get 请求 以json格式提交参数</li>
  * <li>{@link #post(RequestBean, IHttpTaskCallBack)}   post 请求，以普通形式提交参数</li>
- * <li>{@link #post(RequestBean, IHttpTaskCallBack)}   post 请求，以普通形式提交参数</li>
- * <li>{@link #postByJsonParams(RequestBean, IHttpTaskCallBack)}  post 请求，以json格式提交参数</li>
  * <li>{@link #postByJsonParams(RequestBean, IHttpTaskCallBack)}  post 请求，以json格式提交参数</li>
  * </ul>
  *

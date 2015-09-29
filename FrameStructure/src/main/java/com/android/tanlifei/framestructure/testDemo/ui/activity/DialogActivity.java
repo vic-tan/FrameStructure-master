@@ -1,23 +1,21 @@
 package com.android.tanlifei.framestructure.testDemo.ui.activity;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.view.View;
 
 import com.android.tanlifei.framestructure.R;
-import com.android.tanlifei.framestructure.common.utils.InflaterUtils;
 import com.android.tanlifei.framestructure.common.utils.ToastUtils;
 import com.android.tanlifei.framestructure.common.view.prompt.BaseDialog;
 import com.android.tanlifei.framestructure.common.view.prompt.DefaultDialog;
 import com.android.tanlifei.framestructure.common.view.prompt.SingleDialog;
-import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnDefaultCallBack;
-import com.android.tanlifei.framestructure.engine.interf.IPromptDialogBtnSingleCallBack;
+import com.android.tanlifei.framestructure.engine.interf.IDialogBtnDefaultCallBack;
+import com.android.tanlifei.framestructure.engine.interf.IDialogBtnSingleCallBack;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 
 @EActivity(R.layout.test_activity_dialog)
-public class DialogActivity extends Activity implements IPromptDialogBtnSingleCallBack{
+public class DialogActivity extends Activity implements IDialogBtnSingleCallBack {
 
     public static final String TAG = "HtppTaskActivity";
 
@@ -40,7 +38,7 @@ public class DialogActivity extends Activity implements IPromptDialogBtnSingleCa
      * 单个对话框 *
      */
   /*  private void singleDialog() {
-        new SingleDialog(this, new IPromptDialogBtnSingleCallBack() {
+        new SingleDialog(this, new IDialogBtnSingleCallBack() {
             @Override
             public void onClickListener(BaseDialog promptDialog, View v,int callBackTag) {
                 ToastUtils.show(getApplicationContext(), "rightBtn");
@@ -56,7 +54,7 @@ public class DialogActivity extends Activity implements IPromptDialogBtnSingleCa
      * 默认两个对话框 *
      */
     private void defaultDialog() {
-        new DefaultDialog(this, new IPromptDialogBtnDefaultCallBack() {
+        new DefaultDialog(this, new IDialogBtnDefaultCallBack() {
             @Override
             public void liftBtnOnClickListener(BaseDialog promptDialog, View v,int callBackTag) {
                 ToastUtils.show(getApplicationContext(), "liftBtn");
