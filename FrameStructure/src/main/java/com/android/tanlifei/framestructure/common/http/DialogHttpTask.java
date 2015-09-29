@@ -61,7 +61,7 @@ public class DialogHttpTask extends TaskController {
     public IHttpTaskCallBack setCallBack() {
         return new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(RequestBean requestBean) {
+            public void httpTaskCallBack(RequestBean requestBean) {
                 switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         dismiss();
@@ -82,7 +82,7 @@ public class DialogHttpTask extends TaskController {
                         ToastUtils.show(context, ResUtils.getStr(R.string.common_prompt_timeout_error));
                         break;
                     case SUCCESS:
-                        taskCallBack.taskHandler(requestBean);
+                        taskCallBack.httpTaskCallBack(requestBean);
                         dismiss();
                         break;
                     default:

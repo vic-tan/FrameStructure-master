@@ -1,4 +1,4 @@
-package com.android.tanlifei.framestructure.common.http;
+package com.android.tanlifei.framestructure.common.http.localJson;
 
 import android.text.Html;
 

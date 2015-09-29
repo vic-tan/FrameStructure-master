@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 
 import com.android.tanlifei.framestructure.common.constants.StatusConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
-import com.android.tanlifei.framestructure.common.http.ReadLocalCustomJson;
+import com.android.tanlifei.framestructure.common.http.localJson.ReadLocalCustomJson;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
 import com.android.tanlifei.framestructure.common.utils.MapUtils;

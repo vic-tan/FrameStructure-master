@@ -42,7 +42,7 @@ public class LayoutHttpTask extends TaskController {
     public IHttpTaskCallBack setCallBack() {
         return new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(RequestBean requestBean) {
+            public void httpTaskCallBack(RequestBean requestBean) {
                 switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         promptView.displayNetworkErrorLayout();
@@ -59,7 +59,7 @@ public class LayoutHttpTask extends TaskController {
                         promptView.displayTimeoutErrorLayout();
                         break;
                     case SUCCESS:
-                        taskCallBack.taskHandler(requestBean);
+                        taskCallBack.httpTaskCallBack(requestBean);
                         promptView.getPromptLayout().setVisibility(View.GONE);
                         break;
                     default:

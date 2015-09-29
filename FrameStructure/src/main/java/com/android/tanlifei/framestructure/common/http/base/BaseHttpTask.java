@@ -8,7 +8,7 @@ import com.android.tanlifei.framestructure.common.constants.JsonConstants;
 import com.android.tanlifei.framestructure.common.constants.StatusConstants;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.RequestStatusLevel;
 import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
-import com.android.tanlifei.framestructure.common.http.ReadLocalCustomJson;
+import com.android.tanlifei.framestructure.common.http.localJson.ReadLocalCustomJson;
 import com.android.tanlifei.framestructure.common.utils.JsonUtils;
 import com.android.tanlifei.framestructure.common.utils.Logger;
 import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
@@ -146,7 +146,7 @@ public class BaseHttpTask {
      * @param callBack
      */
     protected static void sendHandler(RequestBean requestBean, IHttpTaskCallBack callBack) {
-        callBack.taskHandler(requestBean);
+        callBack.httpTaskCallBack(requestBean);
     }
 
     /**

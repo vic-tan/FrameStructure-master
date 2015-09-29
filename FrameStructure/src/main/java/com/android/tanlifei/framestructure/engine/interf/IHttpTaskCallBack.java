@@ -7,7 +7,7 @@ import com.android.tanlifei.framestructure.common.http.base.RequestBean;
  * 请求网络接口，正在请求加载提示成功后回调
  * <ul>
  * <strong>基本方法及自己方法</strong>
- * <li>{@link #taskHandler(RequestBean)}   请求接口完成要后的回调处理</li>
+ * <li>{@link #httpTaskCallBack(RequestBean)}  请求接口完成后的回调方法集体处理</li>
  * </ul>
  *
  * @author tanlifei
@@ -15,9 +15,9 @@ import com.android.tanlifei.framestructure.common.http.base.RequestBean;
  */
 public interface IHttpTaskCallBack {
     /**
-     * 请求接口完成要后的回调处理
+     * 请求接口完成后的回调方法集体处理
      *
      * @param requestBean 返回数据
      */
-    void taskHandler(RequestBean requestBean);
+    void httpTaskCallBack(RequestBean requestBean);
 }

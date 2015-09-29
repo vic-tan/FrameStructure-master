@@ -45,18 +45,18 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
 
 
     @Override
-    public void taskHandler(RequestBean requestBean) {
+    public void httpTaskCallBack(RequestBean requestBean) {
         switch (requestBean.getTaskLevel()) {
-            case TASK_ONE://加载框请求
-                ToastUtils.show(this, requestBean.getBaseJson().getData());
-                if (requestBean.getRequestParams().containsKey("test"))
-                    Logger.i(TAG, requestBean.getRequestParams().get("test").toString());//拿请求之前保存的的数据
-                break;
-            case TASK_TWO://提示框请求
-                ToastUtils.show(this, requestBean.getBaseJson().getData());
-                if (requestBean.getRequestParams().containsKey("test"))
-                    Logger.i(TAG, requestBean.getRequestParams().get("test").toString());//拿请求之前保存的的数据
-                break;
+            case TASK_ONE://接口一请求回调
+               switch (requestBean.getRequestStatusLevel()){//接口一回调方法状态
+                   case SUCCESS:
+                       break;
+               }
+            case TASK_TWO://接口二请求回调
+                switch (requestBean.getRequestStatusLevel()){//接口二回调方法状态
+                    case SUCCESS:
+                        break;
+                }
         }
     }
 
@@ -78,7 +78,7 @@ public class HtppTaskActivity extends Activity implements View.OnClickListener, 
 
                 HttpTask.post(new RequestBean(this, BaseHttpParams.baseParams(UrlConstants.TEST_LIST)), new IHttpTaskCallBack() {
                     @Override
-                    public void taskHandler(RequestBean requestBean) {
+                    public void httpTaskCallBack(RequestBean requestBean) {
                         switch (requestBean.getRequestStatusLevel()) {
                             case START:
                                 ToastUtils.show(HtppTaskActivity.this, "START");

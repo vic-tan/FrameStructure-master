@@ -82,7 +82,7 @@ public abstract class BasePullToRefresh implements ILayoutReStartCallBack {
                 .taskParams(BaseHttpParams.pageParams(refreshCallBack.taskUrl(), pageBean
                         .getPageNumber()))), new IHttpTaskCallBack() {
             @Override
-            public void taskHandler(RequestBean requestBean) {
+            public void httpTaskCallBack(RequestBean requestBean) {
                 switch (requestBean.getRequestStatusLevel()) {
                     case NETWORK_ERROR:
                         loadingPrompt.displayNetworkErrorLayout();

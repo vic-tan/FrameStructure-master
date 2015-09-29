@@ -9,8 +9,8 @@ package com.android.tanlifei.framestructure.common.constants;
 public class JsonConstants {
 
     // 分页参数
-    public static final String REQUEST_TASK_LIST_PARAM_PAGE_SIZE = "pageSize";
-    public static final String REQUEST_TASK_LIST_PARAM_PAGE_NUMBER = "pageNumber";
+    public static final String REQUEST_TASK_LIST_PARAM_PAGE_SIZE = "pageSize";//每页数的key值
+    public static final String REQUEST_TASK_LIST_PARAM_PAGE_NUMBER = "pageNumber";//当前页数的key值
     public static final int PAGE_SIZE = 10; // 每页显示 的数据条数
 
 
