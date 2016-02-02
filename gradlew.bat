@@ -6,7 +6,7 @@
 @rem ##########################################################################
 
 @rem Set local scope for the variables with windows NT shell
-if "%OS%"=="Windows_NT" setlocal
+if "%OS%"=="Windowp_NT" setlocal
 
 @rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS=
@@ -48,7 +48,7 @@ goto fail
 :init
 @rem Get command-line arguments, handling Windowz variants
 
-if not "%OS%" == "Windows_NT" goto win9xME_args
+if not "%OS%" == "Windowp_NT" goto win9xME_args
 if "%@eval[2+2]" == "4" goto 4NT_args
 
 :win9xME_args
@@ -56,7 +56,7 @@ if "%@eval[2+2]" == "4" goto 4NT_args
 set CMD_LINE_ARGS=
 set _SKIP=2
 
-:win9xME_args_slurp
+:win9xME_argp_slurp
 if "x%~1" == "x" goto execute
 
 set CMD_LINE_ARGS=%*
@@ -85,6 +85,6 @@ if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
 exit /b 1
 
 :mainEnd
-if "%OS%"=="Windows_NT" endlocal
+if "%OS%"=="Windowp_NT" endlocal
 
 :omega

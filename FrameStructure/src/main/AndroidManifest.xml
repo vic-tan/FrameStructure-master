@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.tanlifei.framestructure" >
+    package="com.android.tanlifei.framestructure">
 
     <!-- 手机移动网络 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- 允许程序访问有关GSM网络信息 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <!-- 可以读写sdcard -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
     <application
+        android:name=".ui.main.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".ui.GlobalApplication"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.Basic">
+
+        <meta-data
+            android:name="design_width"
+            android:value="1080" />
+        <meta-data
+            android:name="design_height"
+            android:value="1920" />
+
         <activity
-            android:name=".testDemo.ui.activity.TestMainActivity_"
-            android:label="@string/app_name"
-            >
+            android:name=".ui.main.LauncherActivity_"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,14 +34,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.common.ui.base.activity.BasePhotoViewActivity" />
+        <activity android:name="com.common.ui.base.activity.BaseSimplePhotoViewActivity" />
+        <activity android:name=".ui.main.GuideActivity_" />
+        <activity android:name=".ui.main.LoadingActivity" />
 
-        <!-- 测试 -->
-        <activity android:name=".testDemo.ui.activity.HtppTaskActivity"/>
-        <activity android:name=".testDemo.ui.activity.ListViewActivity"/>
-        <activity android:name=".testDemo.ui.activity.GridViewActivity"/>
-        <activity android:name=".testDemo.ui.activity.DialogActivity_"/>
-        <activity android:name=".testDemo.ui.activity.AnnotationActivity_"/>
-        <activity android:name=".testDemo.ui.activity.LoadingDialogActivity"/>
 
     </application>
 

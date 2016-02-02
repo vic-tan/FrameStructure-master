@@ -1,0 +1,15 @@
+1、Lifecycle Sorter
+可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序，快捷键Ctrl + alt + K
+
+2、Android Annotations @ViewById code
+可以选中setContentView中的布局,快速注解findById，快捷键command + N -----> Generate @ViewById entries
+
+3、Gsonformat
+可根据json数据快速生成java实体类 ,快捷键command + N -----> Gsonformat
+
+
+4、JsonOnlineViewer
+可实现直接在android studio中调试接口数据，可以选择请求类型，自定义请求头及请求体，json数据格式化后展示，配合着Gsonformat会不会不错呢 ,快捷键 shift + ctrl + command + N 或者，View--->JsonViewer
+
+5. Android  Drawable Importer
+为了适应所有Android屏幕的大小和密度，每个Android项目都会包含drawable文件夹。选择res 文件夹--->scaled Drawable

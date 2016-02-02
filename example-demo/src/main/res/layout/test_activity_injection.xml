@@ -1,0 +1,115 @@
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:in="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.common.view.injection.SelectorTextView
+        android:layout_width="210px"
+        android:layout_height="200px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="扁平椭圆"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/common_size_two_level"
+        in:in_normal_color="#ff0000"
+        in:in_normal_drawable="@drawable/test_btn_oval_shape" />
+
+
+    <view
+        class="com.common.view.injection.SelectorTextView"
+        android:layout_width="220px"
+        android:layout_height="200px"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="扁平圆角矩形"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/common_size_two_level"
+        in:in_normal_color="#0000ff"
+        in:in_normal_drawable="@drawable/test_btn_round_rectangle_shape"
+        in:in_stroke_color="#ff0000"
+        in:in_stroke_width="4px" />
+
+    <view
+        android:id="@+id/view2"
+        class="com.common.view.injection.SelectorTextView"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="扁平矩形"
+        android:textSize="@dimen/common_size_two_level"
+        in:in_normal_color="#00ff00"
+        in:in_normal_drawable="@drawable/test_btn_rectangle_shape" />
+
+    <view
+        android:id="@+id/view4"
+        class="com.common.view.injection.SelectorTextView"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/view3"
+        android:text="带底部阴影的圆角矩形"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/common_size_two_level"
+        in:in_isSmart="false"
+        in:in_normal_color="#0000ff"
+        in:in_normal_drawable="@drawable/test_btn_rectangle_shape"
+        in:in_pressed_drawable="@drawable/test_btn_rectangle_shadow_bg_layerlist" />
+
+    <view
+        android:id="@+id/view"
+        class="com.common.view.injection.SelectorTextView"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:checked="true"
+        android:text="有checked效果"
+        android:textSize="@dimen/common_size_two_level"
+        in:in_checked_stroke_color="#00ff00"
+        in:in_normal_color="#ff0000"
+        in:in_normal_drawable="@drawable/test_btn_rectangle_shape"
+        in:in_stroke_color="#ff0000" />
+
+    <com.common.view.injection.SelectorTextView
+        android:id="@+id/view3"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="用图片做\n按压效果"
+        android:textColor="#000000"
+        android:textSize="@dimen/common_size_two_level"
+        in:in_normal_drawable="@mipmap/test_kale"
+        in:in_pressed_drawable="@mipmap/test_pressed_icon" />
+
+
+    <com.common.view.injection.SelectorImageButton
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@mipmap/test_pressed_icon"
+        in:in_normal_color="#ff0000"
+        in:in_normal_drawable="@drawable/test_btn_oval_shadow_bg_layerlist"
+        in:in_pressed_color="#0000ff"
+        in:in_pressed_drawable="@drawable/test_btn_rectangle_shadow_bg_layerlist" />
+
+    <com.common.view.injection.SelectorImageButton
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_alignLeft="@+id/view3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/view3"
+        android:background="#00ff00"
+        in:in_isSrc="true"
+        in:in_normal_drawable="@mipmap/test_normal_icon"
+        in:in_pressed_drawable="@mipmap/test_pressed_icon" />
+
+</com.zhy.autolayout.AutoRelativeLayout>

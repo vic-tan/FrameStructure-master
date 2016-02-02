@@ -1,0 +1,74 @@
+<resources>
+
+    <style name="Theme.Basic" parent="Theme.Sherlock.Light.DarkActionBar">
+    </style>
+
+
+    <style name="IMTheme.Transparent" parent="@style/Theme.Basic">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <!-- —————————————————— 公用样式 —————————————————————————————————————————————————————————————————————————— -->
+    <!-- 请求网络接口时弹出正在加载框动画 -->
+    <style name="loadPopupAnimation" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/svfade_in_center</item>
+
+    </style>
+
+
+    <!-- —————————————————— 幕宽高样式 ——————————————————————————————— -->
+
+    <!-- 控件设置屏幕宽 -->
+    <style name="common_match_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!-- 控件设置屏幕宽 -->
+    <style name="common_wrap_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 控件设置屏幕宽 -->
+    <style name="common_match_parent_with">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 控件设置屏幕高 -->
+    <style name="common_match_parent_height">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <!-- —————————————————— dialog样式 ——————————————————————————————— -->
+    <!-- 正在加载弹出框样式  -->
+    <style name="loading_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <style name="AlertActivity_AlertStyle" parent="android:Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!--—————————————————— 模块样式 ——————————————————————————————————————————————————————————————————————————-->
+
+
+</resources>

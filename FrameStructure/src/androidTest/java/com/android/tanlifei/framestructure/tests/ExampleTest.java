@@ -3,13 +3,9 @@ package com.android.tanlifei.framestructure.tests;
 import android.test.InstrumentationTestCase;
 
 import com.android.tanlifei.framestructure.common.TestConstants;
-import com.android.tanlifei.framestructure.common.TestHttpUtils;
-import com.android.tanlifei.framestructure.common.constants.UrlConstants;
-import com.android.tanlifei.framestructure.common.utils.Logger;
-import com.android.tanlifei.framestructure.common.utils.PhoneUtils;
-import com.android.tanlifei.framestructure.ui.GlobalApplication;
-
-import java.util.HashMap;
+import com.android.tanlifei.framestructure.ui.main.GlobalApplication;
+import com.common.utils.Logger;
+import com.common.utils.NetUtils;
 
 /**
  * 单元测试例子
@@ -28,15 +24,14 @@ public class ExampleTest extends InstrumentationTestCase {
     }
 
     public void testHttp2() throws Exception {
-        TestHttpUtils.post(UrlConstants.TEST_TWO_SUCCESS, new HashMap<String, Object>());
+        //TestHttpUtils.post(UrlConstants.TEST_TWO_SUCCESS, new HashMap<String, Object>());
     }
 
     public void testNetWork() throws Exception {
-        PhoneUtils.isNetworkOk(GlobalApplication.appContext);
-        Logger.i(TestConstants.TAG, PhoneUtils.isNetworkOk(GlobalApplication.appContext) + "---");
+        NetUtils.isConnected(GlobalApplication.getContext());
+        Logger.i(TestConstants.TAG, NetUtils.isConnected(GlobalApplication.getContext()) + "---");
     }
 
     public void testDensity() throws Exception {
-        Logger.i(TestConstants.TAG, PhoneUtils.getDensity(getInstrumentation().getContext()) + "---");
     }
 }

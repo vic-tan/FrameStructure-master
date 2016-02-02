@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    style="@style/common_match_parent"
+    android:gravity="center"
+    android:background="@color/common_prompt_dialog_windowp_bg"
+    android:orientation="vertical">
+
+
+    <com.common.view.roundview.RoundLinearLayout
+        android:layout_width="700px"
+        android:layout_height="wrap_content"
+        rv:rv_backgroundColor="@color/common_prompt_dialog_content_bg"
+        rv:rv_cornerRadius="@dimen/common_border_radius"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_prompt_dialog_base_view" />
+
+        <include  layout="@layout/common_split_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_prompt_dialog_opt_btn_height"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.common.view.roundview.RoundTextView
+                android:id="@+id/tv_left"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/common_cancel"
+                android:textColor="@color/common_prompt_dialog_btn_txt"
+                rv:rv_backgroundColor="@color/common_prompt_dialog_btn_nor"
+                rv:rv_cornerRadius_BL="@dimen/common_border_radius"
+                rv:rv_backgroundPressColor="@color/common_prompt_dialog_btn_pre"
+                android:textSize="@dimen/common_size_two_level"/>
+
+            <TextView
+                android:layout_width="@dimen/common_split_line_size"
+                android:layout_height="match_parent"
+                android:background="@color/common_split_bg"
+                />
+
+            <com.common.view.roundview.RoundTextView
+                android:id="@+id/tv_right"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/common_enter"
+                android:textColor="@color/common_prompt_dialog_btn_txt"
+                rv:rv_backgroundColor="@color/common_prompt_dialog_btn_nor"
+                rv:rv_cornerRadius_BR="@dimen/common_border_radius"
+                rv:rv_backgroundPressColor="@color/common_prompt_dialog_btn_pre"
+                android:textSize="@dimen/common_size_two_level"/>
+        </LinearLayout>
+
+    </com.common.view.roundview.RoundLinearLayout>
+</LinearLayout>

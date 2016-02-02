@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- —————————————————————————————————————————  全局间距常量   ——————————————————————————————————————————————————— -->
+
+    <!-- 分割线粗细 -->
+    <dimen name="common_split_line_size">2px</dimen>
+    <!-- 弹出提示框的边框圆角半径 -->
+    <dimen name="common_border_radius">15px</dimen>
+    <!-- 弹出提示框的边框圆角粗细 -->
+    <dimen name="common_prompt_dialog_border_size">0px</dimen>
+
+
+    <!-- ————————————————————————————————————— 正在加载弹出框常量   ——————————————————————————————————————————————————— -->
+    <!--padding-->
+    <dimen name="common_padding_svprogresshuddefault">30px</dimen>
+    <!--窗口最小宽度-->
+    <dimen name="common_size_minwidth_svprogresshuddefault">350px</dimen>
+    <!--图片宽高-->
+    <dimen name="common_size_image_bigloading">100px</dimen>
+
+    <!-- ————————————————————————————————————— 对话弹出框常量   ——————————————————————————————————————————————————— -->
+    <!-- 对话框操作按钮的高度 -->
+    <dimen name="common_prompt_dialog_opt_btn_height">100px</dimen>
+
+
+    <!-- —————————————————————————————————————————  字体大小   ——————————————————————————————————————————————————— -->
+
+    <!-- 一级 (最大字体) -->
+    <dimen name="common_size_one_level">50.0px</dimen>
+    <!-- 二级 (第二字体) -->
+    <dimen name="common_size_two_level">45.0px</dimen>
+    <!-- 三级 (第三字体) -->
+    <dimen name="common_size_three_level">40.0px</dimen>
+    <!-- 四级 (第四字体) -->
+    <dimen name="common_size_four_level">35.0px</dimen>
+    <!-- 五级 (第五字体) -->
+    <dimen name="common_size_five_level">30.0px</dimen>
+
+
+</resources>

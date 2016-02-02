@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/common_match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/common_match_parent_with"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_1_1"
+            style="@style/common_wrap_content"
+            android:layout_height="120px"
+            android:textSize="40px"
+            android:text="普通请求" />
+
+        <Button
+            android:id="@+id/btn_1_2"
+            style="@style/common_wrap_content"
+            android:layout_height="120px"
+            android:textSize="40px"
+            android:text="加载框请求" />
+
+        <Button
+            android:id="@+id/btn_1_3"
+            style="@style/common_wrap_content"
+            android:layout_height="120px"
+            android:textSize="40px"
+            android:text="提示框请求" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_match_parent_with"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_2_1"
+            style="@style/common_wrap_content"
+            android:layout_height="120px"
+            android:textSize="40px"
+            android:text="ListView下拉" />
+
+
+    </LinearLayout>
+
+    <include  layout="@layout/common_loading_prompt"/>
+
+</LinearLayout>

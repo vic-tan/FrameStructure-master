@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.common.view.imageview.SquareCenterImageView
+        android:id="@+id/img_test"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="A"
+        android:text="单张图片加载" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="B"
+        android:text="多单张图片加载" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="C"
+        android:text="访QQ空间查看图片效果" />
+
+</LinearLayout>

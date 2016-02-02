@@ -10,9 +10,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/FrameStructure" />
-            <option value="$PROJECT_DIR$/litepal" />
-            <option value="$PROJECT_DIR$/pullToRefresh" />
-            <option value="$PROJECT_DIR$/svprogresshud" />
+            <option value="$PROJECT_DIR$/example-demo" />
+            <option value="$PROJECT_DIR$/example-localinterface" />
+            <option value="$PROJECT_DIR$/library-actionbarsherlock" />
+            <option value="$PROJECT_DIR$/library-autolayout" />
+            <option value="$PROJECT_DIR$/library-imageslider" />
+            <option value="$PROJECT_DIR$/library-litepal" />
+            <option value="$PROJECT_DIR$/library-pullToRefresh" />
+            <option value="$PROJECT_DIR$/support-common" />
+            <option value="$PROJECT_DIR$/support-constants" />
           </set>
         </option>
       </GradleProjectSettings>

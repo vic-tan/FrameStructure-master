@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="50px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.common.view.roundview.RoundTextView
+                android:id="@+id/rtv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="50px"
+                android:text="TextView Default"
+                android:textSize="31px"
+                android:textColor="#383838"
+                rv:rv_backgroundColor="#ffffff"
+                rv:rv_backgroundPressColor="#383838"
+                rv:rv_strokeColor="#383838"
+                rv:rv_strokeWidth="2px"
+                rv:rv_textPressColor="#ffffff"/>
+
+
+            <com.common.view.roundview.RoundTextView
+                android:id="@+id/rtv_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:gravity="center"
+                android:paddingBottom="20px"
+                android:paddingLeft="28px"
+                android:paddingRight="28px"
+                android:paddingTop="20px"
+                android:text="Radius Half Height"
+                android:textSize="31px"
+                android:textColor="#03A9F4"
+                rv:rv_backgroundColor="#ffffff"
+                rv:rv_backgroundPressColor="#03A9F4"
+                rv:rv_isRadiusHalfHeight="true"
+                rv:rv_strokeColor="#03A9F4"
+                rv:rv_strokePressColor="#6D8FB0"
+                rv:rv_strokeWidth="2px"
+                rv:rv_textPressColor="#ffffff"/>
+
+        </LinearLayout>
+
+
+        <com.common.view.roundview.RoundTextView
+            android:id="@+id/rtv_3"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingBottom="20px"
+            android:paddingLeft="28px"
+            android:paddingRight="28px"
+            android:paddingTop="20px"
+            android:singleLine="true"
+            android:text="TextView Radius 10dpTextView Radius 10dp"
+            android:textSize="31px"
+            android:textColor="#383838"
+            rv:rv_backgroundColor="#F6CE59"
+            rv:rv_cornerRadius="20px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15px"
+            android:orientation="horizontal"
+            android:paddingLeft="40px"
+            android:paddingRight="40px">
+
+            <com.common.view.roundview.RoundTextView
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="Radius TopLeft"
+                android:textSize="31px"
+                android:textColor="#ffffff"
+                rv:rv_backgroundColor="#DE88A5"
+                rv:rv_cornerRadius_TL="20px"/>
+
+            <com.common.view.roundview.RoundTextView
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="Radius TopRight"
+                android:textSize="31px"
+                android:textColor="#ffffff"
+                rv:rv_backgroundColor="#F08A5D"
+                rv:rv_cornerRadius_TR="20px"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            android:orientation="horizontal"
+            android:paddingLeft="40px"
+            android:paddingRight="40px">
+
+            <com.common.view.roundview.RoundTextView
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="Radius BottomLeft"
+                android:textSize="31px"
+                android:textColor="#ffffff"
+                rv:rv_backgroundColor="#4AA0D5"
+                rv:rv_cornerRadius_BL="20px"/>
+
+            <com.common.view.roundview.RoundTextView
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="Radius BottomRight"
+                android:textSize="31px"
+                android:textColor="#ffffff"
+                rv:rv_backgroundColor="#7A9EAF"
+                rv:rv_cornerRadius_BR="20px"/>
+
+        </LinearLayout>
+
+        <com.common.view.roundview.RoundFrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:padding="20px"
+            rv:rv_backgroundColor="#009688"
+            rv:rv_cornerRadius="15px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="FrameLayout"
+                android:textSize="31px"
+                android:textColor="#ffffff"/>
+
+        </com.common.view.roundview.RoundFrameLayout>
+
+        <com.common.view.roundview.RoundLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="20px"
+            android:paddingLeft="28px"
+            android:paddingRight="28px"
+            android:paddingTop="20px"
+            android:textColor="#ffffff"
+            rv:rv_backgroundColor="#E45171"
+            rv:rv_cornerRadius="15px">
+
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@mipmap/ic_launcher"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12px"
+                android:text="LinearLayout"
+                android:textSize="31px"
+                android:textColor="#ffffff"/>
+        </com.common.view.roundview.RoundLinearLayout>
+
+        <com.common.view.roundview.RoundRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:paddingBottom="20px"
+            android:paddingLeft="28px"
+            android:paddingRight="28px"
+            android:paddingTop="20px"
+            android:textColor="#ffffff"
+            rv:rv_backgroundColor="#655989"
+            rv:rv_isRadiusHalfHeight="true">
+            <ImageView
+                android:id="@+id/iv_portrait"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_launcher"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15px"
+                android:layout_toRightOf="@+id/iv_portrait"
+                android:textSize="31px"
+                android:text="RelativeLayout"
+                android:textColor="#ffffff"/>
+
+        </com.common.view.roundview.RoundRelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.common.view.roundview.RoundLinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20px"
+                android:textColor="#ffffff"
+                rv:rv_backgroundColor="#6D8FB0"
+                rv:rv_cornerRadius="15px"
+                rv:rv_isWidthHeightEqual="true">
+
+
+                <ImageView
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:src="@mipmap/ic_launcher"
+                    android:textColor="#ffffff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12px"
+                    android:text="Width=Height"
+                    android:textSize="31px"
+                    android:textColor="#ffffff" />
+            </com.common.view.roundview.RoundLinearLayout>
+
+            <com.common.view.roundview.RoundLinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="28px"
+                android:textColor="#ffffff"
+                rv:rv_backgroundColor="#393E46"
+                rv:rv_isRadiusHalfHeight="true"
+                rv:rv_isWidthHeightEqual="true">
+
+                <ImageView
+                    android:layout_width="50px"
+                    android:layout_height="50px"
+                    android:src="@mipmap/ic_launcher"
+                    android:textColor="#ffffff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12px"
+                    android:text="Circle"
+                    android:textSize="31px"
+                    android:textColor="#ffffff"/>
+            </com.common.view.roundview.RoundLinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -2,12 +2,9 @@ package com.android.tanlifei.framestructure.common;
 
 import android.annotation.SuppressLint;
 
-import com.android.tanlifei.framestructure.common.constants.StatusConstants;
-import com.android.tanlifei.framestructure.common.constants.enumConstants.OnOffLevel;
-import com.android.tanlifei.framestructure.common.http.localJson.ReadLocalCustomJson;
-import com.android.tanlifei.framestructure.common.utils.JsonUtils;
-import com.android.tanlifei.framestructure.common.utils.Logger;
-import com.android.tanlifei.framestructure.common.utils.MapUtils;
+import com.common.utils.JsonUtils;
+import com.common.utils.Logger;
+import com.common.utils.MapUtils;
 import com.loopj.android.http.HttpGet;
 
 import org.apache.http.HttpResponse;
@@ -45,7 +42,7 @@ import java.util.Map.Entry;
 @SuppressLint("NewApi")
 public class TestHttpUtils {
 
-    public static final String JSON_PARAMS_KEY = "json";//json参数形式提交时的key
+    public static final String JSON_PARAMp_KEY = "json";//json参数形式提交时的key
 
     /**
      * get 请求 普通参数提交
@@ -103,9 +100,9 @@ public class TestHttpUtils {
                 .execute(httpRequest);// 发出http请求
         String result = EntityUtils.toString(httpResponse.getEntity()); // 获取字符串
         if (httpResponse.getStatusLine().getStatusCode() == 200) {
-            if (StatusConstants.JSON_LEVEL == OnOffLevel.FULL) {//开启请求接口成功读取对应的本的的自定义JSON
-                result = ReadLocalCustomJson.readJson(url);
-            }
+            //if (OnOffConstants.JSON_LEVEL == OnOffLevel.ON) {//开启请求接口成功读取对应的本的的自定义JSON
+              //  result = CustomJsonReader.readJson(url);
+            //}
             Logger.i(TestConstants.TAG, result + "");
         } else {
             Logger.e(TestConstants.TAG, "--->请求接口失败");
@@ -127,7 +124,7 @@ public class TestHttpUtils {
                 log.append(entry.getKey() + "=" + entry.getValue() + ",");
             }
             if (isJsonType) {//以json 类型提交参数
-                httpParams.add(new BasicNameValuePair(JSON_PARAMS_KEY, JsonUtils
+                httpParams.add(new BasicNameValuePair(JSON_PARAMp_KEY, JsonUtils
                         .mapToJson(mapParams)));
             } else {//普通的url拼接或post参数
                 for (Entry<String, Object> entry : mapParams.entrySet()) {

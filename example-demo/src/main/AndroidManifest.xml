@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.demo">
+
+    <application android:allowBackup="true" android:label="@string/app_name">
+        <!-- 测试 -->
+        <activity android:name=".frame.activity.DemoMainActivity" />
+        <activity android:name=".frame.activity.DemoHttpTaskActivity" />
+        <activity android:name=".frame.activity.DemoListViewActivity" />
+        <activity android:name=".frame.activity.DemoGridViewActivity" />
+        <activity android:name=".frame.activity.DemoDialogActivity" />
+        <activity android:name=".frame.activity.DemoFlycoRoundViewActivity" />
+        <activity android:name=".frame.activity.DemoInjectionActivity" />
+        <activity android:name=".frame.activity.DemoAnnotationActivity" />
+        <activity android:name=".frame.activity.DemoBaseAdpterActivity" />
+        <activity android:name=".frame.activity.DemoSingleItemTypeActivity" />
+        <activity android:name=".frame.activity.DemoMutliItemTypeActivity" />
+        <activity android:name=".frame.activity.DemoBasePhotoActivity" />
+        <activity android:name=".frame.activity.DemoPagerPhotoActivity" />
+        <activity android:name=".frame.activity.DemoSimplePhotoActivity" />
+        <activity
+            android:name=".frame.activity.DemoSpaceImageDetailActivity"
+            android:theme="@style/IMTheme.Transparent"/>
+        <activity
+            android:name=".frame.activity.DemoSmoothPagerPhotoViewActivity"
+            android:theme="@style/IMTheme.Transparent" />
+
+        <activity android:name=".frame.activity.DemoImageSliderActivity" />
+        <activity android:name=".frame.activity.DemoPagerSlidingTabStripActivity" />
+    </application>
+
+</manifest>
