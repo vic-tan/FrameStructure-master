@@ -1,5 +1,4 @@
 
-
 # Framestructure
 Android 框架，适合用零开始开发，集成多开源项目等。
 
@@ -31,6 +30,4 @@ Android 框架，适合用零开始开发，集成多开源项目等。
 <img src="http.bmp" width="720px"/>
 * 例子
 <img src="home.png" width="720px"/>
-
-
 
