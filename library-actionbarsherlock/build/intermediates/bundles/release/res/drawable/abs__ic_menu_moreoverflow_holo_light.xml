@@ -16,4 +16,3 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/abs__ic_menu_moreoverflow_normal_holo_light" />
 </selector>
-<!-- From: file:/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable/abs__ic_menu_moreoverflow_holo_light.xml -->

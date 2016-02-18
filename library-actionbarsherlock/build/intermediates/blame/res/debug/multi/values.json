@@ -1,0 +1,2860 @@
+[
+    {
+        "outputFile": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/debug/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 54,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__attrs.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 167,
+                        "endColumn": 55,
+                        "endOffset": 218
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 59,
+                    "endOffset": 215
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__attrs.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 223,
+                        "endColumn": 60,
+                        "endOffset": 279
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 220,
+                    "endColumn": 45,
+                    "endOffset": 261
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__attrs.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 330,
+                        "endColumn": 46,
+                        "endOffset": 372
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 266,
+                    "endColumn": 44,
+                    "endOffset": 306
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__attrs.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 284,
+                        "endColumn": 45,
+                        "endOffset": 325
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 311,
+                    "endColumn": 55,
+                    "endOffset": 362
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__attrs.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 110,
+                        "endColumn": 56,
+                        "endOffset": 162
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 367,
+                    "endColumn": 52,
+                    "endOffset": 415
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__attrs.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 53,
+                        "endOffset": 105
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 420,
+                    "endColumn": 56,
+                    "endOffset": 472
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__bools.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 687,
+                        "endColumn": 56,
+                        "endOffset": 739
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 477,
+                    "endColumn": 76,
+                    "endOffset": 549
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__bools.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 805,
+                        "endColumn": 76,
+                        "endOffset": 877
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 554,
+                    "endColumn": 62,
+                    "endOffset": 612
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__config.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1541,
+                        "endColumn": 62,
+                        "endOffset": 1599
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 617,
+                    "endColumn": 73,
+                    "endOffset": 686
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__config.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 1782,
+                        "endColumn": 73,
+                        "endOffset": 1851
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 691,
+                    "endColumn": 78,
+                    "endOffset": 765
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__config.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1249,
+                        "endColumn": 78,
+                        "endOffset": 1323
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 770,
+                    "endColumn": 60,
+                    "endOffset": 826
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__bools.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 744,
+                        "endColumn": 60,
+                        "endOffset": 800
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 831,
+                    "endColumn": 61,
+                    "endOffset": 888
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__colors.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 687,
+                        "endColumn": 61,
+                        "endOffset": 744
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 893,
+                    "endColumn": 62,
+                    "endOffset": 951
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__colors.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 749,
+                        "endColumn": 62,
+                        "endOffset": 807
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 956,
+                    "endColumn": 77,
+                    "endOffset": 1029
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__colors.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 998,
+                        "endColumn": 77,
+                        "endOffset": 1071
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1034,
+                    "endColumn": 78,
+                    "endOffset": 1108
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__colors.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1076,
+                        "endColumn": 78,
+                        "endOffset": 1150
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1113,
+                    "endColumn": 92,
+                    "endOffset": 1201
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__colors.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 812,
+                        "endColumn": 92,
+                        "endOffset": 900
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1206,
+                    "endColumn": 92,
+                    "endOffset": 1294
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__colors.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 905,
+                        "endColumn": 92,
+                        "endOffset": 993
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 8910,
+                    "endColumn": 62,
+                    "endOffset": 8968
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 775,
+                        "endColumn": 62,
+                        "endOffset": 833
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 8973,
+                    "endColumn": 68,
+                    "endOffset": 9037
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 893,
+                        "endColumn": 68,
+                        "endOffset": 957
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 9042,
+                    "endColumn": 69,
+                    "endOffset": 9107
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 1352,
+                        "endColumn": 69,
+                        "endOffset": 1417
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 9112,
+                    "endColumn": 65,
+                    "endOffset": 9173
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1118,
+                        "endColumn": 65,
+                        "endOffset": 1179
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 9178,
+                    "endColumn": 66,
+                    "endOffset": 9240
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1233,
+                        "endColumn": 66,
+                        "endOffset": 1295
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 9245,
+                    "endColumn": 62,
+                    "endOffset": 9303
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1007,
+                        "endColumn": 62,
+                        "endOffset": 1065
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 9308,
+                    "endColumn": 60,
+                    "endOffset": 9364
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 36,
+                        "startColumn": 4,
+                        "startOffset": 1562,
+                        "endColumn": 60,
+                        "endOffset": 1618
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 9369,
+                    "endColumn": 59,
+                    "endOffset": 9424
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__config.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1075,
+                        "endColumn": 59,
+                        "endOffset": 1130
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 9429,
+                    "endColumn": 60,
+                    "endOffset": 9485
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 1902,
+                        "endColumn": 60,
+                        "endOffset": 1958
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 9490,
+                    "endColumn": 66,
+                    "endOffset": 9552
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 1670,
+                        "endColumn": 66,
+                        "endOffset": 1732
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 9557,
+                    "endColumn": 67,
+                    "endOffset": 9620
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 1783,
+                        "endColumn": 67,
+                        "endOffset": 1846
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 9625,
+                    "endColumn": 65,
+                    "endOffset": 9686
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 2143,
+                        "endColumn": 65,
+                        "endOffset": 2204
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 9691,
+                    "endColumn": 64,
+                    "endOffset": 9751
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 2028,
+                        "endColumn": 64,
+                        "endOffset": 2088
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 9756,
+                    "endColumn": 53,
+                    "endOffset": 9805
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__ids.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 2,
+                        "startOffset": 751,
+                        "endColumn": 52,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 9810,
+                    "endColumn": 55,
+                    "endOffset": 9861
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__ids.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 2,
+                        "startOffset": 804,
+                        "endColumn": 54,
+                        "endOffset": 856
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 9866,
+                    "endColumn": 38,
+                    "endOffset": 9900
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__ids.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 2,
+                        "startOffset": 677,
+                        "endColumn": 37,
+                        "endOffset": 712
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 9905,
+                    "endColumn": 51,
+                    "endOffset": 9952
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__ids.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 2,
+                        "startOffset": 859,
+                        "endColumn": 50,
+                        "endOffset": 907
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 9957,
+                    "endColumn": 53,
+                    "endOffset": 10006
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__ids.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 2,
+                        "startOffset": 910,
+                        "endColumn": 52,
+                        "endOffset": 960
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 10011,
+                    "endColumn": 36,
+                    "endOffset": 10043
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__ids.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 2,
+                        "startOffset": 715,
+                        "endColumn": 35,
+                        "endOffset": 748
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 10048,
+                    "endColumn": 55,
+                    "endOffset": 10099
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__dimens.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 1423,
+                        "endColumn": 55,
+                        "endOffset": 1474
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 10104,
+                    "endColumn": 74,
+                    "endOffset": 10174
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 820,
+                        "endColumn": 74,
+                        "endOffset": 890
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 10179,
+                    "endColumn": 70,
+                    "endOffset": 10245
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 982,
+                        "endColumn": 70,
+                        "endOffset": 1048
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 10250,
+                    "endColumn": 78,
+                    "endOffset": 10324
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1141,
+                        "endColumn": 78,
+                        "endOffset": 1215
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 10329,
+                    "endColumn": 54,
+                    "endOffset": 10379
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1303,
+                        "endColumn": 54,
+                        "endOffset": 1353
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 10384,
+                    "endColumn": 73,
+                    "endOffset": 10453
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1463,
+                        "endColumn": 73,
+                        "endOffset": 1532
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 10458,
+                    "endColumn": 93,
+                    "endOffset": 10547
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1645,
+                        "endColumn": 93,
+                        "endOffset": 1734
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 10552,
+                    "endColumn": 73,
+                    "endOffset": 10621
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 2633,
+                        "endColumn": 73,
+                        "endOffset": 2702
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 10626,
+                    "endColumn": 74,
+                    "endOffset": 10696
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 41,
+                        "startColumn": 4,
+                        "startOffset": 2473,
+                        "endColumn": 74,
+                        "endOffset": 2543
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 10701,
+                    "endColumn": 69,
+                    "endOffset": 10766
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2313,
+                        "endColumn": 69,
+                        "endOffset": 2378
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 60,
+                    "startColumn": 4,
+                    "startOffset": 10771,
+                    "endColumn": 75,
+                    "endOffset": 10842
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 2793,
+                        "endColumn": 75,
+                        "endOffset": 2864
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 10847,
+                    "endColumn": 74,
+                    "endOffset": 10917
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 4,
+                        "startOffset": 2954,
+                        "endColumn": 74,
+                        "endOffset": 3024
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 10922,
+                    "endColumn": 74,
+                    "endOffset": 10992
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 4,
+                        "startOffset": 1847,
+                        "endColumn": 74,
+                        "endOffset": 1917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 63,
+                    "startColumn": 4,
+                    "startOffset": 10997,
+                    "endColumn": 146,
+                    "endOffset": 11139
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__strings.xml",
+                    "position": {
+                        "startLine": 36,
+                        "startColumn": 4,
+                        "startOffset": 2075,
+                        "endColumn": 150,
+                        "endOffset": 2221
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 11144,
+                    "endColumn": 62,
+                    "endOffset": 11202
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 16,
+                        "endColumn": 62,
+                        "endOffset": 74
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 11207,
+                    "endLine": 68,
+                    "endColumn": 12,
+                    "endOffset": 11407
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 370,
+                        "startColumn": 4,
+                        "startOffset": 21058,
+                        "endLine": 373,
+                        "endColumn": 12,
+                        "endOffset": 21258
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 69,
+                    "startColumn": 4,
+                    "startOffset": 11412,
+                    "endLine": 71,
+                    "endColumn": 12,
+                    "endOffset": 11553
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 197
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 72,
+                    "startColumn": 4,
+                    "startOffset": 11558,
+                    "endLine": 73,
+                    "endColumn": 12,
+                    "endOffset": 11646
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 360,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 448
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 74,
+                    "startColumn": 4,
+                    "startOffset": 11651,
+                    "endLine": 76,
+                    "endColumn": 12,
+                    "endOffset": 11804
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 202,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 355
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 77,
+                    "startColumn": 4,
+                    "startOffset": 11809,
+                    "endLine": 85,
+                    "endColumn": 12,
+                    "endOffset": 12287
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 96,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 574
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 86,
+                    "startColumn": 4,
+                    "startOffset": 12292,
+                    "endLine": 90,
+                    "endColumn": 12,
+                    "endOffset": 12561
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 139,
+                        "startColumn": 4,
+                        "startOffset": 8127,
+                        "endLine": 143,
+                        "endColumn": 12,
+                        "endOffset": 8396
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 91,
+                    "startColumn": 4,
+                    "startOffset": 12566,
+                    "endLine": 98,
+                    "endColumn": 12,
+                    "endOffset": 13028
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 178,
+                        "startColumn": 4,
+                        "startOffset": 10478,
+                        "endLine": 185,
+                        "endColumn": 12,
+                        "endOffset": 10940
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 99,
+                    "startColumn": 4,
+                    "startOffset": 13033,
+                    "endLine": 104,
+                    "endColumn": 12,
+                    "endOffset": 13379
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 236,
+                        "startColumn": 4,
+                        "startOffset": 13825,
+                        "endLine": 241,
+                        "endColumn": 12,
+                        "endOffset": 14171
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 105,
+                    "startColumn": 4,
+                    "startOffset": 13384,
+                    "endLine": 108,
+                    "endColumn": 12,
+                    "endOffset": 13646
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 225,
+                        "startColumn": 4,
+                        "startOffset": 13165,
+                        "endLine": 228,
+                        "endColumn": 12,
+                        "endOffset": 13427
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 109,
+                    "startColumn": 4,
+                    "startOffset": 13651,
+                    "endLine": 118,
+                    "endColumn": 12,
+                    "endOffset": 14280
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 206,
+                        "startColumn": 4,
+                        "startOffset": 11936,
+                        "endLine": 215,
+                        "endColumn": 12,
+                        "endOffset": 12565
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 119,
+                    "startColumn": 4,
+                    "startOffset": 14285,
+                    "endLine": 129,
+                    "endColumn": 12,
+                    "endOffset": 14969
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 282,
+                        "startColumn": 4,
+                        "startOffset": 15987,
+                        "endLine": 292,
+                        "endColumn": 12,
+                        "endOffset": 16671
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 130,
+                    "startColumn": 4,
+                    "startOffset": 14974,
+                    "endColumn": 82,
+                    "endOffset": 15052
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 384,
+                        "startColumn": 4,
+                        "startOffset": 21681,
+                        "endColumn": 82,
+                        "endOffset": 21759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 131,
+                    "startColumn": 4,
+                    "startOffset": 15057,
+                    "endColumn": 108,
+                    "endOffset": 15161
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 401,
+                        "startColumn": 4,
+                        "startOffset": 22377,
+                        "endColumn": 108,
+                        "endOffset": 22481
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 132,
+                    "startColumn": 4,
+                    "startOffset": 15166,
+                    "endLine": 135,
+                    "endColumn": 12,
+                    "endOffset": 15374
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 407,
+                        "startColumn": 4,
+                        "startOffset": 22619,
+                        "endLine": 410,
+                        "endColumn": 12,
+                        "endOffset": 22827
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 136,
+                    "startColumn": 4,
+                    "startOffset": 15379,
+                    "endLine": 138,
+                    "endColumn": 12,
+                    "endOffset": 15505
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 403,
+                        "startColumn": 4,
+                        "startOffset": 22487,
+                        "endLine": 405,
+                        "endColumn": 12,
+                        "endOffset": 22613
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 139,
+                    "startColumn": 4,
+                    "startOffset": 15510,
+                    "endLine": 140,
+                    "endColumn": 12,
+                    "endOffset": 15612
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 376,
+                        "startColumn": 4,
+                        "startOffset": 21366,
+                        "endLine": 377,
+                        "endColumn": 12,
+                        "endOffset": 21468
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 141,
+                    "startColumn": 4,
+                    "startOffset": 15617,
+                    "endLine": 142,
+                    "endColumn": 12,
+                    "endOffset": 15753
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 350,
+                        "startColumn": 4,
+                        "startOffset": 20107,
+                        "endLine": 351,
+                        "endColumn": 12,
+                        "endOffset": 20243
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 143,
+                    "startColumn": 4,
+                    "startOffset": 15758,
+                    "endLine": 144,
+                    "endColumn": 12,
+                    "endOffset": 15894
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 355,
+                        "startColumn": 4,
+                        "startOffset": 20377,
+                        "endLine": 356,
+                        "endColumn": 12,
+                        "endOffset": 20513
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 145,
+                    "startColumn": 4,
+                    "startOffset": 15899,
+                    "endLine": 149,
+                    "endColumn": 12,
+                    "endOffset": 16171
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 386,
+                        "startColumn": 4,
+                        "startOffset": 21765,
+                        "endLine": 390,
+                        "endColumn": 12,
+                        "endOffset": 22037
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 150,
+                    "startColumn": 4,
+                    "startOffset": 16176,
+                    "endLine": 153,
+                    "endColumn": 12,
+                    "endOffset": 16378
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 396,
+                        "startColumn": 4,
+                        "startOffset": 22169,
+                        "endLine": 399,
+                        "endColumn": 12,
+                        "endOffset": 22371
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 154,
+                    "startColumn": 4,
+                    "startOffset": 16383,
+                    "endLine": 156,
+                    "endColumn": 12,
+                    "endOffset": 16503
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 392,
+                        "startColumn": 4,
+                        "startOffset": 22043,
+                        "endLine": 394,
+                        "endColumn": 12,
+                        "endOffset": 22163
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 157,
+                    "startColumn": 4,
+                    "startOffset": 16508,
+                    "endLine": 158,
+                    "endColumn": 12,
+                    "endOffset": 16606
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 374,
+                        "startColumn": 4,
+                        "startOffset": 21263,
+                        "endLine": 375,
+                        "endColumn": 12,
+                        "endOffset": 21361
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 159,
+                    "startColumn": 4,
+                    "startOffset": 16611,
+                    "endLine": 164,
+                    "endColumn": 12,
+                    "endOffset": 16961
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 304,
+                        "startColumn": 4,
+                        "startOffset": 17323,
+                        "endLine": 309,
+                        "endColumn": 12,
+                        "endOffset": 17673
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 165,
+                    "startColumn": 4,
+                    "startOffset": 16966,
+                    "endLine": 168,
+                    "endColumn": 12,
+                    "endOffset": 17225
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 319,
+                        "startColumn": 4,
+                        "startOffset": 18206,
+                        "endLine": 322,
+                        "endColumn": 12,
+                        "endOffset": 18465
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 169,
+                    "startColumn": 4,
+                    "startOffset": 17230,
+                    "endLine": 172,
+                    "endColumn": 12,
+                    "endOffset": 17502
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 323,
+                        "startColumn": 4,
+                        "startOffset": 18470,
+                        "endLine": 326,
+                        "endColumn": 12,
+                        "endOffset": 18742
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 173,
+                    "startColumn": 4,
+                    "startOffset": 17507,
+                    "endLine": 176,
+                    "endColumn": 12,
+                    "endOffset": 17758
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 311,
+                        "startColumn": 4,
+                        "startOffset": 17679,
+                        "endLine": 314,
+                        "endColumn": 12,
+                        "endOffset": 17930
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 177,
+                    "startColumn": 4,
+                    "startOffset": 17763,
+                    "endLine": 180,
+                    "endColumn": 12,
+                    "endOffset": 18029
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 315,
+                        "startColumn": 4,
+                        "startOffset": 17935,
+                        "endLine": 318,
+                        "endColumn": 12,
+                        "endOffset": 18201
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 181,
+                    "startColumn": 4,
+                    "startOffset": 18034,
+                    "endLine": 184,
+                    "endColumn": 12,
+                    "endOffset": 18294
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 335,
+                        "startColumn": 4,
+                        "startOffset": 19276,
+                        "endLine": 338,
+                        "endColumn": 12,
+                        "endOffset": 19536
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 185,
+                    "startColumn": 4,
+                    "startOffset": 18299,
+                    "endLine": 188,
+                    "endColumn": 12,
+                    "endOffset": 18572
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 339,
+                        "startColumn": 4,
+                        "startOffset": 19541,
+                        "endLine": 342,
+                        "endColumn": 12,
+                        "endOffset": 19814
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 189,
+                    "startColumn": 4,
+                    "startOffset": 18577,
+                    "endLine": 192,
+                    "endColumn": 12,
+                    "endOffset": 18829
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 327,
+                        "startColumn": 4,
+                        "startOffset": 18747,
+                        "endLine": 330,
+                        "endColumn": 12,
+                        "endOffset": 18999
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 193,
+                    "startColumn": 4,
+                    "startOffset": 18834,
+                    "endLine": 196,
+                    "endColumn": 12,
+                    "endOffset": 19101
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 331,
+                        "startColumn": 4,
+                        "startOffset": 19004,
+                        "endLine": 334,
+                        "endColumn": 12,
+                        "endOffset": 19271
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 197,
+                    "startColumn": 4,
+                    "startOffset": 19106,
+                    "endLine": 200,
+                    "endColumn": 12,
+                    "endOffset": 19307
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 379,
+                        "startColumn": 4,
+                        "startOffset": 21474,
+                        "endLine": 382,
+                        "endColumn": 12,
+                        "endOffset": 21675
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 201,
+                    "startColumn": 4,
+                    "startOffset": 19312,
+                    "endLine": 205,
+                    "endColumn": 12,
+                    "endOffset": 19577
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 364,
+                        "startColumn": 4,
+                        "startOffset": 20787,
+                        "endLine": 368,
+                        "endColumn": 12,
+                        "endOffset": 21052
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 206,
+                    "startColumn": 4,
+                    "startOffset": 19582,
+                    "endLine": 208,
+                    "endColumn": 12,
+                    "endOffset": 19735
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 344,
+                        "startColumn": 4,
+                        "startOffset": 19820,
+                        "endLine": 346,
+                        "endColumn": 12,
+                        "endOffset": 19973
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 209,
+                    "startColumn": 4,
+                    "startOffset": 19740,
+                    "endLine": 211,
+                    "endColumn": 12,
+                    "endOffset": 19864
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 347,
+                        "startColumn": 4,
+                        "startOffset": 19978,
+                        "endLine": 349,
+                        "endColumn": 12,
+                        "endOffset": 20102
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 212,
+                    "startColumn": 4,
+                    "startOffset": 19869,
+                    "endLine": 214,
+                    "endColumn": 12,
+                    "endOffset": 19993
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 352,
+                        "startColumn": 4,
+                        "startOffset": 20248,
+                        "endLine": 354,
+                        "endColumn": 12,
+                        "endOffset": 20372
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 215,
+                    "startColumn": 4,
+                    "startOffset": 19998,
+                    "endLine": 219,
+                    "endColumn": 12,
+                    "endOffset": 20260
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 358,
+                        "startColumn": 4,
+                        "startOffset": 20519,
+                        "endLine": 362,
+                        "endColumn": 12,
+                        "endOffset": 20781
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 220,
+                    "startColumn": 4,
+                    "startOffset": 20265,
+                    "endLine": 293,
+                    "endColumn": 12,
+                    "endOffset": 25398
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 454,
+                        "endLine": 85,
+                        "endColumn": 12,
+                        "endOffset": 5587
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 294,
+                    "startColumn": 4,
+                    "startOffset": 25403,
+                    "endLine": 367,
+                    "endColumn": 12,
+                    "endOffset": 30762
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 86,
+                        "startColumn": 4,
+                        "startOffset": 5592,
+                        "endLine": 159,
+                        "endColumn": 12,
+                        "endOffset": 10951
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 368,
+                    "startColumn": 4,
+                    "startOffset": 30767,
+                    "endLine": 403,
+                    "endColumn": 12,
+                    "endOffset": 33658
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 160,
+                        "startColumn": 4,
+                        "startOffset": 10956,
+                        "endLine": 195,
+                        "endColumn": 12,
+                        "endOffset": 13847
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 404,
+                    "startColumn": 4,
+                    "startOffset": 33663,
+                    "endLine": 407,
+                    "endColumn": 12,
+                    "endOffset": 33820
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 202,
+                        "startColumn": 4,
+                        "startOffset": 14010,
+                        "endLine": 205,
+                        "endColumn": 12,
+                        "endOffset": 14167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 408,
+                    "startColumn": 4,
+                    "startOffset": 33825,
+                    "endLine": 411,
+                    "endColumn": 12,
+                    "endOffset": 33976
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__themes.xml",
+                    "position": {
+                        "startLine": 198,
+                        "startColumn": 4,
+                        "startOffset": 13854,
+                        "endLine": 201,
+                        "endColumn": 12,
+                        "endOffset": 14005
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 412,
+                    "startColumn": 4,
+                    "startOffset": 33981,
+                    "endLine": 413,
+                    "endColumn": 12,
+                    "endOffset": 34015
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 90
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 414,
+                    "startColumn": 4,
+                    "startOffset": 34020,
+                    "endLine": 425,
+                    "endColumn": 12,
+                    "endOffset": 34911
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 579,
+                        "endLine": 26,
+                        "endColumn": 12,
+                        "endOffset": 1470
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 426,
+                    "startColumn": 4,
+                    "startOffset": 34916,
+                    "endLine": 437,
+                    "endColumn": 12,
+                    "endOffset": 35795
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1475,
+                        "endLine": 38,
+                        "endColumn": 12,
+                        "endOffset": 2354
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 438,
+                    "startColumn": 4,
+                    "startOffset": 35800,
+                    "endLine": 442,
+                    "endColumn": 12,
+                    "endOffset": 36056
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 85,
+                        "startColumn": 4,
+                        "startOffset": 5499,
+                        "endLine": 89,
+                        "endColumn": 12,
+                        "endOffset": 5755
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 443,
+                    "startColumn": 4,
+                    "startOffset": 36061,
+                    "endLine": 451,
+                    "endColumn": 12,
+                    "endOffset": 36519
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 95,
+                        "startColumn": 4,
+                        "startOffset": 5953,
+                        "endLine": 103,
+                        "endColumn": 12,
+                        "endOffset": 6411
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 452,
+                    "startColumn": 4,
+                    "startOffset": 36524,
+                    "endLine": 457,
+                    "endColumn": 12,
+                    "endOffset": 36856
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 74,
+                        "startColumn": 4,
+                        "startOffset": 4966,
+                        "endLine": 79,
+                        "endColumn": 12,
+                        "endOffset": 5298
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 458,
+                    "startColumn": 4,
+                    "startOffset": 36861,
+                    "endLine": 467,
+                    "endColumn": 12,
+                    "endOffset": 37371
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 110,
+                        "startColumn": 4,
+                        "startOffset": 6688,
+                        "endLine": 119,
+                        "endColumn": 12,
+                        "endOffset": 7198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 468,
+                    "startColumn": 4,
+                    "startOffset": 37376,
+                    "endLine": 470,
+                    "endColumn": 12,
+                    "endOffset": 37527
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 123,
+                        "startColumn": 4,
+                        "startOffset": 7309,
+                        "endLine": 125,
+                        "endColumn": 12,
+                        "endOffset": 7460
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 471,
+                    "startColumn": 4,
+                    "startOffset": 37532,
+                    "endLine": 475,
+                    "endColumn": 12,
+                    "endOffset": 37861
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 130,
+                        "startColumn": 4,
+                        "startOffset": 7629,
+                        "endLine": 134,
+                        "endColumn": 12,
+                        "endOffset": 7958
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 476,
+                    "startColumn": 4,
+                    "startOffset": 37866,
+                    "endLine": 479,
+                    "endColumn": 12,
+                    "endOffset": 38160
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 144,
+                        "startColumn": 4,
+                        "startOffset": 8401,
+                        "endLine": 147,
+                        "endColumn": 12,
+                        "endOffset": 8695
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 480,
+                    "startColumn": 4,
+                    "startOffset": 38165,
+                    "endLine": 481,
+                    "endColumn": 12,
+                    "endOffset": 38275
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 186,
+                        "startColumn": 4,
+                        "startOffset": 10945,
+                        "endLine": 187,
+                        "endColumn": 12,
+                        "endOffset": 11055
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 482,
+                    "startColumn": 4,
+                    "startOffset": 38280,
+                    "endLine": 487,
+                    "endColumn": 12,
+                    "endOffset": 38605
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 192,
+                        "startColumn": 4,
+                        "startOffset": 11267,
+                        "endLine": 197,
+                        "endColumn": 12,
+                        "endOffset": 11592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 488,
+                    "startColumn": 4,
+                    "startOffset": 38610,
+                    "endLine": 489,
+                    "endColumn": 12,
+                    "endOffset": 38719
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 242,
+                        "startColumn": 4,
+                        "startOffset": 14176,
+                        "endLine": 243,
+                        "endColumn": 12,
+                        "endOffset": 14285
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 490,
+                    "startColumn": 4,
+                    "startOffset": 38724,
+                    "endLine": 499,
+                    "endColumn": 12,
+                    "endOffset": 39561
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2359,
+                        "endLine": 48,
+                        "endColumn": 12,
+                        "endOffset": 3196
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 500,
+                    "startColumn": 4,
+                    "startOffset": 39566,
+                    "endLine": 511,
+                    "endColumn": 12,
+                    "endOffset": 40429
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 3201,
+                        "endLine": 60,
+                        "endColumn": 12,
+                        "endOffset": 4064
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 512,
+                    "startColumn": 4,
+                    "startOffset": 40434,
+                    "endLine": 523,
+                    "endColumn": 12,
+                    "endOffset": 41325
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 61,
+                        "startColumn": 4,
+                        "startOffset": 4069,
+                        "endLine": 72,
+                        "endColumn": 12,
+                        "endOffset": 4960
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 524,
+                    "startColumn": 4,
+                    "startOffset": 41330,
+                    "endLine": 525,
+                    "endColumn": 12,
+                    "endOffset": 41438
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 90,
+                        "startColumn": 4,
+                        "startOffset": 5760,
+                        "endLine": 91,
+                        "endColumn": 12,
+                        "endOffset": 5868
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 526,
+                    "startColumn": 4,
+                    "startOffset": 41443,
+                    "endLine": 527,
+                    "endColumn": 12,
+                    "endOffset": 41517
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 92,
+                        "startColumn": 4,
+                        "startOffset": 5873,
+                        "endLine": 93,
+                        "endColumn": 12,
+                        "endOffset": 5947
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 528,
+                    "startColumn": 4,
+                    "startOffset": 41522,
+                    "endLine": 529,
+                    "endColumn": 12,
+                    "endOffset": 41632
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 104,
+                        "startColumn": 4,
+                        "startOffset": 6416,
+                        "endLine": 105,
+                        "endColumn": 12,
+                        "endOffset": 6526
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 530,
+                    "startColumn": 4,
+                    "startOffset": 41637,
+                    "endLine": 532,
+                    "endColumn": 12,
+                    "endOffset": 41788
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 106,
+                        "startColumn": 4,
+                        "startOffset": 6531,
+                        "endLine": 108,
+                        "endColumn": 12,
+                        "endOffset": 6682
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 533,
+                    "startColumn": 4,
+                    "startOffset": 41793,
+                    "endLine": 534,
+                    "endColumn": 12,
+                    "endOffset": 41903
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 80,
+                        "startColumn": 4,
+                        "startOffset": 5303,
+                        "endLine": 81,
+                        "endColumn": 12,
+                        "endOffset": 5413
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 535,
+                    "startColumn": 4,
+                    "startOffset": 41908,
+                    "endLine": 536,
+                    "endColumn": 12,
+                    "endOffset": 41983
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 82,
+                        "startColumn": 4,
+                        "startOffset": 5418,
+                        "endLine": 83,
+                        "endColumn": 12,
+                        "endOffset": 5493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 537,
+                    "startColumn": 4,
+                    "startOffset": 41988,
+                    "endLine": 538,
+                    "endColumn": 12,
+                    "endOffset": 42088
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 120,
+                        "startColumn": 4,
+                        "startOffset": 7203,
+                        "endLine": 121,
+                        "endColumn": 12,
+                        "endOffset": 7303
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 539,
+                    "startColumn": 4,
+                    "startOffset": 42093,
+                    "endLine": 541,
+                    "endColumn": 12,
+                    "endOffset": 42251
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 126,
+                        "startColumn": 4,
+                        "startOffset": 7465,
+                        "endLine": 128,
+                        "endColumn": 12,
+                        "endOffset": 7623
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 542,
+                    "startColumn": 4,
+                    "startOffset": 42256,
+                    "endLine": 544,
+                    "endColumn": 12,
+                    "endOffset": 42414
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 135,
+                        "startColumn": 4,
+                        "startOffset": 7963,
+                        "endLine": 137,
+                        "endColumn": 12,
+                        "endOffset": 8121
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 545,
+                    "startColumn": 4,
+                    "startOffset": 42419,
+                    "endLine": 548,
+                    "endColumn": 12,
+                    "endOffset": 42717
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 148,
+                        "startColumn": 4,
+                        "startOffset": 8700,
+                        "endLine": 151,
+                        "endColumn": 12,
+                        "endOffset": 8998
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 549,
+                    "startColumn": 4,
+                    "startOffset": 42722,
+                    "endLine": 552,
+                    "endColumn": 12,
+                    "endOffset": 43046
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 152,
+                        "startColumn": 4,
+                        "startOffset": 9003,
+                        "endLine": 155,
+                        "endColumn": 12,
+                        "endOffset": 9327
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 553,
+                    "startColumn": 4,
+                    "startOffset": 43051,
+                    "endLine": 555,
+                    "endColumn": 12,
+                    "endOffset": 43252
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 188,
+                        "startColumn": 4,
+                        "startOffset": 11060,
+                        "endLine": 190,
+                        "endColumn": 12,
+                        "endOffset": 11261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 556,
+                    "startColumn": 4,
+                    "startOffset": 43257,
+                    "endLine": 561,
+                    "endColumn": 12,
+                    "endOffset": 43589
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 198,
+                        "startColumn": 4,
+                        "startOffset": 11597,
+                        "endLine": 203,
+                        "endColumn": 12,
+                        "endOffset": 11929
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 562,
+                    "startColumn": 4,
+                    "startOffset": 43594,
+                    "endLine": 563,
+                    "endColumn": 12,
+                    "endOffset": 43709
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 244,
+                        "startColumn": 4,
+                        "startOffset": 14290,
+                        "endLine": 245,
+                        "endColumn": 12,
+                        "endOffset": 14405
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 564,
+                    "startColumn": 4,
+                    "startOffset": 43714,
+                    "endLine": 570,
+                    "endColumn": 12,
+                    "endOffset": 44179
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 165,
+                        "startColumn": 4,
+                        "startOffset": 9796,
+                        "endLine": 171,
+                        "endColumn": 12,
+                        "endOffset": 10261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 571,
+                    "startColumn": 4,
+                    "startOffset": 44184,
+                    "endLine": 574,
+                    "endColumn": 12,
+                    "endOffset": 44464
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 231,
+                        "startColumn": 4,
+                        "startOffset": 13539,
+                        "endLine": 234,
+                        "endColumn": 12,
+                        "endOffset": 13819
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 575,
+                    "startColumn": 4,
+                    "startOffset": 44469,
+                    "endLine": 576,
+                    "endColumn": 12,
+                    "endOffset": 44575
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 174,
+                        "startColumn": 4,
+                        "startOffset": 10365,
+                        "endLine": 175,
+                        "endColumn": 12,
+                        "endOffset": 10471
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 577,
+                    "startColumn": 4,
+                    "startOffset": 44580,
+                    "endLine": 579,
+                    "endColumn": 12,
+                    "endOffset": 44741
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 249,
+                        "startColumn": 4,
+                        "startOffset": 14498,
+                        "endLine": 251,
+                        "endColumn": 12,
+                        "endOffset": 14659
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 580,
+                    "startColumn": 4,
+                    "startOffset": 44746,
+                    "endLine": 581,
+                    "endColumn": 12,
+                    "endOffset": 44844
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 259,
+                        "startColumn": 4,
+                        "startOffset": 14916,
+                        "endLine": 260,
+                        "endColumn": 12,
+                        "endOffset": 15014
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 582,
+                    "startColumn": 4,
+                    "startOffset": 44849,
+                    "endLine": 584,
+                    "endColumn": 12,
+                    "endOffset": 45068
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 268,
+                        "startColumn": 4,
+                        "startOffset": 15457,
+                        "endLine": 270,
+                        "endColumn": 12,
+                        "endOffset": 15676
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 585,
+                    "startColumn": 4,
+                    "startOffset": 45073,
+                    "endLine": 588,
+                    "endColumn": 12,
+                    "endOffset": 45394
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 297,
+                        "startColumn": 4,
+                        "startOffset": 16994,
+                        "endLine": 300,
+                        "endColumn": 12,
+                        "endOffset": 17315
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 589,
+                    "startColumn": 4,
+                    "startOffset": 45399,
+                    "endLine": 593,
+                    "endColumn": 12,
+                    "endOffset": 45790
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 219,
+                        "startColumn": 4,
+                        "startOffset": 12768,
+                        "endLine": 223,
+                        "endColumn": 12,
+                        "endOffset": 13159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 594,
+                    "startColumn": 4,
+                    "startOffset": 45795,
+                    "endLine": 600,
+                    "endColumn": 12,
+                    "endOffset": 46252
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 158,
+                        "startColumn": 4,
+                        "startOffset": 9334,
+                        "endLine": 164,
+                        "endColumn": 12,
+                        "endOffset": 9791
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 601,
+                    "startColumn": 4,
+                    "startOffset": 46257,
+                    "endLine": 602,
+                    "endColumn": 12,
+                    "endOffset": 46359
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 229,
+                        "startColumn": 4,
+                        "startOffset": 13432,
+                        "endLine": 230,
+                        "endColumn": 12,
+                        "endOffset": 13534
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 603,
+                    "startColumn": 4,
+                    "startOffset": 46364,
+                    "endLine": 604,
+                    "endColumn": 12,
+                    "endOffset": 46458
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 172,
+                        "startColumn": 4,
+                        "startOffset": 10266,
+                        "endLine": 173,
+                        "endColumn": 12,
+                        "endOffset": 10360
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 605,
+                    "startColumn": 4,
+                    "startOffset": 46463,
+                    "endLine": 606,
+                    "endColumn": 12,
+                    "endOffset": 46545
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 247,
+                        "startColumn": 4,
+                        "startOffset": 14411,
+                        "endLine": 248,
+                        "endColumn": 12,
+                        "endOffset": 14493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 607,
+                    "startColumn": 4,
+                    "startOffset": 46550,
+                    "endLine": 610,
+                    "endColumn": 12,
+                    "endOffset": 46794
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 255,
+                        "startColumn": 4,
+                        "startOffset": 14667,
+                        "endLine": 258,
+                        "endColumn": 12,
+                        "endOffset": 14911
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 611,
+                    "startColumn": 4,
+                    "startOffset": 46799,
+                    "endLine": 616,
+                    "endColumn": 12,
+                    "endOffset": 47231
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 262,
+                        "startColumn": 4,
+                        "startOffset": 15020,
+                        "endLine": 267,
+                        "endColumn": 12,
+                        "endOffset": 15452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 617,
+                    "startColumn": 4,
+                    "startOffset": 47236,
+                    "endLine": 620,
+                    "endColumn": 12,
+                    "endOffset": 47549
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 293,
+                        "startColumn": 4,
+                        "startOffset": 16676,
+                        "endLine": 296,
+                        "endColumn": 12,
+                        "endOffset": 16989
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 621,
+                    "startColumn": 4,
+                    "startOffset": 47554,
+                    "endLine": 623,
+                    "endColumn": 12,
+                    "endOffset": 47747
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 216,
+                        "startColumn": 4,
+                        "startOffset": 12570,
+                        "endLine": 218,
+                        "endColumn": 12,
+                        "endOffset": 12763
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 624,
+                    "startColumn": 4,
+                    "startOffset": 47752,
+                    "endLine": 628,
+                    "endColumn": 12,
+                    "endOffset": 48047
+                },
+                "from": {
+                    "file": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/values/abs__styles.xml",
+                    "position": {
+                        "startLine": 274,
+                        "startColumn": 4,
+                        "startOffset": 15684,
+                        "endLine": 278,
+                        "endColumn": 12,
+                        "endOffset": 15979
+                    }
+                }
+            }
+        ]
+    }
+]

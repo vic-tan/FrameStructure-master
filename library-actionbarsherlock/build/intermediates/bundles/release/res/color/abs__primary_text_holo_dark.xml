@@ -22,4 +22,3 @@
     <item android:state_activated="true" android:color="@color/abs__bright_foreground_holo_dark"/>
     <item android:color="@color/abs__bright_foreground_holo_dark"/> <!-- not selected -->
 </selector>
-<!-- From: file:/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/color/abs__primary_text_holo_dark.xml -->

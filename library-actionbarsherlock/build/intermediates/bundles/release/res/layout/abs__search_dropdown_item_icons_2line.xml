@@ -87,4 +87,3 @@
               android:layout_above="@android:id/text2" />
 
 </RelativeLayout>
-<!-- From: file:/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/layout/abs__search_dropdown_item_icons_2line.xml -->

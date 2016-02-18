@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/maven/org.androidannotations/androidannotations-api/pom.xml'
+        exclude 'META-INF/maven/org.androidannotations/androidannotations-api/pom.properties'
+    }
 }
 
 dependencies {

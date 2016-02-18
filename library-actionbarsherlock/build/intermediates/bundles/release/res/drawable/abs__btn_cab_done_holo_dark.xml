@@ -22,4 +22,3 @@
     <item android:state_enabled="true"
         android:drawable="@drawable/abs__btn_cab_done_default_holo_dark" />
 </selector>
-<!-- From: file:/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable/abs__btn_cab_done_holo_dark.xml -->

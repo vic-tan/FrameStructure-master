@@ -10,8 +10,7 @@ public class Bean
 	private String phone;
 	
 	private boolean isChecked ; 
-	
-	
+
 
 
 	public boolean isChecked()
