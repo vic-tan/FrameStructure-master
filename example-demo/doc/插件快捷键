@@ -19,3 +19,9 @@ Android中的序列化有两种方式，分别是实现Serializable接口和Parc
 
 7、Android Layout ID Converter
 生成findView代码的使用方法，在你的布局文件当中右键，在弹出来的菜单当中选择Convert Android layout xml
+
+8、Android File Grouping
+个很实用的插件，它可以在不改变文件目录结构的情况下，将文件按名称进行分组，
+使用方法：
+点击文件夹右键，选择Group
+https://www.aswifter.com/2015/07/25/android-file-grouping-plugin/

@@ -36,6 +36,7 @@ public class DemoMainActivity extends BaseActivity implements AdapterView.OnItem
     PullToRefreshListView listView;
     private List list;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,10 +49,10 @@ public class DemoMainActivity extends BaseActivity implements AdapterView.OnItem
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
         list = new ArrayList();
         list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromAssets(JsonReader.CUSTOM_JSON_FOLDER + File.separator + "test_list_main_json.txt"), BaseJson.class).getData(), TestBean.class));
-        listView.setAdapter(new CommonAdapter<TestBean>(this,list,R.layout.test_list_item) {
+        listView.setAdapter(new CommonAdapter<TestBean>(this, list, R.layout.test_list_item) {
             @Override
             public void convert(ViewHolder holder, TestBean bean) {
-                ((ExpandableTextView)holder.getView(R.id.expand_text_view)).setText(bean.getDesc());
+                ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setText(bean.getDesc());
                 holder.setText(R.id.tv_name, bean.getName());
             }
         });
@@ -59,7 +60,6 @@ public class DemoMainActivity extends BaseActivity implements AdapterView.OnItem
         Logger.i(TAG, ScreenUtils.getScreenWidth(this) + ":" + ScreenUtils.getScreenHeight(this));
         Logger.i(TAG, ResUtils.getFileFromAssets(JsonReader.CUSTOM_JSON_FOLDER + File.separator + "test_list_main_json.txt") + "");
     }
-
 
 
     @Override
@@ -100,6 +100,6 @@ public class DemoMainActivity extends BaseActivity implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        StartActUtils.startForAbsolutePath(DemoMainActivity.this, ((TestBean) list.get(position-1)).getActivityPath());
+        StartActUtils.startForAbsolutePath(DemoMainActivity.this, ((TestBean) list.get(position - 1)).getActivityPath());
     }
 }
