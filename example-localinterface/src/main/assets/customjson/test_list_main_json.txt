@@ -57,7 +57,12 @@
             "activityPath": "com.example.demo.frame.activity.DemoPagerSlidingTabStripActivity",
             "name": " pagerSlidingTabStripActivity 多个tab 页滑动切换集合",
             "desc": "pagerSlidingTabStripActivity 多个tab 页滑动,自定义颜色及操作简单"
-          }
+          },
+         {
+           "activityPath": "com.example.demo.frame.activity.DemoNoteActivity",
+           "name": "GreenDao ",
+           "desc": "sqlite 数据库ORM框架"
+         }
 
     ]
 }

@@ -238,6 +238,11 @@ final public class FastCursor implements Cursor {
     }
 
     @Override
+    public void setExtras(Bundle extras) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public Bundle getExtras() {
         throw new UnsupportedOperationException();
     }

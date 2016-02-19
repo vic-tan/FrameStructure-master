@@ -10,10 +10,11 @@ import com.common.ui.base.main.BaseApplication;
  */
 public class GlobalApplication extends BaseApplication {
 
+
     @Override
     public void onCreate() {
         super.onCreate();
-    }
 
+    }
 
 }

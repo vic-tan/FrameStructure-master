@@ -10,6 +10,8 @@ package com.constants.fixed;
 public class GlobalConstants {
 
     public static final String CRASH_PATH = "/framestructure/crash/";//针对全局未捕获异常，保存到本志文件路径
+    /** 数据库名字 **/
+    public static final String DB_NAME = "framestucture.db";
 
 }
 

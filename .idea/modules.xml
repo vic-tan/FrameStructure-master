@@ -14,7 +14,6 @@
       <module fileurl="file://$PROJECT_DIR$/library-greenDAO/library-greenDAO.iml" filepath="$PROJECT_DIR$/library-greenDAO/library-greenDAO.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-greenDAO/library-greenDAO.iml" filepath="$PROJECT_DIR$/library-greenDAO/library-greenDAO.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-imageslider/library-imageslider.iml" filepath="$PROJECT_DIR$/library-imageslider/library-imageslider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library-litepal/library-litepal.iml" filepath="$PROJECT_DIR$/library-litepal/library-litepal.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-pullToRefresh/library-pullToRefresh.iml" filepath="$PROJECT_DIR$/library-pullToRefresh/library-pullToRefresh.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-common/support-common.iml" filepath="$PROJECT_DIR$/support-common/support-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-constants/support-constants.iml" filepath="$PROJECT_DIR$/support-constants/support-constants.iml" />

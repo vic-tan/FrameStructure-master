@@ -1,2 +1,2 @@
-include ':example-localinterface', ':FrameStructure', ':library-litepal',':library-greenDAO', ':library-imageslider', ':support-common', ':support-constants', ':example-demo', ':library-greenDAO', ":library-pullToRefresh", ":library-actionbarsherlock", ":library-autolayout"
+include ':example-localinterface', ':FrameStructure',':library-greenDAO', ':library-imageslider', ':support-common', ':support-constants', ':example-demo', ':library-greenDAO', ":library-pullToRefresh", ":library-actionbarsherlock", ":library-autolayout"
 include 'example-DaoGenerator', 'example-DaoExampleGenerator'

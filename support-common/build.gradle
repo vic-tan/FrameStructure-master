@@ -26,7 +26,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':library-autolayout')
     compile project(':library-pullToRefresh')
-    compile project(':library-litepal')
     compile project(':library-greenDAO')
     compile project(':support-constants')
     compile project(':example-localinterface')
