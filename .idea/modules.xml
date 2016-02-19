@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FrameStructure/FrameStructure.iml" filepath="$PROJECT_DIR$/FrameStructure/FrameStructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/FrameStructure-master.iml" filepath="$PROJECT_DIR$/FrameStructure-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example-DaoExampleGenerator/example-DaoExampleGenerator.iml" filepath="$PROJECT_DIR$/example-DaoExampleGenerator/example-DaoExampleGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example-DaoGenerator/example-DaoGenerator.iml" filepath="$PROJECT_DIR$/example-DaoGenerator/example-DaoGenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/example-demo/example-demo.iml" filepath="$PROJECT_DIR$/example-demo/example-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/example-localinterface/example-localinterface.iml" filepath="$PROJECT_DIR$/example-localinterface/example-localinterface.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-actionbarsherlock/library-actionbarsherlock.iml" filepath="$PROJECT_DIR$/library-actionbarsherlock/library-actionbarsherlock.iml" />
