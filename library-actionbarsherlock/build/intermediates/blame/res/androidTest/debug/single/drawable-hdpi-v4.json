@@ -32,12 +32,12 @@
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-hdpi-v4/abs__textfield_search_default_holo_light.9.png"
     },
     {
-        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/abs__btn_cab_done_pressed_holo_dark.9.png",
-        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-hdpi-v4/abs__btn_cab_done_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/abs__ab_bottom_solid_inverse_holo.9.png",
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-hdpi-v4/abs__ab_bottom_solid_inverse_holo.9.png"
+    },
+    {
+        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/abs__btn_cab_done_pressed_holo_dark.9.png",
+        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-hdpi-v4/abs__btn_cab_done_pressed_holo_dark.9.png"
     },
     {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4/abs__textfield_search_selected_holo_light.9.png",

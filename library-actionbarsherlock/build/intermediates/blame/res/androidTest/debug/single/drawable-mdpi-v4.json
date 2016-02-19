@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__progress_secondary_holo_light.9.png",
-        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-mdpi-v4/abs__progress_secondary_holo_light.9.png"
-    },
-    {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__progress_bg_holo_dark.9.png",
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-mdpi-v4/abs__progress_bg_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__progress_secondary_holo_light.9.png",
+        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-mdpi-v4/abs__progress_secondary_holo_light.9.png"
     },
     {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__textfield_search_right_selected_holo_light.9.png",
@@ -228,12 +228,12 @@
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-mdpi-v4/abs__ic_clear_disabled.png"
     },
     {
-        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__ab_bottom_transparent_dark_holo.9.png",
-        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-mdpi-v4/abs__ab_bottom_transparent_dark_holo.9.png"
-    },
-    {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__list_divider_holo_light.9.png",
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-mdpi-v4/abs__list_divider_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__ab_bottom_transparent_dark_holo.9.png",
+        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/bundles/debug/res/drawable-mdpi-v4/abs__ab_bottom_transparent_dark_holo.9.png"
     },
     {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/abs__menu_dropdown_panel_holo_dark.9.png",

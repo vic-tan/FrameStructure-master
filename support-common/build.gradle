@@ -27,6 +27,7 @@ dependencies {
     compile project(':library-autolayout')
     compile project(':library-pullToRefresh')
     compile project(':library-litepal')
+    compile project(':library-greenDAO')
     compile project(':support-constants')
     compile project(':example-localinterface')
     compile 'org.apache.httpcomponents:httpcore:4.4.2'

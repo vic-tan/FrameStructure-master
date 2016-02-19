@@ -1,3 +1,3 @@
-include ':example-localinterface', ':FrameStructure',':library-litepal', ':library-imageslider', ':support-common', ':support-constants', ':example-demo', ":library-pullToRefresh",":library-actionbarsherlock",":library-autolayout"
+include ':example-localinterface', ':FrameStructure', ':library-litepal', ':library-imageslider', ':support-common', ':support-constants', ':example-demo', ':library-greenDAO', ":library-pullToRefresh", ":library-actionbarsherlock", ":library-autolayout"
 
 
