@@ -26,6 +26,11 @@ import java.util.Map;
 
 public class DemoHttpTaskActivity extends BaseActivity implements View.OnClickListener, IHttpTaskCallBack, IRefreshRequestCallBack {
 
+
+    /**
+     * | Header 1 | Header 2 |
+     * | val1     | val2     |
+     */
     public static final String TAG = "HttpTaskActivity";
 
     private View view;

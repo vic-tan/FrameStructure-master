@@ -1,27 +1,62 @@
 1、Lifecycle Sorter
-可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序，快捷键Ctrl + alt + K
+   可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序，快捷键Ctrl + alt + K
 
 2、Android Annotations @ViewById code
-可以选中setContentView中的布局,快速注解findById，快捷键command + N -----> Generate @ViewById entries
+   可以选中setContentView中的布局,快速注解findById，快捷键command + N -----> Generate @ViewById entries
 
 3、Gsonformat
-可根据json数据快速生成java实体类 ,快捷键command + N -----> Gsonformat
+   可根据json数据快速生成java实体类 ,快捷键command + N -----> Gsonformat
 
 
 4、JsonOnlineViewer
-可实现直接在android studio中调试接口数据，可以选择请求类型，自定义请求头及请求体，json数据格式化后展示，配合着Gsonformat会不会不错呢 ,快捷键 shift + ctrl + command + N 或者，View--->JsonViewer
+   可实现直接在android studio中调试接口数据，可以选择请求类型，自定义请求头及请求体，json数据格式化后展示，配合着Gsonformat会不会不错呢 ,快捷键 shift + ctrl + command + N 或者，View--->JsonViewer
 
 5. Android  Drawable Importer
-为了适应所有Android屏幕的大小和密度，每个Android项目都会包含drawable文件夹。选择res 文件夹--->scaled Drawable
+   为了适应所有Android屏幕的大小和密度，每个Android项目都会包含drawable文件夹。选择res 文件夹--->scaled Drawable
 
 6 、Android Parcelable Code Generator
-Android中的序列化有两种方式，分别是实现Serializable接口和Parcelable接口，但在Android中是推荐使用Parcelable，只不过我们这种方式要比Serializable方式要繁琐，那么有了这个插件一切就ok了。
+   Android中的序列化有两种方式，分别是实现Serializable接口和Parcelable接口，但在Android中是推荐使用Parcelable，只不过我们这种方式要比Serializable方式要繁琐，那么有了这个插件一切就ok了。
 
 7、Android Layout ID Converter
-生成findView代码的使用方法，在你的布局文件当中右键，在弹出来的菜单当中选择Convert Android layout xml
+   生成findView代码的使用方法，在你的布局文件当中右键，在弹出来的菜单当中选择Convert Android layout xml
 
 8、Android File Grouping
-个很实用的插件，它可以在不改变文件目录结构的情况下，将文件按名称进行分组，
-使用方法：
-点击文件夹右键，选择Group
-https://www.aswifter.com/2015/07/25/android-file-grouping-plugin/
+   个很实用的插件，它可以在不改变文件目录结构的情况下，将文件按名称进行分组，
+   使用方法：
+   点击文件夹右键，选择Group
+   https://www.aswifter.com/2015/07/25/android-file-grouping-plugin/
+
+9、 Android Sexy Editor
+   AS编辑代码设置背影图片，操作文件 Settings ----> other Settings ---->Sexy Editor ----> inster 图片
+
+10、ADB Idea
+
+   通过该插件可以轻松完成以下操作而不用手动输入ADB命令:
+
+   拥有以下功能，非常方便:
+
+   卸载应用
+   杀掉应用进程
+   启动应用
+   重启应用
+   清除应用数据
+   清楚应用数据并且重启应用
+
+   用法Mac OSX: Ctrl+Shift+A
+     Windows/Linux: Ctrl+Alt+Shift+A
+
+ 11、Pipe Table Formatter 对齐格式化，
+    操作方法，选择要格式化对齐内容，右键 ----》picpe table ----> formater
+   text like:
+
+      |Header 1|Header 2|
+      |val1|val2|
+   or like:
+
+      Header 1,Header 2
+      val1,val2
+   is formatted to:
+
+   | Header 1 | Header 2 |
+   | val1     | val2     |
+    https://github.com/anton-dev-ua/PipeTableFormatter
