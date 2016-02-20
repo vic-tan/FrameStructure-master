@@ -25,7 +25,7 @@ public class ResUtils {
 
         StringBuilder s = new StringBuilder("");
         try {
-            InputStreamReader in = new InputStreamReader(BaseApplication.getContext().getResources().getAssets().open(fileName));
+            InputStreamReader in = new InputStreamReader(BaseApplication.appContext.getResources().getAssets().open(fileName));
             BufferedReader br = new BufferedReader(in);
             String line;
             while ((line = br.readLine()) != null) {
@@ -52,7 +52,7 @@ public class ResUtils {
         }
         Properties props = new Properties();
         try {
-            InputStream in = BaseApplication.getContext().getAssets().open(fileName);
+            InputStream in = BaseApplication.appContext.getAssets().open(fileName);
             props.load(in);
         } catch (Exception e1) {
             e1.printStackTrace();
@@ -65,7 +65,7 @@ public class ResUtils {
     public static String getFileFromRaw(int id) {
         StringBuilder s = new StringBuilder();
         try {
-            InputStreamReader in = new InputStreamReader(BaseApplication.getContext().getResources().openRawResource(id));
+            InputStreamReader in = new InputStreamReader(BaseApplication.appContext.getResources().openRawResource(id));
             BufferedReader br = new BufferedReader(in);
             String line;
             while ((line = br.readLine()) != null) {
@@ -81,36 +81,36 @@ public class ResUtils {
     //************************************************ string values************************************************************//
 
     public static String getStr( int id) {
-        return BaseApplication.getContext().getResources().getString(id);
+        return BaseApplication.appContext.getResources().getString(id);
     }
 
 
     //************************************************ colors values************************************************************//
 
     public static int getColor(int id) {
-        return BaseApplication.getContext().getResources().getColor(id);
+        return BaseApplication.appContext.getResources().getColor(id);
     }
 
     //************************************************ arrays values************************************************************//
 
     public static String[] getStringArray(int id) {
-        return BaseApplication.getContext().getResources().getStringArray(id);
+        return BaseApplication.appContext.getResources().getStringArray(id);
     }
 
     public static int[] getIntArray( int id) {
-        return BaseApplication.getContext().getResources().getIntArray(id);
+        return BaseApplication.appContext.getResources().getIntArray(id);
     }
 
     //************************************************ dimens values************************************************************//
 
     public static float getDimens( int id) {
-        return BaseApplication.getContext().getResources().getDimension(id);
+        return BaseApplication.appContext.getResources().getDimension(id);
     }
 
     //************************************************ Drawable values************************************************************//
 
     public static Drawable getDrawable(int id) {
-        return BaseApplication.getContext().getResources().getDrawable(id);
+        return BaseApplication.appContext.getResources().getDrawable(id);
     }
 
 }

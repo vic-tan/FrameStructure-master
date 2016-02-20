@@ -90,9 +90,9 @@
     <orderEntry type="library" exported="" name="fastjson-1.1.40" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.4" level="project" />
     <orderEntry type="module" module-name="support-constants" exported="" />
-    <orderEntry type="module" module-name="library-litepal" exported="" />
     <orderEntry type="module" module-name="library-autolayout" exported="" />
     <orderEntry type="module" module-name="library-pullToRefresh" exported="" />
     <orderEntry type="module" module-name="example-localinterface" exported="" />
+    <orderEntry type="module" module-name="library-greenDAO" exported="" />
   </component>
 </module>
