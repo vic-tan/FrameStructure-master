@@ -2,8 +2,8 @@ package com.common.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Environment;
 
+import com.constants.fixed.GlobalConstants;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
@@ -43,7 +43,6 @@ public class ImageLoaderUtils {
     public static final int CONNECT_TIME_OUT = 5000;//连接时间(5s)
     public static final int READ_TIME_OUT = 30000;//超时时间(30s)
     public static ImageLoaderConfiguration imageLoaderConfiguration;
-    public static final String IMAGES_CACHE__PATH = Environment.getExternalStorageDirectory().toString() + "/framestructure/images/cache/";
 
     /**
      * ImageLoader初始化配置
@@ -61,7 +60,7 @@ public class ImageLoaderUtils {
                 .denyCacheImageMultipleSizesInMemory()
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator())//将保存的时候的URI名称用MD5 加密
                 .memoryCache(new LruMemoryCache((int) (Runtime.getRuntime().maxMemory() / 5)))//缓存的文件
-                .diskCache(new UnlimitedDiskCache(new File(IMAGES_CACHE__PATH)))//图片缓存本地地址
+                .diskCache(new UnlimitedDiskCache(new File(GlobalConstants.IMAGES_CACHE_PATH)))//图片缓存本地地址
                 .tasksProcessingOrder(QueueProcessingType.FIFO)
                         //.diskCacheFileCount(LRU_DISK_CACHE_NUM)//缓存的文件数量
                 .memoryCacheSize(LRU_MEMORY_CACHE)

@@ -28,8 +28,8 @@ public class ExampleTest extends InstrumentationTestCase {
     }
 
     public void testNetWork() throws Exception {
-        NetUtils.isConnected(GlobalApplication.getContext());
-        Logger.i(TestConstants.TAG, NetUtils.isConnected(GlobalApplication.getContext()) + "---");
+        NetUtils.isConnected(GlobalApplication.appContext);
+        Logger.i(TestConstants.TAG, NetUtils.isConnected(GlobalApplication.appContext) + "---");
     }
 
     public void testDensity() throws Exception {

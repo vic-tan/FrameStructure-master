@@ -12,7 +12,7 @@ import com.common.utils.InflaterUtils;
 import com.common.utils.SPUtils;
 import com.common.utils.StartActUtils;
 import com.common.ui.base.activity.BaseActivity;
-import com.example.demo.frame.activity.DemoMainActivity;
+import com.example.demo.frame.activity.Demo_MainActivity;
 
 
 import org.androidannotations.annotations.AfterViews;
@@ -84,7 +84,7 @@ public class GuideActivity extends BaseActivity {
         lastView.findViewById(R.id.imgBtn_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StartActUtils.start(GuideActivity.this, DemoMainActivity.class);
+                StartActUtils.start(GuideActivity.this, Demo_MainActivity.class);
                 SPUtils.putBoolean(LauncherActivity.FIRST_LAUNCHER_APP_TAG, false);//设置为已打开过该应用了
                 StartActUtils.finish(GuideActivity.this);
             }

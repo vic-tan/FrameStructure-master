@@ -3,66 +3,72 @@
     "msg": "操作成功",
     "data": [
         {
-            "activityPath": "com.example.demo.frame.activity.DemoHttpTaskActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_HttpTaskActivity",
             "name": "几种公用网络请求方式示范",
             "desc": "包括基本普通请求、加载框请求，布局提示请求，列表请求......"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.DemoListViewActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_ListViewActivity",
             "name": "listView列表上拉下拉刷新示范",
             "desc": "listView列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单。"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.DemoGridViewActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_GridViewActivity",
             "name": "GridView上拉下拉刷新示范",
             "desc": "GridView列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.DemoDialogActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_DialogActivity",
             "name": "提示框",
             "desc": "Dialog公用提示,分为常用一个按钮，和两个按钮，实现简单，自定义布局，适配所有android分辨率机型。"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.DemoAnnotationActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_AnnotationActivity",
             "name": "Annotation注释",
             "desc": "注释 id view，减少id的书写..大大提高效率"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.DemoFlycoRoundViewActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_FlycoRoundViewActivity",
             "name": "圆角布局",
             "desc": "一个扩展原生控件支持圆角矩形框背景的库,可以减少相关shape资源文件使用.支持TextView,及相对，线性，帧布局等，适配所有android分辨率机型"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.DemoInjectionActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_InjectionActivity",
             "name": "view selector选择器",
             "desc": "以后在写不用在写selector.xml资源文件布局,只需要简单的设置属性即可，适配所有android分辨率机型"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.DemoBaseAdpterActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_BaseAdpterActivity",
             "name": "提取公用BaseAdapter",
             "desc": "提取了公用BaseAdapter,减少好代码的编程，少到只用传用ID,和显示文字即可，支持多BaseAdapter的多布局显示,界面效果看不出，请看具体代码。"
         },
          {
-             "activityPath": "com.example.demo.frame.activity.DemoBasePhotoActivity",
+             "activityPath": "com.example.demo.frame.activity.Demo_BasePhotoActivity",
              "name": "PhotoView 显示，缩放，",
              "desc": "PhotoView,、类似于QQ空间点击图片浏览，显示缩略图，加载原图..引用第三方PhotoView库实现"
          },
          {
-           "activityPath": "com.example.demo.frame.activity.DemoImageSliderActivity",
+           "activityPath": "com.example.demo.frame.activity.Demo_ImageSliderActivity",
            "name": " ImageSlider 广告位",
            "desc": "广告位,自定义动画及操作简单,几行代码即可"
          }
          ,
           {
-            "activityPath": "com.example.demo.frame.activity.DemoPagerSlidingTabStripActivity",
+            "activityPath": "com.example.demo.frame.activity.Demo_PagerSlidingTabStripActivity",
             "name": " pagerSlidingTabStripActivity 多个tab 页滑动切换集合",
             "desc": "pagerSlidingTabStripActivity 多个tab 页滑动,自定义颜色及操作简单"
           },
          {
-           "activityPath": "com.example.demo.frame.activity.DemoNoteActivity",
+           "activityPath": "com.example.demo.frame.activity.Demo_NoteActivity",
            "name": "GreenDao ",
            "desc": "sqlite 数据库ORM框架"
-         }
+         },
+           {
+             "activityPath": "com.example.demo.frame.activity.Download_MainActivity",
+             "name": "下载",
+             "desc": "多线程断点续传下载"
+           }
+
 
     ]
 }

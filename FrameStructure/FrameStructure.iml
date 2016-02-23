@@ -83,7 +83,7 @@
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="httpcore-4.4.2" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.2.0" level="project" />
     <orderEntry type="module" module-name="example-demo" exported="" />
     <orderEntry type="module" module-name="library-imageslider" exported="" />
   </component>

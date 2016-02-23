@@ -6,6 +6,7 @@ import android.content.Context;
 
 import com.common.db.DaoMaster;
 import com.common.exception.CrashHandler;
+import com.common.utils.FileUtils;
 import com.common.utils.ImageLoaderUtils;
 import com.constants.fixed.GlobalConstants;
 import com.constants.fixed.OnOffConstants;
@@ -32,7 +33,7 @@ public class BaseApplication extends Application {
         setCrashHandler();//打开全局未捕获异常
         initImageLoader();//初始化图片加载缓存 ImageLoader基本配置
         inittDatabase();//greenDAO创建数据表
-
+        initCreateFolders();//创建文件夹
     }
 
 
@@ -59,6 +60,15 @@ public class BaseApplication extends Application {
     private void inittDatabase() {
         helper = new DaoMaster.DevOpenHelper(this, GlobalConstants.DB_NAME, null);
         daoMaster = new DaoMaster(helper.getWritableDatabase());
+    }
+
+    /**
+     * 创建文件夹
+     */
+    private void initCreateFolders(){
+        FileUtils.makeFolders(GlobalConstants.CRASH_PATH);//针对全局未捕获异常，保存到本志文件路径
+        FileUtils.makeFolders(GlobalConstants.DOWNLOAD_PATH);//文件下载保存路径
+        FileUtils.makeFolders(GlobalConstants.IMAGES_CACHE_PATH);//针对全局图片缓存路径
     }
 
 }

@@ -10,7 +10,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
-import android.os.Environment;
 
 import com.common.utils.Logger;
 import com.common.utils.SDCardUtils;
@@ -195,12 +194,11 @@ public class CrashHandler implements UncaughtExceptionHandler {
             String time = formatter.format(new Date());
             String fileName = "crash-" + time + "-" + timestamp + CRASH_REPORTER_EXTENSION;
             if (SDCardUtils.isSDCardEnable()) {
-                String path = Environment.getExternalStorageDirectory() + GlobalConstants.CRASH_PATH;
-                File dir = new File(path);
+                File dir = new File(GlobalConstants.CRASH_PATH);
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }
-                FileOutputStream fos = new FileOutputStream(path + fileName);
+                FileOutputStream fos = new FileOutputStream(GlobalConstants.CRASH_PATH + fileName);
                 fos.write(sb.toString().getBytes());
                 fos.close();
             }

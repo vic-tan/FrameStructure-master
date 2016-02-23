@@ -35,9 +35,12 @@ public class ExampleDaoGenerator {
 
         addNote(schema);
         addCustomerOrder(schema);
-
+        addDownload(schema);//下载实体
         new DaoGenerator().generateAll(schema, "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/support-common/src/main/java");
+
     }
+
+
 
     private static void addNote(Schema schema) {
         Entity note = schema.addEntity("Note");
@@ -62,6 +65,21 @@ public class ExampleDaoGenerator {
         ToMany customerToOrders = customer.addToMany(order, customerId);
         customerToOrders.setName("orders");
         customerToOrders.orderAsc(orderDate);
+    }
+
+    private static void addDownload(Schema schema) {
+        Entity customer = schema.addEntity("DownloadEntry");
+        customer.addStringProperty("url").notNull().primaryKey();
+        customer.addStringProperty("name").notNull();
+        customer.addIntProperty("currentLength");
+        customer.addIntProperty("totalLength");
+        customer.addIntProperty("status");
+        customer.addIntProperty("percent");
+        customer.addBooleanProperty("isSupportRange");
+        customer.addIntProperty("range_0");
+        customer.addIntProperty("range_1");
+        customer.addIntProperty("range_2");
+
     }
 
 }
