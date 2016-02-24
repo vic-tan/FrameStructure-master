@@ -75,6 +75,10 @@ public class ExampleDaoGenerator {
         customer.addIntProperty("totalLength");
         customer.addIntProperty("status");
         customer.addIntProperty("percent");
+        customer.addStringProperty("saveUrl");
+        customer.addStringProperty("saveName");
+        customer.addStringProperty("fileType");
+        customer.addStringProperty("fileSuffix");
         customer.addBooleanProperty("isSupportRange");
         customer.addIntProperty("range_0");
         customer.addIntProperty("range_1");

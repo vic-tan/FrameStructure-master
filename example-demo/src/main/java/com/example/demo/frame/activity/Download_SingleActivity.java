@@ -10,6 +10,7 @@ import com.common.download.DownloadManager;
 import com.common.download.entity.DownloadEntry;
 import com.common.download.notify.DataWatcher;
 import com.common.ui.base.activity.BaseActivity;
+import com.constants.fixed.GlobalConstants;
 import com.example.demo.R;
 
 
@@ -48,7 +49,7 @@ public class Download_SingleActivity extends BaseActivity implements OnClickList
 		setContentView(R.layout.download_activity_single);
 		
 		entry.setName("x三国.apk");
-		
+		entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
 		showText = (TextView)findViewById(R.id.show_text);
 		addBtn = (Button)findViewById(R.id.add_btn);
 		cancelBtn = (Button)findViewById(R.id.cancel_btn);

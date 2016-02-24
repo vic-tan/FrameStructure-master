@@ -4,12 +4,12 @@
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/color/abs__primary_text_disable_only_holo_dark.xml"
     },
     {
-        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/color/abs__primary_text_disable_only_holo_light.xml",
-        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/color/abs__primary_text_disable_only_holo_light.xml"
-    },
-    {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/color/abs__primary_text_holo_light.xml",
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/color/abs__primary_text_holo_light.xml"
+    },
+    {
+        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/color/abs__primary_text_disable_only_holo_light.xml",
+        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/color/abs__primary_text_disable_only_holo_light.xml"
     },
     {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/color/abs__primary_text_holo_dark.xml",

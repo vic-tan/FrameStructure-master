@@ -152,7 +152,7 @@ public class DownloadTask implements ConnectThread.ConnectListener, DownloadThre
 				endPos = (i + 1) * block - 1;
 			}
 			if(startPos < endPos){
-				downloadThreads[i] = new DownloadThread(entry.getUrl(), i, startPos, endPos, this);
+				downloadThreads[i] = new DownloadThread(entry, i, startPos, endPos, this);
 				downloadStatus[i] = DownloadStatusLevel.DOWNLOADING.value();
 				mExecutor.execute(downloadThreads[i]);
 			}else{
@@ -180,7 +180,7 @@ public class DownloadTask implements ConnectThread.ConnectListener, DownloadThre
 		notifyUpdate(entry, DownloadService.NOTIFY_DOWNLOADING);
 
 		downloadThreads = new DownloadThread[1];
-		downloadThreads[0] = new DownloadThread(entry.getUrl(), 0, 0, 0, this);
+		downloadThreads[0] = new DownloadThread(entry, 0, 0, 0, this);
 		downloadStatus = new int[1];
 		mExecutor.execute(downloadThreads[0]);
 	}
@@ -283,7 +283,7 @@ public class DownloadTask implements ConnectThread.ConnectListener, DownloadThre
 					Logger.d("DownloadTask==>onProgressChanged()###" + " restart sub-thread " + i);
 					downloadThreads[i].pause();
 					downloadThreads[i] = null;
-					downloadThreads[i] = new DownloadThread(entry.getUrl(), i, startPos, endPos, this);
+					downloadThreads[i] = new DownloadThread(entry, i, startPos, endPos, this);
 					downloadStatus[i] = DownloadStatusLevel.DOWNLOADING.value();
 					mExecutor.execute(downloadThreads[i]);
 				}else{
@@ -312,7 +312,7 @@ public class DownloadTask implements ConnectThread.ConnectListener, DownloadThre
 			}
 		}
 
-		if(entry.getTotalLength() > 0 && entry.getCurrentLength() != entry.getTotalLength()){
+		if(entry.getTotalLength() > 0 && !entry.getCurrentLength().equals(entry.getTotalLength()) ){
 			//下载出现异常，文件不完整,要清除，重新下载
 			entry.setStatus( DownloadStatusLevel.ERROR.value());
 			entry.reset();

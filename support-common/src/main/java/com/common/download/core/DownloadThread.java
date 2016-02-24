@@ -1,6 +1,7 @@
 package com.common.download.core;
 
 import com.common.download.DownloadConfig;
+import com.common.download.entity.DownloadEntry;
 import com.common.utils.Logger;
 import com.constants.fixed.GlobalConstants;
 import com.constants.level.DownloadStatusLevel;
@@ -37,19 +38,19 @@ public class DownloadThread implements Runnable{
 	private boolean isSingleDownload;
 	
 	private int status;
-	
-	public DownloadThread(String url, int index, int startPos, int endPos, DownloadListener listener) {
-		this.url = url;
+
+	public DownloadThread(DownloadEntry entry,int index, int startPos, int endPos, DownloadListener listener) {
+		this.url = entry.getUrl();
 		this.index = index;
 		this.startPos = startPos;
 		this.endPos = endPos;
-		this.path = GlobalConstants.DOWNLOAD_PATH + url.substring(url.lastIndexOf("/") + 1);
+		this.path = entry.getSaveUrl();
 		this.listener = listener;
 		if (startPos == 0 && endPos == 0) {
-            isSingleDownload = true;
-        } else {
-            isSingleDownload = false;
-        }
+			isSingleDownload = true;
+		} else {
+			isSingleDownload = false;
+		}
 	}
 
 	@Override

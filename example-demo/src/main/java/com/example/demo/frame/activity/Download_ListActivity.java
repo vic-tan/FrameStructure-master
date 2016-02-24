@@ -15,6 +15,7 @@ import com.common.download.DownloadManager;
 import com.common.download.entity.DownloadEntry;
 import com.common.download.notify.DataWatcher;
 import com.common.ui.base.activity.BaseActivity;
+import com.constants.fixed.GlobalConstants;
 import com.constants.level.DownloadStatusLevel;
 import com.example.demo.R;
 
@@ -68,26 +69,31 @@ public class Download_ListActivity extends BaseActivity implements OnClickListen
 
         DownloadEntry entry = new DownloadEntry();
         entry.setName("少年三国志.apk");
+        entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
         entry.setUrl("http://gh-game.oss-cn-hangzhou.aliyuncs.com/1435814701749842.apk");
         downloadEntries.add(entry);
 
         entry = new DownloadEntry();
         entry.setName("放开那三国.apk");
+        entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
         entry.setUrl("http://gh-game.oss-cn-hangzhou.aliyuncs.com/1437641784268948.apk");
         downloadEntries.add(entry);
 
         entry = new DownloadEntry();
         entry.setName("去吧皮卡丘.apk");
+        entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
         entry.setUrl("http://gh-game.oss-cn-hangzhou.aliyuncs.com/1437740158861375.apk");
         downloadEntries.add(entry);
 
         entry = new DownloadEntry();
         entry.setName("X三国.apk");
+        entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
         entry.setUrl("http://gh-game.oss-cn-hangzhou.aliyuncs.com/1434794302961350.apk");
         downloadEntries.add(entry);
 
         entry = new DownloadEntry();
         entry.setName("火影忍者-忍者大师.apk");
+        entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
         entry.setUrl("http://gh-game.oss-cn-hangzhou.aliyuncs.com/1435242602866100.apk");
         downloadEntries.add(entry);
 
