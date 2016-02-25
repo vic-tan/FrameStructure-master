@@ -53,13 +53,30 @@ public class AppUtils
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
                     context.getPackageName(), 0);
-            return packageInfo.versionName;
+            return packageInfo.packageName;
 
         } catch (NameNotFoundException e)
         {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * [获取应用程序版本名称信息]
+     *
+     * @param context
+     * @return 当前应用的升级号
+     */
+    public static int getVersionCode(Context context)//获取版本号(内部识别号)
+    {
+        try {
+            PackageInfo pi=context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            return pi.versionCode;
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 
 }

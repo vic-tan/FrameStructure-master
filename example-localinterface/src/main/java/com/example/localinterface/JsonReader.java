@@ -5,8 +5,7 @@ import android.content.Context;
 import com.constants.fixed.UrlConstants;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +16,7 @@ import java.util.Map;
 public class JsonReader {
 
     //本地自定义json常量
-    public static final String CUSTOM_JSON_FOLDER = "customjson";//asset子文件夹名
+    //public static final String CUSTOM_JSON_FOLDER = "customjson";//asset子文件夹名
     private static volatile JsonReader instance = null;
     private static Map<String, JsonReaderBean> jsonReader = new HashMap<String, JsonReaderBean>();
 
@@ -54,9 +53,9 @@ public class JsonReader {
      */
     public String getJsonReaderFileContent(Context context, String url) {
         if (null != url && "".equals(url) || null == jsonReader.get(url)) {
-            return getFileFromAssets(context, jsonReader.get(UrlConstants.ERROR).getFileName());
+            return getFileFromRaw(context, jsonReader.get(UrlConstants.ERROR).getFileId());
         } else {
-            return getFileFromAssets(context, jsonReader.get(url).getFileName());
+            return getFileFromRaw(context, jsonReader.get(url).getFileId());
         }
 
     }
@@ -82,7 +81,7 @@ public class JsonReader {
      * @param fileName
      * @return
      */
-    private String getFileFromAssets(Context context, String fileName) {
+   /* private String getFileFromAssets(Context context, String fileName) {
         if (fileName.equals("")) {
             return null;
         }
@@ -99,6 +98,32 @@ public class JsonReader {
             e.printStackTrace();
             return null;
         }
+    }*/
+
+    /**
+     * 读取本地文件数据
+     *
+     * @param context
+     * @param rawId
+     * @return
+     */
+    public static String getFileFromRaw(Context context,int rawId) {
+        try {
+            InputStream inputStream = context.getResources().openRawResource(rawId);
+            InputStreamReader inputStreamReader = new InputStreamReader(
+                    inputStream, "utf-8");
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            StringBuffer sb = new StringBuffer("");
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+                sb.append("\n");
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

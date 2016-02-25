@@ -22,7 +22,9 @@
     <!-- 对话框操作按钮的高度 -->
     <dimen name="common_prompt_dialog_opt_btn_height">100px</dimen>
 
-
+    <!-- —————————————————————————————————————————  仿QQ图片浏览效果GridridView 边距大小   ——————————————————————————————————————————————————— -->
+    <dimen name="common_photo_gridview_horizontal_spacing">5px</dimen>
+    <dimen name="common_photo_gridview_vertical_spacing">5px</dimen>
     <!-- —————————————————————————————————————————  字体大小   ——————————————————————————————————————————————————— -->
 
     <!-- 一级 (最大字体) -->

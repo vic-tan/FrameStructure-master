@@ -25,11 +25,9 @@ import com.common.utils.ViewUtils;
 import com.common.view.textview.expandable.ExpandableTextView;
 import com.example.demo.R;
 import com.example.demo.frame.bean.TestBean;
-import com.example.localinterface.JsonReader;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +48,7 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         public void onServiceConnected(ComponentName name, IBinder service) {
             AutoUpdateService.MyBinder binder = (AutoUpdateService.MyBinder) service;
             AutoUpdateService bindService = binder.getService();
-            bindService.dialogBuilder();
+            bindService.checkAppUpdate();
         }
     };
 
@@ -66,7 +64,7 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         listView = ViewUtils.findViewById(this, R.id.lv_pull_to_refresh);
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
         list = new ArrayList();
-        list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromAssets(JsonReader.CUSTOM_JSON_FOLDER + File.separator + "test_list_main_json.txt"), BaseJson.class).getData(), TestBean.class));
+        list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData(), TestBean.class));
         listView.setAdapter(new CommonAdapter<TestBean>(this, list, R.layout.test_list_item) {
             @Override
             public void convert(ViewHolder holder, TestBean bean) {
@@ -76,7 +74,7 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         });
         listView.setOnItemClickListener(this);
         Logger.i(TAG, ScreenUtils.getScreenWidth(this) + ":" + ScreenUtils.getScreenHeight(this));
-        Logger.i(TAG, ResUtils.getFileFromAssets(JsonReader.CUSTOM_JSON_FOLDER + File.separator + "test_list_main_json.txt") + "");
+        Logger.i(TAG, ResUtils.getFileFromRaw(R.raw.test_list_main_json));
     }
 
 

@@ -25,11 +25,13 @@
     <string name="common_photo_unknown">未知路径</string>
 
     <!-- —————————————————— app 版本升级 ——————————————————————————————— -->
-    <string name="newUpdateAvailable">发现新版本</string>
-    <string name="dialogPositiveButton">立即下载</string>
-    <string name="dialogNegativeButton">以后再说</string>
-    <string name="app_no_new_update">没有发现新版本</string>
-    <string name="download_progress">正在下载:%1$d%%</string>
-    <string name="download_success">下载完成，点击安装</string>
+    <string name="auto_update_new_update_available">发现新版本</string>
+    <string name="auto_update_dialog_positive_button">立即下载</string>
+    <string name="auto_update_dialog_negative_button">以后再说</string>
+    <string name="auto_update_app_no_new_update">没有发现新版本</string>
+    <string name="auto_update_download_progress">正在下载:%1$d%%</string>
+    <string name="auto_update_download_success">下载完成，点击安装</string>
+    <string name="auto_update_downloading">正在下载</string>
+    <string name="auto_update_download_wait">请稍候...</string>
 
 </resources>

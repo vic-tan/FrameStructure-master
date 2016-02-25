@@ -10,6 +10,8 @@ package com.constants.fixed;
 public class UrlConstants {
 	// 域名
 	public static final String DOMAIN_NAME = "http://wenku.baidu.com";
+	//app版本升级
+	public static final String APP_VERSION_UPDATE = DOMAIN_NAME+"/jingpin/20";
 
 	public static final String ERROR = "ERROR";
 	public static final String SUCCESS = "SUCCESS";

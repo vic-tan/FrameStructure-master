@@ -52,13 +52,15 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
     private int numColumns = 3;//每行有多少张图片，用来计算page多张滑动后返回计算位置
     private int currentColumns = 0;//点击图片所在的行数
     private int currentColumnsIndex = 0;//点击图片的在的行数的位置
-    private int viewBorder = 10;//点击图片的在的行数的位置
+    private int verticalSpacing = (int) ResUtils.getDimens(R.dimen.common_photo_gridview_vertical_spacing);//
+    private int horizontalSpacing = (int) ResUtils.getDimens(R.dimen.common_photo_gridview_horizontal_spacing);//
     private AutoRelativeLayout frameRoot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         baseView = InflaterUtils.inflater(this, R.layout.common_pager_photo_view);
         frameRoot = (AutoRelativeLayout) ViewUtils.findViewById(baseView, R.id.frame_root);
+        frameRoot.setBackgroundColor(ResUtils.getColor(android.R.color.black));
         isAima = false;
         super.onCreate(savedInstanceState);
         //getSupportActionBar().hide();
@@ -366,25 +368,31 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
             holder.thumbnail.setOriginalInfo(setWidth(), setHeight(), setLocationX(), setLocationY() - getActionBarHeight());
         }
 
+
+        private int setMoveBeforeVerticalSpacing(int position) {
+            return Math.abs((currentColumns - getViewCoumns(position)) * verticalSpacing);
+        }
+
         /**
          * 点击view位置向前移动位置计算
          */
         private void moveBeforeTransformIn(Holder holder, int position) {
             if (getViewCoumns(position) == currentColumns) {//当前行
                 if (getViewColunmsIndex(position) < currentColumnsIndex) {//同一位置之前的
-                    setViewLocation(holder, setLocationX() - setWidth() * (currentColumnsIndex - getViewColunmsIndex(position)), setLocationY());
+                    setViewLocation(holder, setLocationX() - setWidth() * (currentColumnsIndex - getViewColunmsIndex(position)) - horizontalSpacing, setLocationY());
                 }
             } else if (getViewCoumns(position) < currentColumns) {//上一行
                 if (getViewColunmsIndex(position) == currentColumnsIndex) {//上一行同一位置
-                    setViewLocation(holder, setLocationX(), setLocationY() - setHeight() * currentColumns - getViewCoumns(position));
+                    setViewLocation(holder, setLocationX(), setLocationY() - setHeight() * (currentColumns - getViewCoumns(position)) - setMoveBeforeVerticalSpacing(position));
                 } else if (getViewColunmsIndex(position) < currentColumnsIndex) {//上一行同一位置之前的
-                    setViewLocation(holder, setLocationX() - setWidth() * (currentColumnsIndex - getViewColunmsIndex(position)), setLocationY() - setHeight() * getViewColunmsCount(position));
+                    setViewLocation(holder, setLocationX() - setWidth() * (currentColumnsIndex - getViewColunmsIndex(position)) - horizontalSpacing, setLocationY() - setHeight() * getViewColunmsCount(position) - setMoveBeforeVerticalSpacing(position));
                 } else if (getViewColunmsIndex(position) > currentColumnsIndex) {//上一行同一位置之后的
-                    setViewLocation(holder, setLocationX() + setWidth() * (getViewColunmsIndex(position) - currentColumnsIndex), setLocationY() - setHeight() * getViewColunmsCount(position));
+                    setViewLocation(holder, setLocationX() + setWidth() * (getViewColunmsIndex(position) - currentColumnsIndex) + horizontalSpacing, setLocationY() - setHeight() * getViewColunmsCount(position) - setMoveBeforeVerticalSpacing(position));
                 }
 
             }
         }
+
 
         /**
          * 点击view位置向后移动位置计算
@@ -392,15 +400,15 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
         private void moveAfterTransformIn(Holder holder, int position) {
             if (getViewCoumns(position) == currentColumns) {//当前行
                 if (getViewColunmsIndex(position) > currentColumnsIndex) {//同一位置之后的
-                    setViewLocation(holder, setLocationX() + setWidth() * (getViewColunmsIndex(position) - currentColumnsIndex), setLocationY());
+                    setViewLocation(holder, setLocationX() + horizontalSpacing + setWidth() * (getViewColunmsIndex(position) - currentColumnsIndex), setLocationY());
                 }
             } else if (getViewCoumns(position) > currentColumns) {//下一行
                 if (getViewColunmsIndex(position) == currentColumnsIndex) {//下一行同一位置
-                    setViewLocation(holder, setLocationX(), setLocationY() + setHeight() * (-getViewColunmsCount(position)));
+                    setViewLocation(holder, setLocationX(), setLocationY() + setHeight() * (-getViewColunmsCount(position)) + setMoveBeforeVerticalSpacing(position));
                 } else if (getViewColunmsIndex(position) < currentColumnsIndex) {//下一行同一位置之前的
-                    setViewLocation(holder, setLocationX() - setWidth() * (currentColumnsIndex - getViewColunmsIndex(position)), setLocationY() + setHeight() * (-getViewColunmsCount(position)));
+                    setViewLocation(holder, setLocationX() - setWidth() * (currentColumnsIndex - getViewColunmsIndex(position)) - horizontalSpacing, setLocationY() + setHeight() * (-getViewColunmsCount(position)) + setMoveBeforeVerticalSpacing(position));
                 } else if (getViewColunmsIndex(position) > currentColumnsIndex) {//下一行同一位置之后的
-                    setViewLocation(holder, setLocationX() + setWidth() * (getViewColunmsIndex(position) - currentColumnsIndex), setLocationY() + setHeight() * (-getViewColunmsCount(position)));
+                    setViewLocation(holder, setLocationX() + setWidth() * (getViewColunmsIndex(position) - currentColumnsIndex) + horizontalSpacing, setLocationY() + setHeight() * (-getViewColunmsCount(position)) + setMoveBeforeVerticalSpacing(position));
                 }
 
             }
@@ -488,12 +496,18 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
          * @param view
          */
         private void photoFinishType(View view) {
-            if (setLocationX() == -1 && setLocationY() == -1) {//表示没有从哪里来回哪里去动画
+            try {
+                if (setLocationX() == -1 && setLocationY() == -1) {//表示没有从哪里来回哪里去动画
+                    StartActUtils.finish(BasePhotoViewActivity.this);
+                } else {
+                    //初始化渐变动画
+                    //frameRoot.setBackgroundColor(ResUtils.getColor(android.R.color.transparent));
+                    index.setVisibility(View.GONE);
+                    smoothImagerFinish((SmoothImageView) view);
+                }
+            }catch (Exception e){
+                e.printStackTrace();
                 StartActUtils.finish(BasePhotoViewActivity.this);
-            } else {
-                frameRoot.setBackgroundColor(ResUtils.getColor(android.R.color.transparent));
-                index.setVisibility(View.GONE);
-                smoothImagerFinish((SmoothImageView) view);
             }
         }
 

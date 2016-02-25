@@ -12,8 +12,8 @@ public class AddJsonReaderByTest1 {
      * 公用模块,上线时注释下面的代码即可
      */
     public static void addTestUrl(Map<String, JsonReaderBean> jsonReader) {
-        jsonReader.put(UrlConstants.TEST_SUCCESS, new JsonReaderBean("common_suceess.txt", true));
-        jsonReader.put(UrlConstants.TEST_LIST, new JsonReaderBean("test_list_json.txt", true));
+        jsonReader.put(UrlConstants.TEST_SUCCESS, new JsonReaderBean(R.raw.common_suceess, true));
+        jsonReader.put(UrlConstants.TEST_LIST, new JsonReaderBean(R.raw.test_list_json, true));
     }
 
 

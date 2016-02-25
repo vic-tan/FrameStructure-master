@@ -12,8 +12,9 @@ public class AddJsonReaderByCommon {
      * 公用模块,上线时注释下面的代码即可
      */
     public static void addTestUrl(Map<String, JsonReaderBean> jsonReader) {
-        jsonReader.put(UrlConstants.SUCCESS, new JsonReaderBean("common_suceess.txt", true));
-        jsonReader.put(UrlConstants.ERROR, new JsonReaderBean("common_error.txt", true));
+        jsonReader.put(UrlConstants.SUCCESS, new JsonReaderBean(R.raw.common_suceess, true));
+        jsonReader.put(UrlConstants.ERROR, new JsonReaderBean(R.raw.common_error, true));
+        jsonReader.put(UrlConstants.APP_VERSION_UPDATE, new JsonReaderBean(R.raw.app_version_udpate, true));
     }
 
 }

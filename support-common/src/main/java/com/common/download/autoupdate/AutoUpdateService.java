@@ -7,15 +7,23 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
+import android.text.Html;
 import android.view.WindowManager;
 
 import com.common.R;
 import com.common.download.DownloadManager;
 import com.common.download.entity.DownloadEntry;
 import com.common.download.notify.DataWatcher;
+import com.common.engine.interf.IHttpTaskCallBack;
+import com.common.http.base.BaseHttpParams;
+import com.common.http.base.RequestBean;
+import com.common.http.task.HttpTask;
+import com.common.utils.AppUtils;
+import com.common.utils.JsonUtils;
 import com.common.utils.PackageUtils;
+import com.common.utils.ResUtils;
 import com.constants.fixed.GlobalConstants;
+import com.constants.fixed.UrlConstants;
 import com.constants.level.DownloadStatusLevel;
 
 /**
@@ -23,10 +31,10 @@ import com.constants.level.DownloadStatusLevel;
  * Created by tanlifei on 16/2/22.
  */
 public class AutoUpdateService extends Service {
-    private final String url = "http://p.gdown.baidu.com/34732ea3d557058eacd7b8c279cf45d0a180e711b46e2754c515a2ea87e3e72930c95bd008a8336d6f16a60c1722954818365ddd0b55e8b7d5c9a170c565eb4af0bd1bffed4bef471337b4f8f8b0dd4da8cfc96d00d28ab7bba89a555b7478fb1749eb173274951f4e0e6cf0d710554789cbb77f0f35beb155017486a19af1867c7cfc79c7d54d1352651f73c5d0e634ffab0e94ebf345a5c5cc013c678785f5c8aabbc56d7bb3ec3d4da4e8eae0957589b29b1d77f6baead97d8fe7e2e50dab52ca10f52bea310751f518be645f68caf29c77aadc9755756df46cb4b979cced3c8fed50b11df695";
     ProgressDialog pBar;
     private MyBinder myBinder = new MyBinder();
-    private DownloadEntry entry = new DownloadEntry(url);
+    private DownloadEntry entry;
+    private AppAutoUpdateBean appAutoUpdateBean;
     private DataWatcher dataWatcher = new DataWatcher() {
 
         @Override
@@ -44,31 +52,63 @@ public class AutoUpdateService extends Service {
         }
     };
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return myBinder;
     }
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        download();
+
+    /**
+     * 检查是否有升级
+     */
+    public void checkAppUpdate() {
+        //TODO 删除
+        //BaseApplication.daoMaster.newSession().getDownloadEntryDao().deleteByKey(Builder);
+
+        HttpTask.post(new RequestBean(this, BaseHttpParams.baseParams(UrlConstants.APP_VERSION_UPDATE)), new IHttpTaskCallBack() {
+            @Override
+            public void taskCallBack(RequestBean requestBean) {
+                switch (requestBean.getRequestLevel()) {
+                    case SUCCESS:
+                        if (null != requestBean.getBaseJson()) {
+                            appAutoUpdateBean = JsonUtils.parseToObjectBean(requestBean.getBaseJson().getData(), AppAutoUpdateBean.class);
+                            if (Integer.parseInt(appAutoUpdateBean.getVersion_code()) > AppUtils.getVersionCode(AutoUpdateService.this)) {
+                                checkAppUpdateBuilder();
+                            }
+                        }
+                }
+            }
+        });
     }
 
-    public void dialogBuilder() {
+    /**
+     * 开始下载升级app
+     */
+    private void startDownloadApp() {
+        entry = new DownloadEntry(appAutoUpdateBean.getUrl());
+        entry.setName(appAutoUpdateBean.getName());
+        entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
+        DownloadManager.getInstance(this).add(entry);
+    }
+
+
+    /**
+     * 升级提示框
+     */
+    private void checkAppUpdateBuilder() {
         DownloadManager.getInstance(this).addObserver(dataWatcher);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.newUpdateAvailable);
-        builder.setMessage("aa")
-                .setPositiveButton(R.string.dialogPositiveButton, new DialogInterface.OnClickListener() {
+        builder.setTitle(ResUtils.getStr(R.string.auto_update_new_update_available));
+        builder.setMessage(Html.fromHtml(appAutoUpdateBean.getDesc()))
+                .setPositiveButton(ResUtils.getStr(R.string.auto_update_dialog_positive_button), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        checkUpdate();
+                        startDownloadApp();
+                        downloadingBuilder();
                         dialog.dismiss();
-                        pBar.show();
+
                     }
                 })
-                .setNegativeButton(R.string.dialogNegativeButton, new DialogInterface.OnClickListener() {
+                .setNegativeButton(ResUtils.getStr(R.string.auto_update_dialog_negative_button), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
                     }
@@ -80,22 +120,17 @@ public class AutoUpdateService extends Service {
     }
 
     /**
-     * 检查是否有升级
+     * 正在下载界面
      */
-    private void checkUpdate() {
-        entry.setName("灵犀语音助手.apk");
-        entry.setSaveUrl(GlobalConstants.DOWNLOAD_PATH + entry.getName());
-        DownloadManager.getInstance(this).add(entry);
-    }
-
-    private void download() {
+    private void downloadingBuilder() {
         pBar = new ProgressDialog(this);    //进度条，在下载的时候实时更新进度，提高用户友好度
         pBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        pBar.setTitle("正在下载");
-        pBar.setMessage("请稍候...");
+        pBar.setTitle(ResUtils.getStr(R.string.auto_update_downloading));
+        pBar.setMessage(ResUtils.getStr(R.string.auto_update_download_wait));
         pBar.setProgress(0);
         pBar.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         //pBar.setCancelable(false);
+        pBar.show();
     }
 
     public class MyBinder extends Binder {
@@ -104,5 +139,6 @@ public class AutoUpdateService extends Service {
             return AutoUpdateService.this;
         }
     }
+
 
 }
