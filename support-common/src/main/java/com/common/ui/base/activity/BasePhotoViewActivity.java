@@ -22,7 +22,7 @@ import com.common.utils.ResUtils;
 import com.common.utils.StartActUtils;
 import com.common.utils.StringUtils;
 import com.common.utils.ToastUtils;
-import com.common.utils.ViewUtils;
+import com.common.utils.ViewFindUtils;
 import com.common.view.imageview.SmoothImageView;
 import com.common.view.viewpager.HackyViewPager;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -59,7 +59,7 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         baseView = InflaterUtils.inflater(this, R.layout.common_pager_photo_view);
-        frameRoot = (AutoRelativeLayout) ViewUtils.findViewById(baseView, R.id.frame_root);
+        frameRoot = (AutoRelativeLayout) ViewFindUtils.find(baseView, R.id.frame_root);
         frameRoot.setBackgroundColor(ResUtils.getColor(android.R.color.black));
         isAima = false;
         super.onCreate(savedInstanceState);

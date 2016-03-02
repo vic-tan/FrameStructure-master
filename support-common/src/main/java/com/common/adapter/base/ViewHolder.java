@@ -19,7 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.common.utils.ViewUtils;
+import com.common.utils.ViewFindUtils;
 
 /**
  * 所有adapter getView里公用ViewHolder一个
@@ -70,7 +70,7 @@ public class ViewHolder {
     public <T extends View> T getView(int viewId) {
         View view = mViews.get(viewId);
         if (view == null) {
-            view = ViewUtils.findViewById(mConvertView,viewId);
+            view = ViewFindUtils.find(mConvertView, viewId);
             mViews.put(viewId, view);
         }
         return (T) view;

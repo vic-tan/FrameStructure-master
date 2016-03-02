@@ -10,7 +10,7 @@ import com.common.prompt.DefaultDialog;
 import com.common.prompt.SingleDialog;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.utils.ToastUtils;
-import com.common.utils.ViewUtils;
+import com.common.utils.ViewFindUtils;
 import com.example.demo.R;
 
 
@@ -23,8 +23,8 @@ public class Demo_DialogActivity extends BaseActivity implements IDialogBtnSingl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_activity_dialog);
-        ViewUtils.findViewById(this, R.id.btn_1_1).setOnClickListener(this);
-        ViewUtils.findViewById(this, R.id.btn_1_2).setOnClickListener(this);
+        ViewFindUtils.find(this, R.id.btn_1_1).setOnClickListener(this);
+        ViewFindUtils.find(this, R.id.btn_1_2).setOnClickListener(this);
     }
 
     @Override

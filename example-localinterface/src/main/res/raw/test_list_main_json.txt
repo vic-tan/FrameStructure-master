@@ -68,6 +68,13 @@
              "name": "下载",
              "desc": "多线程断点续传下载"
            }
+           ,
+          {
+            "activityPath": "com.example.demo.frame.dailog.ui.SimpleHomeActivity",
+            "name": "所有公用的Dailog",
+            "desc": ""
+          }
+
 
 
     ]

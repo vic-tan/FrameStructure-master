@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.common.ui.base.activity.BaseActivity;
-import com.common.utils.ViewUtils;
+import com.common.utils.ViewFindUtils;
 import com.example.demo.R;
 
 
@@ -19,7 +19,7 @@ public class Demo_AnnotationActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_activity_annotation);
-        test = (TextView) ViewUtils.findViewById(this, R.id.tv_title);
+        test = (TextView) ViewFindUtils.find(this, R.id.tv_title);
         init();
     }
 

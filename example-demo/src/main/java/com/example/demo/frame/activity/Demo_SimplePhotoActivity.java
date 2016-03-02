@@ -13,7 +13,7 @@ import com.common.bean.paramsBean.PhotoBean;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.ui.base.main.BaseApplication;
 import com.common.utils.ImageLoaderUtils;
-import com.common.utils.ViewUtils;
+import com.common.utils.ViewFindUtils;
 import com.common.view.imageview.SquareCenterImageView;
 import com.example.demo.R;
 
@@ -30,7 +30,7 @@ public class Demo_SimplePhotoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.test_activity_simple_photo_main);
-        mGridView = (GridView) ViewUtils.findViewById(this, R.id.multi_photo_grid);
+        mGridView = (GridView) ViewFindUtils.find(this, R.id.multi_photo_grid);
         list = new ArrayList<PhotoBean>();
         list.add(new PhotoBean("http://c.hiphotos.baidu.com/image/pic/item/10dfa9ec8a136327408ff2f2958fa0ec09fac794.jpg", "http://c.hiphotos.baidu.com/image/pic/item/10dfa9ec8a136327408ff2f2958fa0ec09fac794.jpg", 0));
         list.add(new PhotoBean("http://e.hiphotos.baidu.com/image/pic/item/96dda144ad345982b658b7e90ff431adcaef84fe.jpg", "http://e.hiphotos.baidu.com/image/pic/item/96dda144ad345982b658b7e90ff431adcaef84fe.jpg", 0));

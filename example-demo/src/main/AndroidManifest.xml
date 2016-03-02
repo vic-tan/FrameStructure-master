@@ -30,6 +30,13 @@
         <activity android:name=".frame.activity.Download_SingleActivity" />
         <activity android:name=".frame.activity.Download_ListActivity" />
         <activity android:name=".frame.activity.Download_DetailsActivity" />
+
+
+        <activity android:name=".frame.dailog.ui.SimpleHomeActivity" />
+        <activity android:name=".frame.dailog.ui.PopupHomeActivity" />
+        <activity android:name=".frame.dailog.ui.DialogHomeActivity" />
+        <activity android:name=".frame.dailog.ui.CustomPopupActivity" />
+        <activity android:name=".frame.dailog.ui.BubblePopupActivity" />
     </application>
 
 </manifest>

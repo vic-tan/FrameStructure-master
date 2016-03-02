@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="50px"
+    android:paddingLeft="30px"
+    android:paddingRight="30px"
+    android:paddingTop="50px">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="爷,要走了吗~⊙﹏⊙"
+        android:textColor="#666666"
+        android:textSize="@dimen/common_size_three_level" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="要不再瞧瞧,说不定有新发现哦~"
+        android:textColor="#666666"
+        android:textSize="@dimen/common_size_three_level" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40px"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="210px"
+            android:layout_height="64px"
+            android:background="@drawable/corner_common_border_gray"
+            android:gravity="center"
+            android:text="继续逛逛"
+            android:textColor="#AAAAAA"
+            android:textSize="@dimen/common_size_three_level" />
+
+        <TextView
+            android:id="@+id/tv_exit"
+            android:layout_width="210px"
+            android:layout_height="64px"
+            android:layout_marginLeft="60px"
+            android:background="@drawable/corner_common_border_gray"
+            android:gravity="center"
+            android:text="残忍退出"
+            android:textColor="#1EA8FF"
+            android:textSize="@dimen/common_size_three_level" />
+    </LinearLayout>
+
+</LinearLayout>

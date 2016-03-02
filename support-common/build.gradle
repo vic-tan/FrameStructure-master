@@ -36,4 +36,5 @@ dependencies {
     compile files('libs/fastjson-1.1.40.jar')
     compile files('libs/universal-image-loader-1.9.4.jar')
     compile files('libs/androidannotations-api-3.3.2.jar')
+    compile files('libs/nineoldandroids-2.4.0.jar')
 }

@@ -21,7 +21,8 @@ import com.common.utils.Logger;
 import com.common.utils.ResUtils;
 import com.common.utils.ScreenUtils;
 import com.common.utils.StartActUtils;
-import com.common.utils.ViewUtils;
+import com.common.utils.ToastUtils;
+import com.common.utils.ViewFindUtils;
 import com.common.view.textview.expandable.ExpandableTextView;
 import com.example.demo.R;
 import com.example.demo.frame.bean.TestBean;
@@ -61,15 +62,21 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
     }
 
     void init() {
-        listView = ViewUtils.findViewById(this, R.id.lv_pull_to_refresh);
+        listView = ViewFindUtils.find(this, R.id.lv_pull_to_refresh);
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
         list = new ArrayList();
         list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData(), TestBean.class));
-        listView.setAdapter(new CommonAdapter<TestBean>(this, list, R.layout.test_list_item) {
+        listView.setAdapter(new CommonAdapter<TestBean>(listView.getRefreshableView(),this, list, R.layout.test_list_item) {
             @Override
-            public void convert(ViewHolder holder, TestBean bean) {
+            public void convert(ViewHolder holder, TestBean bean, boolean isScrolling) {
                 ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setText(bean.getDesc());
                 holder.setText(R.id.tv_name, bean.getName());
+                if (isScrolling) {
+
+                } else {
+                    ToastUtils.show(Demo_MainActivity.this,"停了");
+                }
+                Logger.d("------------------isScrolling---------->>" + isScrolling);
             }
         });
         listView.setOnItemClickListener(this);

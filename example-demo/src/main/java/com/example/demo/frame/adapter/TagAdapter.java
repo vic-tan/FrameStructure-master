@@ -2,11 +2,11 @@ package com.example.demo.frame.adapter;
 
 import android.content.Context;
 
-import com.example.demo.R;
 import com.common.adapter.base.CommonAdapter;
 import com.common.adapter.base.ViewHolder;
-import com.example.demo.frame.bean.TagBean;
 import com.common.view.textview.expandable.ExpandableTextView;
+import com.example.demo.R;
+import com.example.demo.frame.bean.TagBean;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class TagAdapter extends CommonAdapter<TagBean> {
     }
 
     @Override
-    public void convert(final ViewHolder holder,  final TagBean bean) {
+    public void convert(final ViewHolder holder,  final TagBean bean,boolean isScrolling) {
         ((ExpandableTextView)holder.getView(R.id.expand_text_view)).setText(bean.getName());
     }
 
