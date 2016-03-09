@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="30px"
+    android:paddingLeft="30px"
+    android:paddingRight="30px"
+    android:paddingTop="30px">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10px"
+        android:text="@string/auto_update_new_update_available"
+        android:textColor="#666666"
+        android:textSize="@dimen/common_size_two_level" />
+
+
+    <com.zhy.autolayout.AutoScrollView
+        android:layout_width="match_parent"
+        android:layout_height="550px"
+        android:layout_marginBottom="20px"
+        android:minHeight="150px">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20px"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="20px"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#666666"
+            android:textSize="@dimen/common_size_three_level" />
+    </com.zhy.autolayout.AutoScrollView>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:gravity="center_vertical|right">
+
+        <TextView
+            android:id="@+id/tv_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20px"
+            android:paddingLeft="30px"
+            android:paddingRight="30px"
+            android:paddingTop="20px"
+            android:text="@string/auto_update_dialog_negative_button"
+            android:textColor="#666666"
+            android:textSize="@dimen/common_size_three_level" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20px"
+            android:paddingLeft="30px"
+            android:paddingRight="30px"
+            android:paddingTop="20px"
+            android:text="@string/auto_update_dialog_positive_button"
+            android:textColor="#1EA8FF"
+            android:textSize="@dimen/common_size_three_level" />
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,4 +1,4 @@
-package com.common.dialog.entity;
+package com.common.dialog.bean;
 
 public class DialogMenuItem {
     public String mOperName;

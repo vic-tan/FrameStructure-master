@@ -1,7 +1,9 @@
 package com.example.demo.frame.dailog.extra;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,6 +21,7 @@ public class CustomBaseDialog extends BaseDialog<CustomBaseDialog> {
         super(context);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View onCreateView() {
         widthScale(0.85f);
@@ -28,7 +31,7 @@ public class CustomBaseDialog extends BaseDialog<CustomBaseDialog> {
         View inflate = View.inflate(mContext, R.layout.dialog_custom_base, null);
         mTvCancel = ViewFindUtils.find(inflate, R.id.tv_cancel);
         mTvExit = ViewFindUtils.find(inflate, R.id.tv_exit);
-        inflate.setBackgroundDrawable(
+        inflate.setBackground(
                 CornerUtils.cornerDrawable(Color.parseColor("#ffffff"), 10));
 
         return inflate;

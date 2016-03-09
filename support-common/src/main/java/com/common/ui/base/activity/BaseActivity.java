@@ -1,6 +1,7 @@
 package com.common.ui.base.activity;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     protected View customNav;
     protected SelectorImageButton actionBack;
+    protected Context mContext;
 
 
     @Override
@@ -27,6 +29,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         super.onCreate(savedInstanceState);
         initActionBar();
+        mContext = this;
     }
 
     protected void initActionBar() {

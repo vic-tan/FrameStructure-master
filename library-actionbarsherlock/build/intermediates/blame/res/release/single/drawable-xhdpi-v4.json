@@ -232,12 +232,12 @@
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-xhdpi/abs__btn_cab_done_focused_holo_light.9.png"
     },
     {
-        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-xhdpi-v4/abs__ic_clear_search_api_disabled_holo_light.png",
-        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-xhdpi/abs__ic_clear_search_api_disabled_holo_light.png"
-    },
-    {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-xhdpi-v4/abs__btn_cab_done_default_holo_light.9.png",
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-xhdpi/abs__btn_cab_done_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-xhdpi-v4/abs__ic_clear_search_api_disabled_holo_light.png",
+        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-xhdpi/abs__ic_clear_search_api_disabled_holo_light.png"
     },
     {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-xhdpi-v4/abs__list_longpressed_holo.9.png",

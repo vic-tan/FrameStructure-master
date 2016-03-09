@@ -81,8 +81,8 @@ public abstract class BasePopup<T extends BasePopup<T>> extends InternalBasePopu
         x = getX(x);
         y = getY(y);
 
-        x = getX(x + mXOffset);
-        y = getY(y + mYOffset);
+        x = getX((int) (x + mXOffset));
+        y = getY((int) (y + mYOffset));
 
         ViewHelper.setX(mLlContent, x);
         ViewHelper.setY(mLlContent, y);

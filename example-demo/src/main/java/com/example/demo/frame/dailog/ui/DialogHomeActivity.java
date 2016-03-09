@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 
-import com.common.dialog.entity.DialogMenuItem;
+import com.common.dialog.bean.DialogMenuItem;
 import com.common.dialog.listener.OnBtnClickL;
 import com.common.dialog.listener.OnOperItemClickL;
 import com.common.dialog.widget.ActionSheetDialog;
@@ -306,6 +306,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
 
     private void MaterialDialogDefault() {
         final MaterialDialog dialog = new MaterialDialog(mContext);
+        dialog.title("ddd");
         dialog.content(
                 "嗨！这是一个 MaterialDialogDefault. 它非常方便使用，你只需将它实例化，这个美观的对话框便会自动地显示出来。"
                         + "它简洁小巧，完全遵照 Google 2014 年发布的 Material Design 风格，希望你能喜欢它！^ ^")//
@@ -470,7 +471,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         final String[] stringItems = {"接收消息并提醒", "接收消息但不提醒", "收进群助手且不提醒", "屏蔽群消息"};
         final ActionSheetDialog dialog = new ActionSheetDialog(mContext, stringItems, null);
         dialog.title("选择群消息提醒方式\r\n(该群在电脑的设置:接收消息并提醒)")//
-                .titleTextSize_PX(34)//
+                .titleTextSize_PX(12)//
                 .show();
 
         dialog.setOnOperItemClickL(new OnOperItemClickL() {

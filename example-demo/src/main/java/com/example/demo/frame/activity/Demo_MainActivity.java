@@ -11,17 +11,15 @@ import android.widget.AdapterView;
 import com.common.adapter.base.CommonAdapter;
 import com.common.adapter.base.ViewHolder;
 import com.common.bean.base.BaseJson;
+import com.common.dialog.listener.OnBtnClickL;
+import com.common.dialog.widget.MaterialDialog;
 import com.common.download.autoupdate.AutoUpdateService;
-import com.common.engine.interf.IDialogBtnDefaultCallBack;
-import com.common.prompt.BaseDialog;
-import com.common.prompt.DefaultDialog;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.utils.JsonUtils;
 import com.common.utils.Logger;
 import com.common.utils.ResUtils;
 import com.common.utils.ScreenUtils;
 import com.common.utils.StartActUtils;
-import com.common.utils.ToastUtils;
 import com.common.utils.ViewFindUtils;
 import com.common.view.textview.expandable.ExpandableTextView;
 import com.example.demo.R;
@@ -66,17 +64,11 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
         list = new ArrayList();
         list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData(), TestBean.class));
-        listView.setAdapter(new CommonAdapter<TestBean>(listView.getRefreshableView(),this, list, R.layout.test_list_item) {
+        listView.setAdapter(new CommonAdapter<TestBean>(listView.getRefreshableView(), this, list, R.layout.test_list_item) {
             @Override
             public void convert(ViewHolder holder, TestBean bean, boolean isScrolling) {
                 ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setText(bean.getDesc());
                 holder.setText(R.id.tv_name, bean.getName());
-                if (isScrolling) {
-
-                } else {
-                    ToastUtils.show(Demo_MainActivity.this,"停了");
-                }
-                Logger.d("------------------isScrolling---------->>" + isScrolling);
             }
         });
         listView.setOnItemClickListener(this);
@@ -106,19 +98,30 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
      * 退出App
      */
     private void exitApp() {
-        new DefaultDialog(this, new IDialogBtnDefaultCallBack() {
-            @Override
-            public void liftBtnOnClickListener(BaseDialog promptDialog, View v, int callBackTag) {
-                promptDialog.dismiss();
-            }
+        final MaterialDialog dialog = new MaterialDialog(mContext);
+        dialog.content(
+                "是否确定退出程序?")//
+                .btnText("取消", "确定")//
+                .show();
 
-            @Override
-            public void rightBtnOnClickListener(BaseDialog promptDialog, View v, int callBackTag) {
-                promptDialog.dismiss();
-                StartActUtils.finish(Demo_MainActivity.this);
-            }
-        }).getContent().setText("您确定要离开本应用吗?");
+        dialog.setOnBtnClickL(
+                new OnBtnClickL() {
+                    @Override
+                    public void onBtnClick() {
+                        dialog.dismiss();
+                    }
+                },
+                new OnBtnClickL() {
+                    @Override
+                    public void onBtnClick() {
+                        dialog.dismiss();
+                        StartActUtils.finish(mContext);
+                    }
+                }
+        );
     }
+
+
 
 
     @Override

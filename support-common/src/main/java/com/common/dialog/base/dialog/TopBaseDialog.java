@@ -9,7 +9,6 @@ import android.widget.FrameLayout;
 
 import com.common.dialog.BaseAnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
-import com.zhy.autolayout.AutoFrameLayout;
 
 public abstract class TopBaseDialog<T extends TopBaseDialog<T>> extends BottomTopBaseDialog<T> {
     public TopBaseDialog(Context context, View animateView) {
@@ -30,8 +29,8 @@ public abstract class TopBaseDialog<T extends TopBaseDialog<T>> extends BottomTo
     @Override
     protected void onStart() {
         super.onStart();
-        mLlTop.setLayoutParams(new AutoFrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
-                AutoFrameLayout.LayoutParams.MATCH_PARENT));
+        mLlTop.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.MATCH_PARENT));
         mLlTop.setGravity(Gravity.TOP);
         getWindow().setGravity(Gravity.TOP);
         mLlTop.setPadding(mLeft, mTop, mRight, mBottom);

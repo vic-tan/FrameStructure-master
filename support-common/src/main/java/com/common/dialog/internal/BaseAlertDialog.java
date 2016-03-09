@@ -6,18 +6,16 @@ import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.common.R;
 import com.common.dialog.base.dialog.BaseDialog;
 import com.common.dialog.listener.OnBtnClickL;
-import com.common.utils.ResUtils;
-import com.zhy.autolayout.AutoLinearLayout;
 
 
 public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends BaseDialog<T> {
     /** container */
-    protected AutoLinearLayout mLlContainer;
+    protected LinearLayout mLlContainer;
     //title
     /** title */
     protected TextView mTvTitle;
@@ -25,7 +23,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
     protected String mTitle;
     /** title textcolor(标题颜色) */
     protected int mTitleTextColor;
-    /** title textsize(标题字体大小,单位px) */
+    /** title textsize(标题字体大小,单位sp) */
     protected float mTitleTextSize;
     /** enable title show(是否显示标题) */
     protected boolean mIsTitleShow = true;
@@ -46,7 +44,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
     /** num of btns, [1,3] */
     protected int mBtnNum = 2;
     /** btn container */
-    protected AutoLinearLayout mLlBtns;
+    protected LinearLayout mLlBtns;
     /** btns */
     protected TextView mTvBtnLeft;
     protected TextView mTvBtnRight;
@@ -60,9 +58,9 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
     protected int mRightBtnTextColor;
     protected int mMiddleBtnTextColor;
     /** btn textsize(按钮字体大小) */
-    protected float mLeftBtnTextSize = ResUtils.getDimens(R.dimen.common_dialog_content_size);
-    protected float mRightBtnTextSize = ResUtils.getDimens(R.dimen.common_dialog_content_size);
-    protected float mMiddleBtnTextSize = ResUtils.getDimens(R.dimen.common_dialog_content_size);
+    protected float mLeftBtnTextSize = 15f;
+    protected float mRightBtnTextSize = 15f;
+    protected float mMiddleBtnTextSize = 15f;
     /** btn press color(按钮点击颜色) */
     protected int mBtnPressColor = Color.parseColor("#E3E3E3");// #85D3EF,#ffcccccc,#E3E3E3
     /** left btn click listener(左按钮接口) */
@@ -73,7 +71,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
     protected OnBtnClickL mOnBtnMiddleClickL;
 
     /** corner radius,dp(圆角程度,单位dp) */
-    protected int mCornerRadius =(int) ResUtils.getDimens(R.dimen.common_border_radius);
+    protected float mCornerRadius = 3;
     /** background color(背景颜色) */
     protected int mBgColor = Color.parseColor("#ffffff");
 
@@ -86,10 +84,10 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
      */
     public BaseAlertDialog(Context context) {
         super(context);
-        widthScale(0.8f);
+        widthScale(0.88f);
 
-        mLlContainer = new AutoLinearLayout(context);
-        mLlContainer.setOrientation(AutoLinearLayout.VERTICAL);
+        mLlContainer = new LinearLayout(context);
+        mLlContainer.setOrientation(LinearLayout.VERTICAL);
 
         /** title */
         mTvTitle = new TextView(context);
@@ -98,8 +96,8 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
         mTvContent = new TextView(context);
 
         /**btns*/
-        mLlBtns = new AutoLinearLayout(context);
-        mLlBtns.setOrientation(AutoLinearLayout.HORIZONTAL);
+        mLlBtns = new LinearLayout(context);
+        mLlBtns.setOrientation(LinearLayout.HORIZONTAL);
 
         mTvBtnLeft = new TextView(context);
         mTvBtnLeft.setGravity(Gravity.CENTER);
@@ -118,13 +116,13 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
 
         mTvTitle.setText(TextUtils.isEmpty(mTitle) ? "温馨提示" : mTitle);
         mTvTitle.setTextColor(mTitleTextColor);
-        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTitleTextSize);
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, mTitleTextSize);
 
         /** content */
         mTvContent.setGravity(mContentGravity);
         mTvContent.setText(mContent);
         mTvContent.setTextColor(mContentTextColor);
-        mTvContent.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContentTextSize);
+        mTvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, mContentTextSize);
         mTvContent.setLineSpacing(0, 1.3f);
 
         /**btns*/
@@ -136,9 +134,9 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
         mTvBtnRight.setTextColor(mRightBtnTextColor);
         mTvBtnMiddle.setTextColor(mMiddleBtnTextColor);
 
-        mTvBtnLeft.setTextSize(TypedValue.COMPLEX_UNIT_PX, mLeftBtnTextSize);
-        mTvBtnRight.setTextSize(TypedValue.COMPLEX_UNIT_PX, mRightBtnTextSize);
-        mTvBtnMiddle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mMiddleBtnTextSize);
+        mTvBtnLeft.setTextSize(TypedValue.COMPLEX_UNIT_SP, mLeftBtnTextSize);
+        mTvBtnRight.setTextSize(TypedValue.COMPLEX_UNIT_SP, mRightBtnTextSize);
+        mTvBtnMiddle.setTextSize(TypedValue.COMPLEX_UNIT_SP, mMiddleBtnTextSize);
 
         if (mBtnNum == 1) {
             mTvBtnLeft.setVisibility(View.GONE);
@@ -326,8 +324,8 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
     }
 
     /** set corner radius (设置圆角程度) */
-    public T cornerRadius(int cornerRadius_PX) {
-        mCornerRadius = cornerRadius_PX;
+    public T cornerRadius(float cornerRadius_DP) {
+        mCornerRadius = cornerRadius_DP;
         return (T) this;
     }
 

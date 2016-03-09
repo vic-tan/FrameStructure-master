@@ -5,8 +5,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-import com.common.utils.StatusBarUtils;
 import com.common.dialog.base.dialog.BaseDialog;
+import com.common.utils.StatusBarUtils;
 
 
 /** Base class to help create PopupWindow Style Dialog(实现PopupWindow风格对话框基类) */
@@ -16,8 +16,8 @@ public abstract class InternalBasePopup<T extends InternalBasePopup<T>> extends 
     protected int mY;
     /** BubblePopup位于给定位置上方(Gravity.Top)或者下方(Gravity.Bottom) */
     protected int mGravity;
-    protected int mXOffset;
-    protected int mYOffset;
+    protected float mXOffset;
+    protected float mYOffset;
     protected boolean isLayoutObtain;
 
     public InternalBasePopup(Context context) {

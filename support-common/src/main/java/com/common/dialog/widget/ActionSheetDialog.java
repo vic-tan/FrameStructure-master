@@ -20,12 +20,11 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.common.R;
 import com.common.dialog.base.dialog.BottomBaseDialog;
-import com.common.dialog.entity.DialogMenuItem;
+import com.common.dialog.bean.DialogMenuItem;
 import com.common.dialog.listener.OnOperItemClickL;
 import com.common.utils.CornerUtils;
-import com.common.utils.ResUtils;
+import com.zhy.autolayout.AutoLinearLayout;
 
 import java.util.ArrayList;
 
@@ -42,31 +41,31 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
     /** mCancel button(取消按钮) */
     private TextView mTvCancel;
     /** corner radius,dp(圆角程度,单位dp) */
-    private float mCornerRadius = ResUtils.getDimens(R.dimen.common_border_radius);
+    private float mCornerRadius = 5;
     /** title background color(标题背景颜色) */
     private int mTitleBgColor = Color.parseColor("#ddffffff");
     /** title text(标题) */
     private String mTitle = "提示";
     /** title height(标题栏高度) */
-    private int mTitleHeight = 88;
+    private int mTitleHeight = 48;
     /** title textcolor(标题颜色) */
     private int mTitleTextColor = Color.parseColor("#8F8F8F");
-    /** title textsize(标题字体大小,单位sp) */
-    private int mTitleTextSize = (int)ResUtils.getDimens(R.dimen.common_dialog_content_size);
+    /** title textsize(标题字体大小,单位px) */
+    private float mTitleTextSize = 17.0f;
     /** ListView background color(ListView背景色) */
     private int mLvBgColor = Color.parseColor("#ddffffff");
     /** divider color(ListView divider颜色) */
     private int mDividerColor = Color.parseColor("#D7D7D9");
     /** divider height(ListView divider高度) */
-    private int mDividerHeight = (int)ResUtils.getDimens(R.dimen.common_dialog_title_split_line_size);
+    private float mDividerHeight = 0.8f;
     /** item press color(ListView item按住颜色) */
     private int mItemPressColor = Color.parseColor("#ffcccccc");
     /** item textcolor(ListView item文字颜色) */
     private int mItemTextColor = Color.parseColor("#44A2FF");
     /** item textsize(ListView item文字大小) */
-    private int mItemTextSize = (int)ResUtils.getDimens(R.dimen.common_dialog_content_size);
+    private float mItemTextSize = 17.0f;
     /** item height(ListView item高度) */
-    private int mItemHeight = 88;
+    private int mItemHeight = 48;
     /** enable title show(是否显示标题) */
     private boolean mIsTitleShow = true;
     /*** cancel btn text(取消按钮内容) */
@@ -74,7 +73,7 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
     /** cancel btn text color(取消按钮文字颜色) */
     private int mCancelTextColor = Color.parseColor("#44A2FF");
     /** cancel btn text size(取消按钮文字大小) */
-    private int mCancelTextSize = (int)ResUtils.getDimens(R.dimen.common_dialog_content_size);
+    private float mCancelTextSize = 17.0f;
     /** adapter(自定义适配器) */
     private BaseAdapter mAdapter;
     /** operation items(操作items) */
@@ -130,10 +129,10 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
         /** title */
         mTvTitle = new TextView(mContext);
         mTvTitle.setGravity(Gravity.CENTER);
-        mTvTitle.setPadding(20, 10, 20, 10);
+        mTvTitle.setPadding(dp2px(20), dp2px(10), dp2px(20), dp2px(10));
 
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        params.topMargin = 40;
+        params.topMargin = dp2px(40);
 
         ll_container.addView(mTvTitle, params);
 
@@ -155,8 +154,8 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
         mTvCancel = new TextView(mContext);
         mTvCancel.setGravity(Gravity.CENTER);
         LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        lp.topMargin = 14;
-        lp.bottomMargin = 14;
+        lp.topMargin = dp2px(14);
+        lp.bottomMargin = dp2px(14);
         mTvCancel.setLayoutParams(lp);
 
         ll_container.addView(mTvCancel);
@@ -167,24 +166,24 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
     @Override
     public void setUiBeforShow() {
         /** title */
-        float radius = mCornerRadius;
-        mTvTitle.setHeight(mTitleHeight);
+        float radius = dp2px(mCornerRadius);
+        mTvTitle.setHeight(dp2px(mTitleHeight));
         mTvTitle.setBackgroundDrawable(CornerUtils.cornerDrawable(mTitleBgColor, new float[]{radius, radius, radius,
                 radius, 0, 0, 0, 0}));
         mTvTitle.setText(mTitle);
-        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTitleTextSize);
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, dp2px(mTitleTextSize));
         mTvTitle.setTextColor(mTitleTextColor);
         mTvTitle.setVisibility(mIsTitleShow ? View.VISIBLE : View.GONE);
 
         /** title underline */
-        mVLineTitle.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, mDividerHeight));
+        mVLineTitle.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, dp2px(mDividerHeight)));
         mVLineTitle.setBackgroundColor(mDividerColor);
         mVLineTitle.setVisibility(mIsTitleShow ? View.VISIBLE : View.GONE);
 
         /** mCancel btn */
-        mTvCancel.setHeight(mItemHeight);
+        mTvCancel.setHeight(dp2px(mItemHeight));
         mTvCancel.setText(mCancelText);
-        mTvCancel.setTextSize(TypedValue.COMPLEX_UNIT_PX, mCancelTextSize);
+        mTvCancel.setTextSize(TypedValue.COMPLEX_UNIT_PX, dp2px(mCancelTextSize));
         mTvCancel.setTextColor(mCancelTextColor);
         mTvCancel.setBackgroundDrawable(CornerUtils.listItemSelector(radius, mLvBgColor, mItemPressColor, 1, 0));
 
@@ -197,7 +196,7 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
 
         /** listview */
         mLv.setDivider(new ColorDrawable(mDividerColor));
-        mLv.setDividerHeight(mDividerHeight);
+        mLv.setDividerHeight(dp2px(mDividerHeight));
 
         if (mIsTitleShow) {
             mLv.setBackgroundDrawable(CornerUtils.cornerDrawable(mLvBgColor, new float[]{0, 0, 0, 0, radius, radius, radius,
@@ -352,12 +351,12 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
         public View getView(int position, View convertView, ViewGroup parent) {
             final DialogMenuItem item = mContents.get(position);
 
-            LinearLayout llItem = new LinearLayout(mContext);
+            AutoLinearLayout llItem = new AutoLinearLayout(mContext);
             llItem.setOrientation(LinearLayout.HORIZONTAL);
             llItem.setGravity(Gravity.CENTER_VERTICAL);
 
             ImageView ivItem = new ImageView(mContext);
-            ivItem.setPadding(0, 0, 35, 0);
+            ivItem.setPadding(0, 0, dp2px(35), 0);
             llItem.addView(ivItem);
 
             TextView tvItem = new TextView(mContext);
@@ -365,15 +364,15 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
             tvItem.setSingleLine(true);
             tvItem.setGravity(Gravity.CENTER);
             tvItem.setTextColor(mItemTextColor);
-            tvItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, mItemTextSize);
-            tvItem.setHeight(mItemHeight);
+            tvItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, dp2px(mItemTextSize));
+            tvItem.setHeight(dp2px(mItemHeight));
 
             llItem.addView(tvItem);
             if (mIsTitleShow) {
-                llItem.setBackgroundDrawable((CornerUtils.listItemSelector(mCornerRadius, Color.TRANSPARENT, mItemPressColor,
+                llItem.setBackgroundDrawable((CornerUtils.listItemSelector(dp2px(mCornerRadius), Color.TRANSPARENT, mItemPressColor,
                         position == mContents.size() - 1)));
             } else {
-                llItem.setBackgroundDrawable(CornerUtils.listItemSelector(mCornerRadius, Color.TRANSPARENT, mItemPressColor,
+                llItem.setBackgroundDrawable(CornerUtils.listItemSelector(dp2px(mCornerRadius), Color.TRANSPARENT, mItemPressColor,
                         mContents.size(), position));
             }
 

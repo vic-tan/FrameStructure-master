@@ -34,8 +34,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.common.ui.base.activity.BasePhotoViewActivity" />
-        <activity android:name="com.common.ui.base.activity.BaseSimplePhotoViewActivity" />
+
         <activity android:name=".ui.main.GuideActivity_" />
         <activity android:name=".ui.main.LoadingActivity" />
 
