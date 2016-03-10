@@ -62,12 +62,13 @@ public class ImageLoaderUtils {
                 .memoryCache(new LruMemoryCache((int) (Runtime.getRuntime().maxMemory() / 5)))//缓存的文件
                 .diskCache(new UnlimitedDiskCache(new File(GlobalConstants.IMAGES_CACHE_PATH)))//图片缓存本地地址
                 .tasksProcessingOrder(QueueProcessingType.FIFO)
-                        //.diskCacheFileCount(LRU_DISK_CACHE_NUM)//缓存的文件数量
+                .diskCacheFileCount(LRU_DISK_CACHE_NUM)//缓存的文件数量
                 .memoryCacheSize(LRU_MEMORY_CACHE)
                 .imageDownloader(new BaseImageDownloader
                         (context, CONNECT_TIME_OUT, READ_TIME_OUT)) // connectTimeout (5 s), readTimeout (30 s)超时时间
                 .defaultDisplayImageOptions(setCommonBuilder().build())
-                .diskCacheSize(DISK_CACHE_SIZE).writeDebugLogs().build();
+                //.writeDebugLogs()//打日志
+                .diskCacheSize(DISK_CACHE_SIZE).build();
         return imageLoaderConfiguration;
     }
 
