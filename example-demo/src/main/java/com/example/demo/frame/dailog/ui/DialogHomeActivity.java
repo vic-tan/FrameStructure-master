@@ -186,14 +186,14 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "left");
+                        ToastUtils.show( "left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "right");
+                        ToastUtils.show("right");
                         dialog.dismiss();
                     }
                 });
@@ -210,14 +210,14 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "left");
+                        ToastUtils.show("left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "right");
+                        ToastUtils.show("right");
                         dialog.dismiss();
                     }
                 });
@@ -243,14 +243,14 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "left");
+                        ToastUtils.show("left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "right");
+                        ToastUtils.show("right");
                         dialog.dismiss();
                     }
                 });
@@ -266,7 +266,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnBtnClickL(new OnBtnClickL() {
             @Override
             public void onBtnClick() {
-                ToastUtils.show(mContext, "middle");
+                ToastUtils.show("middle");
                 dialog.dismiss();
             }
         });
@@ -284,21 +284,21 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "left");
+                        ToastUtils.show("left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "right");
+                        ToastUtils.show( "right");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "middle");
+                        ToastUtils.show( "middle");
                         dialog.dismiss();
                     }
                 });
@@ -317,14 +317,14 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 new OnBtnClickL() {//left btn click listener
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "left");
+                        ToastUtils.show( "left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {//right btn click listener
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "right");
+                        ToastUtils.show("right");
                         dialog.dismiss();
                     }
                 }
@@ -344,14 +344,14 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 new OnBtnClickL() {//left btn click listener
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "left");
+                        ToastUtils.show( "left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {//right btn click listener
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "right");
+                        ToastUtils.show("right");
                         dialog.dismiss();
                     }
                 }
@@ -359,7 +359,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 new OnBtnClickL() {//middle btn click listener
                     @Override
                     public void onBtnClick() {
-                        ToastUtils.show(mContext, "middle");
+                        ToastUtils.show( "middle");
                         dialog.dismiss();
                     }
                 }
@@ -377,7 +377,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnBtnClickL(new OnBtnClickL() {
             @Override
             public void onBtnClick() {
-                ToastUtils.show(mContext, "middle");
+                ToastUtils.show( "middle");
                 dialog.dismiss();
             }
         });
@@ -390,7 +390,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.show(mContext, mMenuItems.get(position).mOperName);
+                ToastUtils.show(mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
         });
@@ -412,7 +412,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.show(mContext, mMenuItems.get(position).mOperName);
+                ToastUtils.show(mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
         });
@@ -433,7 +433,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.show(mContext, mMenuItems.get(position).mOperName);
+                ToastUtils.show( mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
         });
@@ -447,7 +447,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.show(mContext, mMenuItems.get(position).mOperName);
+                ToastUtils.show(mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
         });
@@ -460,7 +460,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.show(mContext, mMenuItems.get(position).mOperName);
+                ToastUtils.show(mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
         });
@@ -477,7 +477,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.show(mContext, stringItems[position]);
+                ToastUtils.show( stringItems[position]);
                 dialog.dismiss();
             }
         });
@@ -491,7 +491,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ToastUtils.show(mContext, stringItems[position]);
+                ToastUtils.show(stringItems[position]);
                 dialog.dismiss();
             }
         });

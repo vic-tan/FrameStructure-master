@@ -43,28 +43,28 @@ public class ShareBottomDialog extends BottomBaseDialog<ShareBottomDialog> {
         mLlWechatFriendCircle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show(mContext, "朋友圈");
+                ToastUtils.show("朋友圈");
                 dismiss();
             }
         });
         mLlWechatFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show(mContext, "微信");
+                ToastUtils.show("微信");
                 dismiss();
             }
         });
         mLlQq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show(mContext, "QQ");
+                ToastUtils.show("QQ");
                 dismiss();
             }
         });
         mLlSms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show(mContext, "短信");
+                ToastUtils.show( "短信");
                 dismiss();
             }
         });

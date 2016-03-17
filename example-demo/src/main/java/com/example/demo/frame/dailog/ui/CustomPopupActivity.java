@@ -133,25 +133,25 @@ public class CustomPopupActivity extends BaseActivity implements View.OnClickLis
             mTvItem1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ToastUtils.show(mContext, mTvItem1.getText());
+                    ToastUtils.show( mTvItem1.getText());
                 }
             });
             mTvItem2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ToastUtils.show(mContext, mTvItem2.getText());
+                    ToastUtils.show(mTvItem2.getText());
                 }
             });
             mTvItem3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ToastUtils.show(mContext, mTvItem3.getText());
+                    ToastUtils.show( mTvItem3.getText());
                 }
             });
             mTvItem4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ToastUtils.show(mContext, mTvItem4.getText());
+                    ToastUtils.show( mTvItem4.getText());
                 }
             });
         }

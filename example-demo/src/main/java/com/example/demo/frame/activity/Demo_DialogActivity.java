@@ -61,13 +61,13 @@ public class Demo_DialogActivity extends BaseActivity implements IDialogBtnSingl
         new DefaultDialog(this, new IDialogBtnDefaultCallBack() {
             @Override
             public void liftBtnOnClickListener(BaseDialog promptDialog, View v, int callBackTag) {
-                ToastUtils.show(getApplicationContext(), "liftBtn");
+                ToastUtils.show( "liftBtn");
             }
 
             @Override
             public void rightBtnOnClickListener(BaseDialog promptDialog, View v, int callBackTag) {
                 promptDialog.dismiss();
-                ToastUtils.show(getApplicationContext(), "rightBtn");
+                ToastUtils.show( "rightBtn");
             }
         }).getContent().setText("确定要删除吗");
     }
@@ -76,10 +76,10 @@ public class Demo_DialogActivity extends BaseActivity implements IDialogBtnSingl
     public void onClickListener(BaseDialog promptDialog, View v, int callBackTag) {
         switch (callBackTag) {
             case 1:
-                ToastUtils.show(getApplicationContext(), "1");
+                ToastUtils.show("1");
                 break;
             case 2:
-                ToastUtils.show(getApplicationContext(), "2");
+                ToastUtils.show( "2");
                 break;
         }
     }

@@ -213,7 +213,7 @@ public abstract class BasePullToRefresh implements IRefreshRequestCallBack {
             startRequest();
             mode = PullToRefreshBase.Mode.PULL_FROM_END;
         } else {//最后一页
-            ToastUtils.show(context, ResUtils.getStr(R.string.common_pull_to_refresh_last_page));
+            ToastUtils.show(ResUtils.getStr(R.string.common_pull_to_refresh_last_page));
             requestFinish();
         }
     }

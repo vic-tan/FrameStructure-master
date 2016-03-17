@@ -1,13 +1,19 @@
 package com.common.okhttp.callback;
 
+import com.common.R;
 import com.common.okhttp.OkHttpUtils;
+import com.common.ui.base.main.BaseApplication;
 import com.common.utils.Logger;
+import com.common.utils.NetUtils;
+import com.common.utils.ResUtils;
+import com.common.utils.ToastUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import okhttp3.Call;
 import okhttp3.Response;
 
 /**
@@ -32,6 +38,12 @@ public abstract class FileCallBack extends Callback<File>
         this.destFileName = destFileName;
     }
 
+    @Override
+    public void onError(Call call, Exception e) {
+        if(!NetUtils.isConnected(BaseApplication.appContext)) {
+            ToastUtils.show(ResUtils.getStr(R.string.common_prompt_network));
+        }
+    }
 
     @Override
     public File parseNetworkResponse(Response response) throws Exception

@@ -66,7 +66,7 @@ public class Demo_ImageSliderActivity extends BaseActivity implements BaseSlider
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mDemoSlider.setPresetTransformer(((TextView) view).getText().toString());
-                ToastUtils.show(Demo_ImageSliderActivity.this, ((TextView) view).getText().toString());
+                ToastUtils.show(((TextView) view).getText().toString());
             }
         });
 

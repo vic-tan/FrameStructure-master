@@ -70,12 +70,13 @@ public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickL
 
                 @Override
                 public void onError(Call call, Exception e) {
-                    ToastUtils.show(Demo_HttpTaskActivity.this, "onError");
+                    super.onError(call,e);
+                    ToastUtils.show("onError");
                 }
 
                 @Override
                 public void onResponse(Object response) {
-                    ToastUtils.show(Demo_HttpTaskActivity.this, "onResponse");
+                    ToastUtils.show( "onResponse");
                 }
             });
 
@@ -89,7 +90,7 @@ public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickL
 
                 @Override
                 public void onResponse(Object object) {
-                    ToastUtils.show(Demo_HttpTaskActivity.this, "onResponse" + object);
+                    ToastUtils.show( "onResponse" + object);
                     Logger.json("OkHttpUtils", object + "");
                 }
             });
@@ -134,14 +135,14 @@ public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickL
 
             @Override
             public void onResponse(Object response) {
-                ToastUtils.show(Demo_HttpTaskActivity.this, "onResponse" + response);
+                ToastUtils.show("onResponse" + response);
             }
         });
     }
 
     @Override
     public void onRefreshRequest() {
-        ToastUtils.show(this, "重试中。。。");
+        ToastUtils.show("重试中。。。");
         testPrompt();
     }
 

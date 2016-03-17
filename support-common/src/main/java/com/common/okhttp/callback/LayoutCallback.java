@@ -3,10 +3,15 @@ package com.common.okhttp.callback;
 import android.app.Activity;
 import android.view.View;
 
+import com.common.R;
 import com.common.bean.base.BaseBean;
 import com.common.engine.interf.IRefreshRequestCallBack;
 import com.common.prompt.LoadingLayout;
+import com.common.ui.base.main.BaseApplication;
 import com.common.utils.JsonUtils;
+import com.common.utils.NetUtils;
+import com.common.utils.ResUtils;
+import com.common.utils.ToastUtils;
 
 import okhttp3.Call;
 import okhttp3.Request;
@@ -53,6 +58,9 @@ public abstract class LayoutCallback extends Callback {
     @Override
     public void onError(Call call, Exception e) {
         promptView.displayserviceErrorLayout();
+        if(!NetUtils.isConnected(BaseApplication.appContext)) {
+            ToastUtils.show(ResUtils.getStr(R.string.common_prompt_network));
+        }
     }
 
 

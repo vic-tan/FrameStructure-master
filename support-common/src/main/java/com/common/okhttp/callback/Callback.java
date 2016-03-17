@@ -1,6 +1,11 @@
 package com.common.okhttp.callback;
 
+import com.common.R;
+import com.common.ui.base.main.BaseApplication;
+import com.common.utils.NetUtils;
+import com.common.utils.ResUtils;
 import com.common.utils.StringUtils;
+import com.common.utils.ToastUtils;
 
 import okhttp3.Call;
 import okhttp3.Request;
@@ -15,6 +20,7 @@ public abstract class Callback<T>
      */
     public void onBefore(Request request)
     {
+
     }
 
     /**
@@ -42,7 +48,11 @@ public abstract class Callback<T>
      */
     public abstract T parseNetworkResponse(Response response) throws Exception;
 
-    public abstract void onError(Call call, Exception e);
+    public  void onError(Call call, Exception e){
+        if(!NetUtils.isConnected(BaseApplication.appContext)) {
+            ToastUtils.show(ResUtils.getStr(R.string.common_prompt_network));
+        }
+    }
 
     public abstract void onResponse(T response);
 
@@ -59,6 +69,9 @@ public abstract class Callback<T>
         @Override
         public void onError(Call call, Exception e)
         {
+            if(!NetUtils.isConnected(BaseApplication.appContext)) {
+                ToastUtils.show(ResUtils.getStr(R.string.common_prompt_network));
+            }
 
         }
 

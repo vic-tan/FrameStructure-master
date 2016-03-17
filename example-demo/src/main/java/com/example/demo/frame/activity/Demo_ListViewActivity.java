@@ -74,6 +74,6 @@ public class Demo_ListViewActivity extends PullToRefreshCallBackAbs implements A
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        ToastUtils.show(this, "aa");
+        ToastUtils.show( "aa");
     }
 }

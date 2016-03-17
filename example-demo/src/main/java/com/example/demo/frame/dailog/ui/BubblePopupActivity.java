@@ -75,7 +75,7 @@ public class BubblePopupActivity extends BaseActivity implements View.OnClickLis
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show(mContext, "tv_bubble");
+                ToastUtils.show( "tv_bubble");
             }
         });
     }

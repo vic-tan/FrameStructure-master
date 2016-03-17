@@ -34,13 +34,13 @@ public class CustomBubblePopup extends BaseBubblePopup<CustomBubblePopup> {
         mTvBubble.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show(mContext, "mTvBubble--->");
+                ToastUtils.show( "mTvBubble--->");
             }
         });
         mIvBubble.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show(mContext, "mIvBubble--->");
+                ToastUtils.show( "mIvBubble--->");
             }
         });
     }
