@@ -1,7 +1,7 @@
 package com.common.ui.interfaceabs;
 
 import com.common.ui.base.activity.BaseActivity;
-import com.common.bean.base.BaseJson;
+import com.common.okhttp.json.BaseJson;
 import com.common.engine.interf.IPullToRefreshCallBack;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 

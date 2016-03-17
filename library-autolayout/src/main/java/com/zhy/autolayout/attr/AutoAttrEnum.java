@@ -3,7 +3,7 @@ package com.zhy.autolayout.attr;
 import android.view.View;
 
 /**
- * Created by zhy on 15/12/4.
+ * Created by tanlifei on 15/12/4.
  */
 public enum AutoAttrEnum
 {

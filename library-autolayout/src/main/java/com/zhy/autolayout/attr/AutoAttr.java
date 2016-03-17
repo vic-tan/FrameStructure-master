@@ -7,7 +7,7 @@ import com.zhy.autolayout.utils.L;
 
 
 /**
- * Created by zhy on 15/12/4.
+ * Created by tanlifei on 15/12/4.
  */
 public abstract class AutoAttr
 {

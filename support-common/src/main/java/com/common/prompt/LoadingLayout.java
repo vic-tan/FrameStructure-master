@@ -12,7 +12,6 @@ import com.common.engine.interf.IRefreshRequestCallBack;
 import com.common.utils.AnimationUtils;
 import com.common.utils.InflaterUtils;
 import com.common.utils.ResUtils;
-import com.constants.level.TaskRequestLevel;
 
 
 /**
@@ -33,11 +32,11 @@ import com.constants.level.TaskRequestLevel;
  * <li>{@link #displayserviceErrorLayout()} 服务器错误提示</li>
  * <li>{@link #displayTimeoutErrorLayout()} 超时错误提示</li>
  * <li>{@link #displayEmptyLayout(int)} 自定义提示文字的空数据提示</li>
- * <li>{@link #display(int, int, TaskRequestLevel)} 自定义设置提示内容，图片，及提示状态</li>
+ * <li>{@link #display(int, int)} 自定义设置提示内容，图片，及提示状态</li>
  * <li>{@link #setPromptLogo(int)} 设置提示图片</li>
  * <li>{@link #setPromptContent(int)} 设置提示语</li>
  * <li>{@link #setProgressLayout(int)} 显示正在加载提示布局</li>
- * <li>{@link #setErrorLayout(TaskRequestLevel, int)} 显示正在错误布局提示布局</li>
+ * <li>{@link #setErrorLayout(int)} 显示正在错误布局提示布局</li>
  * <li>{@link #setRefresh(IRefreshRequestCallBack)} 点击重新请求</li>
  * <p/>
  * </ul>
@@ -52,7 +51,6 @@ public class LoadingLayout {
     private ImageView logo;//提示图片
     private TextView prompt;//提示文字
     private LinearLayout promptLayout;//加载提示布局
-    private TaskRequestLevel level;//异常类型
     private boolean isIncodue = false;//layout.common_prompt 是子布局
     private Context context;
 
@@ -63,7 +61,7 @@ public class LoadingLayout {
      * @param context  上下文
      * @param backCall 回调接口类
      */
-    public LoadingLayout(Context context, IRefreshRequestCallBack backCall) {
+    public LoadingLayout(Context context,IRefreshRequestCallBack backCall) {
         super();
         this.context = context;
         view = InflaterUtils.inflater(context, R.layout.common_loading_prompt);
@@ -96,7 +94,6 @@ public class LoadingLayout {
      * @param backCall
      */
     private void create(IRefreshRequestCallBack backCall) {
-        level = TaskRequestLevel.PROGRESS;
         initView();
         setRefresh(backCall);
     }
@@ -187,7 +184,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayNetworkErrorLayout() {
-        return setErrorLayout(TaskRequestLevel.NETWORK_ERROR, R.string.common_prompt_network);
+        return setErrorLayout(R.string.common_prompt_network);
     }
 
     /**
@@ -196,7 +193,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayserviceErrorLayout() {
-        return setErrorLayout(TaskRequestLevel.SERVICE_ERROR, R.string.common_prompt_serivce);
+        return setErrorLayout( R.string.common_prompt_serivce);
     }
 
     /**
@@ -205,7 +202,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayTimeoutErrorLayout() {
-        return setErrorLayout(TaskRequestLevel.TIMEOUT_ERROR, R.string.common_prompt_timeout_error);
+        return setErrorLayout( R.string.common_prompt_timeout_error);
     }
 
 
@@ -215,7 +212,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayEmptyLayout() {
-        return setErrorLayout(TaskRequestLevel.EMPTY_DATA, R.string.common_prompt_empty);
+        return setErrorLayout(R.string.common_prompt_empty);
     }
 
     /**
@@ -224,7 +221,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayEmptyLayout(int strId) {
-        return setErrorLayout(TaskRequestLevel.EMPTY_DATA, strId);
+        return setErrorLayout(strId);
     }
 
 
@@ -233,12 +230,11 @@ public class LoadingLayout {
      *
      * @param resId  提示文字
      * @param strId  提示内容
-     * @param status 提示状态
      * @return
      */
-    public View display(int resId, int strId, TaskRequestLevel status) {
+    public View display(int resId, int strId) {
         setPromptLogo(resId);
-        return setErrorLayout(status, strId);
+        return setErrorLayout(strId);
     }
 
 
@@ -270,7 +266,6 @@ public class LoadingLayout {
     private View setProgressLayout(int strId) {
         AnimationUtils.show(load, R.mipmap.common_svstatus_loading);
         displayLayout(View.VISIBLE);
-        level = TaskRequestLevel.PROGRESS;
         load.setVisibility(View.VISIBLE);
         logo.setVisibility(View.GONE);
         view.setClickable(false);
@@ -284,9 +279,8 @@ public class LoadingLayout {
      * @param strId
      * @return
      */
-    private View setErrorLayout(TaskRequestLevel status, int strId) {
+    private View setErrorLayout( int strId) {
         displayLayout(View.VISIBLE);
-        level = status;
         setPromptContent(strId);
         view.setClickable(true);
         load.setAnimation(null);
@@ -305,14 +299,14 @@ public class LoadingLayout {
         view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                backCall.onRefreshRequest(level);
+                backCall.onRefreshRequest();
             }
         });
         if (null != promptLayout) {
             promptLayout.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    backCall.onRefreshRequest(level);
+                    backCall.onRefreshRequest();
                 }
             });
         }

@@ -46,6 +46,6 @@
 
     </LinearLayout>
 
-    <include  layout="@layout/common_loading_prompt"/>
+    <include layout="@layout/common_loading_prompt"/>
 
 </LinearLayout>

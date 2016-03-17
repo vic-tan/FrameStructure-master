@@ -11,7 +11,7 @@ import com.example.demo.frame.bean.ChatMessage;
 import java.util.List;
 
 /**
- * Created by zhy on 15/9/4.
+ * Created by tanlifei on 15/9/4.
  */
 public class ChatAdapter extends MultiItemCommonAdapter<ChatMessage>
 {

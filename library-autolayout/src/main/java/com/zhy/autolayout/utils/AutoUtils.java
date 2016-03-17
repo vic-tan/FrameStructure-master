@@ -7,7 +7,7 @@ import com.zhy.autolayout.R;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
 /**
- * Created by zhy on 15/12/4.
+ * Created by tanlifei on 15/12/4.
  */
 public class AutoUtils
 {

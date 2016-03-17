@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * Created by zhy on 15/12/4.
+ * Created by tanlifei on 15/12/4.
  */
 public class TextSizeAttr extends AutoAttr
 {

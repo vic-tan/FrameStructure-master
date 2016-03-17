@@ -83,19 +83,22 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="androidannotations-api-3.3.2" level="project" />
-    <orderEntry type="library" exported="" name="nineoldandroids-2.4.0" level="project" />
-    <orderEntry type="library" exported="" name="httpcore-4.4.2" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
-    <orderEntry type="library" exported="" name="photoview-1.2.2" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />
-    <orderEntry type="library" exported="" name="android-async-http-1.4.8" level="project" />
     <orderEntry type="library" exported="" name="fastjson-1.1.40" level="project" />
+    <orderEntry type="library" exported="" name="photoview-1.2.2" level="project" />
+    <orderEntry type="library" exported="" name="nineoldandroids-2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="androidannotations-api-3.3.2" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.6.0" level="project" />
+    <orderEntry type="library" exported="" name="httpcore-4.4.2" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.4" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.2.0" level="project" />
+    <orderEntry type="library" exported="" name="photoview-2.2.4" level="project" />
+    <orderEntry type="library" exported="" name="android-async-http-1.4.8" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
     <orderEntry type="module" module-name="support-constants" exported="" />
-    <orderEntry type="module" module-name="library-autolayout" exported="" />
+    <orderEntry type="module" module-name="library-greenDAO" exported="" />
     <orderEntry type="module" module-name="library-pullToRefresh" exported="" />
     <orderEntry type="module" module-name="example-localinterface" exported="" />
-    <orderEntry type="module" module-name="library-greenDAO" exported="" />
+    <orderEntry type="module" module-name="library-autolayout" exported="" />
   </component>
 </module>

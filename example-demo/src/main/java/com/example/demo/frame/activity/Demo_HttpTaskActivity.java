@@ -1,30 +1,27 @@
 package com.example.demo.frame.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.common.engine.interf.IHttpTaskCallBack;
 import com.common.engine.interf.IRefreshRequestCallBack;
-import com.common.http.base.BaseHttpParams;
-import com.common.http.base.RequestBean;
-import com.common.http.task.HttpTask;
-import com.common.http.task.LayoutHttpTask;
-import com.common.http.task.LoadingHttpTask;
+import com.common.okhttp.OkHttpUtils;
+import com.common.okhttp.callback.Callback;
+import com.common.okhttp.callback.LayoutCallback;
+import com.common.okhttp.callback.LoadingCallback;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.utils.InflaterUtils;
+import com.common.utils.Logger;
 import com.common.utils.StartActUtils;
 import com.common.utils.ToastUtils;
-import com.constants.fixed.JsonConstants;
 import com.constants.fixed.UrlConstants;
-import com.constants.level.TaskLevel;
-import com.constants.level.TaskRequestLevel;
 import com.example.demo.R;
 
-import java.util.HashMap;
-import java.util.Map;
+import okhttp3.Call;
+import okhttp3.Response;
 
 
-public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickListener, IHttpTaskCallBack, IRefreshRequestCallBack {
+public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickListener, IRefreshRequestCallBack {
 
 
     /**
@@ -34,39 +31,19 @@ public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickL
     public static final String TAG = "HttpTaskActivity";
 
     private View view;
-    private LoadingHttpTask loadingHttpTask;
-    private LayoutHttpTask layoutHttpTask;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         view = InflaterUtils.inflater(this, R.layout.test_activity_http_task);
         setContentView(view);
-        loadingHttpTask = new LoadingHttpTask(this);
-        layoutHttpTask = new LayoutHttpTask(this, this, view);
         setOnClickListener();
     }
 
     @Override
     protected String setActionBarTitle() {
         return "公用请求";
-    }
-
-
-    @Override
-    public void taskCallBack(RequestBean requestBean) {
-        switch (requestBean.getTaskLevel()) {
-            case TASK_ONE://接口一请求回调
-                switch (requestBean.getRequestLevel()) {//接口一回调方法状态
-                    case SUCCESS:
-                        break;
-                }
-            case TASK_TWO://接口二请求回调
-                switch (requestBean.getRequestLevel()) {//接口二回调方法状态
-                    case SUCCESS:
-                        break;
-                }
-        }
     }
 
     private void setOnClickListener() {
@@ -84,57 +61,53 @@ public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickL
             //1、调用 HttpTask相应的方法;
             //2、Handler 处理请求成功后的业务
 
-            HttpTask.post(new RequestBean(this, BaseHttpParams.baseParams(UrlConstants.TEST_LIST)), new IHttpTaskCallBack() {
-                @Override
-                public void taskCallBack(RequestBean requestBean) {
-                    switch (requestBean.getRequestLevel()) {
-                        case START:
-                            ToastUtils.show(Demo_HttpTaskActivity.this, "PROGRESS");
-                            break;
-                        case SUCCESS:
-                            if (null != requestBean.getBaseJson()) {
-                                ToastUtils.show(Demo_HttpTaskActivity.this, requestBean.getBaseJson().getData());
-                            }
-                            break;
-                        case FAILURE:
-                            ToastUtils.show(Demo_HttpTaskActivity.this, "INTERRUPT");
-                            break;
-                        case FINISH:
-                            ToastUtils.show(Demo_HttpTaskActivity.this, "FINISH");
-                            break;
-                        case TIMEOUT_ERROR:
-                            ToastUtils.show(Demo_HttpTaskActivity.this, "TIMEOUT_ERROR");
-                            break;
-                        case SERVICE_ERROR:
-                            ToastUtils.show(Demo_HttpTaskActivity.this, "SERVICE_ERROR");
-                            break;
-                        case NETWORK_ERROR:
-                            ToastUtils.show(Demo_HttpTaskActivity.this, "BaseApplication.getContext()");
-                            break;
+            OkHttpUtils.post().url(UrlConstants.TEST_LIST).build().execute(new Callback() {
 
-                    }
+                @Override
+                public Object parseNetworkResponse(Response response) throws Exception {
+                    return null;
+                }
+
+                @Override
+                public void onError(Call call, Exception e) {
+                    ToastUtils.show(Demo_HttpTaskActivity.this, "onError");
+                }
+
+                @Override
+                public void onResponse(Object response) {
+                    ToastUtils.show(Demo_HttpTaskActivity.this, "onResponse");
                 }
             });
 
-        } else if (i == R.id.btn_1_2) {//步骤
-            //1、创建LoadingHttpTask();
-            //2、实现 ILoadingResultTaskCallBack,resultTask
-            //3、调用 loadingHttpTask.post()请求方法
-            //4、resultTask 处理请求成功后的业务
 
-            Map map = new HashMap();
-            map.put("test", "加载框请求 ");
-            map.put(JsonConstants.JSON_TASK_LEVEL, TaskLevel.TASK_ONE);
-            loadingHttpTask.post(new RequestBean(this, BaseHttpParams.baseParams(UrlConstants.TEST_LIST), map), this);
+        } else if (i == R.id.btn_1_2) {//步骤
+            OkHttpUtils.post().url(UrlConstants.TEST_LIST).build().execute(new LoadingCallback() {
+                @Override
+                public Activity getContext() {
+                    return Demo_HttpTaskActivity.this;
+                }
+
+                @Override
+                public void onResponse(Object object) {
+                    ToastUtils.show(Demo_HttpTaskActivity.this, "onResponse" + object);
+                    Logger.json("OkHttpUtils", object + "");
+                }
+            });
 
         } else if (i == R.id.btn_1_3) {//步骤
-            //1、创建LoadingHttpTask();
-            //2、实现 ILoadingResultTaskCallBack,IRefreshRequestCallBack,类
-            //3、调用 layoutHttpTask.post()请求方法
-            //4、resultTask 处理请求成功后的业务
-            //5、onRefreshRequest 处理请求失败重新请求业务
-
             testPrompt();
+            String json = "{\"appMachine\":\"Google Nexus 5 - 6.0.0 - API 23 - 1080x1920\",\"appSystem\":\"Android 6.0\",\"client_type\":6,\"company_name\":\"知学云\",\"login_id\":\"zhangzeyan\",\"password\":\"NyWYiW4LjsA\\u003d\"}";
+           /* OkHttpUtils.post().url("http://demo.zhixueyun.com/mlds/user/login").addParams("json",json).build().execute(new StringCallback() {
+                @Override
+                public void onError(Call call, Exception e) {
+                    ToastUtils.show(Demo_HttpTaskActivity.this, "onResponse" + e.toString());
+                }
+
+                @Override
+                public void onResponse(String response) {
+                    ToastUtils.show(Demo_HttpTaskActivity.this,  response);
+                }
+            });*/
 
         } else if (i == R.id.btn_2_1) {
             StartActUtils.start(this, Demo_ListViewActivity.class);
@@ -143,14 +116,31 @@ public class Demo_HttpTaskActivity extends BaseActivity implements View.OnClickL
     }
 
     private void testPrompt() {
-        Map map2 = new HashMap();
-        map2.put("test", "提示框请求 ");
-        map2.put(JsonConstants.JSON_TASK_LEVEL, TaskLevel.TASK_TWO);
-        layoutHttpTask.post(new RequestBean(this, BaseHttpParams.baseParams(UrlConstants.TEST_LIST), map2), this);
+        OkHttpUtils.post().url(UrlConstants.TEST_LIST).build().execute(new LayoutCallback() {
+            @Override
+            public Activity getActivity() {
+                return Demo_HttpTaskActivity.this;
+            }
+
+            @Override
+            public View getLayoutView() {
+                return view;
+            }
+
+            @Override
+            public IRefreshRequestCallBack refreshRequestCallBack() {
+                return Demo_HttpTaskActivity.this;
+            }
+
+            @Override
+            public void onResponse(Object response) {
+                ToastUtils.show(Demo_HttpTaskActivity.this, "onResponse" + response);
+            }
+        });
     }
 
     @Override
-    public void onRefreshRequest(TaskRequestLevel level) {
+    public void onRefreshRequest() {
         ToastUtils.show(this, "重试中。。。");
         testPrompt();
     }

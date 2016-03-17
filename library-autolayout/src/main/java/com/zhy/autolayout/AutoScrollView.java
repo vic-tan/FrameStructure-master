@@ -8,7 +8,7 @@ import com.zhy.autolayout.utils.AutoLayoutHelper;
 
 
 /**
- * Created by zhy on 15/11/19.
+ * Created by tanlifei on 15/11/19.
  */
 public class AutoScrollView extends ScrollView {
     private final AutoLayoutHelper mHelper = new AutoLayoutHelper(this);

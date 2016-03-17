@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 
 /**
- * Created by zhy on 15/9/4.
+ * Created by tanlifei on 15/9/4.
  */
 public class Demo_MutliItemTypeActivity extends ListActivity
 {

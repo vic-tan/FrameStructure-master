@@ -10,10 +10,10 @@ import android.widget.AdapterView;
 
 import com.common.adapter.base.CommonAdapter;
 import com.common.adapter.base.ViewHolder;
-import com.common.bean.base.BaseJson;
 import com.common.dialog.listener.OnBtnClickL;
 import com.common.dialog.widget.MaterialDialog;
 import com.common.download.autoupdate.AutoUpdateService;
+import com.common.okhttp.json.BaseJson;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.utils.JsonUtils;
 import com.common.utils.Logger;
@@ -63,7 +63,7 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         listView = ViewFindUtils.find(this, R.id.lv_pull_to_refresh);
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
         list = new ArrayList();
-        list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData(), TestBean.class));
+        list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData().toString(), TestBean.class));
         listView.setAdapter(new CommonAdapter<TestBean>(listView.getRefreshableView(), this, list, R.layout.test_list_item) {
             @Override
             public void convert(ViewHolder holder, TestBean bean, boolean isScrolling) {

@@ -8,7 +8,7 @@ import com.zhy.autolayout.utils.L;
 import com.zhy.autolayout.utils.ScreenUtils;
 
 /**
- * Created by zhy on 15/11/18.
+ * Created by tanlifei on 15/11/18.
  */
 public class AutoLayoutConifg
 {

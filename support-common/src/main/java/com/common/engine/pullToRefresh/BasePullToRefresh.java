@@ -4,22 +4,23 @@ import android.content.Context;
 import android.view.View;
 
 import com.common.R;
-import com.common.bean.base.BaseJson;
 import com.common.bean.base.PageBean;
-import com.common.engine.interf.IHttpTaskCallBack;
 import com.common.engine.interf.IPullToRefreshCallBack;
 import com.common.engine.interf.IRefreshRequestCallBack;
-import com.common.http.base.BaseHttpParams;
-import com.common.http.base.RequestBean;
-import com.common.http.task.HttpTask;
+import com.common.okhttp.OkHttpUtils;
+import com.common.okhttp.callback.Callback;
+import com.common.okhttp.json.BaseJson;
 import com.common.prompt.LoadingLayout;
 import com.common.utils.JsonUtils;
 import com.common.utils.ResUtils;
 import com.common.utils.StringUtils;
 import com.common.utils.ToastUtils;
 import com.constants.fixed.JsonConstants;
-import com.constants.level.TaskRequestLevel;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
+
+import okhttp3.Call;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 /**
@@ -44,7 +45,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
  * <ul>
  * <strong>子类要实现或者实现父类的的方法</strong>
  * <li>{@link #requestFinish()} 请求完成后的操作</li>
- * <li>{@link #onRefreshRequest(TaskRequestLevel)} 加载布局点击刷新（点击重新请求）</li>
+ * <li>{@link #onRefreshRequest()} 加载布局点击刷新（点击重新请求）</li>
  * </ul>
  *
  * @author tanlifei
@@ -78,6 +79,45 @@ public abstract class BasePullToRefresh implements IRefreshRequestCallBack {
      * 开始请求网络
      */
     protected void startRequest() {
+        OkHttpUtils.post().url(refreshCallBack.taskUrl()).build().execute(new Callback() {
+            @Override
+            public void inProgress(float progress) {
+                super.inProgress(progress);
+            }
+
+            @Override
+            public void onAfter() {
+                super.onAfter();
+                requestFinish();
+            }
+
+            @Override
+            public void onBefore(Request request) {
+                super.onBefore(request);
+                loadingPrompt.displayProgressLayout();
+            }
+
+            @Override
+            public Object parseNetworkResponse(Response response) throws Exception {
+                String string = response.body().string();
+                BaseJson jsonBean = JsonUtils.parseToObjectBean(replaceId(new String(string)), BaseJson.class);
+                return jsonBean;
+            }
+
+            @Override
+            public void onError(Call call, Exception e) {
+                loadingPrompt.displayserviceErrorLayout();
+                requestFinish();
+            }
+
+            @Override
+            public void onResponse(Object response) {
+                parseJsonController((BaseJson) response);
+                requestFinish();
+            }
+        });
+
+/*
         HttpTask.post(new RequestBean(context, refreshCallBack
                 .taskParams(BaseHttpParams.pageParams(refreshCallBack.taskUrl(), pageBean
                         .getPageNumber()))), new IHttpTaskCallBack() {
@@ -110,7 +150,7 @@ public abstract class BasePullToRefresh implements IRefreshRequestCallBack {
                         break;
                 }
             }
-        });
+        });*/
     }
 
     /**
@@ -120,36 +160,36 @@ public abstract class BasePullToRefresh implements IRefreshRequestCallBack {
      */
     private void parseJsonController(BaseJson baseJson) {
         if (refreshCallBack.isCustomParseJson()) {//手动解析Json
-            parsePageBean(baseJson.getData());//解析分页数据
-            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST))) {
+            parsePageBean(baseJson.getData().toString());//解析分页数据
+            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData().toString(), JsonConstants.JSON_LIST))) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
             refreshCallBack.customParseJson(baseJson, mode);
             return;
         } else if (mode == PullToRefreshBase.Mode.PULL_FROM_START) {//自动解析下拉json
-            parsePageBean(baseJson.getData());//解析分页数据
-            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST))) {
+            parsePageBean(baseJson.getData().toString());//解析分页数据
+            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData().toString(), JsonConstants.JSON_LIST))) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
-            pullFromStartParseJson(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST));
+            pullFromStartParseJson(JsonUtils.getKeyResult(baseJson.getData().toString(), JsonConstants.JSON_LIST));
             return;
         } else if (mode == PullToRefreshBase.Mode.PULL_FROM_END) {//自动解析上拉json
-            parsePageBean(baseJson.getData());//解析分页数据
+            parsePageBean(baseJson.getData().toString());//解析分页数据
             //pageBean.setPageNumber(pageBean.getPageNumber()+1);//测试本数据用的
-            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST))) {
+            if (isEmptyDate(JsonUtils.getKeyResult(baseJson.getData().toString(), JsonConstants.JSON_LIST))) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
-            pullFromEndParseJson(JsonUtils.getKeyResult(baseJson.getData(), JsonConstants.JSON_LIST));
+            pullFromEndParseJson(JsonUtils.getKeyResult(baseJson.getData().toString(), JsonConstants.JSON_LIST));
             return;
         } else if (mode == PullToRefreshBase.Mode.DISABLED) {//没有上拉下拉时
-            if (isEmptyDate(baseJson.getData())) {
+            if (isEmptyDate(baseJson.getData().toString())) {
                 loadingPrompt.displayEmptyLayout();
                 return;
             }
-            pullFromStartParseJson(baseJson.getData());
+            pullFromStartParseJson(baseJson.getData().toString());
             return;
         }
     }
@@ -279,11 +319,9 @@ public abstract class BasePullToRefresh implements IRefreshRequestCallBack {
 
     /**
      * 加载布局点击刷新（点击重新请求）
-     *
-     * @param level 重新请求前的状态码
      */
     @Override
-    public void onRefreshRequest(TaskRequestLevel level) {
+    public void onRefreshRequest() {
         startRequest();
     }
 

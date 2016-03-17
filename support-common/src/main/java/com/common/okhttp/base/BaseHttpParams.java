@@ -1,4 +1,4 @@
-package com.common.http.base;
+package com.common.okhttp.base;
 
 
 import com.common.utils.MapUtils;
@@ -19,7 +19,6 @@ import java.util.Map;
  * @date 2015年2月14日 上午11:30:51
  */
 public class BaseHttpParams {
-
 
     /**
      * 共同基本参数

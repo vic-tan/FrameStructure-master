@@ -11,11 +11,9 @@ import android.view.WindowManager;
 import com.common.download.DownloadManager;
 import com.common.download.entity.DownloadEntry;
 import com.common.download.notify.DataWatcher;
-import com.common.engine.interf.IHttpTaskCallBack;
-import com.common.http.base.BaseHttpParams;
-import com.common.http.base.RequestBean;
-import com.common.http.task.HttpTask;
 import com.common.notify.NotifyManager;
+import com.common.okhttp.OkHttpUtils;
+import com.common.okhttp.callback.StringCallback;
 import com.common.utils.AppUtils;
 import com.common.utils.JsonUtils;
 import com.common.utils.PackageUtils;
@@ -58,18 +56,12 @@ public class AutoUpdateService extends Service {
     public void checkAppUpdate() {
         //TODO 删除
         //BaseApplication.daoMaster.newSession().getDownloadEntryDao().deleteByKey(Builder);
-
-        HttpTask.post(new RequestBean(this, BaseHttpParams.baseParams(UrlConstants.APP_VERSION_UPDATE)), new IHttpTaskCallBack() {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).build().execute(new StringCallback() {
             @Override
-            public void taskCallBack(RequestBean requestBean) {
-                switch (requestBean.getRequestLevel()) {
-                    case SUCCESS:
-                        if (null != requestBean.getBaseJson()) {
-                            appAutoUpdateBean = JsonUtils.parseToObjectBean(requestBean.getBaseJson().getData(), AppAutoUpdateBean.class);
-                            if (Integer.parseInt(appAutoUpdateBean.getVersion_code()) > AppUtils.getVersionCode(AutoUpdateService.this)) {
-                                checkAppUpdateBuilder();
-                            }
-                        }
+            public void onResponse(String response) {
+                appAutoUpdateBean = JsonUtils.parseToObjectBean(response, AppAutoUpdateBean.class);
+                if (Integer.parseInt(appAutoUpdateBean.getVersion_code()) > AppUtils.getVersionCode(AutoUpdateService.this)) {
+                    checkAppUpdateBuilder();
                 }
             }
         });

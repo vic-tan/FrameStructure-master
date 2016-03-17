@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import com.zhy.autolayout.utils.AutoLayoutHelper;
 
 /**
- * Created by zhy on 15/6/30.
+ * Created by tanlifei on 15/6/30.
  */
 public class AutoLinearLayout extends LinearLayout {
 

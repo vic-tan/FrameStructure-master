@@ -1,7 +1,7 @@
 package com.common.engine.interf;
 
 import com.common.adapter.base.CommonAdapter;
-import com.common.bean.base.BaseJson;
+import com.common.okhttp.json.BaseJson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
 import java.util.List;
@@ -44,7 +44,7 @@ public interface IPullToRefreshCallBack {
      *
      * @return Class<?> 要解析的实体
      */
-    Class<?> parseClassName();
+     Class<?> parseClassName();
 
 
     /**

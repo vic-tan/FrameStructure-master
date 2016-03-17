@@ -1,4 +1,4 @@
-package com.common.http.view;
+package com.common.okhttp.view;
 
 import android.content.Context;
 import android.view.Gravity;

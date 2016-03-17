@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhy on 15/9/4.
+ * Created by tanlifei on 15/9/4.
  */
 public class Demo_SingleItemTypeActivity extends ListActivity {
     private List<Bean> mDatas;

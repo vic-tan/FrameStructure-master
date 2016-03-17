@@ -8,7 +8,7 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 
 /**
- * Created by zhy on 15/11/19.
+ * Created by tanlifei on 15/11/19.
  */
 public class AutoLayoutActivity extends SherlockFragmentActivity {
     private static final String LAYOUT_LINEARLAYOUT = "LinearLayout";

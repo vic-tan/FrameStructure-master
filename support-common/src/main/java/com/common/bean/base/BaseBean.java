@@ -1,53 +1,45 @@
 package com.common.bean.base;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import com.common.utils.StringUtils;
-
 /**
  * 所有实体bean 的基类
+ *
  * @author tanlifei
  * @date 2015年4月1日 下午3:29:05
  */
-public class BaseBean implements Parcelable {
+public class BaseBean<T> {
 
+    //	{"msg":"用户名或密码错误","data":null,"code":402}
+    public String msg;
+    public T data;
+    public String code;
 
     public BaseBean() {
         super();
     }
 
-    /**
-     * 显示 ""
-     */
-    protected String isEmpty(String str) {
-        if (StringUtils.isEmpty(str)) {
-            return "";
-        } else {
-            return str;
-        }
+
+    public String getCode() {
+        return code;
     }
 
-
-    @Override
-    public int describeContents() {
-        return 0;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
+    public T getData() {
+        return data;
     }
 
-    protected BaseBean(Parcel in) {
+    public void setData(T data) {
+        this.data = data;
     }
 
-    public static final Parcelable.Creator<BaseBean> CREATOR = new Parcelable.Creator<BaseBean>() {
-        public BaseBean createFromParcel(Parcel source) {
-            return new BaseBean(source);
-        }
+    public String getMsg() {
+        return msg;
+    }
 
-        public BaseBean[] newArray(int size) {
-            return new BaseBean[size];
-        }
-    };
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
 }

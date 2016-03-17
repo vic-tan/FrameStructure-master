@@ -2,7 +2,6 @@ package com.android.tanlifei.framestructure.common;
 
 import android.annotation.SuppressLint;
 
-import com.common.utils.JsonUtils;
 import com.common.utils.Logger;
 import com.common.utils.MapUtils;
 import com.loopj.android.http.HttpGet;
