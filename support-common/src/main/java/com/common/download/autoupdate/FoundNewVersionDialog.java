@@ -34,7 +34,6 @@ public abstract class FoundNewVersionDialog extends BaseDialog<FoundNewVersionDi
         View inflate = View.inflate(mContext, R.layout.common_autoupdate_found_new_version, null);
         AutoUtils.autoSize(inflate);
         mTvContent = ViewFindUtils.find(inflate,R.id.tv_content);
-       // mTvContent.setTextSize(dp2px(7));
         mTvOk = ViewFindUtils.find(inflate, R.id.tv_ok);
         mTvExit = ViewFindUtils.find(inflate, R.id.tv_exit);
         setSelector(mTvOk);
@@ -46,7 +45,6 @@ public abstract class FoundNewVersionDialog extends BaseDialog<FoundNewVersionDi
     public void setSelector(TextView v){
         v.setBackground(CornerUtils.btnSelector((int) ResUtils.getDimens(R.dimen.common_border_radius), Color.parseColor("#ffffff"), Color.parseColor("#E3E3E3"), -2));
     }
-
 
 
     public TextView getmTvOk() {

@@ -1,13 +1,18 @@
 package com.common.dialog.widget;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.common.dialog.internal.BaseAlertDialog;
+import com.common.R;
+import com.common.dialog.Utils;
 import com.common.utils.CornerUtils;
+import com.common.dialog.internal.BaseAlertDialog;
+import com.common.utils.ResUtils;
 
 
 /**
@@ -20,9 +25,9 @@ public class MaterialDialog extends BaseAlertDialog<MaterialDialog> {
 
         /** default value*/
         mTitleTextColor = Color.parseColor("#DE000000");
-        mTitleTextSize = 22f;
+        mTitleTextSize = ResUtils.getDimens(R.dimen.common_dialog_title_size);
         mContentTextColor = Color.parseColor("#8a000000");
-        mContentTextSize = 16f;
+        mContentTextSize = ResUtils.getDimens(R.dimen.common_dialog_content_size);
         mLeftBtnTextColor = Color.parseColor("#383838");
         mRightBtnTextColor = Color.parseColor("#468ED0");
         mMiddleBtnTextColor = Color.parseColor("#00796B");
@@ -34,13 +39,13 @@ public class MaterialDialog extends BaseAlertDialog<MaterialDialog> {
 
         /** title */
         mTvTitle.setGravity(Gravity.CENTER_VERTICAL);
-        mTvTitle.setPadding(dp2px(20), dp2px(20), dp2px(20), dp2px(0));
+        mTvTitle.setPadding(Utils.dp2px(20), Utils.dp2px(20), Utils.dp2px(20), 0);
         mTvTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
         mLlContainer.addView(mTvTitle);
 
         /** content */
-        mTvContent.setPadding(dp2px(20), dp2px(20), dp2px(20), dp2px(20));
+        mTvContent.setPadding(Utils.dp2px(20), Utils.dp2px(20), Utils.dp2px(20), Utils.dp2px(20));
         mTvContent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
         mLlContainer.addView(mTvContent);
@@ -51,24 +56,25 @@ public class MaterialDialog extends BaseAlertDialog<MaterialDialog> {
         mLlBtns.addView(mTvBtnMiddle);
         mLlBtns.addView(mTvBtnRight);
 
-        mTvBtnLeft.setPadding(dp2px(15), dp2px(8), dp2px(15), dp2px(8));
-        mTvBtnRight.setPadding(dp2px(15), dp2px(8), dp2px(15), dp2px(8));
-        mTvBtnMiddle.setPadding(dp2px(15), dp2px(8), dp2px(15), dp2px(8));
-        mLlBtns.setPadding(dp2px(20), dp2px(0), dp2px(10), dp2px(10));
+        mTvBtnLeft.setPadding(Utils.dp2px(15), Utils.dp2px(7), Utils.dp2px(15), Utils.dp2px(7));
+        mTvBtnRight.setPadding(Utils.dp2px(15), Utils.dp2px(7), Utils.dp2px(15), Utils.dp2px(7));
+        mTvBtnMiddle.setPadding(Utils.dp2px(15), Utils.dp2px(7), Utils.dp2px(15), Utils.dp2px(7));
+        mLlBtns.setPadding(Utils.dp2px(20), 0, Utils.dp2px(15), Utils.dp2px(15));
 
         mLlContainer.addView(mLlBtns);
 
         return mLlContainer;
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void setUiBeforShow() {
         super.setUiBeforShow();
         /**set background color and corner radius */
-        float radius = dp2px(mCornerRadius);
-        mLlContainer.setBackgroundDrawable(CornerUtils.cornerDrawable(mBgColor, radius));
-        mTvBtnLeft.setBackgroundDrawable(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
-        mTvBtnRight.setBackgroundDrawable(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
-        mTvBtnMiddle.setBackgroundDrawable(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
+        float radius = mCornerRadius;
+        mLlContainer.setBackground(CornerUtils.cornerDrawable(mBgColor, radius));
+        mTvBtnLeft.setBackground(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
+        mTvBtnRight.setBackground(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
+        mTvBtnMiddle.setBackground(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
     }
 }

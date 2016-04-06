@@ -37,6 +37,9 @@
         <activity android:name=".frame.dailog.ui.DialogHomeActivity" />
         <activity android:name=".frame.dailog.ui.CustomPopupActivity" />
         <activity android:name=".frame.dailog.ui.BubblePopupActivity" />
+
+
+        <activity android:name=".frame.activity.Demo_NotifyActivity" />
     </application>
 
 </manifest>

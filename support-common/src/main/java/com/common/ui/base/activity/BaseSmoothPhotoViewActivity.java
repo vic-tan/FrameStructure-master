@@ -2,20 +2,20 @@ package com.common.ui.base.activity;
 
 import android.os.Bundle;
 
-import com.common.bean.paramsBean.PhotoBean;
+import com.common.bean.paramsBean.PhotoParams;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BaseSmoothPhotoViewActivity extends BasePhotoViewActivity {
 
-    List<PhotoBean> list;
-    PhotoBean bean;
+    List<PhotoParams> list;
+    PhotoParams bean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        list = new ArrayList<PhotoBean>();
-        bean = (PhotoBean) getIntent().getParcelableExtra("bean");
+        list = new ArrayList<PhotoParams>();
+        bean = (PhotoParams) getIntent().getParcelableExtra("bean");
         list.add(bean);
         super.onCreate(savedInstanceState);
     }

@@ -2,19 +2,19 @@ package com.common.ui.base.activity;
 
 import android.os.Bundle;
 
-import com.common.bean.paramsBean.PhotoBean;
+import com.common.bean.paramsBean.PhotoParams;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BaseSimplePhotoViewActivity extends BasePhotoViewActivity {
 
-    List<PhotoBean> list;
+    List<PhotoParams> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        list = new ArrayList<PhotoBean>();
-        list.add((PhotoBean)getIntent().getParcelableExtra("bean"));
+        list = new ArrayList<PhotoParams>();
+        list.add((PhotoParams)getIntent().getParcelableExtra("bean"));
         super.onCreate(savedInstanceState);
     }
 

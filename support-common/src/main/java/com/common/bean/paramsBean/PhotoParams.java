@@ -6,7 +6,7 @@ import android.os.Parcelable;
 /**
  * Created by tanlifei on 16/1/12.
  */
-public class PhotoBean implements Parcelable {
+public class PhotoParams implements Parcelable {
 
     private final String thumbnail;//缩略图
     private final String artwork;//原始图
@@ -49,7 +49,7 @@ public class PhotoBean implements Parcelable {
     private int locationX;//原始X轴位置
     private int locationY;//原始Y轴位置
 
-    public PhotoBean(String thumbnail, String artwork, int defaultId) {
+    public PhotoParams(String thumbnail, String artwork, int defaultId) {
         this.thumbnail = thumbnail;
         this.artwork = artwork;
         this.defaultId = defaultId;
@@ -83,7 +83,7 @@ public class PhotoBean implements Parcelable {
         dest.writeInt(this.locationY);
     }
 
-    protected PhotoBean(Parcel in) {
+    protected PhotoParams(Parcel in) {
         this.thumbnail = in.readString();
         this.artwork = in.readString();
         this.defaultId = in.readInt();
@@ -93,13 +93,13 @@ public class PhotoBean implements Parcelable {
         this.locationY = in.readInt();
     }
 
-    public static final Creator<PhotoBean> CREATOR = new Creator<PhotoBean>() {
-        public PhotoBean createFromParcel(Parcel source) {
-            return new PhotoBean(source);
+    public static final Creator<PhotoParams> CREATOR = new Creator<PhotoParams>() {
+        public PhotoParams createFromParcel(Parcel source) {
+            return new PhotoParams(source);
         }
 
-        public PhotoBean[] newArray(int size) {
-            return new PhotoBean[size];
+        public PhotoParams[] newArray(int size) {
+            return new PhotoParams[size];
         }
     };
 }

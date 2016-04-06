@@ -2,7 +2,7 @@ package com.example.demo.frame.activity;
 
 import android.os.Bundle;
 
-import com.common.bean.paramsBean.PhotoBean;
+import com.common.bean.paramsBean.PhotoParams;
 import com.common.ui.base.activity.BasePhotoViewActivity;
 
 import java.util.ArrayList;
@@ -10,13 +10,13 @@ import java.util.List;
 
 public class Demo_SmoothPagerPhotoViewActivity extends BasePhotoViewActivity {
 
-    List<PhotoBean> list;
-    PhotoBean bean;
+    List<PhotoParams> list;
+    PhotoParams bean;
     int index= 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        list = (ArrayList<PhotoBean>) getIntent().getSerializableExtra("list");
+        list = (ArrayList<PhotoParams>) getIntent().getSerializableExtra("list");
         index = getIntent().getIntExtra("index",0);
         bean = list.get(index);
         super.onCreate(savedInstanceState);

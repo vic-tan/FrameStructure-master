@@ -214,16 +214,16 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
         }
         switch (failReason.getType()) {
             case IO_ERROR://加载失败
-                ToastUtils.show( R.string.common_photo_io_error);
+                //ToastUtils.show( R.string.common_photo_io_error);
                 break;
             case OUT_OF_MEMORY://内存不足
-                ToastUtils.show(R.string.common_photo_out_of_memory);
+                //ToastUtils.show(R.string.common_photo_out_of_memory);
                 break;
             case DECODING_ERROR://解析错误
-                ToastUtils.show( R.string.common_photo_decoding_error);
+                //ToastUtils.show( R.string.common_photo_decoding_error);
                 break;
             case UNKNOWN://未知路径
-                ToastUtils.show( R.string.common_photo_unknown);
+                //ToastUtils.show( R.string.common_photo_unknown);
                 break;
         }
     }

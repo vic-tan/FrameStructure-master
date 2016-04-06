@@ -6,7 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.common.bean.paramsBean.PhotoBean;
+import com.common.bean.paramsBean.PhotoParams;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.ui.base.activity.BaseSimplePhotoViewActivity;
 import com.common.utils.StartActUtils;
@@ -92,7 +92,7 @@ public class Demo_ImageSliderActivity extends BaseActivity implements BaseSlider
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
-        PhotoBean bean = new PhotoBean("", url_maps.get(slider.getBundle().get("extra")+""), 0);
+        PhotoParams bean = new PhotoParams("", url_maps.get(slider.getBundle().get("extra")+""), 0);
         StartActUtils.start(Demo_ImageSliderActivity.this, BaseSimplePhotoViewActivity.class, "bean", bean);
     }
 

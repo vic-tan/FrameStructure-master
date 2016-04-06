@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView.ScaleType;
 
-import com.common.bean.paramsBean.PhotoBean;
+import com.common.bean.paramsBean.PhotoParams;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.ui.base.main.BaseApplication;
 import com.common.utils.ImageLoaderUtils;
@@ -16,13 +16,13 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public class Demo_SpaceImageDetailActivity extends BaseActivity implements PhotoViewAttacher.OnPhotoTapListener{
 
     SmoothImageView imageView = null;
-    private PhotoBean mDatas;
+    private PhotoParams mDatas;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDatas = (PhotoBean) getIntent().getParcelableExtra("bean");
+        mDatas = (PhotoParams) getIntent().getParcelableExtra("bean");
         imageView = new SmoothImageView(this);
         imageView.setOnPhotoTapListener(this);
         imageView.setOriginalInfo(mDatas.getWidth(), mDatas.getHeight(), mDatas.getLocationX(), mDatas.getLocationY() - getActionBarHeight());

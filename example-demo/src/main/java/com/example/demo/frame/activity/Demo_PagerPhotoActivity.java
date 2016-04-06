@@ -2,14 +2,14 @@ package com.example.demo.frame.activity;
 
 import android.os.Bundle;
 
-import com.common.bean.paramsBean.PhotoBean;
+import com.common.bean.paramsBean.PhotoParams;
 import com.common.ui.base.activity.BasePhotoViewActivity;
 
 import java.util.List;
 
 public class Demo_PagerPhotoActivity extends BasePhotoViewActivity {
 
-    List<PhotoBean> list;
+    List<PhotoParams> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

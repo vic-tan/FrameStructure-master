@@ -19,10 +19,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.common.dialog.base.dialog.BaseDialog;
+import com.common.R;
 import com.common.dialog.bean.DialogMenuItem;
 import com.common.dialog.listener.OnOperItemClickL;
 import com.common.utils.CornerUtils;
+import com.common.dialog.base.dialog.BaseDialog;
+import com.common.utils.ResUtils;
 
 import java.util.ArrayList;
 
@@ -32,27 +34,27 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     /** title */
     private TextView mTvTitle;
     /** corner radius,dp(圆角程度,单位dp) */
-    private float mCornerRadius = 5;
+    private float mCornerRadius = (int)ResUtils.getDimens(R.dimen.common_border_radius);
     /** title background color(标题背景颜色) */
     private int mTitleBgColor = Color.parseColor("#303030");
     /** title text(标题) */
     private String mTitle = "提示";
     /** title textcolor(标题颜色) */
     private int mTitleTextColor = Color.parseColor("#ffffff");
-    /** title textsize(标题字体大小,单位PX) */
-    private float mTitleTextSize = 16.5f;
+    /** title textsize(标题字体大小,单位sp) */
+    private int mTitleTextSize = (int)ResUtils.getDimens(R.dimen.common_dialog_content_size);
     /** ListView background color(ListView背景色) */
     private int mLvBgColor = Color.parseColor("#ffffff");
     /** divider color(ListView divider颜色) */
     private int mDividerColor = Color.LTGRAY;
     /** divider height(ListView divider高度) */
-    private float mDividerHeight = 0.8f;
+    private int mDividerHeight = (int)ResUtils.getDimens(R.dimen.common_dialog_title_split_line_size);
     /** item press color(ListView item按住颜色) */
     private int mItemPressColor = Color.parseColor("#ffcccccc");
     /** item textcolor(ListView item文字颜色) */
     private int mItemTextColor = Color.parseColor("#303030");
     /** item textsize(ListView item文字大小) */
-    private float mItemTextSize = 15f;
+    private int mItemTextSize = (int)ResUtils.getDimens(R.dimen.common_dialog_content_size);
     /** item extra padding(ListView item额外padding) */
     private int mItemExtraLeft;
     private int mItemExtraTop;
@@ -116,7 +118,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
         mTvTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT));
         mTvTitle.setSingleLine(true);
-        mTvTitle.setPadding(dp2px(18), dp2px(10), 0, dp2px(10));
+        mTvTitle.setPadding(36, 20, 0, 20);
 
         ll_container.addView(mTvTitle);
 
@@ -138,17 +140,17 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     @Override
     public void setUiBeforShow() {
         /** title */
-        float radius = dp2px(mCornerRadius);
+        float radius = mCornerRadius;
         mTvTitle.setBackgroundDrawable(CornerUtils.cornerDrawable(mTitleBgColor, new float[]{radius, radius, radius,
                 radius, 0, 0, 0, 0}));
         mTvTitle.setText(mTitle);
-        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, dp2px(mTitleTextSize));
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTitleTextSize);
         mTvTitle.setTextColor(mTitleTextColor);
         mTvTitle.setVisibility(mIsTitleShow ? View.VISIBLE : View.GONE);
 
         /** listview */
         mLv.setDivider(new ColorDrawable(mDividerColor));
-        mLv.setDividerHeight(dp2px(mDividerHeight));
+        mLv.setDividerHeight(mDividerHeight);
 
         if (mIsTitleShow) {
             mLv.setBackgroundDrawable(CornerUtils.cornerDrawable(mLvBgColor, new float[]{0, 0, 0, 0, radius, radius, radius,
@@ -187,7 +189,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     }
 
     /** set title textsize(设置标题字体大小) */
-    public NormalListDialog titleTextSize_PX(float titleTextSize_PX) {
+    public NormalListDialog titleTextSize_PX(int titleTextSize_PX) {
         mTitleTextSize = titleTextSize_PX;
         return this;
     }
@@ -223,7 +225,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     }
 
     /** set divider height(ListView divider高度) */
-    public NormalListDialog dividerHeight(float dividerHeight_PX) {
+    public NormalListDialog dividerHeight(int dividerHeight_PX) {
         mDividerHeight = dividerHeight_PX;
         return this;
     }
@@ -241,17 +243,17 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     }
 
     /** set item textsize(item字体大小) */
-    public NormalListDialog itemTextSize(float itemTextSize_PX) {
+    public NormalListDialog itemTextSize(int itemTextSize_PX) {
         mItemTextSize = itemTextSize_PX;
         return this;
     }
 
     /** set item height(item高度) */
     public NormalListDialog setItemExtraPadding(int itemLeft, int itemTop, int itemRight, int itemBottom) {
-        mItemExtraLeft = dp2px(itemLeft);
-        mItemExtraTop = dp2px(itemTop);
-        mItemExtraRight = dp2px(itemRight);
-        mItemExtraBottom = dp2px(itemBottom);
+        mItemExtraLeft = itemLeft;
+        mItemExtraTop = itemTop;
+        mItemExtraRight = itemRight;
+        mItemExtraBottom = itemBottom;
 
         return this;
     }
@@ -288,7 +290,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
             llItem.setGravity(Gravity.CENTER_VERTICAL);
 
             ImageView ivItem = new ImageView(mContext);
-            ivItem.setPadding(0, 0, dp2px(15), 0);
+            ivItem.setPadding(0, 0, 30, 0);
             llItem.addView(ivItem);
 
             TextView tvItem = new TextView(mContext);
@@ -296,22 +298,21 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
                     LinearLayout.LayoutParams.WRAP_CONTENT));
             tvItem.setSingleLine(true);
             tvItem.setTextColor(mItemTextColor);
-            tvItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, dp2px(mItemTextSize));
+            tvItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, mItemTextSize);
 
             llItem.addView(tvItem);
-            float radius = dp2px(mCornerRadius);
             if (mIsTitleShow) {
-                llItem.setBackgroundDrawable((CornerUtils.listItemSelector(radius, Color.TRANSPARENT, mItemPressColor,
+                llItem.setBackgroundDrawable((CornerUtils.listItemSelector(mCornerRadius, Color.TRANSPARENT, mItemPressColor,
                         position == mContents.size() - 1)));
             } else {
-                llItem.setBackgroundDrawable(CornerUtils.listItemSelector(radius, Color.TRANSPARENT, mItemPressColor,
+                llItem.setBackgroundDrawable(CornerUtils.listItemSelector(mCornerRadius, Color.TRANSPARENT, mItemPressColor,
                         mContents.size(), position));
             }
 
-            int left = item.mResId == 0 ? dp2px(18) : dp2px(16);
-            int top = dp2px(10);
+            int left = item.mResId == 0 ? 36 : 32;
+            int top = 20;
             int right = 0;
-            int bottom = dp2px(10);
+            int bottom = 20;
             llItem.setPadding(left + mItemExtraLeft, top + mItemExtraTop, right + mItemExtraRight, bottom + mItemExtraBottom);
 
             ivItem.setImageResource(item.mResId);

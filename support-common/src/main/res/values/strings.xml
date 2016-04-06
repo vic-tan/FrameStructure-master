@@ -33,5 +33,6 @@
     <string name="auto_update_download_success">下载完成，点击安装</string>
     <string name="auto_update_downloading">正在下载</string>
     <string name="auto_update_download_wait">请稍候...</string>
-
+    <string name="auto_update_download_app">正在更新新版本</string>
+    <string name="auto_update_download_app_title"> 下载</string>
 </resources>

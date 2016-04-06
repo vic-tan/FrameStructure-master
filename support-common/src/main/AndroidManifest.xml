@@ -10,6 +10,13 @@
     <application
         android:allowBackup="true"
         android:label="@string/app_name">
+
+        <meta-data
+            android:name="design_width"
+            android:value="1080" />
+        <meta-data
+            android:name="design_height"
+            android:value="1920" />
         <!-- 测试 -->
         <activity
             android:name=".ui.base.activity.BaseSmoothPhotoViewActivity"
