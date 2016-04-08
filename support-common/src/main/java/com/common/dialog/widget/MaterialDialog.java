@@ -5,13 +5,13 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
-import android.widget.TextView;
 
 import com.common.R;
 import com.common.dialog.internal.BaseAlertDialog;
 import com.common.utils.CornerUtils;
 import com.common.utils.InflaterUtils;
 import com.common.utils.ResUtils;
+import com.common.utils.ViewFindUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 
 
@@ -38,15 +38,15 @@ public class MaterialDialog extends BaseAlertDialog<MaterialDialog> {
 
         mLlContainer = (AutoLinearLayout) InflaterUtils.inflater(mContext, R.layout.common_dialog_material);
         /** title */
-        mTvTitle = (TextView) mLlContainer.findViewById(R.id.mTvTitle);
+        mTvTitle = ViewFindUtils.find(mLlContainer, R.id.mTvTitle);
 
         /** content */
-        mTvContent = (TextView) mLlContainer.findViewById(R.id.mTvContent);
+        mTvContent = ViewFindUtils.find(mLlContainer, R.id.mTvContent);
 
         /**btns*/
-        mTvBtnLeft = (TextView) mLlContainer.findViewById(R.id.mTvBtnLeft);
-        mTvBtnMiddle = (TextView) mLlContainer.findViewById(R.id.mTvBtnMiddle);
-        mTvBtnRight = (TextView) mLlContainer.findViewById(R.id.mTvBtnRight);
+        mTvBtnLeft = ViewFindUtils.find(mLlContainer, R.id.mTvBtnLeft);
+        mTvBtnMiddle =ViewFindUtils.find(mLlContainer, R.id.mTvBtnMiddle);
+        mTvBtnRight = ViewFindUtils.find(mLlContainer, R.id.mTvBtnRight);
 
         return mLlContainer;
     }

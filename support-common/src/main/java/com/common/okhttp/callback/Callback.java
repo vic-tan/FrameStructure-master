@@ -50,7 +50,7 @@ public abstract class Callback<T>
 
     public  void onError(Call call, Exception e){
         if(!NetUtils.isConnected(BaseApplication.appContext)) {
-            ToastUtils.show(ResUtils.getStr(R.string.common_prompt_network));
+            ToastUtils.show(ResUtils.getStr(R.string.common_loading_network));
         }
     }
 
@@ -70,7 +70,7 @@ public abstract class Callback<T>
         public void onError(Call call, Exception e)
         {
             if(!NetUtils.isConnected(BaseApplication.appContext)) {
-                ToastUtils.show(ResUtils.getStr(R.string.common_prompt_network));
+                ToastUtils.show(ResUtils.getStr(R.string.common_loading_network));
             }
 
         }

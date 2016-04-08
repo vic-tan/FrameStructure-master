@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:paddingTop="20px"
         android:textColor="@color/common_loading_dialog_title_txt"
-        android:text="@string/common_prompt_dialog_title"
+        android:text="@string/common_loading_dialog_title"
         android:textSize="@dimen/common_size_one_level" />
 
 

@@ -49,9 +49,20 @@ public class GlobalConstants {
     //region Description dialog
 
     /**
-     * dialog wondows 点屏幕大小的百分比
+     *  平常 dialog 点屏幕大小的百分比
      */
-    public static final float DIALOG_WONDWON_WIDTH_SCALE = 0.88f;
+    public static final float DIALOG_NORMAL_DIALOG_SCALE = 0.88f;
+
+    /**
+     * 平常 list dialog 点屏幕大小的百分比
+     */
+    public static final float DIALOG_NORMAL_LIST_DIALOG_SCALE = 0.8f;
+
+    /**
+     * 下弹出的 dialog 点屏幕大小的百分比
+     */
+    public static final float DIALOG_ACTION_SHEET_DIALOG_SCALE = 0.95f;
+    
     /**
      * dialog wondows 内容行间距大小
      */

@@ -14,7 +14,7 @@
     <color name="action_bar_background_transparent">#f6000000</color>
 
 
-    <!-- —————————————————— 正在加载 dialog颜色 ——————————————————————————————— -->
+    <!-- —————————————————— 加载框颜色 ——————————————————————————————— -->
     <!-- 加载框的背影色 -->
     <color name="common_loading_dialog_content_bg">#fff5f5f9</color>
     <!-- 加载框的windows背影边框色 -->
@@ -32,7 +32,8 @@
     <!-- 加载框按钮点击色 -->
     <color name="common_loading_dialog_btn_pre">#ffe9e9e9</color>
 
-
+    <!-- —————————————————— 提示框颜色 ——————————————————————————————— -->
+    <!-- 中间提示框 -->
     <!-- 提示框的背影色 -->
     <color name="common_prompt_dialog_content_bg">#fff5f5f9</color>
     <!-- 提示框的windows背影边框色 -->
@@ -52,6 +53,11 @@
     <!-- 提示框按钮点击色 -->
     <color name="common_prompt_dialog_btn_pre">#ffE3E3E3</color>
 
+    <!-- 中间列表提示框 -->
+    <!-- 提示框按标题色 -->
+    <color name="common_prompt_dialog_list_title_color">#ffffff</color>
+    <!-- 提示框按标题背景色 -->
+    <color name="common_prompt_dialog_list_title_bg_color">#303030</color>
 
 
     <!-- —————————————————— 模块颜色 ——————————————————————————————— -->

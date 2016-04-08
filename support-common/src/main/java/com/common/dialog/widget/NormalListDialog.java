@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -15,16 +14,18 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.common.R;
+import com.common.dialog.base.dialog.BaseDialog;
 import com.common.dialog.bean.DialogMenuItem;
 import com.common.dialog.listener.OnOperItemClickL;
 import com.common.utils.CornerUtils;
-import com.common.dialog.base.dialog.BaseDialog;
+import com.common.utils.InflaterUtils;
 import com.common.utils.ResUtils;
+import com.common.utils.ViewFindUtils;
+import com.constants.fixed.GlobalConstants;
 
 import java.util.ArrayList;
 
@@ -55,11 +56,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     private int mItemTextColor = Color.parseColor("#303030");
     /** item textsize(ListView item文字大小) */
     private int mItemTextSize = (int)ResUtils.getDimens(R.dimen.common_dialog_content_size);
-    /** item extra padding(ListView item额外padding) */
-    private int mItemExtraLeft;
-    private int mItemExtraTop;
-    private int mItemExtraRight;
-    private int mItemExtraBottom;
+
     /** enable title show(是否显示标题) */
     private boolean mIsTitleShow = true;
     /** adapter(自定义适配器) */
@@ -96,7 +93,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     }
 
     private void init() {
-        widthScale(0.8f);
+        widthScale(GlobalConstants.DIALOG_NORMAL_LIST_DIALOG_SCALE);
 
         /** LayoutAnimation */
         TranslateAnimation animation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 2f, Animation.RELATIVE_TO_SELF,
@@ -110,29 +107,11 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
 
     @Override
     public View onCreateView() {
-        LinearLayout ll_container = new LinearLayout(mContext);
-        ll_container.setOrientation(LinearLayout.VERTICAL);
-
+        View ll_container = InflaterUtils.inflater(mContext,R.layout.common_dialog_normal_list);
         /** title */
-        mTvTitle = new TextView(mContext);
-        mTvTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        mTvTitle.setSingleLine(true);
-        mTvTitle.setPadding(36, 20, 0, 20);
-
-        ll_container.addView(mTvTitle);
-
+        mTvTitle = ViewFindUtils.find(ll_container,R.id.mTvTitle);
         /** listview */
-        mLv = new ListView(mContext);
-        mLv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        mLv.setCacheColorHint(Color.TRANSPARENT);
-        mLv.setFadingEdgeLength(0);
-        mLv.setVerticalScrollBarEnabled(false);
-        mLv.setSelector(new ColorDrawable(Color.TRANSPARENT));
-
-        ll_container.addView(mLv);
-
+        mLv = ViewFindUtils.find(ll_container,R.id.mlist);
         return ll_container;
     }
 
@@ -213,8 +192,8 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
     }
 
     /** set corner radius(设置圆角程度,单位dp) */
-    public NormalListDialog cornerRadius(float cornerRadius_DP) {
-        mCornerRadius = cornerRadius_DP;
+    public NormalListDialog cornerRadius(float cornerRadius_PX) {
+        mCornerRadius = cornerRadius_PX;
         return this;
     }
 
@@ -248,15 +227,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
         return this;
     }
 
-    /** set item height(item高度) */
-    public NormalListDialog setItemExtraPadding(int itemLeft, int itemTop, int itemRight, int itemBottom) {
-        mItemExtraLeft = itemLeft;
-        mItemExtraTop = itemTop;
-        mItemExtraRight = itemRight;
-        mItemExtraBottom = itemBottom;
 
-        return this;
-    }
 
     /** set layoutAnimation(设置layout动画 ,传入null将不显示layout动画) */
     public NormalListDialog layoutAnimation(LayoutAnimationController lac) {
@@ -285,22 +256,13 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
         public View getView(int position, View convertView, ViewGroup parent) {
             final DialogMenuItem item = mContents.get(position);
 
-            LinearLayout llItem = new LinearLayout(mContext);
-            llItem.setOrientation(LinearLayout.HORIZONTAL);
-            llItem.setGravity(Gravity.CENTER_VERTICAL);
+            View llItem = InflaterUtils.inflater(mContext,R.layout.common_dialog_normal_list_item);
 
-            ImageView ivItem = new ImageView(mContext);
-            ivItem.setPadding(0, 0, 30, 0);
-            llItem.addView(ivItem);
+            ImageView ivItem = ViewFindUtils.find(llItem,R.id.ivItem);
 
-            TextView tvItem = new TextView(mContext);
-            tvItem.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
-            tvItem.setSingleLine(true);
+            TextView tvItem = ViewFindUtils.find(llItem,R.id.tvItem);
             tvItem.setTextColor(mItemTextColor);
             tvItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, mItemTextSize);
-
-            llItem.addView(tvItem);
             if (mIsTitleShow) {
                 llItem.setBackgroundDrawable((CornerUtils.listItemSelector(mCornerRadius, Color.TRANSPARENT, mItemPressColor,
                         position == mContents.size() - 1)));
@@ -309,11 +271,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
                         mContents.size(), position));
             }
 
-            int left = item.mResId == 0 ? 36 : 32;
-            int top = 20;
-            int right = 0;
-            int bottom = 20;
-            llItem.setPadding(left + mItemExtraLeft, top + mItemExtraTop, right + mItemExtraRight, bottom + mItemExtraBottom);
+
 
             ivItem.setImageResource(item.mResId);
             tvItem.setText(item.mOperName);
@@ -321,5 +279,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
 
             return llItem;
         }
+
+
     }
 }

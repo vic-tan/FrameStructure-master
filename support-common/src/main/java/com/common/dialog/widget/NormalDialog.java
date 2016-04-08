@@ -11,6 +11,7 @@ import com.common.dialog.internal.BaseAlertDialog;
 import com.common.utils.CornerUtils;
 import com.common.utils.InflaterUtils;
 import com.common.utils.ResUtils;
+import com.common.utils.ViewFindUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 
 
@@ -67,19 +68,19 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
     public View onCreateView() {
         mLlContainer = (AutoLinearLayout) InflaterUtils.inflater(mContext, R.layout.common_dialog_normal);
         /** title */
-        mTvTitle = (TextView) mLlContainer.findViewById(R.id.mTvTitle);
-        mVLineTitle = mLlContainer.findViewById(R.id.mVLineTitle);
+        mTvTitle = ViewFindUtils.find(mLlContainer, R.id.mTvTitle);
+        mVLineTitle = ViewFindUtils.find(mLlContainer, R.id.mVLineTitle);
 
         /** content */
-        mTvContent = (TextView) mLlContainer.findViewById(R.id.mTvContent);
+        mTvContent = ViewFindUtils.find(mLlContainer, R.id.mTvContent);
         mVLineHorizontal = mLlContainer.findViewById(R.id.mVLineHorizontal);
         /**btns*/
-        mTvBtnLeft = (TextView) mLlContainer.findViewById(R.id.mTvBtnLeft);
-        mTvBtnMiddle = (TextView) mLlContainer.findViewById(R.id.mTvBtnMiddle);
+        mTvBtnLeft = ViewFindUtils.find(mLlContainer, R.id.mTvBtnLeft);
+        mTvBtnMiddle =ViewFindUtils.find(mLlContainer, R.id.mTvBtnMiddle);
         mTvBtnRight = (TextView) mLlContainer.findViewById(R.id.mTvBtnRight);
 
-        mVLineVertical = mLlContainer.findViewById(R.id.mVLineVertical);
-        mVLineVertical2 = mLlContainer.findViewById(R.id.mVLineVertical2);
+        mVLineVertical = ViewFindUtils.find(mLlContainer, R.id.mVLineVertical);
+        mVLineVertical2 = ViewFindUtils.find(mLlContainer, R.id.mVLineVertical2);
 
 
         return mLlContainer;

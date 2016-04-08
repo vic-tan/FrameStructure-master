@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30px"
+        android:paddingBottom="35px"
+        android:paddingTop="35px"
+        android:paddingLeft="25px"
+        android:paddingRight="25px"
+        android:text="@string/common_prompt_dialog_default_title"
+        android:textColor="@color/common_prompt_dialog_title_color"
+        android:textSize="@dimen/common_dialog_title_size" />
+
+    <View
+        android:id="@+id/mVLineTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_prompt_dialog_content_btn_split_line_size"
+        android:textColor="@color/common_prompt_dialog_content_btn_line_color" />
+
+    <ListView
+        android:id="@+id/mlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdgeLength="0px"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/mTvCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30px"
+        android:layout_marginBottom="30px"
+        android:paddingBottom="35px"
+        android:paddingLeft="25px"
+        android:paddingRight="25px"
+        android:paddingTop="35px"
+        android:text="@string/common_prompt_dialog_default_title"
+        android:textColor="@color/common_prompt_dialog_title_color"
+        android:textSize="@dimen/common_dialog_title_size" />
+
+</com.zhy.autolayout.AutoLinearLayout>

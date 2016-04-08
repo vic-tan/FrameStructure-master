@@ -33,6 +33,9 @@
     <!-- 对话框标题的高度 -->
     <dimen name="common_dialog_title_split_line_size">2px</dimen>
 
+    <!-- 对话框标题的高度 -->
+    <dimen name="common_dialog_action_sheet_height">80px</dimen>
+
     <!-- 对话框操作内容滚动条高度 -->
     <dimen name="common_dialog_content_scrollview_height">550px</dimen>
 

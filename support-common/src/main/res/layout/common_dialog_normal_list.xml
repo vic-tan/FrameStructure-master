@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingBottom="35px"
+        android:paddingLeft="35px"
+        android:paddingRight="25px"
+        android:paddingTop="35px"
+        android:singleLine="true"
+        android:text="@string/common_prompt_dialog_default_title"
+        android:textColor="@color/common_prompt_dialog_title_color"
+        android:textSize="@dimen/common_dialog_title_size" />
+
+    <ListView
+        android:id="@+id/mlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdgeLength="0px"
+        android:scrollbars="none"
+        android:listSelector="@android:color/transparent"/>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

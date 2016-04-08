@@ -135,7 +135,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
      */
     public BaseAlertDialog(Context context) {
         super(context);
-        widthScale(GlobalConstants.DIALOG_WONDWON_WIDTH_SCALE);
+        widthScale(GlobalConstants.DIALOG_NORMAL_DIALOG_SCALE);
     }
 
     @Override

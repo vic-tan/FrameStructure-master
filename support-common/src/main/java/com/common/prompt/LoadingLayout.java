@@ -164,7 +164,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayProgressLayout() {
-        return setProgressLayout(R.string.common_prompt_loading);
+        return setProgressLayout(R.string.common_loading);
     }
 
     /**
@@ -184,7 +184,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayNetworkErrorLayout() {
-        return setErrorLayout(R.string.common_prompt_network);
+        return setErrorLayout(R.string.common_loading_network);
     }
 
     /**
@@ -193,7 +193,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayserviceErrorLayout() {
-        return setErrorLayout( R.string.common_prompt_serivce);
+        return setErrorLayout( R.string.common_loading_serivce);
     }
 
     /**
@@ -202,7 +202,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayTimeoutErrorLayout() {
-        return setErrorLayout( R.string.common_prompt_timeout_error);
+        return setErrorLayout( R.string.common_loading_timeout_error);
     }
 
 
@@ -212,7 +212,7 @@ public class LoadingLayout {
      * @return
      */
     public View displayEmptyLayout() {
-        return setErrorLayout(R.string.common_prompt_empty);
+        return setErrorLayout(R.string.common_loading_empty);
     }
 
     /**
