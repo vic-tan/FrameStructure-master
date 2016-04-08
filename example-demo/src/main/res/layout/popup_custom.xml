@@ -10,17 +10,17 @@
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
+        android:paddingLeft="30px"
+        android:paddingRight="30px">
 
         <TextView
             android:id="@+id/tv_item_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="30px"
             android:text="标记已读"
             android:textColor="#666666"
-            android:textSize="15sp"/>
+            android:textSize="30px"/>
 
         <View
             android:layout_width="match_parent"
@@ -31,10 +31,10 @@
             android:id="@+id/tv_item_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="30px"
             android:text="全部标记已读"
             android:textColor="#666666"
-            android:textSize="15sp"/>
+            android:textSize="30px"/>
 
         <View
             android:layout_width="match_parent"
@@ -45,10 +45,10 @@
             android:id="@+id/tv_item_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="30px"
             android:text="标签"
             android:textColor="#666666"
-            android:textSize="15sp"/>
+            android:textSize="30px"/>
 
         <View
             android:layout_width="match_parent"
@@ -59,9 +59,9 @@
             android:id="@+id/tv_item_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="30px"
             android:text="添加星标"
             android:textColor="#666666"
-            android:textSize="15sp"/>
+            android:textSize="30px"/>
     </LinearLayout>
 </RelativeLayout>
