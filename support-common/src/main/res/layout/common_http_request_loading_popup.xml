@@ -3,7 +3,7 @@
     xmlns:rv="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     style="@style/common_match_parent"
-    android:background="@color/common_prompt_dialog_windowp_bg"
+    android:background="@color/common_loading_dialog_windowp_bg"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -13,7 +13,7 @@
         android:layout_height="@dimen/common_size_minwidth_svprogresshuddefault"
         android:orientation="vertical"
         android:gravity="center"
-        rv:rv_backgroundColor="@color/common_prompt_dialog_content_bg"
+        rv:rv_backgroundColor="@color/common_loading_dialog_content_bg"
         rv:rv_cornerRadius="@dimen/common_border_radius"
         android:padding="@dimen/common_padding_svprogresshuddefault">
 

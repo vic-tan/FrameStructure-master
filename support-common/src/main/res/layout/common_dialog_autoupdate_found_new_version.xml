@@ -4,44 +4,43 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:paddingBottom="30px"
-    android:paddingLeft="30px"
-    android:paddingRight="30px"
-    android:paddingTop="30px">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10px"
+        android:paddingLeft="35px"
+        android:paddingRight="25px"
+        android:paddingTop="35px"
         android:text="@string/auto_update_new_update_available"
-        android:textColor="#666666"
-        android:textSize="@dimen/common_size_two_level" />
+        android:textColor="@color/common_prompt_dialog_title_color"
+        android:textSize="@dimen/common_dialog_title_size" />
 
 
     <com.zhy.autolayout.AutoScrollView
         android:layout_width="match_parent"
         android:layout_height="550px"
-        android:layout_marginBottom="20px"
         android:minHeight="150px">
 
         <TextView
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="20px"
-            android:layout_marginLeft="30px"
-            android:layout_marginRight="30px"
-            android:layout_marginTop="20px"
-            android:fontFamily="sans-serif-light"
-            android:textColor="#666666"
-            android:textSize="@dimen/common_size_three_level" />
+            android:paddingBottom="15px"
+            android:paddingLeft="35px"
+            android:paddingRight="35px"
+            android:paddingTop="35px"
+            android:textColor="@color/common_prompt_dialog_content_color"
+            android:textSize="@dimen/common_dialog_content_size" />
     </com.zhy.autolayout.AutoScrollView>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20px"
+        android:layout_marginBottom="20px"
+        android:layout_marginRight="15px"
         android:gravity="center_vertical|right">
 
         <TextView
@@ -55,7 +54,7 @@
             android:paddingTop="20px"
             android:text="@string/auto_update_dialog_negative_button"
             android:textColor="#666666"
-            android:textSize="@dimen/common_size_three_level" />
+            android:textSize="@dimen/common_dialog_btn_text_size" />
 
         <TextView
             android:id="@+id/tv_ok"
@@ -68,7 +67,7 @@
             android:paddingTop="20px"
             android:text="@string/auto_update_dialog_positive_button"
             android:textColor="#1EA8FF"
-            android:textSize="@dimen/common_size_three_level" />
+            android:textSize="@dimen/common_dialog_btn_text_size" />
 
 
     </com.zhy.autolayout.AutoLinearLayout>

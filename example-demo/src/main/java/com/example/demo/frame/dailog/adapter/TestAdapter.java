@@ -62,7 +62,7 @@ public class TestAdapter extends BaseAdapter {
 				LinearLayout.LayoutParams.WRAP_CONTENT));
 		tv_item.setSingleLine(true);
 		tv_item.setTextColor(Color.parseColor("#303030"));
-		tv_item.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+		tv_item.setTextSize(TypedValue.COMPLEX_UNIT_PX, 14);
 
 		ll_item.addView(tv_item);
 		ll_item.setPadding(item.mResId == 0 ? (int) (18 * mDisplayMetrics.density) : (int) (16 * mDisplayMetrics.density), (int) (10 * mDisplayMetrics.density), 0,

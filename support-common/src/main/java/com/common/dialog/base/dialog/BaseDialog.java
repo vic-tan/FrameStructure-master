@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
-import android.widget.LinearLayout;
 
 import com.common.dialog.BaseAnimatorSet;
 import com.common.utils.StatusBarUtils;
@@ -24,39 +23,73 @@ import com.zhy.autolayout.AutoLinearLayout;
 
 
 public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
-    /** mTag(日志) */
+    /**
+     * mTag(日志)
+     */
     protected String mTag;
-    /** mContext(上下文) */
+    /**
+     * mContext(上下文)
+     */
     protected Context mContext;
-    /** (DisplayMetrics)设备密度 */
+    /**
+     * (DisplayMetrics)设备密度
+     */
     protected DisplayMetrics mDisplayMetrics;
-    /** enable dismiss outside dialog(设置点击对话框以外区域,是否dismiss) */
+    /**
+     * enable dismiss outside dialog(设置点击对话框以外区域,是否dismiss)
+     */
     protected boolean mCancel;
-    /** dialog width scale(宽度比例) */
+    /**
+     * dialog width scale(宽度比例)
+     */
     protected float mWidthScale = 1;
-    /** dialog height scale(高度比例) */
+    /**
+     * dialog height scale(高度比例)
+     */
     protected float mHeightScale;
-    /** mShowAnim(对话框显示动画) */
-    private BaseAnimatorSet mShowAnim;
-    /** mDismissAnim(对话框消失动画) */
-    private BaseAnimatorSet mDismissAnim;
-    /** top container(最上层容器) */
+    /**
+     * top container(最上层容器)
+     */
     protected AutoLinearLayout mLlTop;
-    /** container to control dialog height(用于控制对话框高度) */
+    /**
+     * container to control dialog height(用于控制对话框高度)
+     */
     protected AutoLinearLayout mLlControlHeight;
-    /** the child of mLlControlHeight you create.(创建出来的mLlControlHeight的直接子View) */
+    /**
+     * the child of mLlControlHeight you create.(创建出来的mLlControlHeight的直接子View)
+     */
     protected View mOnCreateView;
-    /** is mShowAnim running(显示动画是否正在执行) */
-    private boolean mIsShowAnim;
-    /** is DismissAnim running(消失动画是否正在执行) */
-    private boolean mIsDismissAnim;
-    /** max height(最大高度) */
+    /**
+     * max height(最大高度)
+     */
     protected float mMaxHeight;
-    /** show Dialog as PopupWindow(像PopupWindow一样展示Dialog) */
+    /**
+     * mShowAnim(对话框显示动画)
+     */
+    private BaseAnimatorSet mShowAnim;
+    /**
+     * mDismissAnim(对话框消失动画)
+     */
+    private BaseAnimatorSet mDismissAnim;
+    /**
+     * is mShowAnim running(显示动画是否正在执行)
+     */
+    private boolean mIsShowAnim;
+    /**
+     * is DismissAnim running(消失动画是否正在执行)
+     */
+    private boolean mIsDismissAnim;
+    /**
+     * show Dialog as PopupWindow(像PopupWindow一样展示Dialog)
+     */
     private boolean mIsPopupStyle;
-    /** automatic dimiss dialog after given delay(在给定时间后,自动消失) */
+    /**
+     * automatic dimiss dialog after given delay(在给定时间后,自动消失)
+     */
     private boolean mAutoDismiss;
-    /** delay (milliseconds) to dimiss dialog(对话框消失延时时间,毫秒值) */
+    /**
+     * delay (milliseconds) to dimiss dialog(对话框消失延时时间,毫秒值)
+     */
     private long mAutoDismissDelay = 1500;
 
     private Handler mHandler = new Handler(Looper.getMainLooper());
@@ -80,7 +113,9 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
         mIsPopupStyle = isPopupStyle;
     }
 
-    /** set dialog theme(设置对话框主题) */
+    /**
+     * set dialog theme(设置对话框主题)
+     */
     private void setDialogTheme() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);// android:windowNoTitle
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));// android:windowBackground
@@ -101,7 +136,9 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
     public void onViewCreated(View inflate) {
     }
 
-    /** set Ui data or logic opreation before attatched window(在对话框显示之前,设置界面数据或者逻辑) */
+    /**
+     * set Ui data or logic opreation before attatched window(在对话框显示之前,设置界面数据或者逻辑)
+     */
     public abstract void setUiBeforShow();
 
     @Override
@@ -115,7 +152,7 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
         mLlTop.setGravity(Gravity.CENTER);
 
         mLlControlHeight = new AutoLinearLayout(mContext);
-        mLlControlHeight.setOrientation(LinearLayout.VERTICAL);
+        mLlControlHeight.setOrientation(AutoLinearLayout.VERTICAL);
 
         mOnCreateView = onCreateView();
         mLlControlHeight.addView(mOnCreateView);
@@ -167,7 +204,7 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
             height = (int) (mMaxHeight * mHeightScale);
         }
 
-        mLlControlHeight.setLayoutParams(new LinearLayout.LayoutParams(width, height));
+        mLlControlHeight.setLayoutParams(new AutoLinearLayout.LayoutParams(width, height));
 
         if (mShowAnim != null) {
             mShowAnim.listener(new BaseAnimatorSet.AnimatorListener() {
@@ -260,19 +297,25 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
         }
     }
 
-    /** dismiss without anim(无动画dismiss) */
+    /**
+     * dismiss without anim(无动画dismiss)
+     */
     public void superDismiss() {
         super.dismiss();
     }
 
-    /** dialog anim by styles(动画弹出对话框,style动画资源) */
+    /**
+     * dialog anim by styles(动画弹出对话框,style动画资源)
+     */
     public void show(int animStyle) {
         Window window = getWindow();
         window.setWindowAnimations(animStyle);
         show();
     }
 
-    /** show at location only valid for mIsPopupStyle true(指定位置显示,只对isPopupStyle为true有效) */
+    /**
+     * show at location only valid for mIsPopupStyle true(指定位置显示,只对isPopupStyle为true有效)
+     */
     public void showAtLocation(int gravity, int x, int y) {
         if (mIsPopupStyle) {
             Window window = getWindow();
@@ -285,13 +328,17 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
         show();
     }
 
-    /** show at location only valid for mIsPopupStyle true(指定位置显示,只对isPopupStyle为true有效) */
+    /**
+     * show at location only valid for mIsPopupStyle true(指定位置显示,只对isPopupStyle为true有效)
+     */
     public void showAtLocation(int x, int y) {
         int gravity = Gravity.LEFT | Gravity.TOP;//Left Top (坐标原点为右上角)
         showAtLocation(gravity, x, y);
     }
 
-    /** set window dim or not(设置背景是否昏暗) */
+    /**
+     * set window dim or not(设置背景是否昏暗)
+     */
     public T dimEnabled(boolean isDimEnabled) {
         if (isDimEnabled) {
             getWindow().addFlags(LayoutParams.FLAG_DIM_BEHIND);
@@ -301,37 +348,49 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
         return (T) this;
     }
 
-    /** set dialog width scale:0-1(设置对话框宽度,占屏幕宽的比例0-1) */
+    /**
+     * set dialog width scale:0-1(设置对话框宽度,占屏幕宽的比例0-1)
+     */
     public T widthScale(float widthScale) {
         this.mWidthScale = widthScale;
         return (T) this;
     }
 
-    /** set dialog height scale:0-1(设置对话框高度,占屏幕宽的比例0-1) */
+    /**
+     * set dialog height scale:0-1(设置对话框高度,占屏幕宽的比例0-1)
+     */
     public T heightScale(float heightScale) {
         mHeightScale = heightScale;
         return (T) this;
     }
 
-    /** set show anim(设置显示的动画) */
+    /**
+     * set show anim(设置显示的动画)
+     */
     public T showAnim(BaseAnimatorSet showAnim) {
         mShowAnim = showAnim;
         return (T) this;
     }
 
-    /** set dismiss anim(设置隐藏的动画) */
+    /**
+     * set dismiss anim(设置隐藏的动画)
+     */
     public T dismissAnim(BaseAnimatorSet dismissAnim) {
         mDismissAnim = dismissAnim;
         return (T) this;
     }
 
-    /** automatic dimiss dialog after given delay(在给定时间后,自动消失) */
+    /**
+     * automatic dimiss dialog after given delay(在给定时间后,自动消失)
+     */
     public T autoDismiss(boolean autoDismiss) {
         mAutoDismiss = autoDismiss;
         return (T) this;
     }
 
-    /** set dealy (milliseconds) to dimiss dialog(对话框消失延时时间,毫秒值) */
+    /**
+     * set dealy (milliseconds) to dimiss dialog(对话框消失延时时间,毫秒值)
+     */
     public T autoDismissDelay(long autoDismissDelay) {
         mAutoDismissDelay = autoDismissDelay;
         return (T) this;
@@ -362,11 +421,5 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
             return;
         }
         super.onBackPressed();
-    }
-
-    /** dp to px */
-    protected int dp2px(float dp) {
-        final float scale = mContext.getResources().getDisplayMetrics().density;
-        return (int) (dp * scale + 0.5f);
     }
 }

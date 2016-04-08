@@ -45,6 +45,19 @@ public class GlobalConstants {
     public static final int READ_TIME = 10 * 1000;
     //endregion
 
+
+    //region Description dialog
+
+    /**
+     * dialog wondows 点屏幕大小的百分比
+     */
+    public static final float DIALOG_WONDWON_WIDTH_SCALE = 0.88f;
+    /**
+     * dialog wondows 内容行间距大小
+     */
+    public static final float DIALOG_WONDWON_CONTENT_LINE_SPACING = 1.5f;
+    //endregion
+
 }
 
 

@@ -5,7 +5,7 @@
     <!-- 分割线粗细 -->
     <dimen name="common_split_line_size">2px</dimen>
     <!-- 弹出提示框的边框圆角半径 -->
-    <dimen name="common_border_radius">15px</dimen>
+    <dimen name="common_border_radius">8px</dimen>
     <!-- 弹出提示框的边框圆角粗细 -->
     <dimen name="common_prompt_dialog_border_size">0px</dimen>
 
@@ -20,8 +20,10 @@
 
     <!-- ————————————————————————————————————— 对话弹出框常量   ——————————————————————————————————————————————————— -->
 
-    <!-- 对话框操作按钮的高度 -->
-    <dimen name="common_prompt_dialog_opt_btn_height">50px</dimen>
+    <!-- 对话框操内容与按钮之间的分割线大小 -->
+    <dimen name="common_prompt_dialog_content_btn_split_line_size">2px</dimen>
+    <!-- 对话框标题与内容之间的线的大小 -->
+    <dimen name="common_prompt_dialog_title_btn_split_line_size">2px</dimen>
     <!-- 对话框标题字体大小 -->
     <dimen name="common_dialog_title_size">45px</dimen>
     <!-- 对话框操作详情字体大小 -->
@@ -30,6 +32,9 @@
     <dimen name="common_dialog_btn_text_size">40px</dimen>
     <!-- 对话框标题的高度 -->
     <dimen name="common_dialog_title_split_line_size">2px</dimen>
+
+    <!-- 对话框操作内容滚动条高度 -->
+    <dimen name="common_dialog_content_scrollview_height">550px</dimen>
 
 
 

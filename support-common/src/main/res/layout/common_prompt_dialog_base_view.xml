@@ -13,7 +13,7 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:paddingTop="20px"
-        android:textColor="@color/common_prompt_dialog_title_txt"
+        android:textColor="@color/common_loading_dialog_title_txt"
         android:text="@string/common_prompt_dialog_title"
         android:textSize="@dimen/common_size_one_level" />
 
@@ -37,7 +37,7 @@
         android:paddingLeft="15px"
         android:paddingRight="15px"
         android:paddingTop="20px"
-        android:textColor="@color/common_prompt_dialog_content_txt"
+        android:textColor="@color/common_loading_dialog_content_txt"
         android:textSize="@dimen/common_size_three_level" />
 </LinearLayout>
 

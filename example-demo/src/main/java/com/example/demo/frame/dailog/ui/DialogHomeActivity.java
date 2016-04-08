@@ -13,8 +13,8 @@ import com.common.dialog.listener.OnBtnClickL;
 import com.common.dialog.listener.OnOperItemClickL;
 import com.common.dialog.widget.ActionSheetDialog;
 import com.common.dialog.widget.MaterialDialog;
-import com.common.dialog.widget.NormalDialog;
 import com.common.dialog.widget.NormalListDialog;
+import com.common.dialog.widget.NormalDialog;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.utils.ToastUtils;
 import com.common.utils.ViewFindUtils;
@@ -179,7 +179,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
 
     private void NormalDialogStyleOne() {
         final NormalDialog dialog = new NormalDialog(mContext);
-        dialog.content("是否确定退出程序?")//
+        dialog.title("咖啡豆").content("为保证咖啡豆的新鲜度和。")
                 .show();
 
         dialog.setOnBtnClickL(
@@ -201,9 +201,8 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
 
     private void NormalDialogStyleTwo() {
         final NormalDialog dialog = new NormalDialog(mContext);
-        dialog.content("为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲。")//
-                .style(NormalDialog.STYLE_TWO)//
-                .titleTextSize(43)//
+        dialog.content("为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲。为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲为保证咖啡豆的新鲜度和咖啡的香味，并配以特有的传统烘焙和手工冲")
+                .titleTextSize(23)//
                 .show();
 
         dialog.setOnBtnClickL(
@@ -233,7 +232,7 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
                 .contentGravity(Gravity.CENTER)//
                 .contentTextColor(Color.parseColor("#ffffff"))//
                 .dividerColor(Color.parseColor("#222222"))//
-                .btnTextSize(35.5f, 35.5f)//
+                .btnTextSize(15.5f, 15.5f)//
                 .btnTextColor(Color.parseColor("#ffffff"), Color.parseColor("#ffffff"))//
                 .btnPressColor(Color.parseColor("#2B2B2B"))//
                 .widthScale(0.85f)//
@@ -275,7 +274,6 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
     private void NormalDialoThreeBtn() {
         final NormalDialog dialog = new NormalDialog(mContext);
         dialog.content("你今天的抢购名额已用完~")//
-                .style(NormalDialog.STYLE_TWO)//
                 .btnNum(3)
                 .btnText("取消", "确定", "继续逛逛")//
                 .show();
@@ -501,7 +499,6 @@ public class DialogHomeActivity extends BaseActivity implements ExpandableListVi
     public void onBackPressed() {
         final NormalDialog dialog = new NormalDialog(mContext);
         dialog.content("亲,真的要走吗?再看会儿吧~(●—●)")//
-                .style(NormalDialog.STYLE_TWO)//
                 .titleTextSize(23)//
                 .btnText("继续逛逛", "残忍退出")//
                 .btnTextColor(Color.parseColor("#383838"), Color.parseColor("#D4D4D4"))//

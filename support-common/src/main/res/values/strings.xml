@@ -4,7 +4,9 @@
     <string name="test">这是测试文字</string>
     <string name="common_cancel">取消</string>
     <string name="common_enter">确定</string>
+    <string name="common_continue">继续</string>
     <string name="common_prompt_dialog_title">提示</string>
+    <string name="common_prompt_dialog_default_title">温馨提示</string>
 
     <!-- —————————————————— dialog文字 ——————————————————————————————— -->
 
@@ -35,4 +37,5 @@
     <string name="auto_update_download_wait">请稍候...</string>
     <string name="auto_update_download_app">正在更新新版本</string>
     <string name="auto_update_download_app_title"> 下载</string>
+
 </resources>

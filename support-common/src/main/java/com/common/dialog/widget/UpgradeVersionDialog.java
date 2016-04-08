@@ -1,4 +1,4 @@
-package com.common.download.autoupdate;
+package com.common.dialog.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -19,11 +19,11 @@ import com.zhy.autolayout.utils.AutoUtils;
  * 自定义发现新的版本的提示框
  */
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-public abstract class FoundNewVersionDialog extends BaseDialog<FoundNewVersionDialog> {
+public abstract class UpgradeVersionDialog extends BaseDialog<UpgradeVersionDialog> {
     private TextView mTvOk,mTvExit;
     private TextView mTvContent;
 
-    public FoundNewVersionDialog(Context context) {
+    public UpgradeVersionDialog(Context context) {
         super(context);
     }
 
@@ -31,14 +31,14 @@ public abstract class FoundNewVersionDialog extends BaseDialog<FoundNewVersionDi
     @Override
     public View onCreateView() {
         widthScale(0.85f);
-        View inflate = View.inflate(mContext, R.layout.common_autoupdate_found_new_version, null);
+        View inflate = View.inflate(mContext, R.layout.common_dialog_autoupdate_found_new_version, null);
         AutoUtils.autoSize(inflate);
         mTvContent = ViewFindUtils.find(inflate,R.id.tv_content);
         mTvOk = ViewFindUtils.find(inflate, R.id.tv_ok);
         mTvExit = ViewFindUtils.find(inflate, R.id.tv_exit);
         setSelector(mTvOk);
         setSelector(mTvExit);
-        inflate.setBackground(CornerUtils.cornerDrawable(Color.parseColor("#ffffff"), dp2px(5)));
+        inflate.setBackground(CornerUtils.cornerDrawable(Color.parseColor("#ffffff"), ResUtils.getDimens(R.dimen.common_border_radius)));
         return inflate;
     }
 

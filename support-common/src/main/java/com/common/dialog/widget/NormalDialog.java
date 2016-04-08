@@ -2,21 +2,21 @@ package com.common.dialog.widget;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.common.R;
 import com.common.dialog.internal.BaseAlertDialog;
 import com.common.utils.CornerUtils;
-import com.common.utils.DensityUtils;
+import com.common.utils.InflaterUtils;
 import com.common.utils.ResUtils;
+import com.zhy.autolayout.AutoLinearLayout;
 
 
 @SuppressWarnings("deprecation")
 public class NormalDialog extends BaseAlertDialog<NormalDialog> {
-    public static final int STYLE_ONE = 0;
-    public static final int STYLE_TWO = 1;
+
     /**
      * title underline
      */
@@ -36,20 +36,22 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
     /**
      * title underline color(标题下划线颜色)
      */
-    private int mTitleLineColor = Color.parseColor("#61AEDC");
+    private int mTitleLineColor = ResUtils.getColor(R.color.common_prompt_dialog_title_line_color);
     /**
      * title underline height(标题下划线高度)
      */
-    private int mTitleLineHeight = (int) ResUtils.getDimens(R.dimen.common_dialog_title_split_line_size);
+    private float mTitleLineHeight = (int) ResUtils.getDimens(R.dimen.common_prompt_dialog_title_btn_split_line_size);
+
     /**
      * btn divider line color(对话框之间的分割线颜色(水平+垂直))
      */
-    private int mDividerColor = Color.parseColor("#DCDCDC");
-    private int mStyle = STYLE_ONE;
+    private int mDividerColor = ResUtils.getColor(R.color.common_prompt_dialog_content_btn_line_color);
+
+
+
 
     public NormalDialog(Context context) {
         super(context);
-
         /** default value*/
         mTitleTextColor = Color.parseColor("#61AEDC");
         mTitleTextSize = ResUtils.getDimens(R.dimen.common_dialog_title_size);
@@ -63,43 +65,22 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
 
     @Override
     public View onCreateView() {
+        mLlContainer = (AutoLinearLayout) InflaterUtils.inflater(mContext, R.layout.common_dialog_normal);
         /** title */
-        mTvTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        mLlContainer.addView(mTvTitle);
-
-        /** title underline */
-        mVLineTitle = new View(mContext);
-        mLlContainer.addView(mVLineTitle);
+        mTvTitle = (TextView) mLlContainer.findViewById(R.id.mTvTitle);
+        mVLineTitle = mLlContainer.findViewById(R.id.mVLineTitle);
 
         /** content */
-        mTvContent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        mLlContainer.addView(mTvContent);
+        mTvContent = (TextView) mLlContainer.findViewById(R.id.mTvContent);
+        mVLineHorizontal = mLlContainer.findViewById(R.id.mVLineHorizontal);
+        /**btns*/
+        mTvBtnLeft = (TextView) mLlContainer.findViewById(R.id.mTvBtnLeft);
+        mTvBtnMiddle = (TextView) mLlContainer.findViewById(R.id.mTvBtnMiddle);
+        mTvBtnRight = (TextView) mLlContainer.findViewById(R.id.mTvBtnRight);
 
-        mVLineHorizontal = new View(mContext);
-        mVLineHorizontal.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1));
-        mLlContainer.addView(mVLineHorizontal);
+        mVLineVertical = mLlContainer.findViewById(R.id.mVLineVertical);
+        mVLineVertical2 = mLlContainer.findViewById(R.id.mVLineVertical2);
 
-        /** btns */
-        mTvBtnLeft.setLayoutParams(new LinearLayout.LayoutParams(0, DensityUtils.dp2px(mContext,50), 1));
-        mLlBtns.addView(mTvBtnLeft);
-
-        mVLineVertical = new View(mContext);
-        mVLineVertical.setLayoutParams(new LinearLayout.LayoutParams(1, LinearLayout.LayoutParams.MATCH_PARENT));
-        mLlBtns.addView(mVLineVertical);
-
-        mTvBtnMiddle.setLayoutParams(new LinearLayout.LayoutParams(0, DensityUtils.dp2px(mContext,50), 1));
-        mLlBtns.addView(mTvBtnMiddle);
-
-        mVLineVertical2 = new View(mContext);
-        mVLineVertical2.setLayoutParams(new LinearLayout.LayoutParams(1, LinearLayout.LayoutParams.MATCH_PARENT));
-        mLlBtns.addView(mVLineVertical2);
-
-        mTvBtnRight.setLayoutParams(new LinearLayout.LayoutParams(0, DensityUtils.dp2px(mContext,50), 1));
-        mLlBtns.addView(mTvBtnRight);
-
-        mLlContainer.addView(mLlBtns);
 
         return mLlContainer;
     }
@@ -107,33 +88,10 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
     @Override
     public void setUiBeforShow() {
         super.setUiBeforShow();
-
-        /** title */
-        if (mStyle == STYLE_ONE) {
-            mTvTitle.setMinHeight(DensityUtils.dp2px(mContext,50));
-            mTvTitle.setGravity(Gravity.CENTER_VERTICAL);
-            mTvTitle.setPadding(DensityUtils.dp2px(mContext,30), DensityUtils.dp2px(mContext,10), 0, DensityUtils.dp2px(mContext,10));
-            mTvTitle.setVisibility(mIsTitleShow ? View.VISIBLE : View.GONE);
-        } else if (mStyle == STYLE_TWO) {
-            mTvTitle.setGravity(Gravity.CENTER);
-            mTvTitle.setPadding(0, DensityUtils.dp2px(mContext,30), 0, 0);
-        }
-
         /** title underline */
-        mVLineTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, mTitleLineHeight));
+        mVLineTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)mTitleLineHeight));
         mVLineTitle.setBackgroundColor(mTitleLineColor);
-        mVLineTitle.setVisibility(mIsTitleShow && mStyle == STYLE_ONE ? View.VISIBLE : View.GONE);
-
-        /** content */
-        if (mStyle == STYLE_ONE) {
-            mTvContent.setPadding(DensityUtils.dp2px(mContext,30), DensityUtils.dp2px(mContext,20), DensityUtils.dp2px(mContext,30), DensityUtils.dp2px(mContext,20));
-            mTvContent.setMinHeight(100);
-            mTvContent.setGravity(mContentGravity);
-        } else if (mStyle == STYLE_TWO) {
-            mTvContent.setPadding(DensityUtils.dp2px(mContext,30), DensityUtils.dp2px(mContext,14), DensityUtils.dp2px(mContext,30), DensityUtils.dp2px(mContext,20));
-            mTvContent.setMinHeight(100);
-            mTvContent.setGravity(Gravity.CENTER);
-        }
+        mVLineTitle.setVisibility(mIsTitleShow ? View.VISIBLE : View.GONE);
 
         /** btns */
         mVLineHorizontal.setBackgroundColor(mDividerColor);
@@ -151,22 +109,12 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
         }
 
         /**set background color and corner radius */
-        float radius = mCornerRadius;
-        mLlContainer.setBackgroundDrawable(CornerUtils.cornerDrawable(mBgColor, radius));
-        mTvBtnLeft.setBackgroundDrawable(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, 0));
-        mTvBtnRight.setBackgroundDrawable(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, 1));
-        mTvBtnMiddle.setBackgroundDrawable(CornerUtils.btnSelector(mBtnNum == 1 ? radius : 0, mBgColor, mBtnPressColor, -1));
+        mTvBtnLeft.setBackgroundDrawable(CornerUtils.btnSelector(mCornerRadius, mBgColor, mBtnPressColor, 0));
+        mTvBtnRight.setBackgroundDrawable(CornerUtils.btnSelector(mCornerRadius, mBgColor, mBtnPressColor, 1));
+        mTvBtnMiddle.setBackgroundDrawable(CornerUtils.btnSelector(mBtnNum == 1 ? mCornerRadius : 0, mBgColor, mBtnPressColor, -1));
     }
 
-    // --->属性设置
 
-    /**
-     * set style(设置style)
-     */
-    public NormalDialog style(int style) {
-        this.mStyle = style;
-        return this;
-    }
 
     /**
      * set title underline color(设置标题下划线颜色)
@@ -179,8 +127,8 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
     /**
      * set title underline height(设置标题下划线高度)
      */
-    public NormalDialog titleLineHeight(int titleLineHeight_px) {
-        this.mTitleLineHeight = titleLineHeight_px;
+    public NormalDialog titleLineHeight(float titleLineHeight_PX) {
+        this.mTitleLineHeight = titleLineHeight_PX;
         return this;
     }
 

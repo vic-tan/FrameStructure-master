@@ -4,15 +4,15 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.common.R;
-import com.common.dialog.Utils;
-import com.common.utils.CornerUtils;
 import com.common.dialog.internal.BaseAlertDialog;
+import com.common.utils.CornerUtils;
+import com.common.utils.InflaterUtils;
 import com.common.utils.ResUtils;
+import com.zhy.autolayout.AutoLinearLayout;
 
 
 /**
@@ -22,7 +22,6 @@ public class MaterialDialog extends BaseAlertDialog<MaterialDialog> {
 
     public MaterialDialog(Context context) {
         super(context);
-
         /** default value*/
         mTitleTextColor = Color.parseColor("#DE000000");
         mTitleTextSize = ResUtils.getDimens(R.dimen.common_dialog_title_size);
@@ -37,31 +36,17 @@ public class MaterialDialog extends BaseAlertDialog<MaterialDialog> {
     @Override
     public View onCreateView() {
 
+        mLlContainer = (AutoLinearLayout) InflaterUtils.inflater(mContext, R.layout.common_dialog_material);
         /** title */
-        mTvTitle.setGravity(Gravity.CENTER_VERTICAL);
-        mTvTitle.setPadding(Utils.dp2px(20), Utils.dp2px(20), Utils.dp2px(20), 0);
-        mTvTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        mLlContainer.addView(mTvTitle);
+        mTvTitle = (TextView) mLlContainer.findViewById(R.id.mTvTitle);
 
         /** content */
-        mTvContent.setPadding(Utils.dp2px(20), Utils.dp2px(20), Utils.dp2px(20), Utils.dp2px(20));
-        mTvContent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT));
-        mLlContainer.addView(mTvContent);
+        mTvContent = (TextView) mLlContainer.findViewById(R.id.mTvContent);
 
         /**btns*/
-        mLlBtns.setGravity(Gravity.RIGHT);
-        mLlBtns.addView(mTvBtnLeft);
-        mLlBtns.addView(mTvBtnMiddle);
-        mLlBtns.addView(mTvBtnRight);
-
-        mTvBtnLeft.setPadding(Utils.dp2px(15), Utils.dp2px(7), Utils.dp2px(15), Utils.dp2px(7));
-        mTvBtnRight.setPadding(Utils.dp2px(15), Utils.dp2px(7), Utils.dp2px(15), Utils.dp2px(7));
-        mTvBtnMiddle.setPadding(Utils.dp2px(15), Utils.dp2px(7), Utils.dp2px(15), Utils.dp2px(7));
-        mLlBtns.setPadding(Utils.dp2px(20), 0, Utils.dp2px(15), Utils.dp2px(15));
-
-        mLlContainer.addView(mLlBtns);
+        mTvBtnLeft = (TextView) mLlContainer.findViewById(R.id.mTvBtnLeft);
+        mTvBtnMiddle = (TextView) mLlContainer.findViewById(R.id.mTvBtnMiddle);
+        mTvBtnRight = (TextView) mLlContainer.findViewById(R.id.mTvBtnRight);
 
         return mLlContainer;
     }
@@ -71,10 +56,8 @@ public class MaterialDialog extends BaseAlertDialog<MaterialDialog> {
     public void setUiBeforShow() {
         super.setUiBeforShow();
         /**set background color and corner radius */
-        float radius = mCornerRadius;
-        mLlContainer.setBackground(CornerUtils.cornerDrawable(mBgColor, radius));
-        mTvBtnLeft.setBackground(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
-        mTvBtnRight.setBackground(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
-        mTvBtnMiddle.setBackground(CornerUtils.btnSelector(radius, mBgColor, mBtnPressColor, -2));
+        mTvBtnLeft.setBackground(CornerUtils.btnSelector(mCornerRadius, mBgColor, mBtnPressColor, -2));
+        mTvBtnRight.setBackground(CornerUtils.btnSelector(mCornerRadius, mBgColor, mBtnPressColor, -2));
+        mTvBtnMiddle.setBackground(CornerUtils.btnSelector(mCornerRadius, mBgColor, mBtnPressColor, -2));
     }
 }

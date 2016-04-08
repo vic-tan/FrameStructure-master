@@ -67,7 +67,7 @@ public class PopupHomeActivity extends BaseActivity {
 
             TextView tv = new TextView(mContext);
             tv.setText(mItems[position]);
-            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, 18);
             tv.setTextColor(Color.parseColor("#468ED0"));
             // tv.setGravity(Gravity.CENTER);
             tv.setPadding(padding, padding, padding, padding);

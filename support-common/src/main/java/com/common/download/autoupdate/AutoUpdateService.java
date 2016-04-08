@@ -11,6 +11,7 @@ import android.view.WindowManager;
 
 import com.common.R;
 import com.common.bean.paramsBean.NotifyParams;
+import com.common.dialog.widget.UpgradeVersionDialog;
 import com.common.download.DownloadManager;
 import com.common.download.entity.DownloadEntry;
 import com.common.download.notify.DataWatcher;
@@ -88,7 +89,7 @@ public class AutoUpdateService extends Service {
      * 升级提示框
      */
     private void checkAppUpdateBuilder() {
-        final FoundNewVersionDialog dialog = new FoundNewVersionDialog(this) {
+        final UpgradeVersionDialog dialog = new UpgradeVersionDialog(this) {
             @Override
             public void setUiBeforShow() {
                 getmTvOk().setOnClickListener(new View.OnClickListener() {

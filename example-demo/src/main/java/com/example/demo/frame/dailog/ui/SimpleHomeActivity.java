@@ -14,9 +14,9 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.common.ui.base.activity.BaseActivity;
+import com.zhy.autolayout.AutoLayoutActivity;
 
-public class SimpleHomeActivity extends BaseActivity {
+public class SimpleHomeActivity extends AutoLayoutActivity {
     private Context mContext = this;
     private final String[] mItems = {"Dialog", "Popup"};
     private final Class<?>[] mClazzs = {DialogHomeActivity.class, PopupHomeActivity.class};
@@ -63,11 +63,11 @@ public class SimpleHomeActivity extends BaseActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            int padding = (int) (mDisplayMetrics.density * 10);
+            int padding = (int) (25);
 
             TextView tv = new TextView(mContext);
             tv.setText(mItems[position]);
-            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, 38);
             tv.setTextColor(Color.parseColor("#468ED0"));
             // tv.setGravity(Gravity.CENTER);
             tv.setPadding(padding, padding, padding, padding);

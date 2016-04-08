@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mLlContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_prompt_dialog_content_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="35px"
+        android:paddingLeft="35px"
+        android:paddingRight="25px"
+        android:paddingTop="35px"
+        android:text="@string/common_prompt_dialog_default_title"
+        android:textColor="@color/common_prompt_dialog_title_color"
+        android:textSize="@dimen/common_dialog_title_size" />
+
+    <View
+        android:id="@+id/mVLineTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_prompt_dialog_content_btn_split_line_size"
+        android:textColor="@color/common_prompt_dialog_content_btn_line_color" />
+
+
+
+    <TextView
+        android:id="@+id/mTvContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingBottom="55px"
+        android:paddingLeft="35px"
+        android:paddingRight="35px"
+        android:paddingTop="65px"
+        android:textColor="@color/common_prompt_dialog_content_color"
+        android:textSize="@dimen/common_dialog_content_size" />
+
+    <View
+        android:id="@+id/mVLineHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_prompt_dialog_content_btn_split_line_size"
+        android:textColor="@color/common_prompt_dialog_content_btn_line_color" />
+
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/mLlBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mTvBtnLeft"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="33px"
+            android:paddingTop="33px"
+            android:text="@string/common_cancel"
+            android:textSize="@dimen/common_dialog_btn_text_size" />
+
+        <View
+            android:id="@+id/mVLineVertical"
+            android:layout_width="@dimen/common_prompt_dialog_content_btn_split_line_size"
+            android:layout_height="match_parent"
+            android:textColor="@color/common_prompt_dialog_content_btn_line_color" />
+
+        <TextView
+            android:id="@+id/mTvBtnMiddle"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="33px"
+            android:paddingTop="33px"
+            android:text="@string/common_continue"
+            android:textSize="@dimen/common_dialog_btn_text_size" />
+
+        <View
+            android:id="@+id/mVLineVertical2"
+            android:layout_width="@dimen/common_prompt_dialog_content_btn_split_line_size"
+            android:layout_height="match_parent"
+            android:textColor="@color/common_prompt_dialog_content_btn_line_color" />
+
+        <TextView
+            android:id="@+id/mTvBtnRight"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="33px"
+            android:paddingTop="33px"
+            android:text="@string/common_enter"
+            android:textSize="@dimen/common_dialog_btn_text_size" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>
