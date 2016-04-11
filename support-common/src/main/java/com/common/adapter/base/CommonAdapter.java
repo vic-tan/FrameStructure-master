@@ -66,12 +66,12 @@ public abstract class CommonAdapter<T> extends BaseAdapter implements AbsListVie
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = ViewHolder.get(mContext, convertView, parent,
-                layoutId, position);
-        convert(holder, getItem(position), isScrolling);
+                layoutId, position,isScrolling);
+        convert(holder, getItem(position));
         return holder.getConvertView();
     }
 
-    public abstract void convert(ViewHolder holder, T bean, boolean isScrolling);
+    public abstract void convert(ViewHolder holder, T bean);
 
     public boolean isScrolling() {
         return isScrolling;
@@ -90,6 +90,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter implements AbsListVie
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
         // 设置是否滚动的状态
+
         if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
             isScrolling = false;
             this.notifyDataSetChanged();

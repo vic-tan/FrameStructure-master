@@ -26,4 +26,10 @@
         android:onClick="C"
         android:text="访QQ空间查看图片效果" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="D"
+        android:text="滚动不加载图片" />
+
 </LinearLayout>

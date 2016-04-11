@@ -30,12 +30,14 @@ public class ViewHolder {
     private View mConvertView;
     private Context mContext;
     private int mLayoutId;
+    private boolean isScrolling;
 
     public ViewHolder(Context context, ViewGroup parent, int layoutId,
-                      int position) {
+                      int position,boolean isScrolling) {
         mContext = context;
         mLayoutId = layoutId;
         this.mPosition = position;
+        this.isScrolling =isScrolling;
         this.mViews = new SparseArray<View>();
         mConvertView = LayoutInflater.from(context).inflate(layoutId, parent,
                 false);
@@ -43,9 +45,9 @@ public class ViewHolder {
     }
 
     public static ViewHolder get(Context context, View convertView,
-                                 ViewGroup parent, int layoutId, int position) {
+                                 ViewGroup parent, int layoutId, int position,boolean isScrolling) {
         if (convertView == null) {
-            return new ViewHolder(context, parent, layoutId, position);
+            return new ViewHolder(context, parent, layoutId, position,isScrolling);
         } else {
             ViewHolder holder = (ViewHolder) convertView.getTag();
             holder.mPosition = position;
@@ -59,6 +61,14 @@ public class ViewHolder {
 
     public int getLayoutId() {
         return mLayoutId;
+    }
+
+    public boolean isScrolling() {
+        return isScrolling;
+    }
+
+    public void setIsScrolling(boolean isScrolling) {
+        this.isScrolling = isScrolling;
     }
 
     /**
@@ -79,6 +89,8 @@ public class ViewHolder {
     public View getConvertView() {
         return mConvertView;
     }
+
+
 
     /**
      * 设置TextView的值

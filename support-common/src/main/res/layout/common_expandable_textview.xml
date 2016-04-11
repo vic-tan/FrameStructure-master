@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.common.view.textview.expandable.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:id="@id/expand_text_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:orientation="vertical"
+    expandableTextView:clickListenerType="all"
+    expandableTextView:collapseDrawable="@mipmap/ic_collapse_small_holo_light"
+    expandableTextView:expandDrawable="@mipmap/ic_expand_small_holo_light"
+    expandableTextView:maxCollapsedLines="3">
 
-    <com.common.view.textview.expandable.ExpandableTextView
-        android:id="@id/expand_text_view"
+
+    <TextView
+        android:id="@id/expandable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20px"
-        expandableTextView:maxCollapsedLines="10">
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="20px"
+        android:clickable="false"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/test"
+        android:textColor="#666666"
+        android:textSize="@dimen/common_size_three_level" />
 
-        <TextView
-            android:id="@id/expandable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20px"
-            android:layout_marginLeft="50px"
-            android:layout_marginRight="50px"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/test"
-            android:textSize="@dimen/common_size_three_level"
-            android:textColor="#666666" />
+
+    <RelativeLayout
+        android:id="@id/expand_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@id/expand_collapse"
-            android:layout_width="50px"
-            android:layout_height="50px"
-            android:layout_margin="30px"
-            android:layout_gravity="right|bottom"
-            android:background="@android:color/transparent"/>
-    </com.common.view.textview.expandable.ExpandableTextView>
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="60px"
+            android:background="@android:color/transparent"
+            android:clickable="false" />
+    </RelativeLayout>
 
-</LinearLayout>
+
+</com.common.view.textview.expandable.ExpandableTextView>

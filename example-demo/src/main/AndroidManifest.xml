@@ -16,6 +16,7 @@
         <activity android:name=".frame.activity.Demo_BasePhotoActivity" />
         <activity android:name=".frame.activity.Demo_PagerPhotoActivity" />
         <activity android:name=".frame.activity.Demo_SimplePhotoActivity" />
+        <activity android:name=".frame.activity.Demo_ScrollerPhotoActivity" />
         <activity
             android:name=".frame.activity.Demo_SpaceImageDetailActivity"
             android:theme="@style/IMTheme.Transparent"/>

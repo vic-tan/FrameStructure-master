@@ -47,7 +47,7 @@ public class ChatAdapter extends MultiItemCommonAdapter<ChatMessage>
     }
 
     @Override
-    public void convert(ViewHolder holder, ChatMessage chatMessage,boolean isScrolling)
+    public void convert(ViewHolder holder, ChatMessage chatMessage)
     {
 
         if (holder.getLayoutId() == R.layout.test_main_chat_from_msg) {
@@ -62,4 +62,6 @@ public class ChatAdapter extends MultiItemCommonAdapter<ChatMessage>
 
         }
     }
+
+
 }

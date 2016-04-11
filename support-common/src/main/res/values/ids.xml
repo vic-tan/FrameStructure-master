@@ -9,6 +9,7 @@
     <item type="id" name="expandable"/>
     <!-- 点击伸缩textview 图片 id -->
     <item type="id" name="expand_collapse"/>
+    <item type="id" name="expand_footer"></item>
 
     <!-- —————————————————— 公用 listView ———————————————— -->
 

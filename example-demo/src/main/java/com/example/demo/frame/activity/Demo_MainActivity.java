@@ -66,9 +66,10 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData().toString(), TestBean.class));
         listView.setAdapter(new CommonAdapter<TestBean>(listView.getRefreshableView(), this, list, R.layout.test_list_item) {
             @Override
-            public void convert(ViewHolder holder, TestBean bean, boolean isScrolling) {
+            public void convert(ViewHolder holder, TestBean bean) {
                 ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setText(bean.getDesc());
                 holder.setText(R.id.tv_name, bean.getName());
+                //Logger.d("-----" + holder.isScrolling() + "-----");
             }
         });
         listView.setOnItemClickListener(this);

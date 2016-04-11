@@ -27,7 +27,7 @@ public class Demo_SingleItemTypeActivity extends ListActivity {
         setListAdapter(new CommonAdapter<Bean>(this, mDatas,
                 R.layout.test_item_single_listview) {
             @Override
-            public void convert(final ViewHolder holder, final Bean bean,boolean isScrolling) {
+            public void convert(final ViewHolder holder, final Bean bean) {
                 holder.setText(R.id.id_title, bean.getTitle())
                         .setText(R.id.id_desc, bean.getDesc())
                         .setText(R.id.id_time, bean.getTime())

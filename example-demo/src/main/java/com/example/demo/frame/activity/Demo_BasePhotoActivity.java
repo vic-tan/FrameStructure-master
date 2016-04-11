@@ -63,6 +63,11 @@ public class Demo_BasePhotoActivity extends BaseActivity implements View.OnClick
     }
 
 
+    public void D(View v) {
+        StartActUtils.start(this, Demo_ScrollerPhotoActivity.class);
+    }
+
+
     @Override
     protected String setActionBarTitle() {
         return "BasePhotoView";
