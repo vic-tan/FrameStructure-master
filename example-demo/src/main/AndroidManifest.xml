@@ -2,34 +2,34 @@
 
     <application android:allowBackup="true" android:label="@string/app_name">
         <!-- 测试 -->
-        <activity android:name=".frame.activity.Demo_MainActivity" />
-        <activity android:name=".frame.activity.Demo_HttpTaskActivity" />
-        <activity android:name=".frame.activity.Demo_ListViewActivity" />
-        <activity android:name=".frame.activity.Demo_GridViewActivity" />
+        <activity android:name=".frame.MainActivity" />
+        <activity android:name=".frame.http.HttpTaskActivity" />
+        <activity android:name=".frame.table.ListViewActivity" />
+        <activity android:name=".frame.table.GridViewActivity" />
         <activity android:name=".frame.activity.Demo_FlycoRoundViewActivity" />
         <activity android:name=".frame.activity.Demo_InjectionActivity" />
-        <activity android:name=".frame.activity.Demo_AnnotationActivity" />
-        <activity android:name=".frame.activity.Demo_BaseAdpterActivity" />
-        <activity android:name=".frame.activity.Demo_SingleItemTypeActivity" />
-        <activity android:name=".frame.activity.Demo_MutliItemTypeActivity" />
-        <activity android:name=".frame.activity.Demo_BasePhotoActivity" />
-        <activity android:name=".frame.activity.Demo_PagerPhotoActivity" />
-        <activity android:name=".frame.activity.Demo_SimplePhotoActivity" />
-        <activity android:name=".frame.activity.Demo_ScrollerPhotoActivity" />
+        <activity android:name=".frame.annotation.AnnotationActivity" />
+        <activity android:name=".frame.baseAdapter.BaseAdpterActivity" />
+        <activity android:name=".frame.baseAdapter.SingleItemTypeActivity" />
+        <activity android:name=".frame.baseAdapter.MutliItemTypeActivity" />
+        <activity android:name=".frame.photo.BasePhotoActivity" />
+        <activity android:name=".frame.photo.PagerPhotoActivity" />
+        <activity android:name=".frame.photo.SimplePhotoActivity" />
+        <activity android:name=".frame.photo.ScrollerPhotoActivity" />
         <activity
             android:name=".frame.activity.Demo_SpaceImageDetailActivity"
             android:theme="@style/IMTheme.Transparent"/>
         <activity
-            android:name=".frame.activity.Demo_SmoothPagerPhotoViewActivity"
+            android:name=".frame.photo.SmoothPagerPhotoViewActivity"
             android:theme="@style/IMTheme.Transparent" />
 
-        <activity android:name=".frame.activity.Demo_ImageSliderActivity" />
+        <activity android:name=".frame.sliderimage.ImageSliderActivity" />
         <activity android:name=".frame.activity.Demo_PagerSlidingTabStripActivity" />
         <activity android:name=".frame.activity.Demo_NoteActivity" />
-        <activity android:name=".frame.activity.Download_MainActivity" />
-        <activity android:name=".frame.activity.Download_SingleActivity" />
-        <activity android:name=".frame.activity.Download_ListActivity" />
-        <activity android:name=".frame.activity.Download_DetailsActivity" />
+        <activity android:name=".frame.download.Download_MainActivity" />
+        <activity android:name=".frame.download.Download_SingleActivity" />
+        <activity android:name=".frame.download.Download_ListActivity" />
+        <activity android:name=".frame.download.Download_DetailsActivity" />
 
 
         <activity android:name=".frame.dailog.ui.SimpleHomeActivity" />

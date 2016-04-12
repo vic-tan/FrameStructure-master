@@ -8,7 +8,7 @@ import com.android.tanlifei.framestructure.R;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.utils.SPUtils;
 import com.common.utils.StartActUtils;
-import com.example.demo.frame.activity.Demo_MainActivity;
+import com.example.demo.frame.MainActivity;
 
 
 import org.androidannotations.annotations.AfterViews;
@@ -43,7 +43,7 @@ public class LauncherActivity extends BaseActivity {
                     StartActUtils.finish(LauncherActivity.this);
                     break;
                 case HANDLE_WHAT_TWO://没有正在加载数据页时,直接进入首页
-                    StartActUtils.start(LauncherActivity.this, Demo_MainActivity.class);
+                    StartActUtils.start(LauncherActivity.this, MainActivity.class);
                     StartActUtils.finish(LauncherActivity.this);
                     break;
             }

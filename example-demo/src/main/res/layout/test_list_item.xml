@@ -8,10 +8,15 @@
         android:id="@+id/tv_name"
         style="@style/common_match_parent"
         android:layout_marginLeft="50px"
-        android:layout_marginTop="50px"
+        android:layout_marginTop="20px"
         android:text="@string/test"
         android:textSize="@dimen/common_size_one_level" />
 
-    <include layout="@layout/common_expandable_textview"/>
+    <include layout="@layout/common_expandable_textview" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:visibility="invisible"/>
 
 </LinearLayout>

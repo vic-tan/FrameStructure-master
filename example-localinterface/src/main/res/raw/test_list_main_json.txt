@@ -3,7 +3,7 @@
     "msg": "操作成功",
     "data": [
         {
-            "activityPath": "com.example.demo.frame.activity.Demo_HttpTaskActivity",
+            "activityPath": "com.example.demo.frame.http.HttpTaskActivity",
             "name": "网络提示请求方式",
             "desc": "app开发中常见请求网络数据过中友好提示，包括基本普通请求、加载框网络请求携带数据跳转，进入详情布局提示请求，列表布局提示请求这几种类型的加载提示进行了封装，方便界面风格统一管理，及开发成本..."
         },
@@ -13,17 +13,17 @@
             "desc": "主要是封装了主流底部菜单选项卡样式.减少代码及风格统一"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.Demo_ListViewActivity",
+            "activityPath": "com.example.demo.frame.table.ListViewActivity",
             "name": "listView列表上拉下拉刷新示范",
             "desc": "listView列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单。"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.Demo_GridViewActivity",
+            "activityPath": "com.example.demo.frame.table.GridViewActivity",
             "name": "GridView上拉下拉刷新示范",
             "desc": "GridView列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.Demo_AnnotationActivity",
+            "activityPath": "com.example.demo.frame.annotation.AnnotationActivity",
             "name": "Annotation注释",
             "desc": "注释 id view，减少id的书写..大大提高效率"
         },
@@ -38,17 +38,17 @@
             "desc": "以后在写不用在写selector.xml资源文件布局,只需要简单的设置属性即可，适配所有android分辨率机型"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.Demo_BaseAdpterActivity",
+            "activityPath": "com.example.demo.frame.baseAdapter.BaseAdpterActivity",
             "name": "提取公用BaseAdapter",
             "desc": "提取了公用BaseAdapter,减少好代码的编程，少到只用传用ID,和显示文字即可，支持多BaseAdapter的多布局显示,界面效果看不出，请看具体代码。"
         },
          {
-             "activityPath": "com.example.demo.frame.activity.Demo_BasePhotoActivity",
+             "activityPath": "com.example.demo.frame.photo.BasePhotoActivity",
              "name": "PhotoView 显示，缩放，",
              "desc": "PhotoView,、类似于QQ空间点击图片浏览，显示缩略图，加载原图..引用第三方PhotoView库实现"
          },
          {
-           "activityPath": "com.example.demo.frame.activity.Demo_ImageSliderActivity",
+           "activityPath": "com.example.demo.frame.sliderimage.ImageSliderActivity",
            "name": " ImageSlider 广告位",
            "desc": "广告位,自定义动画及操作简单,几行代码即可"
          }
@@ -64,7 +64,7 @@
            "desc": "sqlite 数据库ORM框架，内存占用少，速度快.."
          },
            {
-             "activityPath": "com.example.demo.frame.activity.Download_MainActivity",
+             "activityPath": "com.example.demo.frame.download.Download_MainActivity",
              "name": "多线程断点续传下载",
              "desc": "类似于应用下载类多线程断点续传下载应用，文件，升级，等等，采用观察者模式"
            },
