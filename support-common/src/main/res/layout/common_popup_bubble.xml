@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.common.view.popup.TriangleView
+    <com.common.view.dialog.popu.TriangleView
         android:id="@+id/triangle_view"
         android:layout_width="50px"
         android:layout_height="32px"/>

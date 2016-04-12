@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fragmentnavigator_colorPrimary">#3F51B5</color>
+    <color name="fragmentnavigator_colorPrimaryDark">#303F9F</color>
+    <color name="fragmentnavigator_colorAccent">#FF4081</color>
+    <color name="fragmentnavigator_colorWindowBackground">#f0f0f0</color>
+    <color name="fragmentnavigator_colorTabNormal">#666666</color>
+    <color name="fragmentnavigator_colorTabSelected">@color/fragmentnavigator_colorPrimary</color>
+
+</resources>

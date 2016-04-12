@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.common.dialog.bean.DialogMenuItem;
+import com.common.view.dialog.bean.DialogMenuItem;
 
 import java.util.ArrayList;
 

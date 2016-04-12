@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.common.dialog.base.popup.BubblePopup;
+import com.common.view.dialog.base.popup.BubblePopup;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.utils.ToastUtils;
 import com.common.utils.ViewFindUtils;

@@ -11,7 +11,7 @@ import android.view.WindowManager;
 
 import com.common.R;
 import com.common.bean.paramsBean.NotifyParams;
-import com.common.dialog.widget.NormalScrollViewDialog;
+import com.common.view.dialog.widget.NormalScrollViewDialog;
 import com.common.download.DownloadManager;
 import com.common.download.entity.DownloadEntry;
 import com.common.download.notify.DataWatcher;

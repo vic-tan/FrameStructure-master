@@ -178,7 +178,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
      */
     private void notify_normal_singLine() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent intent = new Intent(mContext, Demo_GridViewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pIntent = PendingIntent.getActivity(mContext,
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -205,7 +205,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
      */
     private void notify_normal_moreLine() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent intent = new Intent(mContext, Demo_GridViewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pIntent = PendingIntent.getActivity(mContext,
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -231,7 +231,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
      */
     private void notify_mailbox() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent intent = new Intent(mContext, Demo_GridViewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pIntent = PendingIntent.getActivity(mContext,
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -264,7 +264,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
      */
     private void notify_bigPic() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent intent = new Intent(mContext, Demo_GridViewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pIntent = PendingIntent.getActivity(mContext,
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -293,14 +293,14 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
      */
     private void notify_customview() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent intent = new Intent(mContext, Demo_GridViewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pIntent = PendingIntent.getActivity(mContext,
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         String ticker = "您有一条新通知";
 
         //设置自定义布局中按钮的跳转界面
-        Intent btnIntent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent btnIntent = new Intent(mContext, Demo_GridViewActivity.class);
         btnIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         //如果是启动activity，那么就用PendingIntent.getActivity，如果是启动服务，那么是getService
         PendingIntent Pintent = PendingIntent.getActivity(mContext,
@@ -341,7 +341,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
 
         int righticon = R.mipmap.android_rightbutton;
         String righttext = "安装";
-        Intent rightIntent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent rightIntent = new Intent(mContext, Demo_GridViewActivity.class);
         rightIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent rightPendIntent = PendingIntent.getActivity(mContext,
                 requestCode, rightIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -372,7 +372,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
      */
     private void notify_progress() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent intent = new Intent(mContext, Demo_GridViewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent rightPendIntent = PendingIntent.getActivity(mContext,
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -405,7 +405,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
         String ticker = "您有一条新通知";
         String title = "范冰冰";
         String content = "文明，今晚在希尔顿酒店2016号房哈";
-        Intent intent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent intent = new Intent(mContext, Demo_GridViewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(mContext,
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -420,7 +420,7 @@ public class Demo_NotifyActivity extends AutoLayoutActivity {
 
         int righticon = R.mipmap.hl_call;
         String righttext = "拨打";
-        Intent rightIntent = new Intent(mContext, Demo_DialogActivity.class);
+        Intent rightIntent = new Intent(mContext, Demo_GridViewActivity.class);
         rightIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent rightPendingIntent = PendingIntent.getActivity(mContext,
                 requestCode, rightIntent, PendingIntent.FLAG_UPDATE_CURRENT);

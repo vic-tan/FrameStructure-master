@@ -5,13 +5,11 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.SparseBooleanArray;
 import android.view.View;
-import android.widget.AdapterView;
 
 import com.common.adapter.base.CommonAdapter;
 import com.common.adapter.base.ViewHolder;
-import com.common.dialog.listener.OnBtnClickL;
-import com.common.dialog.widget.MaterialDialog;
 import com.common.download.autoupdate.AutoUpdateService;
 import com.common.okhttp.json.BaseJson;
 import com.common.ui.base.activity.BaseActivity;
@@ -21,6 +19,8 @@ import com.common.utils.ResUtils;
 import com.common.utils.ScreenUtils;
 import com.common.utils.StartActUtils;
 import com.common.utils.ViewFindUtils;
+import com.common.view.dialog.listener.OnBtnClickL;
+import com.common.view.dialog.widget.MaterialDialog;
 import com.common.view.textview.expandable.ExpandableTextView;
 import com.example.demo.R;
 import com.example.demo.frame.bean.TestBean;
@@ -31,12 +31,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Demo_MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class Demo_MainActivity extends BaseActivity{
 
 
     public static final String TAG = "Demo_MainActivity";
     PullToRefreshListView listView;
     private List list;
+    private SparseBooleanArray mConvertTextCollapsedStatus = new SparseBooleanArray();
     private ServiceConnection conn = new ServiceConnection() {
 
         @Override
@@ -59,6 +60,7 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         bindService(new Intent(this, AutoUpdateService.class), conn, BIND_AUTO_CREATE);
     }
 
+
     void init() {
         listView = ViewFindUtils.find(this, R.id.lv_pull_to_refresh);
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
@@ -66,15 +68,28 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData().toString(), TestBean.class));
         listView.setAdapter(new CommonAdapter<TestBean>(listView.getRefreshableView(), this, list, R.layout.test_list_item) {
             @Override
-            public void convert(ViewHolder holder, TestBean bean) {
-                ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setText(bean.getDesc());
+            public void convert(final ViewHolder holder, TestBean bean) {
+
+                ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setmClickType(ExpandableTextView.ClickFooter);
+                ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setConvertText(mConvertTextCollapsedStatus, holder.getPosition(), bean.getDesc());
+                ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        StartActUtils.startForAbsolutePath(Demo_MainActivity.this, ((TestBean) list.get(holder.getPosition())).getActivityPath());
+                    }
+                });
                 holder.setText(R.id.tv_name, bean.getName());
+                holder.getView(R.id.tv_name).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        StartActUtils.startForAbsolutePath(Demo_MainActivity.this, ((TestBean) list.get(holder.getPosition())).getActivityPath());
+                    }
+                });
                 //Logger.d("-----" + holder.isScrolling() + "-----");
             }
         });
-        listView.setOnItemClickListener(this);
         Logger.i(TAG, ScreenUtils.getScreenWidth(this) + ":" + ScreenUtils.getScreenHeight(this));
-        Logger.i(TAG, ResUtils.getFileFromRaw(R.raw.test_list_main_json));
+
     }
 
 
@@ -131,8 +146,4 @@ public class Demo_MainActivity extends BaseActivity implements AdapterView.OnIte
         unbindService(conn);
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        StartActUtils.startForAbsolutePath(Demo_MainActivity.this, ((TestBean) list.get(position - 1)).getActivityPath());
-    }
 }

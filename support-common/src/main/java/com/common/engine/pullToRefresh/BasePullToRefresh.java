@@ -10,7 +10,7 @@ import com.common.engine.interf.IRefreshRequestCallBack;
 import com.common.okhttp.OkHttpUtils;
 import com.common.okhttp.callback.Callback;
 import com.common.okhttp.json.BaseJson;
-import com.common.prompt.LoadingLayout;
+import com.common.view.prompt.LoadingLayout;
 import com.common.utils.JsonUtils;
 import com.common.utils.ResUtils;
 import com.common.utils.StringUtils;

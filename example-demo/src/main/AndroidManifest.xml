@@ -6,7 +6,6 @@
         <activity android:name=".frame.activity.Demo_HttpTaskActivity" />
         <activity android:name=".frame.activity.Demo_ListViewActivity" />
         <activity android:name=".frame.activity.Demo_GridViewActivity" />
-        <activity android:name=".frame.activity.Demo_DialogActivity" />
         <activity android:name=".frame.activity.Demo_FlycoRoundViewActivity" />
         <activity android:name=".frame.activity.Demo_InjectionActivity" />
         <activity android:name=".frame.activity.Demo_AnnotationActivity" />
@@ -41,6 +40,8 @@
 
 
         <activity android:name=".frame.activity.Demo_NotifyActivity" />
+
+        <activity android:name=".frame.fragmentnavigator.FragmentnavigatorMainActivity" />
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@ import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
 
-import com.common.dialog.base.dialog.BaseDialog;
+import com.common.view.dialog.base.dialog.BaseDialog;
 import com.common.utils.CornerUtils;
 import com.common.utils.ViewFindUtils;
 import com.example.demo.R;

@@ -93,6 +93,14 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
     
     private int mClickType;
 
+    public int getmClickType() {
+        return mClickType;
+    }
+
+    public void setmClickType(int mClickType) {
+        this.mClickType = mClickType;
+    }
+
     public ExpandableTextView(Context context) {
         super(context);
     }

@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.common.dialog.base.popup.BaseBubblePopup;
+import com.common.view.dialog.base.popup.BaseBubblePopup;
 import com.common.utils.ToastUtils;
 import com.example.demo.R;
 

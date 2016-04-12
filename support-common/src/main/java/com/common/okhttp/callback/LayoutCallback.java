@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.common.bean.base.BaseBean;
 import com.common.engine.interf.IRefreshRequestCallBack;
-import com.common.prompt.LoadingLayout;
+import com.common.view.prompt.LoadingLayout;
 import com.common.utils.JsonUtils;
 
 import okhttp3.Call;

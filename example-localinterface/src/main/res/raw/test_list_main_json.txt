@@ -4,8 +4,13 @@
     "data": [
         {
             "activityPath": "com.example.demo.frame.activity.Demo_HttpTaskActivity",
-            "name": "几种公用网络请求方式示范",
-            "desc": "包括基本普通请求、加载框请求，布局提示请求，列表请求......"
+            "name": "网络提示请求方式",
+            "desc": "app开发中常见请求网络数据过中友好提示，包括基本普通请求、加载框网络请求携带数据跳转，进入详情布局提示请求，列表布局提示请求这几种类型的加载提示进行了封装，方便界面风格统一管理，及开发成本..."
+        },
+        {
+            "activityPath": "com.example.demo.frame.fragmentnavigator.FragmentnavigatorMainActivity",
+            "name": "FragmentNavigator 菜单选项卡",
+            "desc": "主要是封装了主流底部菜单选项卡样式.减少代码及风格统一"
         },
         {
             "activityPath": "com.example.demo.frame.activity.Demo_ListViewActivity",
@@ -16,11 +21,6 @@
             "activityPath": "com.example.demo.frame.activity.Demo_GridViewActivity",
             "name": "GridView上拉下拉刷新示范",
             "desc": "GridView列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单"
-        },
-        {
-            "activityPath": "com.example.demo.frame.activity.Demo_DialogActivity",
-            "name": "提示框",
-            "desc": "Dialog公用提示,分为常用一个按钮，和两个按钮，实现简单，自定义布局，适配所有android分辨率机型。"
         },
         {
             "activityPath": "com.example.demo.frame.activity.Demo_AnnotationActivity",

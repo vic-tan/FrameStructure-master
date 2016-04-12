@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.common.dialog.base.dialog.TopBaseDialog;
+import com.common.view.dialog.base.dialog.TopBaseDialog;
 import com.common.utils.ToastUtils;
 import com.common.utils.ViewFindUtils;
 import com.example.demo.R;
