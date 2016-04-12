@@ -1,37 +1,76 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.demo">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.demo">
 
-    <application android:allowBackup="true" android:label="@string/app_name">
-        <!-- 测试 -->
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name">
+
+        <!--————————————————————————主界面 —————————————————————————-->
         <activity android:name=".frame.MainActivity" />
+
+
+        <!--———————————————————————— http —————————————————————————-->
         <activity android:name=".frame.http.HttpTaskActivity" />
+
+
+        <!--———————————————————————— table ————————————————————————-->
+        <activity android:name=".frame.table.TableMianAtivity" />
         <activity android:name=".frame.table.ListViewActivity" />
         <activity android:name=".frame.table.GridViewActivity" />
+
+
+        <!--———————————————————————— roundview ————————————————————————-->
         <activity android:name=".frame.roundview.FlycoRoundViewActivity" />
+
+
+        <!--———————————————————————— selectorview ————————————————————————-->
+
         <activity android:name=".frame.selectorview.InjectionActivity" />
+
+
+        <!--———————————————————————— annotation ————————————————————————-->
         <activity android:name=".frame.annotation.AnnotationActivity" />
+
+
+        <!--———————————————————————— baseAdapter ————————————————————————-->
         <activity android:name=".frame.baseAdapter.BaseAdpterActivity" />
         <activity android:name=".frame.baseAdapter.SingleItemTypeActivity" />
         <activity android:name=".frame.baseAdapter.MutliItemTypeActivity" />
+
+
+        <!--———————————————————————— photo ————————————————————————-->
         <activity android:name=".frame.photo.BasePhotoActivity" />
         <activity android:name=".frame.photo.PagerPhotoActivity" />
         <activity android:name=".frame.photo.SimplePhotoActivity" />
         <activity android:name=".frame.photo.ScrollerPhotoActivity" />
         <activity
             android:name=".frame.photo.SpaceImageDetailActivity"
-            android:theme="@style/IMTheme.Transparent"/>
+            android:theme="@style/IMTheme.Transparent" />
         <activity
             android:name=".frame.photo.SmoothPagerPhotoViewActivity"
             android:theme="@style/IMTheme.Transparent" />
 
+
+        <!--———————————————————————— sliderimage ————————————————————————-->
         <activity android:name=".frame.sliderimage.ImageSliderActivity" />
+
+
+        <!--———————————————————————— pageslidingtabstrip ————————————————————————-->
         <activity android:name=".frame.pageslidingtabstrip.PagerSlidingTabStripActivity" />
+
+
+        <!--———————————————————————— greendao ————————————————————————-->
         <activity android:name=".frame.greendao.GreenDaoActivity" />
+
+
+        <!--———————————————————————— table ————————————————————————-->
         <activity android:name=".frame.download.Download_MainActivity" />
         <activity android:name=".frame.download.Download_SingleActivity" />
         <activity android:name=".frame.download.Download_ListActivity" />
         <activity android:name=".frame.download.Download_DetailsActivity" />
 
 
+        <!--———————————————————————— dailog ————————————————————————-->
         <activity android:name=".frame.dailog.ui.SimpleHomeActivity" />
         <activity android:name=".frame.dailog.ui.PopupHomeActivity" />
         <activity android:name=".frame.dailog.ui.DialogHomeActivity" />
@@ -39,8 +78,11 @@
         <activity android:name=".frame.dailog.ui.BubblePopupActivity" />
 
 
-        <activity android:name=".frame.notify.Demo_NotifyActivity" />
+        <!--———————————————————————— notify ————————————————————————-->
+        <activity android:name=".frame.notify.NotifyActivity" />
 
+
+        <!--———————————————————————— fragmentnavigator ————————————————————————-->
         <activity android:name=".frame.fragmentnavigator.FragmentnavigatorMainActivity" />
     </application>
 

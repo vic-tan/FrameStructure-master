@@ -13,14 +13,9 @@
             "desc": "主要是封装了主流底部菜单选项卡样式.减少代码及风格统一"
         },
         {
-            "activityPath": "com.example.demo.frame.table.ListViewActivity",
-            "name": "listView列表上拉下拉刷新示范",
-            "desc": "listView列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单。"
-        },
-        {
-            "activityPath": "com.example.demo.frame.table.GridViewActivity",
-            "name": "GridView上拉下拉刷新示范",
-            "desc": "GridView列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单"
+            "activityPath": "com.example.demo.frame.table.TableMianAtivity",
+            "name": "列表上拉下拉刷新示范",
+            "desc": "列表请求只需求实现IPullToRefreshCallBack接口中的几个文法即可自动填充数据。方法简单。"
         },
         {
             "activityPath": "com.example.demo.frame.annotation.AnnotationActivity",

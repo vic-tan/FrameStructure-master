@@ -13,7 +13,7 @@ public class AddJsonReaderByTest1 {
      */
     public static void addTestUrl(Map<String, JsonReaderBean> jsonReader) {
         jsonReader.put(UrlConstants.TEST_SUCCESS, new JsonReaderBean(R.raw.common_suceess, true));
-        jsonReader.put(UrlConstants.TEST_LIST, new JsonReaderBean(R.raw.test_list_json, true));
+        jsonReader.put(UrlConstants.TEST_LIST, new JsonReaderBean(R.raw.table_json, true));
     }
 
 

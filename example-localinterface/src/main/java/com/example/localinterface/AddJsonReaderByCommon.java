@@ -14,7 +14,7 @@ public class AddJsonReaderByCommon {
     public static void addTestUrl(Map<String, JsonReaderBean> jsonReader) {
         jsonReader.put(UrlConstants.SUCCESS, new JsonReaderBean(R.raw.common_suceess, true));
         jsonReader.put(UrlConstants.ERROR, new JsonReaderBean(R.raw.common_error, true));
-        jsonReader.put(UrlConstants.APP_VERSION_UPDATE, new JsonReaderBean(R.raw.app_version_udpate, true));
+        jsonReader.put(UrlConstants.APP_VERSION_UPDATE, new JsonReaderBean(R.raw.version_udpate, true));
     }
 
 }
