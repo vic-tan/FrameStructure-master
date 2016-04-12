@@ -1,4 +1,4 @@
-package com.example.demo.frame.activity;
+package com.example.demo.frame.photo;
 
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +13,7 @@ import com.common.view.imageview.SmoothImageView;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-public class Demo_SpaceImageDetailActivity extends BaseActivity implements PhotoViewAttacher.OnPhotoTapListener{
+public class SpaceImageDetailActivity extends BaseActivity implements PhotoViewAttacher.OnPhotoTapListener{
 
     SmoothImageView imageView = null;
     private PhotoParams mDatas;

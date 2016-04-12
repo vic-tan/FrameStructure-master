@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.demo.frame.activity;
+package com.example.demo.frame.pageslidingtabstrip;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -29,14 +29,14 @@ import android.widget.TextView;
 
 import com.example.demo.R;
 
-public class Demo_SuperAwesomeCardFragment extends Fragment {
+public class SuperAwesomeCardFragment extends Fragment {
 
 	private static final String ARG_POSITION = "position";
 
 	private int position;
 
-	public static Demo_SuperAwesomeCardFragment newInstance(int position) {
-		Demo_SuperAwesomeCardFragment f = new Demo_SuperAwesomeCardFragment();
+	public static SuperAwesomeCardFragment newInstance(int position) {
+		SuperAwesomeCardFragment f = new SuperAwesomeCardFragment();
 		Bundle b = new Bundle();
 		b.putInt(ARG_POSITION, position);
 		f.setArguments(b);

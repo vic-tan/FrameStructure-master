@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.demo.frame.activity;
+package com.example.demo.frame.pageslidingtabstrip;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -35,7 +35,7 @@ import android.view.View;
 import com.common.view.tab.slider.PagerSlidingTabStrip;
 import com.example.demo.R;
 
-public class Demo_PagerSlidingTabStripActivity extends FragmentActivity {
+public class PagerSlidingTabStripActivity extends FragmentActivity {
 
 	private final Handler handler = new Handler();
 
@@ -175,7 +175,7 @@ public class Demo_PagerSlidingTabStripActivity extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			return Demo_SuperAwesomeCardFragment.newInstance(position);
+			return SuperAwesomeCardFragment.newInstance(position);
 		}
 
 	}

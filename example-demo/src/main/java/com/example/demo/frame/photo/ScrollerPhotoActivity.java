@@ -11,8 +11,8 @@ import com.common.adapter.base.ViewHolder;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.ui.base.main.BaseApplication;
 import com.common.utils.ImageLoaderUtils;
-import com.common.utils.Logger;
 import com.example.demo.R;
+import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,15 +57,11 @@ public class ScrollerPhotoActivity extends BaseActivity {
 
 
     void init() {
-        lv.setAdapter(new CommonAdapter<String>(lv, this, list, R.layout.test_scroller_list_item) {
+        lv.setOnScrollListener(new PauseOnScrollListener(BaseApplication.imageLoader, true, true));
+        lv.setAdapter(new CommonAdapter<String>(this, list, R.layout.test_scroller_list_item) {
             @Override
             public void convert(ViewHolder holder, String str) {
-                Logger.d("-----" + holder.isScrolling() + "-----");
-                if(holder.isScrolling()){
-
-                }else {
                     BaseApplication.imageLoader.displayImage(str, (ImageView) holder.getView(R.id.tv_img), ImageLoaderUtils.displayConfigDisplay(R.mipmap.ic_launcher));
-                }
             }
         });
     }

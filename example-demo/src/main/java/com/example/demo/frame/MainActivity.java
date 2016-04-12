@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity{
         listView.setMode(PullToRefreshBase.Mode.DISABLED);
         list = new ArrayList();
         list.addAll(JsonUtils.parseToObjectList(JsonUtils.parseToObjectBean(ResUtils.getFileFromRaw(R.raw.test_list_main_json), BaseJson.class).getData().toString(), MainBean.class));
-        listView.setAdapter(new CommonAdapter<MainBean>(listView.getRefreshableView(), this, list, R.layout.test_list_item) {
+        listView.setAdapter(new CommonAdapter<MainBean>(this, list, R.layout.test_list_item) {
             @Override
             public void convert(final ViewHolder holder, MainBean bean) {
 

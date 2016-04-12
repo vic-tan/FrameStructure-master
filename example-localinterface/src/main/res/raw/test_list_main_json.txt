@@ -28,12 +28,12 @@
             "desc": "注释 id view，减少id的书写..大大提高效率"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.Demo_FlycoRoundViewActivity",
+            "activityPath": "com.example.demo.frame.roundview.FlycoRoundViewActivity",
             "name": "圆角布局",
             "desc": "一个扩展原生控件支持圆角矩形框背景的库,可以减少相关shape资源文件使用.支持TextView,及相对，线性，帧布局等，适配所有android分辨率机型"
         },
         {
-            "activityPath": "com.example.demo.frame.activity.Demo_InjectionActivity",
+            "activityPath": "com.example.demo.frame.selector.InjectionActivity",
             "name": "view selector选择器",
             "desc": "以后在写不用在写selector.xml资源文件布局,只需要简单的设置属性即可，适配所有android分辨率机型"
         },
@@ -54,12 +54,12 @@
          }
          ,
           {
-            "activityPath": "com.example.demo.frame.activity.Demo_PagerSlidingTabStripActivity",
+            "activityPath": "com.example.demo.frame.pageslidingtabstrip.PagerSlidingTabStripActivity",
             "name": " pagerSlidingTabStripActivity 多个tab 页滑动切换集合",
             "desc": "pagerSlidingTabStripActivity 多个tab 页滑动,自定义颜色及操作简单"
           },
          {
-           "activityPath": "com.example.demo.frame.activity.Demo_NoteActivity",
+           "activityPath": "com.example.demo.frame.greendao.GreenDaoActivity",
            "name": "GreenDao ",
            "desc": "sqlite 数据库ORM框架，内存占用少，速度快.."
          },
@@ -74,7 +74,7 @@
             "desc": "分为常用一个按钮，和两个按钮，底部上弹，实现简单，自定义布局，适配所有android分辨率机型。"
           },
           {
-            "activityPath": "com.example.demo.frame.activity.Demo_NotifyActivity",
+            "activityPath": "com.example.demo.frame.notify.NotifyActivity",
             "name": "公用的通知",
             "desc": "项目中各种显示通知的样式集合"
           }

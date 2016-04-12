@@ -6,8 +6,8 @@
         <activity android:name=".frame.http.HttpTaskActivity" />
         <activity android:name=".frame.table.ListViewActivity" />
         <activity android:name=".frame.table.GridViewActivity" />
-        <activity android:name=".frame.activity.Demo_FlycoRoundViewActivity" />
-        <activity android:name=".frame.activity.Demo_InjectionActivity" />
+        <activity android:name=".frame.roundview.FlycoRoundViewActivity" />
+        <activity android:name=".frame.selectorview.InjectionActivity" />
         <activity android:name=".frame.annotation.AnnotationActivity" />
         <activity android:name=".frame.baseAdapter.BaseAdpterActivity" />
         <activity android:name=".frame.baseAdapter.SingleItemTypeActivity" />
@@ -17,15 +17,15 @@
         <activity android:name=".frame.photo.SimplePhotoActivity" />
         <activity android:name=".frame.photo.ScrollerPhotoActivity" />
         <activity
-            android:name=".frame.activity.Demo_SpaceImageDetailActivity"
+            android:name=".frame.photo.SpaceImageDetailActivity"
             android:theme="@style/IMTheme.Transparent"/>
         <activity
             android:name=".frame.photo.SmoothPagerPhotoViewActivity"
             android:theme="@style/IMTheme.Transparent" />
 
         <activity android:name=".frame.sliderimage.ImageSliderActivity" />
-        <activity android:name=".frame.activity.Demo_PagerSlidingTabStripActivity" />
-        <activity android:name=".frame.activity.Demo_NoteActivity" />
+        <activity android:name=".frame.pageslidingtabstrip.PagerSlidingTabStripActivity" />
+        <activity android:name=".frame.greendao.GreenDaoActivity" />
         <activity android:name=".frame.download.Download_MainActivity" />
         <activity android:name=".frame.download.Download_SingleActivity" />
         <activity android:name=".frame.download.Download_ListActivity" />
@@ -39,7 +39,7 @@
         <activity android:name=".frame.dailog.ui.BubblePopupActivity" />
 
 
-        <activity android:name=".frame.activity.Demo_NotifyActivity" />
+        <activity android:name=".frame.notify.Demo_NotifyActivity" />
 
         <activity android:name=".frame.fragmentnavigator.FragmentnavigatorMainActivity" />
     </application>

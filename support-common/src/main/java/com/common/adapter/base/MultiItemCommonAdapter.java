@@ -3,7 +3,6 @@ package com.common.adapter.base;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 
 import java.util.List;
 /**
@@ -19,12 +18,6 @@ public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T> {
     public MultiItemCommonAdapter(Context context, List<T> datas,
                                   MultiItemTypeSupport<T> multiItemTypeSupport) {
         super(context, datas, -1);
-        mMultiItemTypeSupport = multiItemTypeSupport;
-    }
-
-    public MultiItemCommonAdapter(AbsListView view,Context context, List<T> datas,
-                                  MultiItemTypeSupport<T> multiItemTypeSupport) {
-        super(view,context, datas, -1);
         mMultiItemTypeSupport = multiItemTypeSupport;
     }
 
@@ -51,7 +44,7 @@ public abstract class MultiItemCommonAdapter<T> extends CommonAdapter<T> {
         int layoutId = mMultiItemTypeSupport.getLayoutId(position,
                 getItem(position));
         ViewHolder viewHolder = ViewHolder.get(mContext, convertView, parent,
-                layoutId, position,isScrolling);
+                layoutId, position);
                 convert(viewHolder, getItem(position));
         return viewHolder.getConvertView();
     }

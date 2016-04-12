@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.demo.frame.activity;
+package com.example.demo.frame.notify;
 
 
 import android.app.Notification;
@@ -42,7 +42,7 @@ import java.util.ArrayList;
 import uk.co.senab.photoview.PhotoView;
 
 
-public class Demo_NotifyActivity extends AutoLayoutActivity {
+public class NotifyActivity extends AutoLayoutActivity {
 
 
     private static final int FLAG = Notification.FLAG_INSISTENT;

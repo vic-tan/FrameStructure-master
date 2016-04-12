@@ -12,6 +12,7 @@ import com.common.view.dialog.base.dialog.BaseDialog;
 import com.common.utils.CornerUtils;
 import com.common.utils.ResUtils;
 import com.common.utils.ViewFindUtils;
+import com.constants.fixed.GlobalConstants;
 import com.zhy.autolayout.utils.AutoUtils;
 
 
@@ -30,10 +31,11 @@ public abstract class NormalScrollViewDialog extends BaseDialog<NormalScrollView
 
     @Override
     public View onCreateView() {
-        widthScale(0.85f);
+        widthScale(GlobalConstants.DIALOG_NORMAL_DIALOG_SCALE);
         View inflate = View.inflate(mContext, R.layout.common_dialog_normal_scroll_view, null);
         AutoUtils.autoSize(inflate);
         mTvContent = ViewFindUtils.find(inflate,R.id.tv_content);
+        mTvContent.setLineSpacing(0, GlobalConstants.DIALOG_WONDWON_CONTENT_LINE_SPACING);
         mTvOk = ViewFindUtils.find(inflate, R.id.tv_ok);
         mTvExit = ViewFindUtils.find(inflate, R.id.tv_exit);
         setSelector(mTvOk);

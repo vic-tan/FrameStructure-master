@@ -98,7 +98,7 @@ public class SimplePhotoActivity extends BaseActivity {
                 public void onClick(View v) {
                     //Intent intent = new Intent(SimplePhotoActivity.this, BaseSmoothPhotoViewActivity.class);
                     Intent intent = new Intent(SimplePhotoActivity.this, SmoothPagerPhotoViewActivity.class);
-                   // Intent intent = new Intent(SimplePhotoActivity.this, Demo_SpaceImageDetailActivity.class);
+                   // Intent intent = new Intent(SimplePhotoActivity.this, SpaceImageDetailActivity.class);
                     int[] location = new int[2];
                     imageView.getLocationOnScreen(location);
                     bean.setWidth(imageView.getWidth());

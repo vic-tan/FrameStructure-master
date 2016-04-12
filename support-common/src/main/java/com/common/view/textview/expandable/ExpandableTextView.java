@@ -32,10 +32,10 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.common.R;
+import com.zhy.autolayout.AutoLinearLayout;
 
 
 /**
@@ -44,7 +44,7 @@ import com.common.R;
  * git hub原始地址
  * https://github.com/Manabu-GT/ExpandableTextView
  */
-public class ExpandableTextView extends LinearLayout implements View.OnClickListener {
+public class ExpandableTextView extends AutoLinearLayout implements View.OnClickListener {
 
 	private static final String TAG = "ExpandableTextView";
 

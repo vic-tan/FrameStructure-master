@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.demo.frame.activity;
+package com.example.demo.frame.greendao;
 
 import android.app.ListActivity;
 import android.database.Cursor;
@@ -41,7 +41,7 @@ import java.util.Date;
 
 
 
-public class Demo_NoteActivity extends ListActivity {
+public class GreenDaoActivity extends ListActivity {
 
 
     private EditText editText;

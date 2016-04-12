@@ -66,7 +66,7 @@ public class GlobalConstants {
     /**
      * dialog wondows 内容行间距大小
      */
-    public static final float DIALOG_WONDWON_CONTENT_LINE_SPACING = 1.5f;
+    public static final float DIALOG_WONDWON_CONTENT_LINE_SPACING = 1.3f;
     //endregion
 
 }

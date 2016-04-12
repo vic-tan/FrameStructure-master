@@ -1,4 +1,4 @@
-package com.example.demo.frame.activity;
+package com.example.demo.frame.roundview;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,7 +12,7 @@ import com.common.view.roundview.RoundTextView;
 import com.common.view.roundview.RoundViewDelegate;
 
 
-public class Demo_FlycoRoundViewActivity extends BaseActivity {
+public class FlycoRoundViewActivity extends BaseActivity {
 
     private Context context = this;
 

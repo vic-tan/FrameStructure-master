@@ -1,4 +1,4 @@
-package com.example.demo.frame.activity;
+package com.example.demo.frame.selectorview;
 
 import android.os.Bundle;
 import android.widget.Checkable;
@@ -7,7 +7,7 @@ import com.example.demo.R;
 import com.common.ui.base.activity.BaseActivity;
 
 
-public class Demo_InjectionActivity extends BaseActivity {
+public class InjectionActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -129,6 +129,7 @@ public class AutoUpdateService extends Service {
             params.setContent("正在下载中");
             params.setVibrate(false);
             params.setLights(false);
+            params.setSound(false);
         }
         notify.notifyDownloadProgress(params, bean);
 
@@ -147,8 +148,9 @@ public class AutoUpdateService extends Service {
         params.setTicker(ticker);
         params.setTitle(ResUtils.getStr(R.string.auto_update_download_app));
         params.setContent("正在下载中");
-        params.setVibrate(false);
-        params.setLights(false);
+        params.setVibrate(true);
+        params.setLights(true);
+        params.setSound(true);
         notify.notifyDownloadProgress(params, bean);
     }
 

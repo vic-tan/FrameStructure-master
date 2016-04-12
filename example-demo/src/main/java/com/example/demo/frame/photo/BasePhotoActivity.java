@@ -13,7 +13,6 @@ import com.common.utils.ImageLoaderUtils;
 import com.common.utils.StartActUtils;
 import com.common.view.imageview.SquareCenterImageView;
 import com.example.demo.R;
-import com.example.demo.frame.activity.Demo_SpaceImageDetailActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -77,7 +76,7 @@ public class BasePhotoActivity extends BaseActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.img_test) {
-            Intent intent = new Intent(BasePhotoActivity.this, Demo_SpaceImageDetailActivity.class);
+            Intent intent = new Intent(BasePhotoActivity.this, SpaceImageDetailActivity.class);
             int[] location = new int[2];
             imgTest.getLocationOnScreen(location);
             bean.setWidth(imgTest.getWidth());

@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10px"
+        android:layout_marginBottom="20px"
         android:paddingLeft="35px"
         android:paddingRight="25px"
         android:paddingTop="35px"
@@ -27,18 +27,17 @@
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="15px"
+            android:paddingBottom="10px"
             android:paddingLeft="35px"
             android:paddingRight="35px"
-            android:paddingTop="35px"
             android:textColor="@color/common_prompt_dialog_content_color"
-            android:textSize="@dimen/common_dialog_content_size" />
+            android:textSize="@dimen/common_dialog_btn_text_size" />
     </com.zhy.autolayout.AutoScrollView>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="15px"
         android:layout_marginBottom="20px"
         android:layout_marginRight="15px"
         android:gravity="center_vertical|right">
