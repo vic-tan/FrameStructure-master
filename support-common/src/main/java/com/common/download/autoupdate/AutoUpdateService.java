@@ -11,20 +11,24 @@ import android.view.WindowManager;
 
 import com.common.R;
 import com.common.bean.paramsBean.NotifyParams;
-import com.common.view.dialog.widget.NormalScrollViewDialog;
 import com.common.download.DownloadManager;
 import com.common.download.entity.DownloadEntry;
+import com.common.download.entity.DownloadEntryDao;
 import com.common.download.notify.DataWatcher;
 import com.common.okhttp.OkHttpUtils;
 import com.common.okhttp.callback.StringCallback;
+import com.common.ui.base.main.BaseApplication;
 import com.common.utils.AppUtils;
 import com.common.utils.JsonUtils;
 import com.common.utils.NotifyUtils;
 import com.common.utils.PackageUtils;
 import com.common.utils.ResUtils;
+import com.common.view.dialog.widget.NormalScrollViewDialog;
 import com.constants.fixed.GlobalConstants;
 import com.constants.fixed.UrlConstants;
 import com.constants.level.DownloadStatusLevel;
+
+import de.greenrobot.dao.query.Query;
 
 /**
  * app 版本升级
@@ -34,8 +38,9 @@ public class AutoUpdateService extends Service {
     PendingIntent rightPendIntent;
     NotifyUtils notify;
     NotifyParams params;
-    //ProgressDialog pBar;
+    private HomeWatcher mHomeWatcher;//home 监听
     private MyBinder myBinder = new MyBinder();
+    private NormalScrollViewDialog dialog;
     private DownloadEntry entry;
     private AppAutoUpdateBean appAutoUpdateBean;
     private DataWatcher dataWatcher = new DataWatcher() {
@@ -61,17 +66,29 @@ public class AutoUpdateService extends Service {
      * 检查是否有升级
      */
     public void checkAppUpdate() {
-        //TODO 删除
-        //BaseApplication.daoMaster.newSession().getDownloadEntryDao().deleteByKey(Builder);
+
+
         OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).build().execute(new StringCallback() {
             @Override
             public void onResponse(String response) {
                 appAutoUpdateBean = JsonUtils.parseToObjectBean(response, AppAutoUpdateBean.class);
                 if (Integer.parseInt(appAutoUpdateBean.getVersion_code()) > AppUtils.getVersionCode(AutoUpdateService.this)) {
+                    deleteDownloadHistory();
                     checkAppUpdateBuilder();
+                    homeWatcher();
                 }
             }
         });
+    }
+
+    /**
+     * 删除上次升级下载在数据库的记录
+     */
+    private void deleteDownloadHistory(){
+        // Query 类代表了一个可以被重复执行的查询
+        Query query = BaseApplication.daoMaster.newSession().getDownloadEntryDao().queryBuilder()
+                .where(DownloadEntryDao.Properties.Url.eq(appAutoUpdateBean.getUrl())).build();
+        BaseApplication.daoMaster.newSession().getDownloadEntryDao().deleteInTx(query.list());
     }
 
     /**
@@ -89,7 +106,7 @@ public class AutoUpdateService extends Service {
      * 升级提示框
      */
     private void checkAppUpdateBuilder() {
-        final NormalScrollViewDialog dialog = new NormalScrollViewDialog(this) {
+        dialog = new NormalScrollViewDialog(this) {
             @Override
             public void setUiBeforShow() {
                 getmTvOk().setOnClickListener(new View.OnClickListener() {
@@ -100,7 +117,6 @@ public class AutoUpdateService extends Service {
                         dismiss();
                     }
                 });
-
                 getmTvExit().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -113,9 +129,33 @@ public class AutoUpdateService extends Service {
         dialog.show();
         dialog.getmTvContent().setText(Html.fromHtml(appAutoUpdateBean.getDesc()).toString());
         dialog.setCanceledOnTouchOutside(false);
+
     }
 
-    /*
+
+
+    /**
+     * home 键监听 用来显示隐藏升级dialog
+     */
+    private void homeWatcher() {
+        mHomeWatcher = new HomeWatcher(this);
+        mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
+            @Override
+            public void onHomePressed() {
+                if (dialog.isShowing()) {
+                    dialog.dismiss();
+                    mHomeWatcher.stopWatch();// 要停止监听，不然会报错的。
+                }
+            }
+            @Override
+            public void onHomeLongPressed() {
+
+            }
+        });
+        mHomeWatcher.startWatch();
+    }
+
+    /**
      *  通知栏列表item样式
      * @param bean
      */
@@ -160,6 +200,8 @@ public class AutoUpdateService extends Service {
             return AutoUpdateService.this;
         }
     }
+
+
 
 
 }

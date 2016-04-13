@@ -10,7 +10,6 @@ import com.common.okhttp.callback.Callback;
 import com.common.okhttp.callback.LayoutCallback;
 import com.common.okhttp.callback.LoadingCallback;
 import com.common.ui.base.activity.BaseActivity;
-import com.common.utils.DateFormatUtils;
 import com.common.utils.InflaterUtils;
 import com.common.utils.Logger;
 import com.common.utils.StartActUtils;
@@ -41,12 +40,6 @@ public class HttpTaskActivity extends BaseActivity implements View.OnClickListen
         view = InflaterUtils.inflater(this, R.layout.test_activity_http_task);
         setContentView(view);
         setOnClickListener();
-        String d = "2016-04-11 23:44:11";
-        Logger.e(DateFormatUtils.convertStrFormat(d));
-        Logger.e(DateFormatUtils.convertStrFormat(d, DateFormatUtils.DAYS));
-        Logger.e(DateFormatUtils.convertStrFormat(d, DateFormatUtils.HOURS));
-        Logger.e(DateFormatUtils.convertStrFormat(d, DateFormatUtils.MINUTES));
-        Logger.e(DateFormatUtils.convertStrFormat(d, DateFormatUtils.SECONDS));
     }
 
     @Override

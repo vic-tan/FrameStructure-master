@@ -37,10 +37,12 @@ public class MainActivity extends BaseActivity{
     PullToRefreshListView listView;
     private List list;
     private SparseBooleanArray mConvertTextCollapsedStatus = new SparseBooleanArray();
+
     private ServiceConnection conn = new ServiceConnection() {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
+
         }
 
         @Override
