@@ -12,6 +12,7 @@ import com.common.utils.ImageLoaderUtils;
 import com.constants.fixed.GlobalConstants;
 import com.constants.fixed.OnOffConstants;
 import com.constants.level.OnOffLevel;
+import com.fans.loader.FanImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.concurrent.TimeUnit;
@@ -47,10 +48,10 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         appContext = this;
+        initCreateFolders();//创建文件夹
         setCrashHandler();//打开全局未捕获异常
         initImageLoader();//初始化图片加载缓存 ImageLoader基本配置
         inittDatabase();//greenDAO创建数据表
-        initCreateFolders();//创建文件夹
         initOKhttp();//初始化Okhttp
     }
 
@@ -77,6 +78,7 @@ public class BaseApplication extends Application {
     private void initImageLoader() {
         imageLoader = ImageLoader.getInstance();
         imageLoader.init(ImageLoaderUtils.initConfigImageLoader(getApplicationContext()));
+        FanImageLoader.init(appContext, GlobalConstants.IMAGES_CACHE_PATH);
     }
 
     /**

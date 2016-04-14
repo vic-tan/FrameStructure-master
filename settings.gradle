@@ -1,2 +1,29 @@
-include ':example-localinterface', ':FrameStructure',':library-greenDAO', ':library-imageslider', ':support-common', ':support-constants', ':example-demo', ':library-greenDAO', ":library-pullToRefresh", ":library-actionbarsherlock", ":library-autolayout"
-include 'example-DaoGenerator', 'example-DaoExampleGenerator'
+/*
+ * 主项目
+ */
+include ':FrameStructure'
+
+/*
+ * 项目支持
+ */
+include ':support-common'//常用库
+include ':support-constants'//常量库
+
+
+/*
+ * 项目第三方库
+ */
+include ':library-greenDAO'//orm 关系型数据库
+include ':library-imageslider'//轮播广告库
+include ':library-image-loader'//基于universal-image-loader 更深层封装
+include ':library-pullToRefresh'//上下拉刷新
+include ':library-actionbarsherlock'//头部状态栏
+include ':library-autolayout'//适配机型库
+
+/*
+ * 支持工具，可以删除
+ */
+include 'example-DaoGenerator'//orm 关系型实体生成数据库
+include 'example-DaoExampleGenerator'//orm 关系型实体生成数据库
+include ':example-demo'//示范demo
+include ':example-localinterface'//请求接口本地自定义返回json库（可试先在自己本地返回要求json调试）

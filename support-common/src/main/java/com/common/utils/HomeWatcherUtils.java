@@ -1,4 +1,4 @@
-package com.common.download.autoupdate;
+package com.common.utils;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,15 +10,15 @@ import android.util.Log;
  * Home键监听封装
  * Created by tanlifei on 16/4/13.
  */
-public class HomeWatcher {
+public class HomeWatcherUtils {
 
-    static final String TAG = "HomeWatcher";
+    static final String TAG = "HomeWatcherUtils";
     private Context mContext;
     private IntentFilter mFilter;
     private OnHomePressedListener mListener;
     private InnerRecevier mRecevier;
 
-    public HomeWatcher(Context context) {
+    public HomeWatcherUtils(Context context) {
         mContext = context;
         mFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
     }

@@ -42,7 +42,6 @@ import uk.co.senab.photoview.PhotoViewAttacher;
  * @Description: 用一句话描述该文件做什么
  * @date 2015年2月28日 下午3:42:37
  */
-//TODO 1、返回回到原点。2、返回时有一个闪图的出现。3、如果有GridView 有边距时返回不能跟原图边上对齐回去。4、活用一行显示多少张图片，边距。 5、返回时当前界面没有时处理
 public abstract class BasePhotoViewActivity extends BaseActivity {
 
     private View baseView;
@@ -351,9 +350,7 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
                 isAima = true;
             }
 
-            // holder.artwork.setLayoutParams(new AutoFrameLayout.LayoutParams(-1, -1));
             holder.artwork.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            //holder.thumbnail.setLayoutParams(new AutoFrameLayout.LayoutParams(-1, -1));
             holder.thumbnail.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
         }
@@ -505,7 +502,7 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
                     index.setVisibility(View.GONE);
                     smoothImagerFinish((SmoothImageView) view);
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 StartActUtils.finish(BasePhotoViewActivity.this);
             }

@@ -232,12 +232,12 @@
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__textfield_search_default_holo_light.9.png"
     },
     {
-        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__ic_menu_moreoverflow_normal_holo_light.png",
-        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__ic_menu_moreoverflow_normal_holo_light.png"
-    },
-    {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__cab_background_bottom_holo_light.9.png",
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__cab_background_bottom_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__ic_menu_moreoverflow_normal_holo_light.png",
+        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__ic_menu_moreoverflow_normal_holo_light.png"
     },
     {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__textfield_search_right_selected_holo_light.9.png",
@@ -320,12 +320,12 @@
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__spinner_ab_default_holo_light.9.png",
-        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__spinner_ab_default_holo_light.9.png"
-    },
-    {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__ab_transparent_dark_holo.9.png",
         "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__ab_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__spinner_ab_default_holo_light.9.png",
+        "source": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/src/main/res/drawable-mdpi/abs__spinner_ab_default_holo_light.9.png"
     },
     {
         "merged": "/Users/tanlifei/Documents/WorkSpace/Project/Studio/Self/FrameStructure-master/library-actionbarsherlock/build/intermediates/res/merged/release/drawable-mdpi-v4/abs__menu_dropdown_panel_holo_dark.9.png",

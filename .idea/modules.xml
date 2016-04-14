@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/library-actionbarsherlock/library-actionbarsherlock.iml" filepath="$PROJECT_DIR$/library-actionbarsherlock/library-actionbarsherlock.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-autolayout/library-autolayout.iml" filepath="$PROJECT_DIR$/library-autolayout/library-autolayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-greenDAO/library-greenDAO.iml" filepath="$PROJECT_DIR$/library-greenDAO/library-greenDAO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-image-loader/library-image-loader.iml" filepath="$PROJECT_DIR$/library-image-loader/library-image-loader.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-imageslider/library-imageslider.iml" filepath="$PROJECT_DIR$/library-imageslider/library-imageslider.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-pullToRefresh/library-pullToRefresh.iml" filepath="$PROJECT_DIR$/library-pullToRefresh/library-pullToRefresh.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-common/support-common.iml" filepath="$PROJECT_DIR$/support-common/support-common.iml" />

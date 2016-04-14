@@ -19,6 +19,7 @@ import com.common.okhttp.OkHttpUtils;
 import com.common.okhttp.callback.StringCallback;
 import com.common.ui.base.main.BaseApplication;
 import com.common.utils.AppUtils;
+import com.common.utils.HomeWatcherUtils;
 import com.common.utils.JsonUtils;
 import com.common.utils.NotifyUtils;
 import com.common.utils.PackageUtils;
@@ -38,7 +39,7 @@ public class AutoUpdateService extends Service {
     PendingIntent rightPendIntent;
     NotifyUtils notify;
     NotifyParams params;
-    private HomeWatcher mHomeWatcher;//home 监听
+    private HomeWatcherUtils mHomeWatcher;//home 监听
     private MyBinder myBinder = new MyBinder();
     private NormalScrollViewDialog dialog;
     private DownloadEntry entry;
@@ -138,8 +139,8 @@ public class AutoUpdateService extends Service {
      * home 键监听 用来显示隐藏升级dialog
      */
     private void homeWatcher() {
-        mHomeWatcher = new HomeWatcher(this);
-        mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
+        mHomeWatcher = new HomeWatcherUtils(this);
+        mHomeWatcher.setOnHomePressedListener(new HomeWatcherUtils.OnHomePressedListener() {
             @Override
             public void onHomePressed() {
                 if (dialog.isShowing()) {

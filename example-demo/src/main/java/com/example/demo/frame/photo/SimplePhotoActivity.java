@@ -16,6 +16,7 @@ import com.common.utils.ImageLoaderUtils;
 import com.common.utils.ViewFindUtils;
 import com.common.view.imageview.SquareCenterImageView;
 import com.example.demo.R;
+import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class SimplePhotoActivity extends BaseActivity {
 
     void init() {
         mGridView.setAdapter(new ImagesInnerGridViewAdapter(list));
+        mGridView.setOnScrollListener(new PauseOnScrollListener(BaseApplication.imageLoader, true, true));
     }
 
     @Override

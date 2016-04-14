@@ -7,9 +7,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <!-- activity 栈顶权限 -->
-    <uses-permission android:name="android.permission.GET_TASKS" />
-
     <application
         android:allowBackup="true"
         android:label="@string/app_name">
