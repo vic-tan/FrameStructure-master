@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':library-autolayout')
     compile project(':library-pullToRefresh')
     compile project(':library-greenDAO')
@@ -32,11 +32,11 @@ dependencies {
     compile project(':example-localinterface')
     compile 'org.apache.httpcomponents:httpcore:4.4.2'
     compile 'com.android.support:support-v4:22.1.1'
-    compile files('libs/photoview-2.2.4.jar')
     compile files('libs/android-async-http-1.4.8.jar')
     compile files('libs/fastjson-1.1.40.jar')
     compile files('libs/androidannotations-api-3.3.2.jar')
     compile files('libs/nineoldandroids-2.4.0.jar')
     compile files('libs/okhttp-3.2.0.jar')
     compile files('libs/okio-1.6.0.jar')
+    compile files('libs/photoview-1.2.2.jar')
 }
