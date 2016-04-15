@@ -2,17 +2,15 @@ package com.example.demo.frame.photo;
 
 import android.os.Bundle;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.common.adapter.base.CommonAdapter;
 import com.common.adapter.base.ViewHolder;
 import com.common.ui.base.activity.BaseActivity;
-import com.common.ui.base.main.BaseApplication;
-import com.common.utils.ImageLoaderUtils;
 import com.example.demo.R;
-import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
+import com.fans.loader.FanImageLoader;
+import com.fans.loader.core.listener.AbsListPauseOnScrollListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,11 +55,143 @@ public class ScrollerPhotoActivity extends BaseActivity {
 
 
     void init() {
-        lv.setOnScrollListener(new PauseOnScrollListener(BaseApplication.imageLoader, true, true));
+        lv.setOnScrollListener(new AbsListPauseOnScrollListener(true, true));
         lv.setAdapter(new CommonAdapter<String>(this, list, R.layout.test_scroller_list_item) {
             @Override
             public void convert(ViewHolder holder, String str) {
-                    BaseApplication.imageLoader.displayImage(str, (ImageView) holder.getView(R.id.tv_img), ImageLoaderUtils.displayConfigDisplay(R.mipmap.ic_launcher));
+                if (0 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_DEFAULT)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .into(holder.getView(R.id.tv_img));
+                } else if (1 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_FADE_IN)
+                            .setFadeInTime(1000)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (2 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setRoundRadius(36)
+                            .setDisplayType(FanImageLoader.DISPLAY_ROUND)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (3 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_ROUND_FADE_IN)
+                            .setRoundRadius(36)
+                            .setFadeInTime(1000)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (4 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_ROUND_VIGNETTE)
+                            .setRoundRadius(36)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (5 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_ROUND_VIGNETTE_FADE_IN)
+                            .setRoundRadius(36)
+                            .setFadeInTime(1000)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (6 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_CIRCLE)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (7 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_CIRCLE_FADE_IN)
+                            .setFadeInTime(1000)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (8 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_CIRCLE_RING)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .setStrokeWidth(5.f)
+                            .setRingColor(0xff00ff00)
+                            .setRingPadding(5.f)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (9 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_BLUR)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .setBlurDepth(10)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (10 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_BLUR_FADE_IN)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .setBlurDepth(10)
+                            .setFadeInTime(1000)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (11 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_ROUND_BLUR)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .setRoundRadius(6)
+                            .setBlurDepth(10)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (12 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_ROUND_BLUR_VIGNETTE)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .setRoundRadius(36)
+                            .setBlurDepth(10)
+                            .into(holder.getView(R.id.tv_img));
+
+                } else if (13 == holder.getPosition()) {
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_CIRCLE_BLUR)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .setBlurDepth(10)
+                            .into(holder.getView(R.id.tv_img));
+
+                }else{
+                    FanImageLoader.create(str)
+                            .setShowSize(holder.getView(R.id.tv_img).getWidth(), holder.getView(R.id.tv_img).getWidth())
+                            .setDisplayType(FanImageLoader.DISPLAY_CIRCLE_BLUR)
+                            .setDefaultRes(R.mipmap.ic_launcher)
+                            .setFailRes(R.mipmap.ic_launcher)
+                            .setEmptyRes(R.mipmap.ic_launcher)
+                            .setBlurDepth(10)
+                            .into(holder.getView(R.id.tv_img));
+                }
             }
         });
     }

@@ -13,8 +13,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.common.R;
-import com.common.ui.base.main.BaseApplication;
-import com.common.utils.ImageLoaderUtils;
 import com.common.utils.InflaterUtils;
 import com.common.utils.ListUtils;
 import com.common.utils.NetUtils;
@@ -25,9 +23,9 @@ import com.common.utils.ToastUtils;
 import com.common.utils.ViewFindUtils;
 import com.common.view.imageview.SmoothImageView;
 import com.common.view.viewpager.HackyViewPager;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.fans.loader.FanImageLoader;
+import com.fans.loader.internal.core.assist.FailReason;
+import com.fans.loader.internal.core.listener.ImageLoadingListener;
 import com.zhy.autolayout.AutoFrameLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -132,7 +130,7 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
      * 加载缩略图业务
      */
     protected void displayThumbnail(final Holder holder, final String thumbnailUrl, final String artworkUrl) {
-        BaseApplication.imageLoader.displayImage(thumbnailUrl, holder.thumbnail, ImageLoaderUtils.setCommonBuilder().displayer(new SimpleBitmapDisplayer()).build(), new ImageLoadingListener() {
+        FanImageLoader.create(thumbnailUrl).setImageLoadinglistener(new ImageLoadingListener() {
             @Override
             public void onLoadingStarted(String imageUri, View view) {
                 view.setLayoutParams(setLayoutParams(AutoFrameLayout.LayoutParams.WRAP_CONTENT));
@@ -153,10 +151,9 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
 
             @Override
             public void onLoadingCancelled(String imageUri, View view) {
-                holder.loading.setVisibility(View.GONE);
-
+                displayArtwork(holder, thumbnailUrl, artworkUrl);
             }
-        });
+        }).into(holder.thumbnail);
     }
 
 
@@ -164,7 +161,8 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
      * 加载原图业务
      */
     protected void displayArtwork(final Holder holder, final String thumbnailUrl, final String artworkUrl) {
-        BaseApplication.imageLoader.displayImage(artworkUrl, holder.artwork, ImageLoaderUtils.displayConfigDisplay(), new ImageLoadingListener() {
+
+        FanImageLoader.create(thumbnailUrl).setImageLoadinglistener(new ImageLoadingListener() {
             @Override
             public void onLoadingStarted(String imageUri, View view) {
                 holder.loading.setVisibility(View.VISIBLE);
@@ -189,7 +187,6 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
                 holder.thumbnail.setVisibility(View.GONE);
                 holder.loading.setVisibility(View.GONE);
                 holder.artwork.setVisibility(View.VISIBLE);
-
             }
 
             @Override
@@ -197,7 +194,8 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
                 holder.loading.setVisibility(View.GONE);
                 holder.thumbnail.setLayoutParams(setLayoutParams(AutoFrameLayout.LayoutParams.MATCH_PARENT));
             }
-        });
+        }).into(holder.artwork);
+
     }
 
 

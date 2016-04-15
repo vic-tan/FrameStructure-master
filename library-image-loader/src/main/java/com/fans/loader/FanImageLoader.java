@@ -477,6 +477,20 @@ public class FanImageLoader {
             return this;
         }
 
+        public Builder setAllRes(int res){
+            this.mEmptyRes = res;
+            this.mDefaultRes = res;
+            this.mFailRes = res;
+            return this;
+        }
+
+        public Builder setAllDrawable(Drawable drawable) {
+            this.mDefaultDrawable = drawable;
+            this.mEmptyDrawable = drawable;
+            this.mFailDrawable = drawable;
+            return this;
+        }
+
         public Builder setDisplayType(int displayType) {
             this.mDisplayType = displayType;
             return this;

@@ -7,9 +7,8 @@ import android.widget.ImageView.ScaleType;
 
 import com.common.bean.paramsBean.PhotoParams;
 import com.common.ui.base.activity.BaseActivity;
-import com.common.ui.base.main.BaseApplication;
-import com.common.utils.ImageLoaderUtils;
 import com.common.view.imageview.SmoothImageView;
+import com.fans.loader.FanImageLoader;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -30,7 +29,7 @@ public class SpaceImageDetailActivity extends BaseActivity implements PhotoViewA
         imageView.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         imageView.setScaleType(ScaleType.FIT_CENTER);
         setContentView(imageView);
-        BaseApplication.imageLoader.displayImage(mDatas.getThumbnail(), imageView, ImageLoaderUtils.displayConfigDisplay());
+        FanImageLoader.create(mDatas.getThumbnail()).into(imageView);
     }
 
 

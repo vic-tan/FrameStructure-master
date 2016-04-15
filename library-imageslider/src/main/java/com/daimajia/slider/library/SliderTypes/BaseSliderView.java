@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.common.utils.ImageLoaderUtils;
 import com.daimajia.slider.library.R;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.fans.loader.FanImageLoader;
+import com.fans.loader.internal.core.assist.FailReason;
+import com.fans.loader.internal.core.listener.ImageLoadingListener;
 
 import java.io.File;
 
@@ -26,7 +25,6 @@ public abstract class BaseSliderView {
     protected Context mContext;
     protected OnSliderClickListener mOnSliderClickListener;
     private Bundle mBundle;
-    private ImageLoader imageLoader;
     /**
      * Error place holder image.
      */
@@ -53,7 +51,6 @@ public abstract class BaseSliderView {
 
     protected BaseSliderView(Context context) {
         mContext = context;
-        initImageLoader();//初始化图片加载缓存 ImageLoader基本配置
     }
 
     /**
@@ -177,10 +174,10 @@ public abstract class BaseSliderView {
     /**
      * 初始化图片加载缓存 ImageLoader基本配置
      */
-    private void initImageLoader() {
+   /* private void initImageLoader() {
         imageLoader = ImageLoader.getInstance();
         imageLoader.init(ImageLoaderUtils.initConfigImageLoader(mContext));
-    }
+    }*/
 
     /**
      * set a slider image click listener
@@ -220,16 +217,18 @@ public abstract class BaseSliderView {
 
 
         if (mUrl != null) {
-            imageLoader.displayImage(mUrl, targetImageView, ImageLoaderUtils.displayConfigDisplay(R.mipmap.ic_launcher), new ImageLoadingListener() {
+            FanImageLoader.create(mUrl).setDefaultRes(R.mipmap.ic_launcher)
+                    .setFailRes(R.mipmap.ic_launcher)
+                    .setEmptyRes(R.mipmap.ic_launcher).setImageLoadinglistener(new ImageLoadingListener() {
                 @Override
-                public void onLoadingStarted(String s, View view) {
+                public void onLoadingStarted(String imageUri, View view) {
                     if (v.findViewById(R.id.loading_bar) != null) {
                         v.findViewById(R.id.loading_bar).setVisibility(View.INVISIBLE);
                     }
                 }
 
                 @Override
-                public void onLoadingFailed(String s, View view, FailReason failReason) {
+                public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
                     if (mLoadListener != null) {
                         mLoadListener.onEnd(false, me);
                     }
@@ -239,19 +238,20 @@ public abstract class BaseSliderView {
                 }
 
                 @Override
-                public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+                public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     if (v.findViewById(R.id.loading_bar) != null) {
                         v.findViewById(R.id.loading_bar).setVisibility(View.INVISIBLE);
                     }
                 }
 
                 @Override
-                public void onLoadingCancelled(String s, View view) {
+                public void onLoadingCancelled(String imageUri, View view) {
                     if (v.findViewById(R.id.loading_bar) != null) {
                         v.findViewById(R.id.loading_bar).setVisibility(View.GONE);
                     }
+
                 }
-            });
+            }).into(targetImageView);
         }
 
 

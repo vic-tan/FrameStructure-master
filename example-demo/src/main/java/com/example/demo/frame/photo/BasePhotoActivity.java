@@ -8,11 +8,10 @@ import android.view.View;
 import com.common.bean.paramsBean.PhotoParams;
 import com.common.ui.base.activity.BaseActivity;
 import com.common.ui.base.activity.BaseSimplePhotoViewActivity;
-import com.common.ui.base.main.BaseApplication;
-import com.common.utils.ImageLoaderUtils;
 import com.common.utils.StartActUtils;
 import com.common.view.imageview.SquareCenterImageView;
 import com.example.demo.R;
+import com.fans.loader.FanImageLoader;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ public class BasePhotoActivity extends BaseActivity implements View.OnClickListe
         imgTest = (SquareCenterImageView) findViewById(R.id.img_test);
         addList();
         bean = new PhotoParams("http://c.hiphotos.baidu.com/image/pic/item/10dfa9ec8a136327408ff2f2958fa0ec09fac794.jpg", "http://c.hiphotos.baidu.com/image/pic/item/10dfa9ec8a136327408ff2f2958fa0ec09fac794.jpg", 0);
-        BaseApplication.imageLoader.displayImage(bean.getThumbnail(), imgTest, ImageLoaderUtils.displayConfigDisplay(R.mipmap.ic_launcher));
+        FanImageLoader.create(bean.getThumbnail()).setAllRes(R.mipmap.ic_launcher).into(imgTest);
         imgTest.setOnClickListener(this);
     }
 

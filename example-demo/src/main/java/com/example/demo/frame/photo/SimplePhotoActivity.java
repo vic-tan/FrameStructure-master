@@ -11,12 +11,11 @@ import android.widget.ImageView;
 
 import com.common.bean.paramsBean.PhotoParams;
 import com.common.ui.base.activity.BaseActivity;
-import com.common.ui.base.main.BaseApplication;
-import com.common.utils.ImageLoaderUtils;
 import com.common.utils.ViewFindUtils;
 import com.common.view.imageview.SquareCenterImageView;
 import com.example.demo.R;
-import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
+import com.fans.loader.FanImageLoader;
+import com.fans.loader.core.listener.AbsListPauseOnScrollListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -59,7 +58,8 @@ public class SimplePhotoActivity extends BaseActivity {
 
     void init() {
         mGridView.setAdapter(new ImagesInnerGridViewAdapter(list));
-        mGridView.setOnScrollListener(new PauseOnScrollListener(BaseApplication.imageLoader, true, true));
+       // mGridView.setOnScrollListener(new PauseOnScrollListener(BaseApplication.imageLoader, true, true));
+        mGridView.setOnScrollListener(new AbsListPauseOnScrollListener(true,true));
     }
 
     @Override
@@ -98,9 +98,7 @@ public class SimplePhotoActivity extends BaseActivity {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //Intent intent = new Intent(SimplePhotoActivity.this, BaseSmoothPhotoViewActivity.class);
                     Intent intent = new Intent(SimplePhotoActivity.this, SmoothPagerPhotoViewActivity.class);
-                   // Intent intent = new Intent(SimplePhotoActivity.this, SpaceImageDetailActivity.class);
                     int[] location = new int[2];
                     imageView.getLocationOnScreen(location);
                     bean.setWidth(imageView.getWidth());
@@ -115,7 +113,7 @@ public class SimplePhotoActivity extends BaseActivity {
                 }
 
             });
-            BaseApplication.imageLoader.displayImage(datas.get(position).getThumbnail(), imageView, ImageLoaderUtils.displayConfigDisplay(R.mipmap.ic_launcher));
+            FanImageLoader.create(datas.get(position).getThumbnail()).setAllRes(R.mipmap.ic_launcher).into(imageView);
             return imageView;
         }
 

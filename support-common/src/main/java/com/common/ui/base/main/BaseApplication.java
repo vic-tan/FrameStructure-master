@@ -8,12 +8,10 @@ import com.common.db.DaoMaster;
 import com.common.exception.CrashHandler;
 import com.common.okhttp.OkHttpUtils;
 import com.common.utils.FileUtils;
-import com.common.utils.ImageLoaderUtils;
 import com.constants.fixed.GlobalConstants;
 import com.constants.fixed.OnOffConstants;
 import com.constants.level.OnOffLevel;
 import com.fans.loader.FanImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +23,6 @@ import java.util.concurrent.TimeUnit;
  */
 public class BaseApplication extends Application {
 
-    public static ImageLoader imageLoader;
     public static Context appContext;
     public static DaoMaster daoMaster;
     public static DaoMaster.DevOpenHelper helper;
@@ -76,8 +73,6 @@ public class BaseApplication extends Application {
      * 初始化图片加载缓存 ImageLoader基本配置
      */
     private void initImageLoader() {
-        imageLoader = ImageLoader.getInstance();
-        imageLoader.init(ImageLoaderUtils.initConfigImageLoader(getApplicationContext()));
         FanImageLoader.init(appContext, GlobalConstants.IMAGES_CACHE_PATH);
     }
 
