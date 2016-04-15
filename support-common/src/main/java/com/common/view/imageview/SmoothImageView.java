@@ -148,6 +148,8 @@ public class SmoothImageView extends PhotoView {
 	 * 初始化进入的变量信息
 	 */
 	private void initTransform() {
+		try {
+
 		if (getDrawable() == null) {
 			return;
 		}
@@ -197,6 +199,10 @@ public class SmoothImageView extends PhotoView {
 		mTransfrom.endRect.height = bitmapEndHeight;
 
 		mTransfrom.rect = new LocationSizeF();
+
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	private class LocationSizeF implements Cloneable{

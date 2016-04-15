@@ -56,11 +56,10 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         baseView = InflaterUtils.inflater(this, R.layout.common_pager_photo_view);
-        frameRoot = (AutoRelativeLayout) ViewFindUtils.find(baseView, R.id.frame_root);
+        frameRoot = ViewFindUtils.find(baseView, R.id.frame_root);
         frameRoot.setBackgroundColor(ResUtils.getColor(android.R.color.black));
         isAima = false;
         super.onCreate(savedInstanceState);
-        //getSupportActionBar().hide();
         setContentView(baseView);
         initWidget();
         initData();
@@ -126,6 +125,8 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
     }
 
 
+
+
     /**
      * 加载缩略图业务
      */
@@ -155,6 +156,7 @@ public abstract class BasePhotoViewActivity extends BaseActivity {
             }
         }).into(holder.thumbnail);
     }
+
 
 
     /**
